@@ -36,7 +36,7 @@ function rs_hero_slider( $atts, $content = '', $id = '' ) {
   $big_heading_color   = ($big_heading_color) ? ' style="color:'.esc_attr($big_heading_color).';"':'';
   $small_heading_color = ($small_heading_color) ? ' style="color:'.esc_attr($small_heading_color).';"':'';
   $btn_text_color      = ($btn_text_color) ? ' style="color:'.esc_attr($btn_text_color).';"':'';
-  $pagination_class    = ($pagination == 'no') ? ' hidden-lg':'';
+  $pagination_class    = ($pagination == 'no') ? ' d-none':''; // d-sm-none для включения на мобилках
 
   switch ($style) {
     case 'style1':
@@ -83,9 +83,9 @@ function rs_hero_slider( $atts, $content = '', $id = '' ) {
         }
       }
       $output .= '</div>';
-      $output .=  '<div class="pagination type-1 pos-1 visible-xs-block"></div>';
-      $output .=  '<div class="swiper-arrow-left tt-arrow-left type-1 pos-1 hidden-xs'.$pagination_class.'"><span class="lnr lnr-chevron-left"></span></div>';
-      $output .=  '<div class="swiper-arrow-right tt-arrow-right type-1 pos-1 hidden-xs'.$pagination_class.'"><span class="lnr lnr-chevron-right"></span></div>';
+      $output .=  '<div class="pagination type-1 pos-1 '.$pagination_class.'"></div>';
+      $output .=  '<div class="swiper-arrow-left tt-arrow-left type-1 pos-1"><span class="lnr lnr-chevron-left"></span></div>';
+      $output .=  '<div class="swiper-arrow-right tt-arrow-right type-1 pos-1"><span class="lnr lnr-chevron-right"></span></div>';
       $output .=  '</div>';
       # code...
       break;
@@ -113,7 +113,7 @@ function rs_hero_slider( $atts, $content = '', $id = '' ) {
           $output .=  '<img class="tt-mslide-2-img img-responsive" src="'.esc_url($object_url).'" height="996" width="640" alt="">';
         }
         $output .=  '<div class="row">';
-        $output .=  '<div class="col-sm-6 col-sm-offset-6">';
+        $output .=  '<div class="col-sm-6 offset-sm-6">';
         $output .=  '<h1 class="tt-mslide-2-title c-h1"'.$big_heading_color.'>'.esc_html($big_heading).'</h1>';
         $output .=  '<div class="simple-text size-4">';
         $output .=  '<p'.$small_heading_color.'>'.esc_html($small_heading).'</p>';
@@ -123,7 +123,7 @@ function rs_hero_slider( $atts, $content = '', $id = '' ) {
 
         if(function_exists('newsletter_form')):
           $output .=  '<div class="row">';
-          $output .=  '<div class="col-sm-6 col-sm-offset-6 col-md-4 col-md-offset-6">';
+          $output .=  '<div class="col-sm-6 offset-sm-6 col-md-4 offset-md-6">';
           $output .=  '<form method="post" action="'.home_url('/').'?na=s" onsubmit="return newsletter_check(this)">';
           $output .=  '<div class="c-input-3-wrapper">';
           $output .=  '<input class="c-input type-3" type="text" name="nn" required="" placeholder="'.esc_html($name_placehodler).'">';
@@ -152,9 +152,9 @@ function rs_hero_slider( $atts, $content = '', $id = '' ) {
       }
 
       $output .=  '</div>';
-      $output .=  '<div class="pagination type-1 pos-1 visible-xs-block"></div>';
-      $output .=  '<div class="swiper-arrow-left tt-arrow-left type-1 '.$pagination_class.' pos-1 hidden-xs"><span class="lnr lnr-chevron-left"></span></div>';
-      $output .=  '<div class="swiper-arrow-right tt-arrow-right type-1 '.$pagination_class.' pos-1 hidden-xs"><span class="lnr lnr-chevron-right"></span></div>';                   
+      $output .=  '<div class="pagination type-1 pos-1 '.$pagination_class.'"></div>';
+      $output .=  '<div class="swiper-arrow-left tt-arrow-left type-1 pos-1"><span class="lnr lnr-chevron-left"></span></div>';
+      $output .=  '<div class="swiper-arrow-right tt-arrow-right type-1 pos-1"><span class="lnr lnr-chevron-right"></span></div>';                   
       $output .=  '</div>';
 
       break;
@@ -205,9 +205,9 @@ function rs_hero_slider( $atts, $content = '', $id = '' ) {
         }
       }
       $output .= '</div>';
-      $output .=  '<div class="pagination type-1 pos-1 visible-xs-block"></div>';
-      $output .=  '<div class="swiper-arrow-left tt-arrow-left type-1 '.$pagination_class.' pos-1 hidden-xs"><span class="lnr lnr-chevron-left"></span></div>';
-      $output .=  '<div class="swiper-arrow-right tt-arrow-right type-1 '.$pagination_class.' pos-1 hidden-xs"><span class="lnr lnr-chevron-right"></span></div>';
+      $output .=  '<div class="pagination type-1 pos-1 '.$pagination_class.'"></div>';
+      $output .=  '<div class="swiper-arrow-left tt-arrow-left type-1 pos-1"><span class="lnr lnr-chevron-left"></span></div>';
+      $output .=  '<div class="swiper-arrow-right tt-arrow-right type-1 pos-1"><span class="lnr lnr-chevron-right"></span></div>';
       $output .=  '</div>';
       break;
 
@@ -264,9 +264,9 @@ function rs_hero_slider( $atts, $content = '', $id = '' ) {
       }
 
       $output .=  '</div>';
-      $output .=  '<div class="pagination type-1 pos-1 visible-xs-block"></div>';
-      $output .=  '<div class="swiper-arrow-left tt-arrow-left type-1 pos-1 '.$pagination_class.' hidden-xs"><span class="lnr lnr-chevron-left"></span></div>';
-      $output .=  '<div class="swiper-arrow-right tt-arrow-right type-1 pos-1 '.$pagination_class.' hidden-xs"><span class="lnr lnr-chevron-right"></span></div>';                   
+      $output .=  '<div class="pagination type-1 pos-1 '.$pagination_class.'"></div>';
+      $output .=  '<div class="swiper-arrow-left tt-arrow-left type-1 pos-1"><span class="lnr lnr-chevron-left"></span></div>';
+      $output .=  '<div class="swiper-arrow-right tt-arrow-right type-1 pos-1"><span class="lnr lnr-chevron-right"></span></div>';                   
       $output .=  '</div>';
       break;
 
@@ -315,9 +315,49 @@ function rs_hero_slider( $atts, $content = '', $id = '' ) {
       }
 
       $output .=  '</div>';
-      $output .=  '<div class="pagination type-1 pos-1 visible-xs-block"></div>';
-      $output .=  '<div class="swiper-arrow-left tt-arrow-left type-1 pos-1 '.$pagination_class.' hidden-xs"><span class="lnr lnr-chevron-left"></span></div>';
-      $output .=  '<div class="swiper-arrow-right tt-arrow-right type-1 pos-1 '.$pagination_class.' hidden-xs"><span class="lnr lnr-chevron-right"></span></div>';                   
+      $output .=  '<div class="pagination type-1 pos-1 '.$pagination_class.'"></div>';
+      $output .=  '<div class="swiper-arrow-left tt-arrow-left type-1 pos-1"><span class="lnr lnr-chevron-left"></span></div>';
+      $output .=  '<div class="swiper-arrow-right tt-arrow-right type-1 pos-1"><span class="lnr lnr-chevron-right"></span></div>';                   
+      $output .=  '</div>';
+      
+      break;
+
+      case 'style6':
+      $output .=  '<div '.$id.' class="swiper-container tt-swiper-shadow'.$class.'" data-autoplay="'.esc_attr($autoplay).'" data-loop="'.esc_attr($loop).'" data-speed="'.esc_attr($speed).'" data-center="0" data-slides-per-view="1" data-add-slides="2">';
+      $output .=  '<div class="swiper-wrapper clearfix">';
+
+      foreach ($rs_hero_slider as $key => $slide) {
+        $image_id      = (isset($slide['atts']['background'])) ? $slide['atts']['background']:'';
+        $small_heading = (isset($slide['atts']['small_heading'])) ? $slide['atts']['small_heading']:'';
+        $btn_text      = (isset($slide['atts']['btn_text'])) ? $slide['atts']['btn_text']:'';
+        $btn_link      = (isset($slide['atts']['btn_link'])) ? $slide['atts']['btn_link']:'';
+        $big_heading   = (isset($slide['atts']['heading'])) ? $slide['atts']['heading']:'';
+
+        if (function_exists('vc_parse_multi_attribute')) {
+          $parse_args = vc_parse_multi_attribute($btn_link);
+          $href       = ( isset($parse_args['url']) ) ? $parse_args['url'] : '#';
+          $btn_title  = ( isset($parse_args['title']) ) ? $parse_args['title'] : 'button';
+          $target     = ( isset($parse_args['target']) ) ? trim($parse_args['target']) : '_self';
+        }
+
+        $active_class = ($key === 0) ? ' active':'';
+        $image_url  = rs_get_image_src($image_id);
+        if(!empty($image_url)) {
+          $output .=  '<div class="swiper-slide'.$active_class.'" data-val="'.esc_attr($key).'">';
+          $output .=  '<div class="tt-mslide-3 background-block" style="background-image:url('.esc_url($image_url).');">';
+          $output .=  '<div class="container">';
+          $output .=  '<div class="tt-mslide-3-table text-center">';
+          $output .=  '</div>';
+          $output .=  '</div>';
+          $output .=  '</div>';
+          $output .=  '</div>';
+        }
+      }
+
+      $output .=  '</div>';
+      $output .=  '<div class="pagination type-1 pos-1 '.$pagination_class.'"></div>';
+      $output .=  '<div class="swiper-custom swiper-arrow-left tt-arrow-left type-1 pos-1"><span class="lnr lnr-chevron-left"></span></div>';
+      $output .=  '<div class="swiper-custom swiper-arrow-right tt-arrow-right type-1 pos-1"><span class="lnr lnr-chevron-right"></span></div>';                   
       $output .=  '</div>';
       
       break;

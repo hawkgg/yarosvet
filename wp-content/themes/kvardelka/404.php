@@ -15,8 +15,8 @@ get_header(); ?>
       <div class="col-md-12">
         <div class="tt-page-404-content text-center">
           <h1 class="c-h1"><?php echo esc_html__('404', 'marketing'); ?></h1>
-          <p><?php echo wp_kses_post(marketing_get_opt('page404-content')); ?></p>
-          <a class="c-btn type-2 size-2 color-1" target="_self" title="button" href="<?php echo esc_url(home_url('/')); ?>"><span><?php echo esc_html__('Back to Home', 'marketing'); ?></span></a>
+          <p class="lead mb-4"><?php echo wp_kses_post(marketing_get_opt('page404-content')); ?></p>
+          <a class="c-btn type-1 size-1 color-1" target="_self" title="button" href="<?php echo esc_url(home_url('/')); ?>"><span><?php echo esc_html__('На главную', 'marketing'); ?></span></a>
         </div><!-- /page-404-content -->
       </div><!-- /col-md-12 -->
     </div><!-- /row -->

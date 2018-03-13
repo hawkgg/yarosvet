@@ -37,7 +37,7 @@ function rs_cta( $atts, $content = '', $id = '' ) {
     $output .=  '<img class="img-responsive" src="'.esc_url($image_src).'" alt="">';
     $output .=  '</div>';                 
     $output .=  '<div class="row">';
-    $output .=  '<div class="col-sm-7 col-sm-offset-5">';
+    $output .=  '<div class="col-sm-7 offset-sm-5">';
     $output .=  '<h4 class="tt-banner-title c-h2"><small>'.esc_html($heading).'</small></h4>';
     $output .=  '<a class="c-btn type-1 size-3" title="'.esc_attr($btn_title).'" target="'.esc_attr($target).'" href="'.esc_url($href).'">'.esc_html($btn_text).'</a>';
     $output .=  '</div>';

@@ -37,7 +37,7 @@ function rs_newsletter( $atts, $content = '', $id = '' ) {
         $output .=  '</div>';
       endif;
       $output .=  '<div class="row">';
-      $output .=  '<div class="col-sm-7 col-sm-offset-5">';
+      $output .=  '<div class="col-sm-7 offset-sm-5">';
       $output .=  '<h4 class="tt-banner-title c-h2"><small>'.esc_html($big_heading).'</small></h4>';
       $output .=  '<div class="simple-text size-7">';
       $output .=  '<p>'.esc_html($small_heading).'</p>';
@@ -70,7 +70,7 @@ function rs_newsletter( $atts, $content = '', $id = '' ) {
       $output .=  '<div class="container">';
       $output .=  '<div class="empty-space marg-lg-b70 marg-sm-b50 marg-xs-b30"></div>';
       $output .=  '<div class="row">';
-      $output .=  '<div class="col-sm-8 col-sm-offset-2">';
+      $output .=  '<div class="col-sm-8 offset-sm-2">';
       $output .=  '<h4 class="tt-banner-title c-h2"><small>'.esc_html($big_heading).'</small></h4>';
       $output .=  '<div class="simple-text size-7">';
       $output .=  '<p>'.esc_html($small_heading).'</p>';
@@ -79,7 +79,7 @@ function rs_newsletter( $atts, $content = '', $id = '' ) {
       $output .=  '</div>';
 
       $output .=  '<div class="row">';
-      $output .=  '<div class="col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">';
+      $output .=  '<div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3">';
       if(function_exists('newsletter_form')):
         $output .=  '<div class="tt-banner-3-form">';
         $output .=  '<form method="post" action="'.home_url('/').'?na=s" onsubmit="return newsletter_check(this)">';

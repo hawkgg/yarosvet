@@ -1,0 +1,273 @@
+.swiper-custom.tt-arrow-left, .swiper-custom.tt-arrow-right{
+    background:transparent !important;
+    border:none;
+}
+.swiper-custom span{
+    font-size:35px;
+    color:#fff;
+    background:transparent;
+}
+.pagination{
+    justify-content:center;
+}
+#content-wrapper.content {
+    padding:0;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
+/* TT-SERVICE TYPE-1 */
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+.tt-service.type-1.color-2 .tt-service-icon:hover {
+    background: #368aa9;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
+/* TT-SERVICE TYPE-2 */
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+.tt-service.type-2.color-2 .tt-service-icon:hover {
+    background: #368aa9;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+/* TT-SERVICE TYPE-5 */
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+.tt-service.type-5 .tt-service-icon:hover {
+    background: transparent;
+}
+
+.tt-service.type-5.color-1 .tt-service-icon:hover span{
+    color: #86bb6b;
+}
+
+.tt-service.type-5.color-2 .tt-service-icon:hover span{
+    color: #368aa9;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
+/* TT-SERVICE TYPE-6 */
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
+.tt-service.type-6.color-2 .tt-service-icon:hover {
+    background: #368aa9;
+}
+
+.tt-service.type-6 .tt-service-title:hover {
+    color: inherit;
+    cursor: default;
+}
+
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
+/* TT-SERVICE TYPE-7 */
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+.tt-service.type-7 {
+  text-align: center;
+}
+
+.tt-service.type-7 .tt-service-icon {
+  float: none;
+  margin: 0 auto 30px auto;
+}
+
+.tt-service.type-7 .tt-service-info {
+  padding-left: 0;
+  padding-top: 0;
+}
+
+.tt-service.type-7.color-2 .tt-service-icon:hover {
+    background: #368aa9;
+}
+
+.tt-service.type-7 .tt-service-title:hover {
+    color: inherit;
+    cursor: default;
+}
+
+.tt-service.type-7 .tt-service-title {
+  margin-bottom: 16px;
+}
+
+@media (max-width:767px) {
+  .tt-service.type-7 {
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
+/* TT-SERVICE TYPE-8 */
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+.tt-service.type-8 .tt-service-icon {
+  width: 60px;
+  height: 60px;
+  font-size: 60px;
+  border: 0;
+}
+
+.tt-service.type-8 .tt-service-icon span {
+  font-size: 60px;
+  line-height: 60px;
+}
+
+.tt-service.type-8 .tt-service-icon:hover,
+.tt-service.type-9 .tt-service-icon:hover {
+  background: transparent;
+}
+
+.tt-service.type-8 .tt-service-title:hover {
+    color: inherit;
+    cursor: default;
+}
+
+.tt-service.type-8 .tt-service-icon:hover span {
+  color: #30373b;
+}
+
+.tt-service.type-8 .tt-service-info {
+  padding-left: 80px;
+}
+
+@media (max-width:991px) {
+  .tt-service.type-8 .tt-service-info {
+    padding-left: 0;
+  }
+  .tt-service.type-8 .tt-service-icon {
+    display: block;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width:767px) {
+  .tt-service.type-8 {
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
+/* TT-SERVICE TYPE-9 */
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+.tt-service.type-9 {
+  text-align: center;
+}
+
+.tt-service.type-9 .tt-service-icon {
+  float: none;
+  margin: 0 auto 30px auto;
+  border: 0;
+  background: transparent;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+
+.tt-service.type-9 .tt-service-title:hover {
+    color: inherit;
+    cursor: default;
+}
+
+.tt-service.type-9 .tt-service-info {
+  padding-left: 0;
+  padding-top: 0;
+}
+
+@media (max-width:991px) {
+  .tt-service.type-9 {
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
+/* TT-SERVICE TYPE-10 */
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+.tt-service.type-10 {
+  text-align: center;
+  border:1px solid #eaeaea;
+  padding:25px 40px 50px 40px;
+}
+
+.tt-service.type-10 .tt-service-icon:hover {
+    background: transparent;
+}
+
+.tt-service.type-10.color-1 .tt-service-icon:hover span{
+    color: #86bb6b;
+}
+
+.tt-service.type-10.color-2 .tt-service-icon:hover span{
+    color: #368aa9;
+}
+
+.tt-service.type-10 .tt-service-title:hover {
+    color: inherit;
+    cursor: default;
+}
+
+.tt-service.type-10 .tt-service-icon {
+  float: none;
+  margin: 0 auto 30px auto;
+  border: 0;
+  background: transparent;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+
+.tt-service.type-10 .tt-service-info {
+  padding-left: 0 !important;
+  padding-top: 0px;
+}
+
+@media (max-width:991px) {
+  .tt-service.type-9 {
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

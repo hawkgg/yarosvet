@@ -35,15 +35,27 @@ function rs_icon_box( $atts, $content = '', $id = '' ) {
     if(isset($image_src[0])) {
       $img_icon_html .=  '<img src="'.esc_url($image_src[0]).'" height="100" width="100" alt="">';
     }
-  }
-  $icon_html = ($style == 'type-4') ? $img_icon_html:'<span class="'.marketing_sanitize_html_classes($icon).'"></span>';
+  } else {
+      $img_icon_html .=  '<span class="'.marketing_sanitize_html_classes($icon).'"></span>';
+    }
 
   $output  =  '<div '.$id.' class="tt-service '.$color.' '.$style.' clearfix'.$class.'">';
-  $output .=  '<a class="tt-service-icon" href="'.esc_url($href).'" target="'.esc_attr($target).'">';
-  $output .=  $icon_html;
-  $output .=  '</a>';
+
+  if ($style == 'type-6' || $style == 'type-7' || $style == 'type-8' || $style == 'type-9' || $style == 'type-10') {
+    $output .=  '<div class="tt-service-icon">';
+    $output .=  $img_icon_html;
+    $output .=  '</div>';
+  } else {
+    $output .=  '<a class="tt-service-icon" href="'.esc_url($href).'" target="'.esc_attr($target).'">';
+    $output .=  $img_icon_html;
+    $output .=  '</a>';
+  }
   $output .=  '<div class="tt-service-info">';
-  $output .=  '<a class="tt-service-title c-h4">'.esc_html($heading).'</a>';
+  if ($style == 'type-6' || $style == 'type-7' || $style == 'type-8' || $style == 'type-9' || $style == 'type-10') {
+    $output .=  '<p class="tt-service-title c-h4">'.esc_html($heading).'</p>';
+  } else {
+    $output .=  '<a class="tt-service-title c-h4">'.esc_html($heading).'</a>';
+  }
   $output .=  '<div class="simple-text size-3">';
   $output .=  rs_set_wpautop($content);
   $output .=  '</div>';

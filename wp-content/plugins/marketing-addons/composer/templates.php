@@ -91,6 +91,18 @@ CONTENT;
 CONTENT;
   $templates[] = $data;
 
+
+  $data = array();
+  $data['name'] = esc_html__( 'Custom', 'marketing-addons' );
+  $data['disabled'] = true; //disable it to not show in the default tab
+  $data['image_path'] = preg_replace( '/\s/', '%20',  false );
+  $data['sort_name'] = 'Slider';
+  $data['custom_class'] = 'general slider';
+  $data['content'] = <<<CONTENT
+[vc_row full_width="stretch_row_content_no_spaces" fluid="stretch_row_content"][vc_column][rs_hero_slider style="style6"][rs_hero_slider_item background="http://themebubble.com/demo/marketingpro/wp-content/uploads/2016/11/event.png"][/rs_hero_slider][/vc_column][/vc_row]
+CONTENT;
+  $templates[] = $data;
+
   $data = array();
   $data['name'] = esc_html__( 'Icon Box With Image Icon', 'marketing-addons' );
   $data['disabled'] = true; //disable it to not show in the default tab

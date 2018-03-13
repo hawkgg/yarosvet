@@ -180,6 +180,7 @@ if( !function_exists('marketing_enqueue_scripts')) {
       wp_enqueue_style('woocommerce',           get_template_directory_uri(). '/css/woocommerce.css',null, MARKETING_THEME_VERSION);
     //endif;
     wp_enqueue_style('marketing-main-style',    get_template_directory_uri(). '/css/style.css',null, MARKETING_THEME_VERSION);
+    wp_enqueue_style('custom-styles',    get_template_directory_uri(). '/css/custom.css',null, MARKETING_THEME_VERSION);
 
     $pages = array();
   

@@ -608,9 +608,15 @@ vc_map( array(
       'param_name' => 'style',
       'value'      => array(
         'Style 1' => 'type-1',
+        'Style 1 without links' => 'type-6',
         'Style 2' => 'type-2',
+        'Style 2 without links' => 'type-7',
         'Style 3' => 'type-3',
+        'Style 3 without links' => 'type-8',
         'Style 4' => 'type-4',
+        'Style 4 without links' => 'type-9',
+        'Style 5' => 'type-5',
+        'Style 5 without links' => 'type-10',
       ),
     ),
     array(
@@ -621,7 +627,6 @@ vc_map( array(
       'icon_type'   => 'font_icon',
       'description' => 'Please select icon if you select accordion type to with icon.',
       'value'       => '',
-      'dependency'  => array( 'element' => 'style', 'value' => array('type-1', 'type-2', 'type-3') ),
     ),
     array(
       'type'       => 'dropdown',
@@ -636,7 +641,6 @@ vc_map( array(
       'type'        => 'attach_image',
       'heading'     => 'Icon',
       'param_name'  => 'img_icon',
-      'dependency'  => array( 'element' => 'style', 'value' => array('type-4') ),
     ),
     array(
       'type'        => 'textfield',
@@ -654,6 +658,7 @@ vc_map( array(
       'type'        => 'vc_link',
       'heading'     => 'Link',
       'param_name'  => 'icon_box_link',
+      'dependency'  => array( 'element' => 'style', 'value' => array('type-1', 'type-2', 'type-3', 'type-4', 'type-5') ),
     ),
 
     // Extras
@@ -1383,6 +1388,7 @@ vc_map( array(
         'Style 3'   => 'style3',
         'Style 4'   => 'style4',
         'Style 5'   => 'style5',
+        'Style 6'   => 'style6',
       ),
     ),
     array(
