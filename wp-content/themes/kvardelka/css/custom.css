@@ -265,9 +265,54 @@
 }
 
 @media (max-width:991px) {
-  .tt-service.type-9 {
+  .tt-service.type-10 {
     max-width: 480px;
     margin-left: auto;
     margin-right: auto;
+  }
+}
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
+/* TT-SERVICE TYPE-11 */
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
+.tt-service.type-11{
+    background-color: #eee;
+    padding: 25px;
+    text-align: center;
+    min-height:270px;
+}
+
+.tt-service.type-11 .tt-service-icon {
+  float: none;
+  margin: 0 auto 30px auto;
+  border: 0;
+  background: transparent;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+
+.tt-service.type-11 .tt-service-info {
+  padding-left: 0;
+  padding-top: 0;
+}
+
+.tt-service.type-11 p{
+    color: #646464;
+}
+
+.tt-service.type-11 .tt-service-icon {
+    height: 85px;
+}
+
+@media (max-width:991px) {
+  .tt-service.type-11 {
+    max-width: 3000px;
+    margin:10px auto;
   }
 }

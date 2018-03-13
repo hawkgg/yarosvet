@@ -21,18 +21,18 @@ function rs_client( $atts, $content = '', $id = '' ) {
 
   $image_array = explode(',', $image);
   if(is_array($image_array)) {
-    $output .=  '<div '.$id.' class="swiper-container'.$class.'" data-autoplay="5000" data-loop="0" data-speed="500" data-center="0" data-slides-per-view="responsive" data-xs-slides="2" data-sm-slides="3" data-md-slides="3" data-lg-slides="4" data-add-slides="5">';
+    $output .=  '<div '.$id.' class="swiper-container'.$class.'" data-autoplay="5000" data-loop="1" data-speed="300" data-center="0" data-slides-per-view="responsive" data-xs-slides="2" data-sm-slides="3" data-md-slides="3" data-lg-slides="4" data-add-slides="5">';
     $output .=  '<div class="swiper-wrapper clearfix">';
     foreach ($image_array as $single_image) {
       $image_src  = rs_get_image_src($single_image);
       $output .=  '<div class="swiper-slide active" data-val="0">';
       $output .=  '<div class="tt-partner">';
-      $output .=  '<img class="img-responsive" src="'.esc_url($image_src).'" alt="">';
+      $output .=  '<img class="img-responsive d-block" src="'.esc_url($image_src).'" alt="">';
       $output .=  '</div>';
       $output .=  '</div>';
     }                      
     $output .=  '</div>';
-    $output .=  '<div class="pagination type-1 visible-xs-block"></div>';
+    $output .=  '<div class="pagination type-1 d-none"></div>';
     $output .=  '</div>';
   }
 

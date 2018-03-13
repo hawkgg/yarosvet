@@ -617,6 +617,7 @@ vc_map( array(
         'Style 4 without links' => 'type-9',
         'Style 5' => 'type-5',
         'Style 5 without links' => 'type-10',
+        'Style 6' => 'type-11',
       ),
     ),
     array(

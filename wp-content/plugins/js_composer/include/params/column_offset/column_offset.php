@@ -86,9 +86,9 @@ class Vc_Column_Offset {
 	 * @return string
 	 */
 	public function sizeControl( $size ) {
-		if ( 'sm' === $size ) {
-			return '<span class="vc_description">' . __( 'Default value from width attribute', 'js_composer' ) . '</span>';
-		}
+		// if ( 'sm' === $size ) {
+		// 	return '<span class="vc_description">' . __( 'Default value from width attribute', 'js_composer' ) . '</span>';
+		// }
 		$empty_label = 'xs' === $size ? '' : __( 'Inherit from smaller', 'js_composer' );
 		$output = '<select name="vc_col_' . $size . '_size" class="vc_column_offset_field" data-type="size-' . $size . '">' . '<option value="" style="color: #ccc;">' . $empty_label . '</option>';
 		foreach ( $this->column_width_list as $label => $index ) {
