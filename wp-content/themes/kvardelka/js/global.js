@@ -23,10 +23,7 @@ jQuery(function($) {
   /* 01 - VARIABLES */
   /*================*/
   var swipers = [],
-    winW, winH, winScr, $container, $isotope_container_rating, _isresponsive, smPoint = 768,
-    mdPoint = 992,
-    lgPoint = 1200,
-    addPoint = 1600,
+    winW, winH, winScr, $container, $isotope_container_rating, _isresponsive, 
     _ismobile = navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i);
 
   /*========================*/
@@ -81,32 +78,11 @@ jQuery(function($) {
   /*==============================*/
   /* 05 - function on page resize */
   /*==============================*/
-  function resizeCall() {
-    pageCalculations();
-
-    $('.swiper-container.initialized[data-slides-per-view="responsive"]').each(function() {
-      var thisSwiper = swipers['swiper-' + $(this).attr('id')],
-        $t = $(this),
-        slidesPerViewVar = updateSlidesPerView($t);
-      thisSwiper.params.slidesPerView = slidesPerViewVar;
-      thisSwiper.reInit();
-      var paginationSpan = $t.find('.pagination span');
-      var paginationSlice = paginationSpan.hide().slice(0, (paginationSpan.length + 1 - slidesPerViewVar));
-      if (paginationSlice.length <= 1 || slidesPerViewVar >= $t.find('.swiper-slide').length) $t.addClass('pagination-hidden');
-      else $t.removeClass('pagination-hidden');
-      paginationSlice.show();
-    });
-  }
   if (!_ismobile) {
     $(window).resize(function() {
-      resizeCall();
       heightInit();
     });
-  } else {
-    window.addEventListener("orientationchange", function() {
-      resizeCall();
-    }, false);
-  }
+  } 
 
   $(document).ready(function() {
     function enableFullWidth() {
@@ -153,10 +129,10 @@ jQuery(function($) {
       var centerVar = parseInt($t.attr('data-center'), 10);
       var simVar = ($t.closest('.circle-description-slide-box').length) ? false : true;
 
-      var slidesPerViewVar = $t.attr('data-slides-per-view');
-      if (slidesPerViewVar == 'responsive') {
-        slidesPerViewVar = updateSlidesPerView($t);
-      } else if (slidesPerViewVar != 'auto') slidesPerViewVar = parseInt(slidesPerViewVar, 10);
+      var lg = parseInt($t.attr('data-lg-slides'), 10);
+      var md = parseInt($t.attr('data-md-slides'), 10);
+      var sm = parseInt($t.attr('data-sm-slides'), 10);
+      var xs = parseInt($t.attr('data-xs-slides'), 10);
 
       var loopVar = parseInt($t.attr('data-loop'), 10);
       var speedVar = parseInt($t.attr('data-speed'), 10);
@@ -167,12 +143,29 @@ jQuery(function($) {
         loop: loopVar,
         paginationClickable: true,
         autoplay: autoPlayVar,
-        slidesPerView: slidesPerViewVar,
         keyboardControl: true,
         calculateHeight: true,
         simulateTouch: simVar,
         centeredSlides: centerVar,
         roundLengths: true,
+        breakpoints: {
+            1600: {
+              slidesPerView: lg,
+              spaceBetween: 40,    
+            },
+            1200: {
+              slidesPerView: md,
+              spaceBetween: 40,
+            },
+            992: {
+              slidesPerView: sm,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: xs,
+              spaceBetween: 30,
+            },
+        },
         onSlideChangeEnd: function(swiper) {
           var activeIndex = (loopVar === true) ? swiper.activeIndex : swiper.activeLoopIndex;
           var qVal = $t.find('.swiper-slide-active').attr('data-val');
@@ -185,27 +178,10 @@ jQuery(function($) {
 
         }
       });
-      swipers['swiper-' + index].reInit();
-      if ($t.attr('data-slides-per-view') == 'responsive') {
-        var paginationSpan = $t.find('.pagination span');
-        var paginationSlice = paginationSpan.hide().slice(0, (paginationSpan.length + 1 - slidesPerViewVar));
-        if (paginationSlice.length <= 1 || slidesPerViewVar >= $t.find('.swiper-slide').length) $t.addClass('pagination-hidden');
-        else $t.removeClass('pagination-hidden');
-        paginationSlice.show();
-      }
       initIterator++;
     });
 
   }
-
-  function updateSlidesPerView(swiperContainer) {
-    if (winW >= addPoint) return parseInt(swiperContainer.attr('data-add-slides'), 10);
-    else if (winW >= lgPoint) return parseInt(swiperContainer.attr('data-lg-slides'), 10);
-    else if (winW >= mdPoint) return parseInt(swiperContainer.attr('data-md-slides'), 10);
-    else if (winW >= smPoint) return parseInt(swiperContainer.attr('data-sm-slides'), 10);
-    else return parseInt(swiperContainer.attr('data-xs-slides'), 10);
-  }
-
   //swiper arrows
   $('.swiper-arrow-left').on('click', function() {
     swipers['swiper-' + $(this).parents('.swiper-container').attr('id')].swipePrev();
@@ -303,7 +279,6 @@ jQuery(function($) {
     $tab.find('.swiper-container').each(function() {
       var thisSwiper = swipers['swiper-' + $(this).attr('id')],
         $t = $(this);
-      thisSwiper.reInit();
     });
   }
 

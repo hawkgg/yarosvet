@@ -27,7 +27,7 @@ function rs_client( $atts, $content = '', $id = '' ) {
       $image_src  = rs_get_image_src($single_image);
       $output .=  '<div class="swiper-slide active" data-val="0">';
       $output .=  '<div class="tt-partner">';
-      $output .=  '<img class="img-responsive d-block" src="'.esc_url($image_src).'" alt="">';
+      $output .=  '<img class="img-responsive" src="'.esc_url($image_src).'" alt="">';
       $output .=  '</div>';
       $output .=  '</div>';
     }                      
