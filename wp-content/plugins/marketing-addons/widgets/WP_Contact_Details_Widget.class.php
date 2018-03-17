@@ -52,7 +52,7 @@ class marketing_WP_Contact_Details_Widget extends WP_Widget
 
     <?php if(isset($instance['phone_no']) || isset($instance['email']) || isset($instance['location'])): ?>
 
-    <?php if(isset($instance['location'])): ?>
+    <?php if(isset($instance['location']) && !empty($instance['location'])): ?>
     <div class="tt-address clearfix">
       <div class="tt-address-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
       <div class="tt-address-info">
@@ -62,7 +62,7 @@ class marketing_WP_Contact_Details_Widget extends WP_Widget
     <div class="empty-space marg-lg-b25"></div>
     <?php endif; ?>
 
-    <?php if(isset($instance['email'])): ?>
+    <?php if(isset($instance['email']) && !empty($instance['email'])): ?>
     <div class="tt-address clearfix">
       <div class="tt-address-icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
       <div class="tt-address-info">
@@ -72,7 +72,7 @@ class marketing_WP_Contact_Details_Widget extends WP_Widget
     <div class="empty-space marg-lg-b25"></div>
     <?php endif; ?>
 
-    <?php if(isset($instance['phone_no'])): ?>
+    <?php if(isset($instance['phone_no']) && !empty($instance['phone_no'])): ?>
     <div class="tt-address clearfix">
       <div class="tt-address-icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
       <div class="tt-address-info">

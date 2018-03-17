@@ -36,8 +36,8 @@ endif;
       <div class="row">
         <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
           <div class="tt-blog-top">
-            <div class="tt-blog-cat"><?php echo implode(' ', $term_name); ?></div>
-            <h2 class="tt-blog-title c-h2"><?php the_title(); ?></h2>
+            <!-- <div class="tt-blog-cat"><?php echo implode(' ', $term_name); ?></div> -->
+            <h2 class="tt-blog-title c-h2 text-left"><?php the_title(); ?></h2>
           </div>
         </div>
       </div>
@@ -46,20 +46,20 @@ endif;
       <div class="row">
         <div class="col-lg-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
           <div class="simple-text style-2">
-            <?php if(marketing_get_post_opt('service-date-enable')): ?>
-            <h4><?php esc_html_e('Date:','marketing'); ?></h4>
+            <!-- <?php if(marketing_get_post_opt('service-date-enable')): ?> -->
+            <!--  <h4><?php esc_html_e('Date:','marketing'); ?></h4>
             <p><?php the_time('F. d, y'); ?></p>
-            <?php endif; ?>
+            <?php endif; ?> -->
 
             <?php if(!empty($client_name) && marketing_get_post_opt('service-client-enable')): ?>
             <h4><?php esc_html_e('Client', 'marketing'); ?></h4>
               <p><?php echo esc_html($client_name); ?></p>
             <?php endif; ?>
 
-            <?php if(has_excerpt()): ?>
+            <!-- <?php if(has_excerpt()): ?>
               <h4><?php esc_html_e('Summary', 'marketing'); ?></h4>
               <p><?php echo marketing_auto_post_excerpt(); ?></p>
-            <?php endif; ?>
+            <?php endif; ?> -->
 
           </div>
           <div class="empty-space marg-lg-b45 marg-sm-b30"></div>

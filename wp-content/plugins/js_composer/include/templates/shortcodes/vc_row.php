@@ -149,7 +149,17 @@ $css_class = preg_replace( '/\s+/', ' ', apply_filters( VC_SHORTCODE_CUSTOM_CSS_
 $wrapper_attributes[] = 'class="' . esc_attr( trim( $css_class ) ) . '"';
 
 $output .= '<div ' . implode( ' ', $wrapper_attributes ) . '>';
+
+if ( empty( $full_width ) ) {
+    $output .= '<div class="container">';
+}
+
 $output .= wpb_js_remove_wpautop( $content );
+
+if ( empty( $full_width ) ) {
+	$output .= '</div>';
+}
+
 $output .= '</div>';
 $output .= $after_output;
 

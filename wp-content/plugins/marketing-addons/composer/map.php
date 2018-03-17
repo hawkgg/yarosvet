@@ -542,6 +542,7 @@ vc_map( array(
       'value'      => array(
         'Style 1' => 'style1',
         'Style 2' => 'style2',
+        'Style 3' => 'style3',
       ),
     ),
     array(

@@ -157,6 +157,33 @@ function rs_case_study($atts, $content = '', $id = '') {
       </div>
       <?php
       break;
+
+    case 'style3': 
+    ?>
+      <div class="d-flex flex-wrap">  
+        <?php
+          $i = 0;
+          while( $the_query->have_posts() ) : $the_query->the_post();
+            $terms = wp_get_post_terms(get_the_ID(), 'service-category');
+            $term_slugs = array();
+            if (count($terms) > 0):
+              foreach ($terms as $term):
+                $term_slugs[] = $term->slug;
+              endforeach;
+            endif;
+            $case_item_args = array(
+              'style' => 'style3',
+              'count' => $i,
+            );  
+            rs_case_study_item($case_item_args,  $term_slugs);
+            $i++;
+          endwhile;
+          wp_reset_query();
+          wp_reset_postdata();
+        ?>
+      </div>
+      <?php
+      break;
     
     default:
       # code...
@@ -211,6 +238,26 @@ if(!function_exists('rs_case_study_item')) {
               <div class="simple-text size-3">
                 <p><?php echo marketing_auto_post_excerpt(); ?></p>
               </div>
+            </div>
+          </div>
+        </div>
+        <?php
+        break;
+      case 'style3': 
+      $active_class = ($count == 0) ? ' active':'';
+      ?>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 mb-3">
+          <div class="tt-case">
+            <?php if(has_post_thumbnail()): ?>
+            <a class="tt-case-img hover-custom" href="<?php echo esc_url(get_the_permalink()); ?>">
+              <img class="img-responsive" src="<?php echo esc_url($image_src[0]); ?>" height="230" width="392" alt="">
+            </a>
+            <?php endif; ?>
+            <div class="tt-case-info text-center">
+                <a class="tt-case-title c-h5" href="<?php echo esc_url(get_the_permalink()); ?>"><?php the_title(); ?></a>
+                <div class="simple-text size-3">
+                  <p><?php echo marketing_auto_post_excerpt(); ?></p>
+                </div>
             </div>
           </div>
         </div>

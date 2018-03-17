@@ -128,11 +128,18 @@ jQuery(function($) {
       var autoPlayVar = parseInt($t.attr('data-autoplay'), 10);
       var centerVar = parseInt($t.attr('data-center'), 10);
       var simVar = ($t.closest('.circle-description-slide-box').length) ? false : true;
-
-      var lg = parseInt($t.attr('data-lg-slides'), 10);
-      var md = parseInt($t.attr('data-md-slides'), 10);
-      var sm = parseInt($t.attr('data-sm-slides'), 10);
-      var xs = parseInt($t.attr('data-xs-slides'), 10);
+      var slidesPerViewVar = parseInt($t.attr('data-slides-per-view-for-all'), 10)
+      if(slidesPerViewVar) {
+        var lg = slidesPerViewVar,
+            md = slidesPerViewVar,
+            sm = slidesPerViewVar,
+            xs = slidesPerViewVar;
+      } else {
+        var lg = parseInt($t.attr('data-lg-slides'), 10),
+            md = parseInt($t.attr('data-md-slides'), 10),
+            sm = parseInt($t.attr('data-sm-slides'), 10),
+            xs = parseInt($t.attr('data-xs-slides'), 10);
+      }
 
       var loopVar = parseInt($t.attr('data-loop'), 10);
       var speedVar = parseInt($t.attr('data-speed'), 10);

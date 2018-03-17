@@ -1,3 +1,9 @@
+a{
+    vertical-align: middle;
+}
+
+
+
 .swiper-custom.tt-arrow-left, .swiper-custom.tt-arrow-right{
     background:transparent !important;
     border:none;
@@ -333,4 +339,49 @@
 .swiper-container{
   border-top: 1px solid #e6e9ea;
   border-bottom: 1px solid #e6e9ea;
+}
+
+
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
+/* MASONRY */
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
+.msnry_item a:hover{
+  cursor: zoom-in;
+}
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
+/* MASONRY */
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
+.tt-case-img.hover-custom{
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+
+.tt-case-img.hover-custom img{
+  max-width: 100%;
+  
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.tt-case-img.hover-custom:hover img{
+  -moz-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
 }
