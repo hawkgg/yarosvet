@@ -150,112 +150,114 @@ if(!function_exists('marketing_breadcrumbs')) {
   function marketing_breadcrumbs($class = '') {
     $breadcrumbs_enable = marketing_get_opt('title-wrapper-breadcrumbs-enable');
     if(!$breadcrumbs_enable) { return; }
-    $before      = '<li>';
+    $before      = '<li class="breadcrumb-item">';
     $after       = '</li>';
-    $before_last = '';
-    $after_last  = '';
+    $before_last = '<li>';
+    $after_last  = '</li>';
     $separator   = '';
   ?>
     <!-- Breadcrumbs -->
-    <ul class="tt-breadcrumbs">
-      <?php
-      $output = '';
-      if (function_exists('is_woocoomerce') && is_woocommerce() || function_exists('is_shop') && is_shop()) {
-        $args = array(
-          'delimiter'   => '&nbsp;/&nbsp;',
-          'wrap_before' => '',
-          'wrap_after'  => '',
-          'before'      => '<li>',
-          'after'       => '</li>',
-          'home'        => esc_html_x( 'Home', 'breadcrumb', 'marketing' )
-        );
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <?php
+        $output = '';
+        if (function_exists('is_woocoomerce') && is_woocommerce() || function_exists('is_shop') && is_shop()) {
+          $args = array(
+            'delimiter'   => '&nbsp;/&nbsp;',
+            'wrap_before' => '',
+            'wrap_after'  => '',
+            'before'      => '<li>',
+            'after'       => '</li>',
+            'home'        => esc_html_x( 'Главная', 'breadcrumb', 'marketing' )
+          );
 
-        woocommerce_breadcrumb($args);
+          woocommerce_breadcrumb($args);
 
-      } else if (!is_home()) {
+        } else if (!is_home()) {
 
-        $output .= $before.'<a href="';
-        $output .= esc_url(home_url('/'));
-        $output .= '">';
-        $output .= esc_html__('Home', 'marketing');
-        $output .= '</a>'.$after. $separator .'';
-
-        if (is_single()) {
-
-          $cats = get_the_category();
-
-          if( isset($cats[0]) ) :
-            $output .= $before.'<a href="'. esc_url(get_category_link( $cats[0]->term_id )) .'">'. $cats[0]->cat_name.'</a>' . $after . $separator;
-          endif;
+          $output .= $before.'<a href="';
+          $output .= esc_url(home_url('/'));
+          $output .= '">';
+          $output .= esc_html__('Главная', 'marketing');
+          $output .= '</a>'.$after. $separator .'';
 
           if (is_single()) {
-            $output .= $before.$before_last;
-            $output .= get_the_title();
-            $output .= $after_last.$after;
-          }
-        } elseif( is_category() ) {
 
-          $cats = get_the_category();
+            $cats = get_the_category();
 
-          if( isset($cats[0]) ) :
-            $output .= $before.$before_last.single_cat_title('', false).$after_last.$after;
-          endif;
+            if( isset($cats[0]) ) :
+              $output .= $before.'<a href="'. esc_url(get_category_link( $cats[0]->term_id )) .'">'. $cats[0]->cat_name.'</a>' . $after . $separator;
+            endif;
 
-        } elseif (is_page()) {
-          global $post;
-
-          if($post->post_parent){
-            $anc = get_post_ancestors( $post->ID );
-            $title = get_the_title();
-            foreach ( $anc as $ancestor ) {
-              $output_ancestor = $before.'<a href="'.esc_url(get_permalink($ancestor)).'" title="'.esc_attr(get_the_title($ancestor)).'"  rel="v:url" property="v:title">'.get_the_title($ancestor).'</a>'.$after.' ' . $separator;
+            if (is_single()) {
+              $output .= $before.$before_last;
+              $output .= get_the_title();
+              $output .= $after_last.$after;
             }
-            $output .= $output_ancestor;
-            $output .= $before.$before_last.$title.$after_last.$after;
-          } else {
-            $output .= $before.$before_last.get_the_title().$after_last.$after;
+          } elseif( is_category() ) {
+
+            $cats = get_the_category();
+
+            if( isset($cats[0]) ) :
+              $output .= $before.$before_last.single_cat_title('', false).$after_last.$after;
+            endif;
+
+          } elseif (is_page()) {
+            global $post;
+
+            if($post->post_parent){
+              $anc = get_post_ancestors( $post->ID );
+              $title = get_the_title();
+              foreach ( $anc as $ancestor ) {
+                $output_ancestor = $before.'<a href="'.esc_url(get_permalink($ancestor)).'" title="'.esc_attr(get_the_title($ancestor)).'"  rel="v:url" property="v:title">'.get_the_title($ancestor).'</a>'.$after.' ' . $separator;
+              }
+              $output .= $output_ancestor;
+              $output .= $before.$before_last.$title.$after_last.$after;
+            } else {
+              $output .= $before.$before_last.get_the_title().$after_last.$after;
+            }
           }
+          elseif (is_tag()) {
+            $output .= $before.$before_last.single_cat_title('', false).$after_last.$after;
+
+          } elseif (is_day()) {
+            $output .= $before.$before_last. esc_html__('Archive for', 'marketing').' ';
+            $output .= get_the_time('F jS, Y');
+            $output .= $after_last.$after;
+
+          } elseif (is_month()) {
+            $output .= $before.$before_last.esc_html__('Archive for', 'marketing').' ';
+            $output .= get_the_time('F, Y');
+            $output .= $after_last.$after;
+
+          } elseif (is_year()) {
+            $output .= $before.$before_last. esc_html__('Archive for', 'marketing').' ';
+            $output .=get_the_time('Y');
+            $output .= $after_last.$after;
+
+          } elseif (is_author()) {
+            $output .= $before.$before_last. esc_html__('Author Archive', 'marketing');
+            $output .= $after_last.$after;
+
+          } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {
+            $output .= $before.$before_last.esc_html__('Blog Archives', 'marketing').$after_last.$after;
+
+          } elseif (is_search()) {
+            $output .= $before.$before_last. esc_html__('Search Results', 'marketing').$after_last.$after;
+
+          } elseif (is_404()) {
+            $output .= $before.$before_last. esc_html__('Страница не найдена', 'marketing').$after_last.$after;
+
+          }
+
+        } elseif (is_home()) {
+          $output .= $before.$before_last. esc_html__('Главная', 'marketing') .$after_last.$after;
         }
-        elseif (is_tag()) {
-          $output .= $before.$before_last.single_cat_title('', false).$after_last.$after;
 
-        } elseif (is_day()) {
-          $output .= $before.$before_last. esc_html__('Archive for', 'marketing').' ';
-          $output .= get_the_time('F jS, Y');
-          $output .= $after_last.$after;
-
-        } elseif (is_month()) {
-          $output .= $before.$before_last.esc_html__('Archive for', 'marketing').' ';
-          $output .= get_the_time('F, Y');
-          $output .= $after_last.$after;
-
-        } elseif (is_year()) {
-          $output .= $before.$before_last. esc_html__('Archive for', 'marketing').' ';
-          $output .=get_the_time('Y');
-          $output .= $after_last.$after;
-
-        } elseif (is_author()) {
-          $output .= $before.$before_last. esc_html__('Author Archive', 'marketing');
-          $output .= $after_last.$after;
-
-        } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {
-          $output .= $before.$before_last.esc_html__('Blog Archives', 'marketing').$after_last.$after;
-
-        } elseif (is_search()) {
-          $output .= $before.$before_last. esc_html__('Search Results', 'marketing').$after_last.$after;
-
-        } elseif (is_404()) {
-          $output .= $before.$before_last. esc_html__('Page not Found', 'marketing').$after_last.$after;
-
-        }
-
-      } elseif (is_home()) {
-        $output .= $before.$before_last. esc_html__('Home', 'marketing') .$after_last.$after;
-      }
-
-      echo wp_kses_post($output);
-      ?>
-    </ul>
+        echo wp_kses_post($output);
+        ?>
+      </ol>
+    </nav>
     <!-- End Breadcrumbs -->
   <?php }
 
