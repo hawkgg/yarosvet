@@ -400,3 +400,82 @@ ol.breadcrumb{
   background-color:#fff;
   justify-content: center;
 }
+
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
+/* MENU */
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+.tt-header .main-nav > ul > li > ul > li > a{
+  transition: .1s linear;
+  padding-right:50px;
+}
+
+@media (min-width: 992px) {
+  .tt-header .main-nav > ul > li > ul{
+    transform: translateY(0);
+    -webkit-transition: all 50ms ease-in-out;
+    -moz-transition: all 50ms ease-in-out;
+    transition: all 50ms ease-in-out;
+    margin-top:0;
+    margin-left: 0;
+    left: 0;
+    width:auto;
+  }
+  .tt-header .main-nav > ul > li > ul {
+    border-top: none;
+  }
+  .tt-header .main-nav > ul > li > ul > li > a:hover{
+    background:initial;
+    color:inherit;
+    font-weight:bold;
+  }
+}
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
+/* CONTACTS FORM */
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
+#form-contacts{
+  width:40%;
+}
+
+#form-contacts label{
+  display:block;
+  margin: 10px 0;
+}
+
+#form-contacts input, #form-contacts textarea{
+  background-color:#eee;
+  border:none;
+  width:100%;
+  line-height:30px;
+  font-size:23px;
+}
+
+#form-contacts textarea{
+  resize:none;
+  height:140px;
+}
+
+#form-contacts input[type="submit"]{
+  color:#777;
+  padding:7px;
+  font-size:15px;
+  border:none;
+  cursor:pointer;
+}
+#form-contacts input[type="submit"]:active{
+  border-top: 1px solid #aaa;
+  border-left: 1px solid #aaa;
+}
