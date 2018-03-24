@@ -3,6 +3,22 @@ a{
 }
 
 
+.h-100vh{
+  height:100vh!important;
+}
+
+.h-90vh{
+  height:90vh!important;
+}
+.h-600px{
+  height:600px!important;
+}
+.h-500px{
+  height:500px!important;
+}
+.h-400px{
+  height:400px!important;
+}
 
 .swiper-custom.tt-arrow-left, .swiper-custom.tt-arrow-right{
     background:transparent !important;
@@ -327,26 +343,6 @@ a{
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
 
-/* DANGEROUS SLIDER */
-
-
-/*-------------------------------------------------------------------------------------------------------------------------------*/
-
-.tt-partner {
-    border: none
-}
-
-.swiper-container{
-  border-top: 1px solid #e6e9ea;
-  border-bottom: 1px solid #e6e9ea;
-}
-
-
-
-
-/*-------------------------------------------------------------------------------------------------------------------------------*/
-
-
 /* MASONRY */
 
 
@@ -609,4 +605,49 @@ ol.breadcrumb{
 
 .swiper-wrapper {
   align-items: center;
+}
+
+.tt-partner {
+  border: none
+}
+
+.swiper-container {
+  border-top: 1px solid #e6e9ea;
+  border-bottom: 1px solid #e6e9ea;
+}
+
+.swiper-container.h-90vh img{
+  max-height:100%;
+}
+
+.tt-mslide-2-img {
+  padding-top:3%;
+}
+
+.tt-mslide-2-table {
+  height:100%;
+}
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
+/* TESTIMONIALS */
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+.testimonial-swiper-slider.swiper-container{
+  border:none;
+}
+
+.tt-testimonial-label{
+  color: #30373b
+}
+
+.tt-swiper-arrow-center.for-testimonials .swiper-button-prev.pos-1{
+  left:-25px!important;
+}
+.tt-swiper-arrow-center.for-testimonials .swiper-button-next.pos-1{
+  right:-25px!important;
 }

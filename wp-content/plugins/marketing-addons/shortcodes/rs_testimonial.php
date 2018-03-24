@@ -25,7 +25,7 @@ function rs_testimonial( $atts, $content = '', $id = '' ) {
     case 'type-1':
       $data_autoplay        = ' data-autoplay="0"';
       $data_loop            = ' data-loop="1"';
-      $data_slides_per_view = ' data-slides-per-view="1"';
+      $data_slides_per_view = ' data-slides-per-view-for-all="1"';
       $data_xs_slides       = '';
       $data_sm_slides       = '';
       $data_md_slides       = '';
@@ -34,7 +34,6 @@ function rs_testimonial( $atts, $content = '', $id = '' ) {
       break;
 
     case 'type-2':
-    default:
       $data_autoplay        = ' data-autoplay="5000"';
       $data_loop            = ' data-loop="0"';
       $data_slides_per_view = ' data-slides-per-view="responsive"';
@@ -43,6 +42,18 @@ function rs_testimonial( $atts, $content = '', $id = '' ) {
       $data_md_slides       = ' data-md-slides="3"';
       $data_lg_slides       = ' data-lg-slides="3"';
       $data_add_slides      = ' data-add-slides="3"';
+      break;
+
+    case 'type-3':
+    default:
+      $data_autoplay        = ' data-autoplay="5000"';
+      $data_loop            = ' data-loop="1"';
+      $data_slides_per_view = ' data-slides-per-view="responsive"';
+      $data_xs_slides       = ' data-xs-slides="1"';
+      $data_sm_slides       = ' data-sm-slides="1"';
+      $data_md_slides       = ' data-md-slides="2"';
+      $data_lg_slides       = ' data-lg-slides="2"';
+      $data_add_slides      = ' data-add-slides="2"';
       break;
   }
 
@@ -65,7 +76,7 @@ function rs_testimonial( $atts, $content = '', $id = '' ) {
 
   ob_start(); 
 
-  echo '<div class="testimonial-swiper-slider swiper-container" '.$data_autoplay.$data_loop.$data_slides_per_view.$data_xs_slides.$data_sm_slides.$data_md_slides.$data_lg_slides.$data_add_slides.' data-speed="500" data-center="0">';
+  echo '<div class="testimonial-swiper-slider swiper-container" '.$data_autoplay.$data_loop.$data_slides_per_view.$data_xs_slides.$data_sm_slides.$data_md_slides.$data_lg_slides.$data_add_slides.' data-speed="400" data-center="0">';
   echo '<div class="swiper-wrapper clearfix">';
     $i = 0;
     while( $the_query->have_posts()) : $the_query->the_post();
@@ -80,11 +91,12 @@ function rs_testimonial( $atts, $content = '', $id = '' ) {
     endwhile;
     wp_reset_query();
   echo '</div>';
-  echo '<div class="pagination type-1 visible-xs-block"></div>';
-  echo '<div class="tt-swiper-arrow-center">';
-  echo '<div class="swiper-arrow-left tt-arrow-left type-2 pos-2 hidden-xs"><span class="lnr lnr-chevron-left"></span></div>';
-  echo '<div class="swiper-arrow-right tt-arrow-right type-2 pos-2 hidden-xs"><span class="lnr lnr-chevron-right"></span></div>';
+  // echo '<div class="swiper-pagination type-1 visible-xs-block"></div>';
+
   echo '</div>';
+  echo '<div class="tt-swiper-arrow-center for-testimonials">';
+  echo '<div class="swiper-button-prev tt-arrow-left type-2 pos-1 hidden-xs"><span class="lnr lnr-chevron-left"></span></div>';
+  echo '<div class="swiper-button-next tt-arrow-right type-2 pos-1 hidden-xs"><span class="lnr lnr-chevron-right"></span></div>';
   echo '</div>';
 
   $output = ob_get_clean();
@@ -109,7 +121,7 @@ if(!function_exists('rs_testimonial_item')) {
             <?php the_content(); ?>
           </div>
           <div class="tt-testimonial-label">
-            - <a class="tt-testimonial-name" href="#"><?php echo esc_html($author_name); ?></a>, <a href="#"><?php echo esc_html($position); ?></a>
+            - <?php echo esc_html($author_name); ?> <!-- <a href="#"><?php echo esc_html($position); ?></a> -->
           </div>
         </div>
       </div>

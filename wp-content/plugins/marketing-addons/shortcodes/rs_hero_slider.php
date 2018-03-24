@@ -18,6 +18,7 @@ function rs_hero_slider( $atts, $content = '', $id = '' ) {
     'class'               => '',
     'style'               => 'style1',
     'big_heading_color'   => '',
+    'height'              => '90vh',
     'autoplay'            => '0',
     'speed'               => '500',
     'loop'                => '0',
@@ -37,11 +38,12 @@ function rs_hero_slider( $atts, $content = '', $id = '' ) {
   $small_heading_color = ($small_heading_color) ? ' style="color:'.esc_attr($small_heading_color).';"':'';
   $btn_text_color      = ($btn_text_color) ? ' style="color:'.esc_attr($btn_text_color).';"':'';
   $pagination_class    = ($pagination == 'no') ? ' d-none':''; // d-sm-none для включения на мобилках
+  $height              = ($height == '90vh') ? ' h-90vh ': ' '.$height.' ';
 
   switch ($style) {
     case 'style1':
 
-      $output  = '<div '.$id.' class="swiper-container '.sanitize_html_class( $class).'" data-autoplay="'.esc_attr($autoplay).'" data-loop="'.esc_attr($loop).'" data-speed="'.esc_attr($speed).'" data-center="0" data-slides-per-view-for-all="1" data-add-slides="2">';
+      $output  = '<div '.$id.' class="swiper-container '.$height.sanitize_html_class( $class).'" data-autoplay="'.esc_attr($autoplay).'" data-loop="'.esc_attr($loop).'" data-speed="'.esc_attr($speed).'" data-center="0" data-slides-per-view-for-all="1" data-add-slides="2">';
       $output .= '<div class="swiper-wrapper clearfix">';
       foreach ($rs_hero_slider as $key => $slide) {
         $image_id      = (isset($slide['atts']['background'])) ? $slide['atts']['background']:'';
@@ -91,7 +93,7 @@ function rs_hero_slider( $atts, $content = '', $id = '' ) {
       break;
 
     case 'style2':
-      $output  =  '<div '.$id.' class="swiper-container tt-swiper-shadow'.$class.'" data-autoplay="'.esc_attr($autoplay).'" data-loop="'.esc_attr($loop).'" data-speed="'.esc_attr($speed).'" data-center="0" data-slides-per-view-for-all="1" data-add-slides="2">';
+      $output  =  '<div '.$id.' class="swiper-container tt-swiper-shadow'.$height.$class.'" data-autoplay="'.esc_attr($autoplay).'" data-loop="'.esc_attr($loop).'" data-speed="'.esc_attr($speed).'" data-center="0" data-slides-per-view-for-all="1" data-add-slides="2">';
       $output .=  '<div class="swiper-wrapper clearfix">';
       foreach ($rs_hero_slider as $key => $slide) {
         $active_class      = ($key === 0) ? ' active':'';
@@ -160,7 +162,7 @@ function rs_hero_slider( $atts, $content = '', $id = '' ) {
       break;
 
     case 'style3':
-      $output  = '<div '.$id.' class="swiper-container '.$class.'" data-autoplay="'.esc_attr($autoplay).'" data-loop="'.esc_attr($loop).'" data-speed="'.esc_attr($speed).'" data-center="0" data-slides-per-view-for-all="1" data-add-slides="2">';
+      $output  = '<div '.$id.' class="swiper-container '.$height.$class.'" data-autoplay="'.esc_attr($autoplay).'" data-loop="'.esc_attr($loop).'" data-speed="'.esc_attr($speed).'" data-center="0" data-slides-per-view-for-all="1" data-add-slides="2">';
       $output .= '<div class="swiper-wrapper clearfix">';
       foreach ($rs_hero_slider as $key => $slide) {
         $image_id      = (isset($slide['atts']['background'])) ? $slide['atts']['background']:'';
@@ -213,7 +215,7 @@ function rs_hero_slider( $atts, $content = '', $id = '' ) {
 
     case 'style4':
     default:
-      $output .=  '<div '.$id.' class="swiper-container tt-swiper-shadow'.$class.'" data-autoplay="'.esc_attr($autoplay).'" data-loop="'.esc_attr($loop).'" data-speed="'.esc_attr($speed).'" data-center="0" data-slides-per-view-for-all="1" data-add-slides="2">';
+      $output .=  '<div '.$id.' class="swiper-container tt-swiper-shadow'.$height.$class.'" data-autoplay="'.esc_attr($autoplay).'" data-loop="'.esc_attr($loop).'" data-speed="'.esc_attr($speed).'" data-center="0" data-slides-per-view-for-all="1" data-add-slides="2">';
       $output .=  '<div class="swiper-wrapper clearfix">';
 
       foreach ($rs_hero_slider as $key => $slide) {
@@ -271,7 +273,7 @@ function rs_hero_slider( $atts, $content = '', $id = '' ) {
       break;
 
       case 'style5':
-      $output .=  '<div '.$id.' class="swiper-container tt-swiper-shadow'.$class.'" data-autoplay="'.esc_attr($autoplay).'" data-loop="'.esc_attr($loop).'" data-speed="'.esc_attr($speed).'" data-center="0" data-slides-per-view-for-all="1" data-add-slides="2">';
+      $output .=  '<div '.$id.' class="swiper-container tt-swiper-shadow'.$height.$class.'" data-autoplay="'.esc_attr($autoplay).'" data-loop="'.esc_attr($loop).'" data-speed="'.esc_attr($speed).'" data-center="0" data-slides-per-view-for-all="1" data-add-slides="2">';
       $output .=  '<div class="swiper-wrapper clearfix">';
 
       foreach ($rs_hero_slider as $key => $slide) {
@@ -323,7 +325,7 @@ function rs_hero_slider( $atts, $content = '', $id = '' ) {
       break;
 
       case 'style6':
-      $output .=  '<div '.$id.' class="swiper-container tt-swiper-shadow'.$class.'" data-autoplay="'.esc_attr($autoplay).'" data-loop="'.esc_attr($loop).'" data-speed="'.esc_attr($speed).'" data-center="0" data-slides-per-view-for-all="1" data-add-slides="2">';
+      $output .=  '<div '.$id.' class="swiper-container tt-swiper-shadow'.$height.$class.'" data-autoplay="'.esc_attr($autoplay).'" data-loop="'.esc_attr($loop).'" data-speed="'.esc_attr($speed).'" data-center="0" data-slides-per-view-for-all="1" data-add-slides="2">';
       $output .=  '<div class="swiper-wrapper clearfix">';
 
       foreach ($rs_hero_slider as $key => $slide) {

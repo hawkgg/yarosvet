@@ -116,6 +116,7 @@ vc_map( array(
       'value'       => array(
         'Style 1'   => 'type-1',
         'Style 2'   => 'type-2',
+        'Style 3'   => 'type-3',
       ),
     ),
     array(
@@ -1418,6 +1419,18 @@ vc_map( array(
       'value'       => array(
         'No'  => '0',
         'Yes' => '1',
+      ),
+    ),
+    array(
+      'type'        => 'dropdown',
+      'heading'     => 'Height',
+      'param_name'  => 'height',
+      'value'       => array(
+        '90vh'  => 'h-90vh',
+        '400px'  => 'h-400px',
+        '500px'  => 'h-500px',
+        '600px'  => 'h-600px',
+        'Custom' => 'custom',
       ),
     ),
     array(

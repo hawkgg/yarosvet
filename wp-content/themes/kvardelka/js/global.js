@@ -154,6 +154,11 @@ jQuery(function($) {
           enabled: true,
           onlyInViewport: false,
         },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        parallax: true,
         simulateTouch: simVar,
         centeredSlides: centerVar,
         roundLengths: true,
@@ -191,14 +196,6 @@ jQuery(function($) {
     });
 
   }
-  //swiper arrows
-  $('.swiper-button-prev').on('click', function() {
-    swipers['swiper-' + $(this).parents('.swiper-container').attr('id')].slidePrev();
-  });
-
-  $('.swiper-button-next').on('click', function() {
-    swipers['swiper-' + $(this).parents('.swiper-container').attr('id')].slideNext();
-  });
 
   /*==============================*/
   /* 08 - buttons, clicks, hovers */
