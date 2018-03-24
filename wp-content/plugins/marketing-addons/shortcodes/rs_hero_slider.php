@@ -83,9 +83,9 @@ function rs_hero_slider( $atts, $content = '', $id = '' ) {
         }
       }
       $output .= '</div>';
-      $output .=  '<div class="pagination type-1 pos-1 '.$pagination_class.'"></div>';
-      $output .=  '<div class="swiper-arrow-left tt-arrow-left type-1 pos-1"><span class="lnr lnr-chevron-left"></span></div>';
-      $output .=  '<div class="swiper-arrow-right tt-arrow-right type-1 pos-1"><span class="lnr lnr-chevron-right"></span></div>';
+      $output .=  '<div class="swiper-pagination type-1 pos-1 '.$pagination_class.'"></div>';
+      $output .=  '<div class="swiper-button-prev tt-arrow-left type-1 pos-1"><span class="lnr lnr-chevron-left"></span></div>';
+      $output .=  '<div class="swiper-button-next tt-arrow-right type-1 pos-1"><span class="lnr lnr-chevron-right"></span></div>';
       $output .=  '</div>';
       # code...
       break;
@@ -152,9 +152,9 @@ function rs_hero_slider( $atts, $content = '', $id = '' ) {
       }
 
       $output .=  '</div>';
-      $output .=  '<div class="pagination type-1 pos-1 '.$pagination_class.'"></div>';
-      $output .=  '<div class="swiper-arrow-left tt-arrow-left type-1 pos-1"><span class="lnr lnr-chevron-left"></span></div>';
-      $output .=  '<div class="swiper-arrow-right tt-arrow-right type-1 pos-1"><span class="lnr lnr-chevron-right"></span></div>';                   
+      $output .=  '<div class="swiper-pagination type-1 pos-1 '.$pagination_class.'"></div>';
+      $output .=  '<div class="swiper-button-prev tt-arrow-left type-1 pos-1"><span class="lnr lnr-chevron-left"></span></div>';
+      $output .=  '<div class="swiper-button-next tt-arrow-right type-1 pos-1"><span class="lnr lnr-chevron-right"></span></div>';                   
       $output .=  '</div>';
 
       break;
@@ -176,7 +176,7 @@ function rs_hero_slider( $atts, $content = '', $id = '' ) {
           $btn_title  = ( isset($parse_args['title']) ) ? $parse_args['title'] : 'button';
           $target     = ( isset($parse_args['target']) ) ? trim($parse_args['target']) : '_self';
         }
-        $active_class = ($key === 0) ? ' active':'';
+        $active_class = ($key === 0) ? ' swiper-slide-active':'';
         $image_url  = rs_get_image_src($image_id);
         $object_url = rs_get_image_src($object_id);
         if(!empty($image_url) && !empty($object_url)) {
@@ -205,9 +205,9 @@ function rs_hero_slider( $atts, $content = '', $id = '' ) {
         }
       }
       $output .= '</div>';
-      $output .=  '<div class="pagination type-1 pos-1 '.$pagination_class.'"></div>';
-      $output .=  '<div class="swiper-arrow-left tt-arrow-left type-1 pos-1"><span class="lnr lnr-chevron-left"></span></div>';
-      $output .=  '<div class="swiper-arrow-right tt-arrow-right type-1 pos-1"><span class="lnr lnr-chevron-right"></span></div>';
+      $output .=  '<div class="swiper-pagination type-1 pos-1 '.$pagination_class.'"></div>';
+      $output .=  '<div class="swiper-button-prev tt-arrow-left type-1 pos-1"><span class="lnr lnr-chevron-left"></span></div>';
+      $output .=  '<div class="swiper-button-next tt-arrow-right type-1 pos-1"><span class="lnr lnr-chevron-right"></span></div>';
       $output .=  '</div>';
       break;
 
@@ -264,9 +264,9 @@ function rs_hero_slider( $atts, $content = '', $id = '' ) {
       }
 
       $output .=  '</div>';
-      $output .=  '<div class="pagination type-1 pos-1 '.$pagination_class.'"></div>';
-      $output .=  '<div class="swiper-arrow-left tt-arrow-left type-1 pos-1"><span class="lnr lnr-chevron-left"></span></div>';
-      $output .=  '<div class="swiper-arrow-right tt-arrow-right type-1 pos-1"><span class="lnr lnr-chevron-right"></span></div>';                   
+      $output .=  '<div class="swiper-pagination type-1 pos-1 '.$pagination_class.'"></div>';
+      $output .=  '<div class="swiper-button-prev tt-arrow-left type-1 pos-1"><span class="lnr lnr-chevron-left"></span></div>';
+      $output .=  '<div class="swiper-button-next tt-arrow-right type-1 pos-1"><span class="lnr lnr-chevron-right"></span></div>';                   
       $output .=  '</div>';
       break;
 
@@ -315,9 +315,9 @@ function rs_hero_slider( $atts, $content = '', $id = '' ) {
       }
 
       $output .=  '</div>';
-      $output .=  '<div class="pagination type-1 pos-1 '.$pagination_class.'"></div>';
-      $output .=  '<div class="swiper-arrow-left tt-arrow-left type-1 pos-1"><span class="lnr lnr-chevron-left"></span></div>';
-      $output .=  '<div class="swiper-arrow-right tt-arrow-right type-1 pos-1"><span class="lnr lnr-chevron-right"></span></div>';                   
+      $output .=  '<div class="swiper-pagination type-1 pos-1 '.$pagination_class.'"></div>';
+      $output .=  '<div class="swiper-button-prev tt-arrow-left type-1 pos-1"><span class="lnr lnr-chevron-left"></span></div>';
+      $output .=  '<div class="swiper-button-next tt-arrow-right type-1 pos-1"><span class="lnr lnr-chevron-right"></span></div>';                   
       $output .=  '</div>';
       
       break;
@@ -355,9 +355,9 @@ function rs_hero_slider( $atts, $content = '', $id = '' ) {
       }
 
       $output .=  '</div>';
-      $output .=  '<div class="pagination type-1 pos-1 '.$pagination_class.'"></div>';
-      $output .=  '<div class="swiper-custom swiper-arrow-left tt-arrow-left type-1 pos-1"><span class="lnr lnr-chevron-left"></span></div>';
-      $output .=  '<div class="swiper-custom swiper-arrow-right tt-arrow-right type-1 pos-1"><span class="lnr lnr-chevron-right"></span></div>';                   
+      $output .=  '<div class="swiper-pagination type-1 pos-1 '.$pagination_class.'"></div>';
+      $output .=  '<div class="swiper-custom swiper-button-prev tt-arrow-left type-1 pos-1"><span class="lnr lnr-chevron-left"></span></div>';
+      $output .=  '<div class="swiper-custom swiper-button-next tt-arrow-right type-1 pos-1"><span class="lnr lnr-chevron-right"></span></div>';                   
       $output .=  '</div>';
       
       break;

@@ -678,7 +678,7 @@ if(!function_exists('marketing_accent_css')) {
       body.theme-accent .c-input.type-1:focus,
       body.theme-accent .c-input.type-3:focus,
       body.theme-accent .c-area.type-1:focus,
-      body.theme-accent .pagination.type-1 .swiper-pagination-switch,
+      body.theme-accent .swiper-pagination.type-1 .swiper-pagination-bullet,
       body.theme-accent #loader,
       body.theme-accent .tt-s-banner,
       body.theme-accent .c-input.type-4:focus,
@@ -724,7 +724,7 @@ if(!function_exists('marketing_accent_css')) {
         border-color: '.esc_attr($accent_color_first).';
       }
 
-      body.theme-accent .pagination.type-1 .swiper-active-switch {
+      body.theme-accent .swiper-pagination.type-1 .swiper-pagination-bullet-active {
         background: '.esc_attr($accent_color_first).';
         border-color: '.esc_attr($accent_color_first).';
       }

@@ -2580,24 +2580,24 @@ p {
 
 /*pagination*/
 
-.pagination.type-1 .swiper-pagination-switch {
+.swiper-pagination.type-1 .swiper-pagination-bullet {
   border-color: #7ab55c;
   margin: 0 7px;
 }
 
-.pagination.type-1 .swiper-active-switch {
+.swiper-pagination.type-1 .swiper-pagination-bullet-active {
   background: #7ab55c;
   border-color: #7ab55c;
 }
 
-.pagination.pos-1 {
+.swiper-pagination.pos-1 {
   position: absolute;
   bottom: 15px;
   left: 0;
 }
 
 @media (max-width:767px) {
-  .swiper-container .pagination {
+  .swiper-container .swiper-pagination {
     margin-top: 30px;
   }
 }
@@ -5720,7 +5720,7 @@ body.theme-orange .tt-header .contact-details-module .detail-module i {
 body.theme-orange .c-input.type-1:focus,
 body.theme-orange .c-input.type-3:focus,
 body.theme-orange .c-area.type-1:focus,
-body.theme-orange .pagination.type-1 .swiper-pagination-switch,
+body.theme-orange .swiper-pagination.type-1 .swiper-pagination-bullet-active,
 body.theme-orange #loader,
 body.theme-orange .tt-s-banner,
 body.theme-orange .c-input.type-4:focus,
@@ -5766,7 +5766,7 @@ body.theme-orange .c-btn.type-2 {
   color: #ef662f;
 }
 
-body.theme-orange .pagination.type-1 .swiper-active-switch {
+body.theme-orange .swiper-pagination.type-1 .swiper-pagination-bullet-active {
   background: #ef662f;
   border-color: #ef662f;
 }

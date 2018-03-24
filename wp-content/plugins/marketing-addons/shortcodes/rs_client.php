@@ -32,7 +32,7 @@ function rs_client( $atts, $content = '', $id = '' ) {
       $output .=  '</div>';
     }                      
     $output .=  '</div>';
-    $output .=  '<div class="pagination type-1 d-none"></div>';
+    $output .=  '<div class="swiper-pagination type-1 d-none"></div>';
     $output .=  '</div>';
   }
 

@@ -53,7 +53,6 @@ jQuery(function($) {
     $('#loader-wrapper').fadeOut();
     $isotope_container_rating.isotope({ itemSelector: '.isotope-item-rating', masonry: { gutter: 0, columnWidth: '.grid-sizer' } });
     //izotopInit();
-    initSwiper();
     if ($('.isotope-filter').length) {
       var initValue = $('.isotope-nav').find('.selected a').attr('data-filter');
       $container.isotope({ itemSelector: '.isotope-item', filter: initValue, masonry: { gutter: 0, columnWidth: '.grid-sizer' } });
@@ -123,7 +122,6 @@ jQuery(function($) {
       var index = 'swiper-unique-id-' + initIterator;
 
       $t.addClass('swiper-' + index + ' initialized').attr('id', index);
-      $t.find('.pagination').addClass('pagination-' + index);
 
       var autoPlayVar = parseInt($t.attr('data-autoplay'), 10);
       var centerVar = parseInt($t.attr('data-center'), 10);
@@ -146,12 +144,16 @@ jQuery(function($) {
 
       swipers['swiper-' + index] = new Swiper('.swiper-' + index, {
         speed: speedVar,
-        pagination: '.pagination-' + index,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
         loop: loopVar,
-        paginationClickable: true,
         autoplay: autoPlayVar,
-        keyboardControl: true,
-        calculateHeight: true,
+        keyboard: {
+          enabled: true,
+          onlyInViewport: false,
+        },
         simulateTouch: simVar,
         centeredSlides: centerVar,
         roundLengths: true,
@@ -190,12 +192,12 @@ jQuery(function($) {
 
   }
   //swiper arrows
-  $('.swiper-arrow-left').on('click', function() {
-    swipers['swiper-' + $(this).parents('.swiper-container').attr('id')].swipePrev();
+  $('.swiper-button-prev').on('click', function() {
+    swipers['swiper-' + $(this).parents('.swiper-container').attr('id')].slidePrev();
   });
 
-  $('.swiper-arrow-right').on('click', function() {
-    swipers['swiper-' + $(this).parents('.swiper-container').attr('id')].swipeNext();
+  $('.swiper-button-next').on('click', function() {
+    swipers['swiper-' + $(this).parents('.swiper-container').attr('id')].slideNext();
   });
 
   /*==============================*/
@@ -369,7 +371,6 @@ jQuery(function($) {
     }
 
     if ($('input[type=number]').length) {
-      console.log('sfsdf');
       $('input[type=number]').number();
     };
   }
