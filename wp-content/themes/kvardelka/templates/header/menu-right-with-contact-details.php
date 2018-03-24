@@ -23,11 +23,18 @@
         </nav>
         <div class="nav-more contact-details-module">
           <div class="tt-address-info detail-module">
-            <i class="fa fa-phone"></i><span><?php echo marketing_get_opt('header-contact-details-phone-text'); ?></span>
+            <i class="fa fa-phone"></i><span><?php echo marketing_get_opt('header-contact-details-phone-text'); ?></span><br />
+            <!-- <i class="fa fa-envelope-o"></i><span><?php echo marketing_get_opt('header-contact-details-email-text'); ?></span> -->
           </div>
-          <div class="tt-address-info detail-module">
-            <i class="fa fa-envelope-o"></i><span><?php echo marketing_get_opt('header-contact-details-email-text'); ?></span>
+        <?php
+          $header_btn_link = marketing_get_opt('header-btn-link');
+          $header_btn_text = marketing_get_opt('header-btn-text');
+          if(!empty($header_btn_text) && !empty($header_btn_text) && class_exists('ReduxFramework')):
+        ?>
+          <div class="nav-more">
+            <a class="c-btn type-5" href="<?php echo esc_url(marketing_get_opt('header-btn-link')); ?>"><span><?php echo esc_html(marketing_get_opt('header-btn-text')); ?></span></a>
           </div>
+        <?php endif; ?>
         </div>
       </div>
     </div>

@@ -411,6 +411,18 @@ ol.breadcrumb{
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
+.tt-header .container .toggle-block .toggle-block-container{
+  display:flex;
+  align-items:center;
+}
+
+.tt-header .nav-more.contact-details-module, .tt-header .nav-more{
+  display:flex;
+  padding:0;
+  align-items:center;
+}
+
+
 .tt-header .main-nav > ul > li > ul > li > a{
   transition: .1s linear;
   padding-right:50px;
@@ -478,4 +490,123 @@ ol.breadcrumb{
 #form-contacts input[type="submit"]:active{
   border-top: 1px solid #aaa;
   border-left: 1px solid #aaa;
+}
+
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
+/* BUTTON TYPE-5 */
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
+.c-btn.type-5 {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 700;
+  color: #7ab55c;
+  border: 2px solid #7ab55c;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  transform: translateZ(0);
+  transition: .15s linear;
+}
+
+.c-btn.type-5 span,
+.c-btn.type-5 input {
+  display: inline-block;
+  padding: 8px 29px 7px 29px;
+}
+
+
+.c-btn.type-5 input {
+  background: transparent;
+  border: 0;
+  font-size: inherit;
+  line-height: inherit;
+  text-transform: inherit;
+  letter-spacing: inherit;
+  font-weight: inherit;
+}
+
+.c-btn.type-5:hover {
+  background: #7ab55c;
+  color:#fff;
+}
+
+.c-btn.type-5.size-2 span,
+.c-btn.type-5.size-2 input {
+  padding: 15px 54px 14px 54px;
+}
+
+.c-btn.type-5.color-2 {
+  color: #7ab55c;
+  border: 2px solid #7ab55c;
+}
+
+.c-btn.type-5.color-2:hover {
+  color: #fff;
+  background: #7ab55c;
+}
+
+.c-btn.type-5.color-3 {
+  color: #fff;
+  border: 2px solid #fff;
+  background: transparent;
+}
+
+.c-btn.type-5.color-3:hover {
+  color: #000;
+  background: #fff;
+}
+
+.c-btn.type-5.color-4 {
+  color: #ef662f;
+  border: 2px solid #ef662f;
+}
+
+.c-btn.type-5.color-4:hover {
+  color: #fff;
+  background: #ef662f;
+}
+
+.c-btn.type-5.color-5 {
+  color: #479ccf;
+  border: 2px solid #479ccf;
+}
+
+.c-btn.type-5.color-5:hover {
+  color: #fff;
+  background: #479ccf;
+}
+
+.c-btn.type-5.color-6 {
+  background: rgba(255, 255, 255, 0.6);
+  color: #000;
+  border-color: rgba(255, 255, 255, 0.6);
+  background: #fff;
+}
+
+.c-btn.type-5.radius-0 {
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
+/* SWIPER */
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
+.swiper-wrapper {
+  align-items: center;
 }
