@@ -125,6 +125,7 @@ jQuery(function($) {
 
       var autoPlayVar = parseInt($t.attr('data-autoplay'), 10);
       var centerVar = parseInt($t.attr('data-center'), 10);
+      centerVar = centerVar ? true : false;
       var simVar = ($t.closest('.circle-description-slide-box').length) ? false : true;
       var slidesPerViewVar = parseInt($t.attr('data-slides-per-view-for-all'), 10)
       if(slidesPerViewVar) {

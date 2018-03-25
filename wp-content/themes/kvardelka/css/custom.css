@@ -730,7 +730,8 @@ footer ul li ul {
 }
 
 .tt-partner {
-  border: none
+  border: none;
+  text-align: center;
 }
 
 .swiper-container {
