@@ -11,13 +11,13 @@
 <footer class="tt-footer">
   <div class="container">
     <div class="row">
-      <div class="col-sm-6 col-md-4">
+      <div class="col-sm-6 col-md-3">
         <?php if (is_active_sidebar( marketing_get_custom_sidebar('footer-1', 'footer-sidebar-1') )): ?>
           <?php dynamic_sidebar( marketing_get_custom_sidebar('footer-1', 'footer-sidebar-1') ); ?>
         <?php endif; ?>
         <div class="empty-space marg-xs-b30"></div>
       </div>
-      <div class="col-sm-6 col-md-5">
+      <div class="col-sm-6 col-md-5 offset-md-1">
         <?php if (is_active_sidebar( marketing_get_custom_sidebar('footer-2', 'footer-sidebar-2') )): ?>
           <?php dynamic_sidebar( marketing_get_custom_sidebar('footer-2', 'footer-sidebar-2') ); ?>
         <?php endif; ?>

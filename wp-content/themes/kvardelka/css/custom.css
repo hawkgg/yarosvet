@@ -417,18 +417,54 @@ ol.breadcrumb {
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
-.tt-header .container .toggle-block .toggle-block-container{
-  display:flex;
-  align-items:center;
+.toggle-block-container {
+  justify-content: center;
 }
 
-.tt-header .nav-more.contact-details-module, .tt-header .nav-more{
-  display:flex;
+.tt-header .tt-address-info{
   padding:0;
-  align-items:center;
 }
 
+@media (max-width: 1200px){
+  /* Вкл. мобильный дизайн меню */
+  .tt-header .toggle-block {
+      text-align: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      max-height: 100%;
+      background: #fff;
+      padding: 65px 15px 0px 15px;
+      -webkit-box-shadow: 0px 1px 2px 0px #eaeaea;
+      -moz-box-shadow: 0px 1px 2px 0px #eaeaea;
+      box-shadow: 0px 1px 2px 0px #eaeaea;
+  }
 
+  /* Ширина меню */
+  .tt-header .top-inner {
+    width:100%
+  }
+}
+
+@media (min-width:992px) and (max-width: 1200px) {
+  /* Центрирование логотипа */
+  .top-inner-container {
+    text-align: center;
+  }
+}
+
+@media (max-width:992px) {
+  .tt-header .toggle-block-container {
+    padding: 15px 0;
+  }
+  .tt-header .tt-address-info{
+    margin-bottom:10px;
+  }
+}
+/*---------------------*/
+/* Многоуровневое меню */
+/*---------------------*/
 .tt-header .main-nav > ul > li > ul > li > a{
   transition: .1s linear;
   padding-right:50px;
@@ -450,10 +486,22 @@ ol.breadcrumb {
   }
   .tt-header .main-nav > ul > li > ul > li > a:hover{
     background:initial;
-    color:inherit;
     font-weight:bold;
   }
 }
+@media (max-width:992px) {
+  .tt-header .main-nav > ul > li > ul {
+    background:none;
+    color:#007bff;
+    padding:0!important;
+  }
+  .tt-header .main-nav > ul > li > ul > li > a {
+    color:inherit;
+    padding-right:0!important;
+    padding-left:0!important;
+  }
+}
+
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
@@ -542,6 +590,27 @@ footer input[aria-invalid="true"]:focus{
 footer .wpcf7-response-output, footer .wpcf7-not-valid-tip {
   display:none!important;
 }
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
+/* MENU IN FOOTER */
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+footer .widget_nav_menu ul#menu-main-menu{
+  height:170px;
+  display:flex;
+  flex-wrap:wrap;
+  flex-direction:column;
+}
+
+footer ul li ul {
+  display:none;
+}
+
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
