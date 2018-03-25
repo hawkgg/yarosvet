@@ -34,6 +34,8 @@ if( !function_exists('marketing_register_sidebar') ) {
         'after_widget'  => '</div>',
         'before_title'  => '<h5 class="c-h5 color-3">',
         'after_title'   => '</h5><div class="empty-space marg-lg-b10"></div>',
+        'before_desc'   => '<p>',
+        'after_desc'    => '</p>',
         'description'   => 'Drag the widgets for sidebars.'
       ));
     }

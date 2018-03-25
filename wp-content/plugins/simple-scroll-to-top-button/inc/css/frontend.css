@@ -1,0 +1,38 @@
+/*
+ * WP plugin 'Simple Scroll to Top Button' by Arthur Gareginyan ( https://www.arthurgareginyan.com ).
+ *
+ * @package     Simple Scroll to Top Button
+ * @author      Arthur Gareginyan
+ * @link        https://www.spacexchimp.com
+ * @copyright   Copyright (c) 2016-2018 Space X-Chimp. All Rights Reserved.
+ */
+
+
+#ssttbutton {
+    position: fixed;
+    right: 30px;
+    bottom: 20px;
+    padding: 5px;
+    box-sizing: content-box;
+    cursor: pointer;
+    font-family: Fontawesome;
+    font-weight: normal;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    z-index: 9999;
+}
+#ssttbutton:hover {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
+    opacity: 1;
+}
+.ssttbutton-transparent {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=50);
+    -moz-opacity: .5;
+    -khtml-opacity: .5;
+    opacity: .5;
+}

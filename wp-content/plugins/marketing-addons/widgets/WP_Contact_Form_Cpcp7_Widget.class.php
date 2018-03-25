@@ -48,6 +48,12 @@ class marketing_WP_Contact_Form_Cpcp7_Widget extends WP_Widget
 
         if ($title):
             echo $before_title.esc_html($title).$after_title;
+        endif; 
+
+        $desc = apply_filters('widget_desc', $instance['desc'], $instance, $this->id_base);
+
+        if ($desc):
+            echo $before_desc.esc_html($desc).$after_desc;
         endif; ?>
         <?php echo do_shortcode('[contact-form-7 id="'.$instance['content'].'"]'); ?>
 
@@ -60,6 +66,7 @@ class marketing_WP_Contact_Form_Cpcp7_Widget extends WP_Widget
     {
       $instance = $old_instance;
       $instance['title'] = strip_tags($new_instance['title']);
+      $instance['desc'] = strip_tags($new_instance['desc']);
       $instance['content'] = $new_instance['content'];
       $this->flush_widget_cache();
 
@@ -79,10 +86,14 @@ class marketing_WP_Contact_Form_Cpcp7_Widget extends WP_Widget
     function form( $instance )
     {
         $title   = isset($instance['title']) ? $instance['title'] : '';
+        $desc   = isset($instance['desc']) ? $instance['desc'] : '';
         $content = isset($instance['content']) ? $instance['content'] : '';
         ?>
         <p><label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php _e( 'Title:', 'marketing-addons' ); ?></label>
         <input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>" name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></p>
+
+        <p><label for="<?php echo esc_attr($this->get_field_id('desc')); ?>"><?php _e( 'Description:', 'marketing-addons' ); ?></label>
+        <input class="widefat" id="<?php echo esc_attr($this->get_field_id('desc')); ?>" name="<?php echo esc_attr($this->get_field_name('desc')); ?>" type="text" value="<?php echo esc_attr($desc); ?>" /></p>
 
         <p><label for="<?php echo esc_attr($this->get_field_id('content')); ?>"><?php _e( 'Form ID (Content):', "marketing-addons" ); ?></label>
         <textarea class="widefat" rows="7" id="<?php echo esc_attr($this->get_field_id('content')); ?>" name="<?php echo esc_attr($this->get_field_name('content')); ?>"><?php echo esc_textarea($content); ?></textarea></p>
