@@ -456,3 +456,14 @@ jQuery(function($) {
 
 
 });
+
+
+/*==================================================*/
+/* 10 - My javascript code */
+/*==================================================*/
+//Form submit
+var wpcf7Elm = document.querySelector( 'footer .wpcf7' );
+ 
+wpcf7Elm.addEventListener( 'wpcf7mailsent', function( event ) {
+    document.querySelector( '.send-form' ).click();
+}, false );

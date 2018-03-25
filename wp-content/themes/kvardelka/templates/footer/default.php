@@ -40,3 +40,7 @@
   </div>
 </footer>
 <?php endif; ?>
+
+<?php
+  wp_enqueue_script('maskedinput');
+?>

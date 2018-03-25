@@ -158,10 +158,12 @@ if( !function_exists('marketing_enqueue_scripts')) {
     wp_enqueue_script('form-stone',             get_template_directory_uri() .'/js/jquery.formstone.min.js',array('jquery'), MARKETING_THEME_VERSION,true);
     wp_register_script('bootstrap',             get_template_directory_uri() .'/js/bootstrap.min.js',array('jquery'), MARKETING_THEME_VERSION,true);
     wp_register_script('swiper',                get_template_directory_uri() .'/js/swiper.min.js',array('jquery'), MARKETING_THEME_VERSION,true);
-    wp_enqueue_script('isotope',               get_template_directory_uri() .'/js/isotope.pkgd.min.js',array('jquery'), MARKETING_THEME_VERSION,true);
+    wp_enqueue_script('isotope',                get_template_directory_uri() .'/js/isotope.pkgd.min.js',array('jquery'), MARKETING_THEME_VERSION,true);
     wp_enqueue_script('ytplayer',               get_template_directory_uri() .'/js/YT.player.js',array('jquery'), MARKETING_THEME_VERSION,true);
     wp_register_script('gmapsensor',            'http://maps.google.com/maps/api/js?key=AIzaSyDjttDw_zlwsJl27N8shtKX_I2DLydSZSo',array('jquery'), MARKETING_THEME_VERSION,true);
     wp_register_script('map',                   get_template_directory_uri() .'/js/map.js',array('gmapsensor'), MARKETING_THEME_VERSION,true);
+    //Custom
+    wp_register_script('maskedinput',           get_template_directory_uri() .'/js/jquery.maskedinput.min.js',array('jquery'), MARKETING_THEME_VERSION,true);
     
     wp_localize_script('map', 'get',
       array(

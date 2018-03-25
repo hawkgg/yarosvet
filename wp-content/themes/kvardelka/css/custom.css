@@ -392,10 +392,20 @@ a{
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
 
-ol.breadcrumb{
-  background-color:#fff;
-  justify-content: center;
+.breadcrumb {
+  background:none;
 }
+
+ol.breadcrumb {
+  justify-content: flex-end;
+  font-size: 19px;
+}
+
+#breadcrumbs-div {
+  background-color:#f8f8f8;
+  padding:15px 0 1px 0;
+}
+
 
 
 
@@ -502,17 +512,35 @@ footer form {
 }
 
 footer form input {
-  height:35px;
+  height:32px;
   font-size:16px;
   border:none;
   background:#eee;
   padding-left:5px;
 }
 
-input[type="submit"]{
+footer input[type="tel"]{
+  margin-right:10px;
+  margin-bottom:10px;
+}
+
+footer input[type="submit"]{
   cursor:pointer;
   padding:1px 20px;
-  margin-left:10px;
+}
+
+footer input[aria-invalid="true"]{
+  border:1px solid #ff6868;
+  background-color:#ffcccc;
+}
+
+footer input[aria-invalid="true"]:focus{
+  background-color:#fff;
+  border:none;
+}
+
+footer .wpcf7-response-output, footer .wpcf7-not-valid-tip {
+  display:none!important;
 }
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
@@ -675,18 +703,4 @@ input[type="submit"]{
 }
 .tt-swiper-arrow-center.for-testimonials .swiper-button-next.pos-1{
   right:-25px!important;
-}
-
-
-/*-------------------------------------------------------------------------------------------------------------------------------*/
-
-
-/* SCROLL TO TOP */
-
-
-/*-------------------------------------------------------------------------------------------------------------------------------*/
-
-
-.ssttbutton:hover{
-  opacity:0.8;
 }

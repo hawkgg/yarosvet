@@ -7,7 +7,7 @@
  */
 ?>
 <?php if(marketing_get_opt('title-wrapper-enable') || !class_exists('ReduxFramework')): ?>
-<div class="mt-5">
+<div id="breadcrumbs-div">
   <div class="container">
     <?php marketing_breadcrumbs(); ?>
   </div>
