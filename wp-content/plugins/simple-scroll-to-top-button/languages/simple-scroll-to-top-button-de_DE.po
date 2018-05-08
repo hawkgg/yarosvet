@@ -1,18 +1,18 @@
-# Translation of Development (trunk) in German (Germany)
-# This file is distributed under the same license as the Development (trunk) package.
+# Translation of plugin - Simple Scroll to Top Button - in German (Germany)
+# This file is distributed under the same license as the plugin - Simple Scroll to Top Button.
 msgid ""
 msgstr ""
-"Project-Id-Version: Development (trunk)\n"
-"POT-Creation-Date: 2018-01-19 15:11+0300\n"
-"PO-Revision-Date: 2018-01-20 07:37+0300\n"
-"Last-Translator: \n"
+"Project-Id-Version: Simple Scroll to Top Button\n"
+"POT-Creation-Date: 2018-04-20 01:36+0300\n"
+"PO-Revision-Date: 2018-04-20 01:36+0300\n"
+"Last-Translator: Arthur Gareginyan\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 1.8.7\n"
+"X-Generator: Poedit 2.0.6\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: simple-scroll-to-top-button.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -34,7 +34,7 @@ msgstr ""
 
 #: inc/php/messages.php:26
 msgid "Hello. We are the team of Space X-Chimp."
-msgstr "Hallo! Ich bin Space X-Chimp, der Autor dieses plugins."
+msgstr "Hallo! Wir sind das Team von Space X-Chimp."
 
 #: inc/php/messages.php:28
 #, php-format
@@ -166,7 +166,7 @@ msgstr ""
 
 #: inc/php/page.php:133
 msgid "Does this plugin requires any modification of the theme?"
-msgstr "Benötigt das Plugin Veränderungen am Theme."
+msgstr "Benötigt das Plugin Veränderungen am Theme?"
 
 #: inc/php/page.php:134
 msgid "Absolutely not. This plugin is configurable entirely from the plugin settings page."
@@ -193,7 +193,7 @@ msgid "It's impossible to tell what could be wrong exactly, but if you post a su
 msgstr ""
 
 #: inc/php/page.php:143
-msgid "The last WordPress update is preventing me from editing the website of the creator that is using this plugin. Why is this?"
+msgid "The last WordPress update is preventing me from editing my website that is using this plugin. Why is this?"
 msgstr "Das letzte WordPress-Update hindert mich daran, meine Webseite, die dieses Plugin verwendet, zu bearbeiten. Warum ist das so?"
 
 #: inc/php/page.php:144
@@ -206,7 +206,7 @@ msgstr "Wo kann ich eine Fehler melden?"
 
 #: inc/php/page.php:148
 #, php-format
-msgid "Please visit %s this page %s and report. Please do not forget to specify the name of the plugin. Thank you!"
+msgid "Bug reports are very welcome! Please visit %s our contact page %s and report. Please do not forget to specify the name of the plugin. Thank you!"
 msgstr ""
 
 #: inc/php/page.php:154
@@ -215,7 +215,7 @@ msgstr "Wo können Sie Ideen oder Vorschläge loswerden, um das Plugin besser zu
 
 #: inc/php/page.php:156
 #, php-format
-msgid "Any suggestions are very welcome! Just contact us %s here %s. Please do not forget to specify the name of the plugin. Thank you!"
+msgid "Any suggestions are very welcome! Please visit %s our contact page %s. Please do not forget to specify the name of the plugin. Thank you!"
 msgstr ""
 
 #: inc/php/page.php:162
@@ -224,7 +224,7 @@ msgstr "Ich liebe dieses Plugin! Kann ich Irgendwie helfen?"
 
 #: inc/php/page.php:164
 #, php-format
-msgid "Yes, any financial contributions are welcome! Just visit %s the website of the creator %s, click on the donate button, and thank you!"
+msgid "Yes, any contributions are very welcome! Please visit %s our donation page %s. Thank you!"
 msgstr "Ja, jede finanzielle Unterstützung ist Willkommen! Besuchen Sie %s meine Webseite %s, klicken Sie auf den Spenden Button und Danke!"
 
 #: inc/php/page.php:170
@@ -402,9 +402,9 @@ msgid "Easily add cross browser \"Scroll to Top\" button to your website. It wil
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "Arthur Gareginyan"
-msgstr "Arthur Gareginyan"
+msgid "Space X-Chimp"
+msgstr "Space X-Chimp"
 
 #. Author URI of the plugin/theme
-msgid "https://www.arthurgareginyan.com"
-msgstr "https://www.arthurgareginyan.com"
+msgid "https://www.spacexchimp.com"
+msgstr "https://www.spacexchimp.com"

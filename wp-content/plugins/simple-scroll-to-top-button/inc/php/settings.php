@@ -23,7 +23,7 @@ defined( 'ABSPATH' ) or die( "Restricted access!" );
                         // Set default value if option is empty
                         $transparency = (!empty( $options['transparency_button'] ) AND $options['transparency_button'] == 'on') ? 'ssttbutton-transparent' : '' ;
                         $background_button = !empty( $options['background_button'] ) ? $options['background_button'] : 'fa-circle';
-                        $background_color = !empty( $options['background-color'] ) ? $options['background-color'] : '#000000';
+                        $background_color = !empty( $options['background-color'] ) ? $options['background-color'] : '#000';
                         $image_button = !empty( $options['image_button'] ) ? $options['image_button'] : 'fa-hand-o-up';
                     ?>
 
@@ -56,7 +56,7 @@ defined( 'ABSPATH' ) or die( "Restricted access!" );
                                     spacexchimp_p008_control_color( 'background-color',
                                                                     __( 'Button background color', $text ),
                                                                     __( 'Select the background color of button. You can also add html HEX color code.', $text ),
-                                                                    '#ffffff'
+                                                                    '#fff'
                                                                   );
                                     spacexchimp_p008_control_choice( 'image_button',
                                                                      array(
@@ -78,7 +78,7 @@ defined( 'ABSPATH' ) or die( "Restricted access!" );
                                     spacexchimp_p008_control_color( 'symbol-color',
                                                                     __( 'Button symbol color', $text ),
                                                                     __( 'Select the color of symbol inside button. You can also add html HEX color code.', $text ),
-                                                                    '#ffffff'
+                                                                    '#fff'
                                                                   );
                                     spacexchimp_p008_control_switch( 'transparency_button',
                                                                      __( 'Transparency', $text ),
