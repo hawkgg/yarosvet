@@ -784,15 +784,16 @@ footer ul li ul {
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
-.iso-nav ul {
+.iso-nav {
   display: flex;
   list-style-type: none;
   justify-content: center;
 }
 
-.iso-nav ul li {
+.iso-nav button {
   padding:20px;
   background: #8AD1EC;
   cursor: pointer;
   margin: 5px;
+  border: none;
 }

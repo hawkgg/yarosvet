@@ -1669,7 +1669,10 @@ vc_map( array(
   'description'   => 'Добавить фильтрацию.',
   'params'        => array(
     array(
-
+      'type'        => 'textfield',
+      'heading'     => 'Slug Родительской категории',
+      'param_name'  => 'slug',
+      'description' => 'Имя родительской категории, по которому будут хвататься дочерние (не дальше 1 вложенности)',
     ),
      // Extras
     $vc_map_extra_id,

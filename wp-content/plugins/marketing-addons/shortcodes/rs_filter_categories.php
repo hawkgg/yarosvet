@@ -6,16 +6,28 @@
  * @version 1.0.0
  *
  */
-function rs_filter_categories() {
+function rs_filter_categories($atts) {
+
+  $category = get_category_by_slug( $atts['slug'] );
+  $args = array(
+    // 'type'                     => 'post',
+    'child_of'                 => $category->term_id,
+    // 'orderby'                  => 'name',
+    // 'order'                    => 'ASC',
+    // 'hide_empty'               => FALSE,
+    // 'hierarchical'             => 1,
+    // 'taxonomy'                 => 'category',
+  );
+
 
   $output .= '<div class="iso-nav">';
-  $output .= '<ul>';
 
-  foreach (get_categories() as $category) {
-      $output .=  '<li data-filter=".' . $category->slug .'" >' . $category->name . '</li>';
+  $output .=  '<button type="button" data-filter="*" >Все</li>';
+
+  foreach (get_categories($args) as $category) {
+      $output .=  '<button type="button" data-filter=".' . $category->slug .'" >' . $category->name . '</li>';
   }
 
-  $output .=  '</ul>';
   $output .=  '</div>';
 
   return $output;
