@@ -472,12 +472,13 @@ function photoswipe_shortcode( $attr ) {
 				$_post = get_post($aid);
 
 				$image_title = esc_attr($_post->post_title);
+				$image_category = end(get_the_category($aid))->slug;		//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 				$image_alttext = get_post_meta($aid, '_wp_attachment_image_alt', true);
 				$image_caption = $_post->post_excerpt;
 				$image_description = $_post->post_content;
 
 				$output_buffer .='
-				<figure class="msnry_item" itemscope itemtype="http://schema.org/ImageObject">
+				<figure class="msnry_item '. $image_category .'" itemscope itemtype="http://schema.org/ImageObject" data-category="'. $image_category .'">
 					<a href="'. $full[0] .'" itemprop="contentUrl" data-size="'.$full[1].'x'.$full[2].'" data-caption="'. $image_caption .'" >
 				        <img src='. $thumb[0] .' itemprop="thumbnail" alt="'.$image_alttext.'"  />
 				    </a>

@@ -1653,6 +1653,31 @@ vc_map( array(
 ) );
 
 
+
+
+//////////////////////////////////////////////////////////
+/// CUSTOM
+//////////////////////////////////////////////////////////
+
+// ==========================================================================================
+// Filter Categories
+// ==========================================================================================
+vc_map( array(
+  'name'          => 'Isotope Filter Categories',
+  'base'          => 'rs_filter_categories',
+  'icon'          => 'fa fa-filter',
+  'description'   => 'Добавить фильтрацию.',
+  'params'        => array(
+    array(
+
+    ),
+     // Extras
+    $vc_map_extra_id,
+    $vc_map_extra_class,
+  )
+) );
+
+
 require_once vc_path_dir( 'SHORTCODES_DIR', 'vc-tab.php' );
 require_once vc_path_dir( 'SHORTCODES_DIR', 'vc-tabs.php' );
 class WPBakeryShortCode_RS_Hero_Slider   extends WPBakeryShortCodesContainer {}

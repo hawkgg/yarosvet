@@ -371,7 +371,7 @@ a{
 
 .tt-case-img.hover-custom img{
   max-width: 100%;
-  
+
   -moz-transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -773,4 +773,26 @@ footer ul li ul {
 }
 .tt-swiper-arrow-center.for-testimonials .swiper-button-next.pos-1{
   right:-25px!important;
+}
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
+/* FILTER CATEGORIES */
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+.iso-nav ul {
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+}
+
+.iso-nav ul li {
+  padding:20px;
+  background: #8AD1EC;
+  cursor: pointer;
+  margin: 5px;
 }

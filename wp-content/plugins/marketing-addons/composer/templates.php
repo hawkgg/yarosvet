@@ -8,12 +8,12 @@
  *
  */
 function rs_vc_templates(){
-  
+
   $templates = array();
-  
+
   $data = array();
   $data['name'] = esc_html__( 'Blog Post', 'marketing-addons' );
-  $data['disabled'] = true; 
+  $data['disabled'] = true;
   $data['image_path'] = preg_replace( '/\s/', '%20',  plugins_url('/assets/img/templates/', __FILE__) . '/40.jpg' );
   $data['sort_name'] = 'Blog';
   $data['custom_class'] = 'blog';
@@ -42,7 +42,7 @@ CONTENT;
   $data['content'] = <<<CONTENT
 [vc_row full_width="stretch_row_content_no_spaces" fluid="stretch_row_content"][vc_column][rs_hero_slider style="style2" pagination="no"][rs_hero_slider_item object="http://themebubble.com/demo/marketingpro/wp-content/uploads/2016/11/user.png" small_heading="Pro tips that will help you grow your business" heading="Growth hack sales funnel secrets brought to you" form_id="4"][/rs_hero_slider][/vc_column][/vc_row]
 CONTENT;
-  $templates[] = $data; 
+  $templates[] = $data;
 
   $data = array();
   $data['name'] = esc_html__( 'Slider Modern', 'marketing-addons' );
@@ -58,7 +58,7 @@ CONTENT;
   $data = array();
   $data['name'] = esc_html__( 'Slider Content Top', 'marketing-addons' );
   $data['disabled'] = true; //disable it to not show in the default tab
-  $data['image_path'] = preg_replace( '/\s/', '%20',  plugins_url('/assets/img/templates/', __FILE__) . '/41.jpg' ); 
+  $data['image_path'] = preg_replace( '/\s/', '%20',  plugins_url('/assets/img/templates/', __FILE__) . '/41.jpg' );
   $data['sort_name'] = 'Slider';
   $data['custom_class'] = 'general slider';
   $data['content'] = <<<CONTENT
@@ -156,7 +156,7 @@ CONTENT;
   $data['content'] = <<<CONTENT
 [vc_row][vc_column][rs_section_heading small_heading="SEO MADE EASY" big_heading="Marketers best kept secret"][rs_space lg_device="40" md_device="" sm_device="30" xs_device=""][vc_row_inner][vc_column_inner width="1/3" class="col-sm-6"][rs_icon_box style="type-2" icon="lnr lnr-rocket" heading="Skyrocket your Business"]Mobile ready proprietary dedication intuitive. Thought leadership pass the clap hackathon wearables.[/rs_icon_box][rs_space lg_device="40" md_device="" sm_device="" xs_device=""][/vc_column_inner][vc_column_inner width="1/3"][rs_icon_box style="type-2" icon="lnr lnr-earth" heading="Global Audience "]Platform omnichannel click bait thought leadership pivot. Disrupt taste makers council emerging.[/rs_icon_box][rs_space lg_device="40" md_device="" sm_device="" xs_device=""][/vc_column_inner][vc_column_inner width="1/3"][rs_icon_box style="type-2" icon="lnr lnr-laptop" heading="Digital Strategy"]Thought leadership iterative seed money lean content proprietary. Snackable content quiet period.[/rs_icon_box][rs_space lg_device="40" md_device="" sm_device="" xs_device=""][/vc_column_inner][/vc_row_inner][vc_row_inner][vc_column_inner width="1/3" class="col-sm-6"][rs_icon_box style="type-2" icon="lnr lnr-database" heading="Data Driven"]Mobile ready proprietary dedication intuitive. Thought leadership pass the clap hackathon wearables.[/rs_icon_box][/vc_column_inner][vc_column_inner width="1/3"][rs_icon_box style="type-2" icon="lnr lnr-chart-bars" heading="Growth Analaysis"]Platform omnichannel click bait thought leadership pivot. Disrupt taste makers council emerging.[/rs_icon_box][/vc_column_inner][vc_column_inner width="1/3"][rs_icon_box style="type-2" icon="lnr lnr-apartment" heading="Empire Business "]Thought leadership iterative seed money lean content proprietary. Snackable content quiet period.[/rs_icon_box][/vc_column_inner][/vc_row_inner][/vc_column][/vc_row]
 CONTENT;
-  $templates[] = $data;  
+  $templates[] = $data;
 
 
   $data = array();
@@ -168,7 +168,7 @@ CONTENT;
   $data['content'] = <<<CONTENT
 [vc_row][vc_column width="1/3"][rs_icon_box style="type-5" icon="lnr lnr-chart-bars" color="color-2" heading=" Risk and Financial Advisory"]Our contact center advisory practice focuses on improving customer care, shared services, help desk, tech support and collections contact centers.[/rs_icon_box][/vc_column][vc_column width="1/3"][rs_icon_box style="type-5" icon="lnr lnr-pie-chart" color="color-2" heading="Customer Analytics"]As the world’s largest consulting firm, we can help you take decisive action and achieve sustainable results. We begin by framing the ambition.[/rs_icon_box][/vc_column][vc_column width="1/3"][rs_icon_box style="type-5" icon="lnr lnr-database" color="color-2" heading="Result-driven Consulting"]No matter how complex your business questions, we have the capabilities and experience to deliver the answers you need to move forward.[/rs_icon_box][/vc_column][/vc_row]
 CONTENT;
-  $templates[] = $data;  
+  $templates[] = $data;
 
 
   $data = array();
@@ -269,14 +269,14 @@ CONTENT;
 
   $data = array();
   $data['name'] = esc_html__( 'Case Study With Filter', 'marketing-addons' );
-  $data['disabled'] = true; 
+  $data['disabled'] = true;
   $data['image_path'] = preg_replace( '/\s/', '%20',  plugins_url('/assets/img/templates/', __FILE__) . '/34.jpg' );
   $data['sort_name'] = 'case';
   $data['custom_class'] = 'general case';
   $data['content'] = <<<CONTENT
 [vc_row][vc_column][rs_section_heading small_heading="Market Your Mind" big_heading="Case Studies"][rs_space lg_device="35" md_device="" sm_device="30" xs_device=""][rs_case_study][/vc_column][/vc_row]
 CONTENT;
-  $templates[] = $data;  
+  $templates[] = $data;
 
   $data = array();
   $data['name'] = esc_html__( 'Divider With Space', 'marketing-addons' );
@@ -310,7 +310,7 @@ CONTENT;
   $data['content'] = <<<CONTENT
 [vc_row][vc_column][rs_section_heading small_heading="Lovely Customer " big_heading="Don't Take Our Word for It"][rs_space lg_device="35" md_device="" sm_device="30" xs_device=""][/vc_column][/vc_row][vc_row][vc_column width="5/6" offset="vc_col-lg-offset-1"][rs_testimonial limit="4"][/vc_column][/vc_row]
 CONTENT;
-  $templates[] = $data; 
+  $templates[] = $data;
 
 
   $data = array();
@@ -322,7 +322,7 @@ CONTENT;
   $data['content'] = <<<CONTENT
 [vc_row][vc_column][rs_section_heading small_heading="Story Telling" big_heading="Meet Our Team"][rs_space lg_device="35" md_device="" sm_device="30" xs_device=""][vc_row_inner][vc_column_inner width="1/4"][rs_team][/vc_column_inner][vc_column_inner width="1/4"][rs_team][/vc_column_inner][vc_column_inner width="1/4"][rs_team][/vc_column_inner][vc_column_inner width="1/4"][rs_team][/vc_column_inner][/vc_row_inner][/vc_column][/vc_row]
 CONTENT;
-  $templates[] = $data;  
+  $templates[] = $data;
 
   $data = array();
   $data['name'] = esc_html__( 'Testimonial 3 Column', 'marketing-addons' );
@@ -344,7 +344,7 @@ CONTENT;
   $data['content'] = <<<CONTENT
 [vc_row][vc_column][rs_section_heading small_heading="Lovely Customers" big_heading="Simple Pricing for All"][rs_space lg_device="40" md_device="" sm_device="30" xs_device=""][vc_row_inner][vc_column_inner width="1/3" class_type="sm"][rs_pricing_table plan="Entrepreneur" price="10" feature="Limited marketing & growth hacks|Basic Email list building techniques|Invitation to Secret group|Secret Business Group|Free Landing Page"][/vc_column_inner][vc_column_inner width="1/3" class_type="sm"][rs_pricing_table plan="Growing Business" price="29" feature="Limited marketing & growth hacks|Basic Email list building techniques|Invitation to Secret group|Secret Business Group|Free Landing Page"][/vc_column_inner][vc_column_inner width="1/3" class_type="sm"][rs_pricing_table plan="Pro Business" price="39" feature="Limited marketing & growth hacks|Basic Email list building techniques|Invitation to Secret group|Secret Business Group|Free Landing Page"][/vc_column_inner][/vc_row_inner][rs_space lg_device="40" md_device="" sm_device="" xs_device=""][rs_button align="text-center" btn_link="url:%23|||" btn_text="Start Free Trial"][/vc_column][/vc_row]
 CONTENT;
-  $templates[] = $data;  
+  $templates[] = $data;
 
   $data = array();
   $data['name'] = esc_html__( 'Pricing Table 2 Column', 'marketing-addons' );
@@ -389,7 +389,7 @@ CONTENT;
   $data['content'] = <<<CONTENT
 [vc_row full_width="stretch_row_content_no_spaces" css=".vc_custom_1479040683569{background-image: url(http://themebubble.com/demo/marketingpro/wp-content/uploads/2016/10/bg-sub.png?id=279) !important; overflow:visible !important;}"][vc_column][rs_cta image="http://themebubble.com/demo/marketingpro/wp-content/uploads/2016/10/tt-banner_2.png" heading="Exclusive SEO Backlinking Formula Marketing Giveaway (Worth $99)" btn_text="Call to Action " btn_link="url:%23|||"][/vc_column][/vc_row]
 CONTENT;
-  $templates[] = $data;   
+  $templates[] = $data;
 
 
   $data = array();
@@ -425,7 +425,7 @@ CONTENT;
   $data['content'] = <<<CONTENT
 [vc_row][vc_column][rs_section_heading small_heading="Thats right" big_heading="Business led. People driven."][rs_space lg_device="40" md_device="" sm_device="" xs_device=""][/vc_column][/vc_row][vc_row][vc_column width="1/3"][vc_column_text]<h1 class="special-text" style="font-size: 28px; line-height: 1.5em; text-align: left; font-weight: 400; color: #30373b;">We thrive on building relationships and take great pride in the company we keep.</h1>[/vc_column_text][rs_space lg_device="20" md_device="" sm_device="" xs_device=""][rs_button style="type-4" btn_text="Learn More" btn_link="url:http%3A%2F%2Fwordpress-104454-297862.cloudwaysapps.com%2Fdemo%2Fmarketingpro%2Ffaq%2F|||"][/vc_column][vc_column width="1/3"][vc_column_text]Dynamic content brand voice council tweens sticky content responsive ROI. Dynamic content CRM target audience buzz engagement. Thought leadership iterative seed money lean content proprietary.[/vc_column_text][rs_space lg_device="20" md_device="" sm_device="" xs_device=""][rs_image_block shadow="no" image="1559"][/vc_column][vc_column width="1/3"][rs_image_block shadow="no" image="http://themebubble.com/demo/marketingpro/wp-content/uploads/2016/11/new.png"][/vc_column][/vc_row]
 CONTENT;
-  $templates[] = $data;  
+  $templates[] = $data;
 
 
   $data = array();
@@ -509,7 +509,7 @@ CONTENT;
 [vc_row][vc_column][rs_section_heading small_heading=" BEST KEPT SECRET" big_heading="Enterpreneur Meets Marketer"][rs_space lg_device="40" md_device="" sm_device="30" xs_device=""][vc_tta_tabs style="style2" active="1"][vc_tta_section icon="lnr lnr-home" title="Growth Hack"][rs_space lg_device="5" md_device="" sm_device="" xs_device=""][vc_row_inner][vc_column_inner width="1/2" class_type="sm"][rs_image_block shadow="no" image="http://themebubble.com/demo/marketingpro/wp-content/uploads/2016/12/people.jpg"][/vc_column_inner][vc_column_inner width="1/2"][rs_icon_box style="type-3" icon="lnr lnr-diamond" heading="Social Consultant"]Platform omnichannel click bait thought leadership pivot.[/rs_icon_box][rs_space lg_device="30" md_device="" sm_device="" xs_device=""][rs_icon_box style="type-3" icon="lnr lnr-funnel" heading="Sales Funnel"]Platform omnichannel click bait thought leadership pivot.[/rs_icon_box][rs_space lg_device="30" md_device="" sm_device="" xs_device=""][rs_icon_box style="type-3" icon="lnr lnr-earth" heading="All Over the Web"]Platform omnichannel click bait thought leadership pivot.[/rs_icon_box][rs_space lg_device="100" md_device="" sm_device="" xs_device=""][/vc_column_inner][/vc_row_inner][/vc_tta_section][vc_tta_section icon="lnr lnr-home" title="Facebook Ads"][rs_space lg_device="5" md_device="" sm_device="" xs_device=""][vc_row_inner][vc_column_inner width="1/2" class_type="sm"][rs_image_block shadow="no" image="http://themebubble.com/demo/marketingpro/wp-content/uploads/2016/12/people.jpg"][/vc_column_inner][vc_column_inner width="1/2"][rs_icon_box style="type-3" icon="lnr lnr-diamond" heading="Social Consultant"]Platform omnichannel click bait thought leadership pivot. Disrupt taste makers council conversions emerging.[/rs_icon_box][rs_space lg_device="30" md_device="" sm_device="" xs_device=""][rs_icon_box style="type-3" icon="lnr lnr-funnel" heading="Sales Funnel"]Platform omnichannel click bait thought leadership pivot. Disrupt taste makers council conversions emerging.[/rs_icon_box][rs_space lg_device="30" md_device="" sm_device="" xs_device=""][rs_icon_box style="type-3" icon="lnr lnr-earth" heading="All Over the Web"]Platform omnichannel click bait thought leadership pivot. Disrupt taste makers council conversions emerging.[/rs_icon_box][rs_space lg_device="100" md_device="" sm_device="" xs_device=""][/vc_column_inner][/vc_row_inner][/vc_tta_section][vc_tta_section icon="lnr lnr-home" title="Data Analyst "][rs_space lg_device="5" md_device="" sm_device="" xs_device=""][vc_row_inner][vc_column_inner width="1/2" class_type="sm"][rs_image_block shadow="no" image="http://themebubble.com/demo/marketingpro/wp-content/uploads/2016/12/people.jpg"][/vc_column_inner][vc_column_inner width="1/2"][rs_icon_box style="type-3" icon="lnr lnr-diamond" heading="Social Consultant"]Platform omnichannel click bait thought leadership pivot. Disrupt taste makers council conversions emerging.[/rs_icon_box][rs_space lg_device="30" md_device="" sm_device="" xs_device=""][rs_icon_box style="type-3" icon="lnr lnr-funnel" heading="Sales Funnel"]Platform omnichannel click bait thought leadership pivot. Disrupt taste makers council conversions emerging.[/rs_icon_box][rs_space lg_device="30" md_device="" sm_device="" xs_device=""][rs_icon_box style="type-3" icon="lnr lnr-earth" heading="All Over the Web"]Platform omnichannel click bait thought leadership pivot. Disrupt taste makers council conversions emerging.[/rs_icon_box][rs_space lg_device="100" md_device="" sm_device="" xs_device=""][/vc_column_inner][/vc_row_inner][/vc_tta_section][vc_tta_section icon="lnr lnr-home" title="Consulting"][rs_space lg_device="5" md_device="" sm_device="" xs_device=""][vc_row_inner][vc_column_inner width="1/2" class_type="sm"][rs_image_block shadow="no" image="http://themebubble.com/demo/marketingpro/wp-content/uploads/2016/12/people.jpg"][/vc_column_inner][vc_column_inner width="1/2"][rs_icon_box style="type-3" icon="lnr lnr-diamond" heading="Social Consultant"]Platform omnichannel click bait thought leadership pivot. Disrupt taste makers council conversions emerging.[/rs_icon_box][rs_space lg_device="30" md_device="" sm_device="" xs_device=""][rs_icon_box style="type-3" icon="lnr lnr-funnel" heading="Sales Funnel"]Platform omnichannel click bait thought leadership pivot. Disrupt taste makers council conversions emerging.[/rs_icon_box][rs_space lg_device="30" md_device="" sm_device="" xs_device=""][rs_icon_box style="type-3" icon="lnr lnr-earth" heading="All Over the Web"]Platform omnichannel click bait thought leadership pivot. Disrupt taste makers council conversions emerging.[/rs_icon_box][rs_space lg_device="100" md_device="" sm_device="" xs_device=""][/vc_column_inner][/vc_row_inner][/vc_tta_section][vc_tta_section icon="lnr lnr-home" title="eBook Seminar"][rs_space lg_device="5" md_device="" sm_device="" xs_device=""][vc_row_inner][vc_column_inner width="1/2" class_type="sm"][rs_image_block shadow="no" image="http://themebubble.com/demo/marketingpro/wp-content/uploads/2016/12/people.jpg"][/vc_column_inner][vc_column_inner width="1/2"][rs_icon_box style="type-3" icon="lnr lnr-diamond" heading="Social Consultant"]Platform omnichannel click bait thought leadership pivot. Disrupt taste makers council conversions emerging.[/rs_icon_box][rs_space lg_device="30" md_device="" sm_device="" xs_device=""][rs_icon_box style="type-3" icon="lnr lnr-funnel" heading="Sales Funnel"]Platform omnichannel click bait thought leadership pivot. Disrupt taste makers council conversions emerging.[/rs_icon_box][rs_space lg_device="30" md_device="" sm_device="" xs_device=""][rs_icon_box style="type-3" icon="lnr lnr-earth" heading="All Over the Web"]Platform omnichannel click bait thought leadership pivot. Disrupt taste makers council conversions emerging.[/rs_icon_box][rs_space lg_device="100" md_device="" sm_device="" xs_device=""][/vc_column_inner][/vc_row_inner][/vc_tta_section][vc_tta_section icon="lnr lnr-home" title="Webinar"][rs_space lg_device="5" md_device="" sm_device="" xs_device=""][vc_row_inner][vc_column_inner width="1/2" class_type="sm"][rs_image_block shadow="no" image="http://themebubble.com/demo/marketingpro/wp-content/uploads/2016/12/people.jpg"][/vc_column_inner][vc_column_inner width="1/2"][rs_icon_box style="type-3" icon="lnr lnr-diamond" heading="Social Consultant"]Platform omnichannel click bait thought leadership pivot. Disrupt taste makers council conversions emerging.[/rs_icon_box][rs_space lg_device="30" md_device="" sm_device="" xs_device=""][rs_icon_box style="type-3" icon="lnr lnr-funnel" heading="Sales Funnel"]Platform omnichannel click bait thought leadership pivot. Disrupt taste makers council conversions emerging.[/rs_icon_box][rs_space lg_device="30" md_device="" sm_device="" xs_device=""][rs_icon_box style="type-3" icon="lnr lnr-earth" heading="All Over the Web"]Platform omnichannel click bait thought leadership pivot. Disrupt taste makers council conversions emerging.[/rs_icon_box][/vc_column_inner][/vc_row_inner][/vc_tta_section][/vc_tta_tabs][/vc_column][/vc_row]
 
 CONTENT;
-  $templates[] = $data;    
+  $templates[] = $data;
 
   $data = array();
   $data['name'] = esc_html__( 'Google Map', 'marketing-addons' );
@@ -532,7 +532,7 @@ CONTENT;
 
 
 
-  
+
   return $templates;
 }
 
@@ -544,7 +544,7 @@ CONTENT;
  *
  */
 function rs_reset_default_templates( $data ) {
-  return array(); 
+  return array();
 }
 add_filter( 'vc_load_default_templates', 'rs_reset_default_templates' );
 

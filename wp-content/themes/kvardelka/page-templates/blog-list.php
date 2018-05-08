@@ -68,10 +68,10 @@ if(is_page()) {
       get_template_part('templates/content', 'none');
     endif; ?>
     <?php marketing_paging_nav($max_num_pages, 'default'); ?>
-    <div class="empty-space marg-sm-b30"></div>  
-  <?php get_template_part('templates/global/page-after-content'); ?> 
+    <div class="empty-space marg-sm-b30"></div>
+  <?php get_template_part('templates/global/page-after-content'); ?>
 </div>
-<div class="empty-space marg-lg-b150 marg-sm-b50 marg-xs-b30"></div> 
+<div class="empty-space marg-lg-b150 marg-sm-b50 marg-xs-b30"></div>
 <?php marketing_after_content_special_content(); ?>
 <?php
 get_footer();

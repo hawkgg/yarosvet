@@ -21,12 +21,12 @@
         <?php if (is_active_sidebar( marketing_get_custom_sidebar('footer-2', 'footer-sidebar-2') )): ?>
           <?php dynamic_sidebar( marketing_get_custom_sidebar('footer-2', 'footer-sidebar-2') ); ?>
         <?php endif; ?>
-        <div class="empty-space marg-sm-b30"></div>                       
+        <div class="empty-space marg-sm-b30"></div>
       </div>
       <div class="col-xs-12 col-md-3">
         <?php if (is_active_sidebar( marketing_get_custom_sidebar('footer-3', 'footer-sidebar-3') )): ?>
           <?php dynamic_sidebar( marketing_get_custom_sidebar('footer-3', 'footer-sidebar-3') ); ?>
-        <?php endif; ?>         
+        <?php endif; ?>
       </div>
     </div>
     <div class="empty-space marg-lg-b80 marg-sm-b50 marg-xs-b30"></div>

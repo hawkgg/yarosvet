@@ -71,8 +71,8 @@ $col_class = (!class_exists('ReduxFramework') || $layout == 'default') ? ' col-m
               </div>
               <a class="c-btn type-4" href="<?php echo esc_url(get_the_permalink()); ?>"><?php echo esc_html__('Read More', 'marketing'); ?></a>
             </div>
-          </div>                        
-          <div class="empty-spaca marg-lg-b30"></div>   
+          </div>
+          <div class="empty-spaca marg-lg-b30"></div>
         </div>
         <?php endwhile; wp_reset_postdata(); else:
         get_template_part('templates/content', 'none');
@@ -82,10 +82,10 @@ $col_class = (!class_exists('ReduxFramework') || $layout == 'default') ? ' col-m
       <div class="empty-space marg-lg-b50 marg-sm-b30"></div>
     <!-- tt-custom-pagination -->
     <?php marketing_paging_nav($max_num_pages, 'default'); ?>
-    <div class="empty-space marg-sm-b30"></div>                                                             
+    <div class="empty-space marg-sm-b30"></div>
   <?php get_template_part('templates/global/page-after-content'); ?>
 </div>
-<div class="empty-space marg-lg-b150 marg-sm-b50 marg-xs-b30"></div> 
+<div class="empty-space marg-lg-b150 marg-sm-b50 marg-xs-b30"></div>
 <?php marketing_after_content_special_content(); ?>
 <?php
 get_footer();

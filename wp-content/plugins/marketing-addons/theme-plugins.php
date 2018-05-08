@@ -121,7 +121,8 @@ if(!class_exists('RS_Shortcode')) {
       require_once(RS_ROOT. '/' . 'shortcodes/rs_hero_video_banner.php');
       require_once(RS_ROOT. '/' . 'shortcodes/rs_special_text.php');
       require_once(RS_ROOT. '/' . 'shortcodes/rs_featured_tabs.php');
-      require_once(RS_ROOT. '/' . 'shortcodes/rs_countdown_timer.php');      
+      require_once(RS_ROOT. '/' . 'shortcodes/rs_countdown_timer.php');
+      require_once(RS_ROOT. '/' . 'shortcodes/rs_filter_categories.php');
       require_once(RS_ROOT. '/' . 'shortcodes/vc_column_text.php');
     }
 
@@ -147,7 +148,7 @@ if(!class_exists('RS_Shortcode')) {
     public function rs_reload_vc_js() {
       echo '<script type="text/javascript">(function($){ $(document).ready( function(){ $.reloadPlugins(); }); })(jQuery);</script>';
     }
-  } 
+  }
   new RS_Shortcode;
   register_activation_hook( __FILE__, array( 'RS_Shortcode', 'activate' ) );
   register_deactivation_hook( __FILE__, array( 'RS_Shortcode', 'deactivate' ) );

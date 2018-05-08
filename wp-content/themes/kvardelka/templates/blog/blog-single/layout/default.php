@@ -17,7 +17,7 @@
         <div class="empty-space marg-lg-b30"></div>
 
         <!-- TT-SUBSCRIBE -->
-        <?php 
+        <?php
           $newsletter_big_heading   = marketing_get_opt('single-post-newsletter-big-heading');
           $newsletter_small_heading = marketing_get_opt('single-post-newsletter-small-heading');
           $newsletter_image         = marketing_get_opt('single-post-newsletter-image');
@@ -26,7 +26,7 @@
           if(function_exists('newsletter_form') && marketing_get_opt('single-post-subscribe-enable')): ?>
           <div class="tt-devider"></div>
           <div class="empty-space marg-lg-b50 marg-sm-b30"></div>
-        
+
         <div class="tt-subscribe">
           <?php if(isset($newsletter_image['url']) && !empty($newsletter_image['url'])): ?>
             <div class="tt-subscribe-img">
@@ -41,7 +41,7 @@
               <p><?php echo esc_html($newsletter_small_heading); ?></p>
             </div>
           <?php endif; ?>
-        
+
           <div class="tt-banner-3-form">
             <form method="post" action="'.home_url('/').'?na=s" onsubmit="return newsletter_check(this)">
                 <div class="row">

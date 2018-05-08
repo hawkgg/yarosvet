@@ -40,9 +40,9 @@ if( !function_exists('marketing_after_setup')) {
 
   function marketing_after_setup() {
 
-    add_image_size('marketing-thumb',        40,   40,  true ); 
+    add_image_size('marketing-thumb',        40,   40,  true );
     add_image_size('marketing-small-alt',    165,  112, true );
-    add_image_size('marketing-medium',       392,  230, true ); 
+    add_image_size('marketing-medium',       392,  230, true );
     add_image_size('marketing-medium-alt',   263,  305, true );
     add_image_size('marketing-medium-hor',   748,  210, true );
     add_image_size('marketing-big',          750,  365, true );
