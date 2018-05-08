@@ -49,7 +49,7 @@ function onHashchange() {
   }
   isIsotopeInit = true;
 
-  if (hashFilter[0] != '*') hashFilter = '.' + hashFilter;
+  if (hashFilter && hashFilter[0] != '*') hashFilter = '.' + hashFilter;
 
   // filter isotope
   jQuery('.psgal').isotope({
