@@ -392,8 +392,7 @@ function photoswipe_shortcode( $attr ) {
 				-moz-transition: all 0.4s ease;
 				-o-transition: all 0.4s ease;
 				transition: all 0.4s ease;
-
-				opacity:0.1;
+				margin: 0 auto;
 				";
 
 				if($options['use_masonry']) $output_buffer .="opacity:1; text-align:center;";
@@ -459,7 +458,7 @@ function photoswipe_shortcode( $attr ) {
 		$size_class = sanitize_html_class( $args['size'] );
 		$output_buffer .=' <div style="clear:both"></div>
 
-		<div id="psgal_'.$post_id.'" class="psgal gallery-columns-'.$columns.' gallery-size-'.$size_class.'" itemscope itemtype="http://schema.org/ImageGallery" >';
+		<div id="psgal_'.$post_id.'" class="fitWidth isotope psgal gallery-columns-'.$columns.' gallery-size-'.$size_class.'" itemscope itemtype="http://schema.org/ImageGallery" >';
 
 
 		if ( !empty($attachments) ) {
@@ -472,13 +471,15 @@ function photoswipe_shortcode( $attr ) {
 				$_post = get_post($aid);
 
 				$image_title = esc_attr($_post->post_title);
-				$image_category = end(get_the_category($aid))->slug;		//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+				$image_category = end(get_the_category($aid))->slug ?
+								  'category-' . end(get_the_category($aid))->slug :
+								  '';
 				$image_alttext = get_post_meta($aid, '_wp_attachment_image_alt', true);
 				$image_caption = $_post->post_excerpt;
 				$image_description = $_post->post_content;
 
 				$output_buffer .='
-				<figure class="msnry_item '. $image_category .'" itemscope itemtype="http://schema.org/ImageObject" data-category="'. $image_category .'">
+				<figure class="isotope-item msnry_item '. $image_category .'" itemscope itemtype="http://schema.org/ImageObject" data-category="'. $image_category .'">
 					<a href="'. $full[0] .'" itemprop="contentUrl" data-size="'.$full[1].'x'.$full[2].'" data-caption="'. $image_caption .'" >
 				        <img src='. $thumb[0] .' itemprop="thumbnail" alt="'.$image_alttext.'"  />
 				    </a>
@@ -494,40 +495,6 @@ function photoswipe_shortcode( $attr ) {
 		$output_buffer .="</div>
 
 		<div style='clear:both'></div>
-
-		<script type='text/javascript'>
-
-			var container_".$post_id." = document.querySelector('#psgal_".$post_id."');
-			var msnry;
-
-			// initialize  after all images have loaded
-			imagesLoaded( container_".$post_id.", function() {
-
-				";
-
-				if(!$options['use_masonry']){
-					 $output_buffer .="
-
-						// initialize Masonry after all images have loaded
-						new Masonry( container_".$post_id.", {
-						  // options...
-						  itemSelector: '.msnry_item',
-						  //columnWidth: ".$options['thumbnail_width'].",
-						  isFitWidth: true
-						});
-
-						(container_".$post_id.").className += ' photoswipe_showme';
-
-						";
-				}
-
-				$output_buffer .="
-
-			});
-
-
-		</script>
-
 	";
 
 

@@ -88,7 +88,7 @@ function rs_blog_list( $atts, $content = '', $id = '' ) {
       get_template_part('templates/content', 'none');
     endif; ?>
     <?php marketing_paging_nav($max_num_pages, 'default'); ?>
-    <div class="empty-space marg-sm-b30"></div>  
+    <div class="empty-space marg-sm-b30"></div>
   </div>
 
   <?php

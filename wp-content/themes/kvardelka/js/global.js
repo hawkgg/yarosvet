@@ -5,7 +5,7 @@
 /* Version: 1.0 Initial Release*/
 /* Build Date: 22-04-2015*/
 /* Author: Unbranded*/
-/* Website: http://moonart.net.ua/site/ 
+/* Website: http://moonart.net.ua/site/
 /* Copyright: (C) 2015 */
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
@@ -23,7 +23,7 @@ jQuery(function($) {
   /* 01 - VARIABLES */
   /*================*/
   var swipers = [],
-    winW, winH, winScr, $container, $isotope_container_rating, _isresponsive, 
+    winW, winH, winScr, $container, $isotope_container_rating, _isresponsive,
     _ismobile = navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i);
 
   /*========================*/
@@ -81,7 +81,7 @@ jQuery(function($) {
     $(window).resize(function() {
       heightInit();
     });
-  } 
+  }
 
   $(document).ready(function() {
     function enableFullWidth() {
@@ -166,7 +166,7 @@ jQuery(function($) {
         breakpoints: {
             1600: {
               slidesPerView: lg,
-              spaceBetween: 40,    
+              spaceBetween: 40,
             },
             1200: {
               slidesPerView: md,
@@ -469,5 +469,3 @@ jQuery(function($) {
   });
 
 });
-
-

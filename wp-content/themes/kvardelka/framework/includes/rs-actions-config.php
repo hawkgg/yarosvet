@@ -164,7 +164,7 @@ if( !function_exists('marketing_enqueue_scripts')) {
     wp_register_script('map',                   get_template_directory_uri() .'/js/map.js',array('gmapsensor'), MARKETING_THEME_VERSION,true);
     //Custom
     wp_register_script('maskedinput',           get_template_directory_uri() .'/js/jquery.maskedinput.min.js',array('jquery'), MARKETING_THEME_VERSION,true);
-    
+
     wp_localize_script('map', 'get',
       array(
         'ajaxurl' => admin_url( 'admin-ajax.php' ),
@@ -187,13 +187,13 @@ if( !function_exists('marketing_enqueue_scripts')) {
     wp_enqueue_style('custom-styles',    get_template_directory_uri(). '/css/custom.css',null, MARKETING_THEME_VERSION);
 
     $pages = array();
-  
+
     if (marketing_get_post_opt('page-show-special-content-after-content')) {
       $pages[] = marketing_get_post_opt('page-after-special-content');
     }
-  
+
     if (is_array($pages) && count($pages) > 0) {
-      foreach ($pages as $page) {        
+      foreach ($pages as $page) {
         if (empty($page)) { continue; }
         $shortcodes_custom_css = get_post_meta( $page, '_wpb_shortcodes_custom_css', true );
         if(!empty($shortcodes_custom_css)) {

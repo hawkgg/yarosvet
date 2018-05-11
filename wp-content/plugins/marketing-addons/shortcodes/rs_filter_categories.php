@@ -20,12 +20,12 @@ function rs_filter_categories($atts) {
   );
 
 
-  $output .= '<div class="iso-nav">';
+  $output .= '<div class="isotope-filter">';
 
   $output .=  '<button type="button" data-filter="*" >Все</li>';
 
   foreach (get_categories($args) as $category) {
-      $output .=  '<button type="button" data-filter=".' . $category->slug .'" >' . $category->name . '</li>';
+      $output .=  '<button type="button" data-filter=".category-' . $category->slug .'" >' . $category->name . '</li>';
   }
 
   $output .=  '</div>';

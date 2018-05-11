@@ -378,7 +378,7 @@ if(!function_exists('marketing_social_share')) {
   function marketing_social_share($style) {
     switch ($style) {
       case 'style1':
-      default: 
+      default:
       global $post;
       $pinterest_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'marketing-big' );
       ?>
@@ -449,7 +449,7 @@ function marketing_comment( $comment, $args, $depth ) {
               <?php endif; ?>
               <?php comment_text(); ?>
             </div>
-            <?php 
+            <?php
               $reply = get_comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => 2 ) ) );
               if (!empty($reply)): ?>
                 <?php echo wp_kses_post($reply); ?>
@@ -583,7 +583,7 @@ if(!function_exists('marketing_accent_css')) {
     $header_logo_height  = marketing_get_opt('header-logo-height');
     $output = '';
     if(marketing_get_opt('theme-skin') == 'theme-accent' || !empty($accent_color_first) || !empty($accent_color_second)):
-      $output .= 
+      $output .=
      'body.theme-accent .c-btn.type-2:before,
       body.theme-accent .c-btn.type-2:after,
       body.theme-accent .c-btn.type-3,
@@ -612,14 +612,14 @@ if(!function_exists('marketing_accent_css')) {
       .widget_price_filter .ui-slider .ui-slider-handle,
       .widget_shopping_cart .buttons .checkout,
       .woocommerce-form-login input[type="submit"],
-      .woocommerce .shop_table .button[name="apply_coupon"], 
-      .woocommerce-page .shop_table .button[name="apply_coupon"], 
+      .woocommerce .shop_table .button[name="apply_coupon"],
+      .woocommerce-page .shop_table .button[name="apply_coupon"],
       .single_add_to_cart_button {
         background-color: '.esc_attr($accent_color_first).' !important; // main color
       }
 
       /* hover background hover woo buttons */
-      .ajax_add_to_cart.c-btn.type-2:hover, 
+      .ajax_add_to_cart.c-btn.type-2:hover,
       .product_type_variable.add_to_cart_button.c-btn.type-2:hover,
       .widget_shopping_cart .buttons .checkout:hover,
       .price_slider_amount button[type="submit"]:hover,
@@ -631,7 +631,7 @@ if(!function_exists('marketing_accent_css')) {
       .woocommerce-page .single_add_to_cart_button.button:hover {
         background:'.marketing_hex2rgba($accent_color_first, 0.80).' !important;
       }
-      
+
       @media (max-width: 991px) {
        body.theme-accent .tt-header.style-2 .top-inner,
        body.theme-accent .tt-header.style-2 .toggle-block {
@@ -755,7 +755,7 @@ if(!function_exists('marketing_accent_css')) {
     endif;
 
     if(!empty($header_color_bg)):
-      $output .= 
+      $output .=
       '@media (max-width:991px) {
         .tt-header .top-inner {
           background: '.esc_attr($header_color_bg).';
@@ -813,7 +813,7 @@ if(!function_exists('marketing_accent_css')) {
 //   global $marketing_force_content;
 
 //     $content = do_shortcode( get_page( get_the_ID() )->post_content );
-//     $oArgs = ThemeArguments::getInstance('inline_style'); 
+//     $oArgs = ThemeArguments::getInstance('inline_style');
 //     $inline_styles = $oArgs -> get('inline_styles');
 //     if (is_array($inline_styles) && count($inline_styles) > 0) {
 //       $marketing_force_content = $content;
@@ -821,6 +821,6 @@ if(!function_exists('marketing_accent_css')) {
 //     }
 //     $oArgs -> reset();
 
-//   }  
+//   }
 // }
 

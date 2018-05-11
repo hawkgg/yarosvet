@@ -1,0 +1,60 @@
+# Translation of Plugins - Media Library Categories - Stable (latest release) in Russian
+# This file is distributed under the same license as the Plugins - Media Library Categories - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2017-11-28 01:01:07+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: ru\n"
+"Project-Id-Version: Plugins - Media Library Categories - Stable (latest release)\n"
+
+#. Author URI of the plugin/theme
+msgid "https://codecanyon.net/user/jeffrey-wp/?ref=jeffrey-wp"
+msgstr "https://codecanyon.net/user/jeffrey-wp/?ref=jeffrey-wp"
+
+#. Author of the plugin/theme
+msgid "Jeffrey-WP"
+msgstr "Jeffrey-WP"
+
+#. Description of the plugin/theme
+msgid "Adds the ability to use categories in the media library."
+msgstr "Добавляет возможность использовать рубрики в медиабиблиотеке."
+
+#. Plugin URI of the plugin/theme
+msgid "https://wordpress.org/plugins/wp-media-library-categories/"
+msgstr "https://wordpress.org/plugins/wp-media-library-categories/"
+
+#. Plugin Name of the plugin/theme
+msgid "Media Library Categories"
+msgstr "Media Library Categories"
+
+#: index.php:454
+msgid "Get Premium Version"
+msgstr "Получить платную версию"
+
+#: index.php:439
+msgid "Category changes are saved."
+msgstr "Изменения рубрики сохранены."
+
+#: index.php:321 index.php:322
+msgid "Remove all categories"
+msgstr "Удалить все рубрики"
+
+#: index.php:316
+msgid "Remove"
+msgstr "Удалить"
+
+#: index.php:310
+msgid "Add"
+msgstr "Добавить"
+
+#: index.php:305 index.php:306 index.php:453
+msgid "Categories"
+msgstr "Рубрики"
+
+#: index.php:268 index.php:279 index.php:530
+msgid "View all categories"
+msgstr "Посмотреть все рубрики"

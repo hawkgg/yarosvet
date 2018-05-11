@@ -9,67 +9,75 @@
 
 <?php get_template_part('templates/footer/default'); ?>
 <?php wp_footer(); ?>
-
 <script>
-// external js: isotope.pkgd.js
 
-// filter functions
-var filterFns = {
-  // show if number is greater than 50
-  // numberGreaterThan50: function() {
-  //   var number = $(this).find('.number').text();
-  //   return parseInt( number, 10 ) > 50;
-  // }
-};
+jQuery(window).load(function() {
 
-function getHashFilter() {
-  // get filter=filterName
-  var matches = location.hash.match( /filter=([^&]+)/i );
-  var hashFilter = matches && matches[1];
-  return hashFilter && decodeURIComponent( hashFilter );
-}
+    // filter functions
+    var filterFns = {
+      // show if number is greater than 50
+      // numberGreaterThan50: function() {
+      //   var number = $(this).find('.number').text();
+      //   return parseInt( number, 10 ) > 50;
+      // }
+    };
 
-// bind filter button click
-var jQueryfilterButtonGroup = jQuery('.iso-nav');
-jQueryfilterButtonGroup.on( 'click', 'button', function() {
-  var filterAttr = jQuery( this ).attr('data-filter');
-  // set filter in hash
+    function getHashFilter() {
+      // get filter=filterName
+      var matches = location.hash.match( /filter=([^&]+)/i );
+      var hashFilter = matches && matches[1];
+      return hashFilter && decodeURIComponent( hashFilter );
+    }
 
-  if (filterAttr[0] != '*') filterAttr = filterAttr.slice(1);
+    // bind filter button click
+    var jQueryfilterButtonGroup = jQuery('.isotope-filter');
+    jQueryfilterButtonGroup.on( 'click', 'button', function() {
+      var filterAttr = jQuery( this ).attr('data-filter');
+      // set filter in hash
 
-  location.hash = 'filter=' + encodeURIComponent( filterAttr );
+      if (filterAttr[0] != '*') filterAttr = filterAttr.slice(1);
+
+      location.hash = 'filter=' + encodeURIComponent( filterAttr );
+    });
+
+    var isIsotopeInit = false;
+
+    function onHashchange() {
+      var hashFilter = getHashFilter();
+      if ( !hashFilter && isIsotopeInit ) {
+        return;
+      }
+      isIsotopeInit = true;
+
+      if (hashFilter && hashFilter[0] != '*') hashFilter = '.' + hashFilter;
+
+      // filter isotope
+      jQuery('.isotope').isotope({
+        itemSelector: '.isotope-item',
+        // use filterFns
+        filter: filterFns[ hashFilter ] ||  hashFilter
+      });
+
+      if (jQuery('.isotope').hasClass('fitWidth')) {
+        jQuery('.isotope').isotope({
+          masonry: {
+            fitWidth: true,
+          },
+        });
+      }
+
+      // set selected class on button
+      if ( hashFilter ) {
+        jQueryfilterButtonGroup.find('.is-checked').removeClass('is-checked');
+        jQueryfilterButtonGroup.find('[data-filter="' + hashFilter + '"]').addClass('is-checked');
+      }
+    }
+
+    jQuery(window).on( 'hashchange', onHashchange );
+
+    // trigger event handler to init Isotope
+    onHashchange();
 });
-
-var isIsotopeInit = false;
-
-function onHashchange() {
-  var hashFilter = getHashFilter();
-  if ( !hashFilter && isIsotopeInit ) {
-    return;
-  }
-  isIsotopeInit = true;
-
-  if (hashFilter && hashFilter[0] != '*') hashFilter = '.' + hashFilter;
-
-  // filter isotope
-  jQuery('.psgal').isotope({
-    itemSelector: '.msnry_item',
-    // use filterFns
-    filter: filterFns[ hashFilter ] ||  hashFilter
-  });
-  // set selected class on button
-  if ( hashFilter ) {
-    jQueryfilterButtonGroup.find('.is-checked').removeClass('is-checked');
-    jQueryfilterButtonGroup.find('[data-filter="' + hashFilter + '"]').addClass('is-checked');
-  }
-}
-
-jQuery(window).on( 'hashchange', onHashchange );
-
-// trigger event handler to init Isotope
-onHashchange();
-
-
 </script>
 </body>
 </html>
