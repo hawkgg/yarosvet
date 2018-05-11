@@ -417,12 +417,19 @@ ol.breadcrumb {
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
-.toggle-block-container {
-  justify-content: center;
-}
-
 .tt-header .tt-address-info{
   padding:0;
+}
+
+.tt-header .main-nav > ul > li > ul > li > a:hover {
+  color: #949494;
+}
+
+.tt-address-info, .contact-details-module .c-btn.type-5 {
+  font-size: 15px;
+}
+#mega-menu-wrap-primary-menu #mega-menu-primary-menu > li.mega-menu-megamenu.mega-services > ul.mega-sub-menu {
+  width:150%;
 }
 
 @media (max-width: 1200px){
@@ -443,7 +450,12 @@ ol.breadcrumb {
 
   /* Ширина меню */
   .tt-header .top-inner {
-    width:100%
+    width:100%;
+  }
+
+  /* Отступ от лого */
+  .tt-header .toggle-block {
+    padding-top: 90px;
   }
 }
 
@@ -452,22 +464,43 @@ ol.breadcrumb {
   .top-inner-container {
     text-align: center;
   }
+  .top-inner {
+    margin-bottom: 10px;
+  }
 }
 
 @media (max-width:992px) {
-  .tt-header .toggle-block-container {
-    padding: 15px 0;
+  #mega-menu-wrap-primary-menu #mega-menu-primary-menu > li.mega-menu-megamenu > ul.mega-sub-menu {
+    max-width:100%;
   }
-  .tt-header .tt-address-info{
+  .tt-header .main-nav {
+    margin-bottom: 0;
+  }
+  .tt-header .nav-more .c-btn {
     margin-bottom:10px;
+    margin-top:10px;
+  }
+  .tt-header .toggle-block {
+    overflow: initial;
   }
 }
+@media (max-width:600px) {
+  .tt-header .toggle-block {
+    overflow: auto !important;
+  }
+}
+
+
+
+
+
+
 /*---------------------*/
 /* Многоуровневое меню */
 /*---------------------*/
 .tt-header .main-nav > ul > li > ul > li > a{
   transition: .1s linear;
-  padding-right:50px;
+  /*padding-right:50px;*/
 }
 
 @media (min-width: 992px) {
@@ -480,9 +513,10 @@ ol.breadcrumb {
     margin-left: 0;
     left: 0;
     width:auto;
+    min-width: 120px;
   }
   .tt-header .main-nav > ul > li > ul {
-    border-top: none;
+    /*border-top: none;*/
   }
   .tt-header .main-nav > ul > li > ul > li > a:hover{
     background:initial;
