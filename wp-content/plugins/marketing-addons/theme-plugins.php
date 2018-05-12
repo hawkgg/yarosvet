@@ -102,6 +102,7 @@ if(!class_exists('RS_Shortcode')) {
       require_once(RS_ROOT. '/' . 'shortcodes/rs_section_heading.php');
       require_once(RS_ROOT. '/' . 'shortcodes/rs_image_block.php');
       require_once(RS_ROOT. '/' . 'shortcodes/rs_icon_box.php');
+      require_once(RS_ROOT. '/' . 'shortcodes/rs_link_box.php');
       require_once(RS_ROOT. '/' . 'shortcodes/rs_case_study.php');
       require_once(RS_ROOT. '/' . 'shortcodes/rs_team.php');
       require_once(RS_ROOT. '/' . 'shortcodes/rs_blog.php');

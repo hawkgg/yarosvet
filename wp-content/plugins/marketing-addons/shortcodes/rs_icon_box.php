@@ -7,7 +7,6 @@
  *
  */
 function rs_icon_box( $atts, $content = '', $id = '' ) {
-
   extract( shortcode_atts( array(
     'id'            => '',
     'class'         => '',

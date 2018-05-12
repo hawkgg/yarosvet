@@ -543,7 +543,6 @@ vc_map( array(
       'value'      => array(
         'Style 1' => 'style1',
         'Style 2' => 'style2',
-        'Style 3' => 'style3',
       ),
     ),
     array(
@@ -670,6 +669,55 @@ vc_map( array(
 
   )
 ) );
+
+
+// ==========================================================================================
+// ICON BOX // marketing
+// ==========================================================================================
+vc_map( array(
+  'name'          => 'Link Box',
+  'base'          => 'rs_link_box',
+  'icon'          => 'fa fa-briefcase',
+  'description'   => 'Создать блок-ссылку.',
+  'params'        => array(
+    array(
+      'type'       => 'dropdown',
+      'heading'    => 'Style',
+      'param_name' => 'style',
+      'value'      => array(
+        'Style 1' => 'type-1',
+      ),
+    ),
+    array(
+      'type'        => 'attach_image',
+      'heading'     => 'Image',
+      'param_name'  => 'img',
+    ),
+    array(
+      'type'        => 'textfield',
+      'heading'     => 'Heding',
+      'param_name'  => 'heading',
+      'holder'      => 'h3'
+    ),
+    array(
+      'type'        => 'textfield',
+      'heading'     => 'Content',
+      'param_name'  => 'desc',
+      'holder'      => 'div',
+    ),
+    array(
+      'type'        => 'vc_link',
+      'heading'     => 'Link',
+      'param_name'  => 'link',
+    ),
+
+    // Extras
+    $vc_map_extra_id,
+    $vc_map_extra_class,
+
+  )
+) );
+
 
 // ==========================================================================================
 // Call To Action

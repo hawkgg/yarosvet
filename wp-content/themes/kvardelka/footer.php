@@ -53,7 +53,7 @@ jQuery(window).load(function() {
 
       // filter isotope
       jQuery('.isotope').isotope({
-        itemSelector: '.isotope-item',
+        itemSelector: '.isotope .isotope-item',
         // use filterFns
         filter: filterFns[ hashFilter ] ||  hashFilter
       });
