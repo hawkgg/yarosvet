@@ -64,7 +64,7 @@ function rs_case_study($atts, $content = '', $id = '') {
 
   switch ($style) {
     case 'style1': ?>
-      <div class="tt-filter type-1 style-2 isotope-filter">
+      <div class="tt-filter type-1 style-2">
         <?php 
           $terms = get_terms('service-category', array('orderby' => 'name', 'include' => $filter_cats));
           if($filter == 'yes' && count($terms) > 0): 
@@ -79,7 +79,7 @@ function rs_case_study($atts, $content = '', $id = '') {
           </select>                            
         </div>
 
-        <ul class="isotope-nav">
+        <ul class="isotope-nav isotope-filter">
           <li class="selected"><a href="#all" data-filter="*"><?php echo esc_html__('All', 'marketing-addons'); ?></a></li>
           <?php foreach ($terms as $term): ?>
             <li><a href="#<?php echo esc_attr($term->slug); ?>" data-filter=".<?php echo esc_attr($term->slug); ?>"><?php echo esc_attr($term->name); ?></a></li>
@@ -87,29 +87,27 @@ function rs_case_study($atts, $content = '', $id = '') {
         </ul>
         <?php endif; ?>
 
-        <div class="row marg5">                           
-          <div class="isotope-content">
-            <div class="grid-sizer col-xs-12 col-sm-6 col-md-4"></div>
+        <div class="row marg5 isotope-content">               
+          <div class="grid-sizer col-xs-12 col-sm-6 col-md-4"></div>
 
-            <?php
-              while( $the_query->have_posts() ) : $the_query->the_post();
-                $terms = wp_get_post_terms(get_the_ID(), 'service-category');
-                $term_slugs = array();
-                if (count($terms) > 0):
-                  foreach ($terms as $term):
-                    $term_slugs[] = $term->slug;
-                  endforeach;
-                endif;
-                $case_item_args = array(
-                  'style' => 'style1',
-                  'limit' => $limit,
-                );
-                rs_case_study_item($case_item_args, $term_slugs);
-              endwhile;
-              wp_reset_query();
-              wp_reset_postdata();
-            ?>
-          </div>
+          <?php
+            while( $the_query->have_posts() ) : $the_query->the_post();
+              $terms = wp_get_post_terms(get_the_ID(), 'service-category');
+              $term_slugs = array();
+              if (count($terms) > 0):
+                foreach ($terms as $term):
+                  $term_slugs[] = $term->slug;
+                endforeach;
+              endif;
+              $case_item_args = array(
+                'style' => 'style1',
+                'limit' => $limit,
+              );
+              rs_case_study_item($case_item_args, $term_slugs);
+            endwhile;
+            wp_reset_query();
+            wp_reset_postdata();
+          ?>
         </div>
       </div>
       <?php
@@ -219,7 +217,7 @@ if(!function_exists('rs_case_study_item')) {
                 </div>
             </div>
           </div>
-          <div class="empty-spaca marg-lg-b30"></div>   
+          <div class="mb-lg-5"></div>   
         </div>
         <?php
         break;

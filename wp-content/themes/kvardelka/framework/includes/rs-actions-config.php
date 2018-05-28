@@ -154,7 +154,7 @@ if( !function_exists('marketing_enqueue_scripts')) {
 
     if (is_singular()) { wp_enqueue_script( 'comment-reply' ); }
 
-    wp_enqueue_script('marketing-global',       get_template_directory_uri() .'/js/global.js',array('jquery'), MARKETING_THEME_VERSION,true);
+    wp_enqueue_script('marketing-global',       get_template_directory_uri() .'/js/global.js',array('isotope', 'jquery'), MARKETING_THEME_VERSION,true);
     wp_enqueue_script('form-stone',             get_template_directory_uri() .'/js/jquery.formstone.min.js',array('jquery'), MARKETING_THEME_VERSION,true);
     wp_register_script('bootstrap',             get_template_directory_uri() .'/js/bootstrap.min.js',array('jquery'), MARKETING_THEME_VERSION,true);
     wp_register_script('swiper',                get_template_directory_uri() .'/js/swiper.min.js',array('jquery'), MARKETING_THEME_VERSION,true);
