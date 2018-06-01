@@ -605,6 +605,13 @@ footer input[type="tel"]{
 footer input[type="submit"]{
   cursor:pointer;
   padding:1px 20px;
+  color: #fff;
+  font-weight: bold;
+  background: #949494;
+  transition: .1s linear;
+}
+footer input[type="submit"]:hover{
+  background: #737373;
 }
 
 footer input[aria-invalid="true"]{
@@ -818,14 +825,21 @@ footer ul li ul {
   display: flex;
   list-style-type: none;
   justify-content: center;
+  margin-bottom: 20px;
 }
 
 .isotope-filter button {
-  padding:20px;
-  background: #8AD1EC;
+  padding:15px 20px;
+  background: #e0e0e0;
   cursor: pointer;
   margin: 5px;
   border: none;
+  transition: .2s linear;
+}
+
+.isotope-filter button.is-checked {
+  background: #7ab55c;
+  color: #fff;
 }
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
