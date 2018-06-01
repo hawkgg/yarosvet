@@ -545,14 +545,10 @@ ol.breadcrumb {
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
-
-#form-contacts{
-  width:40%;
-}
-
 #form-contacts label{
   display:block;
   margin: 10px 0;
+  font-size: 17px;
 }
 
 #form-contacts input, #form-contacts textarea{
@@ -560,7 +556,7 @@ ol.breadcrumb {
   border:none;
   width:100%;
   line-height:30px;
-  font-size:23px;
+  font-size:18px;
 }
 
 #form-contacts textarea{

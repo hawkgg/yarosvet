@@ -93,13 +93,25 @@ CONTENT;
 
 
   $data = array();
-  $data['name'] = esc_html__( 'Custom', 'marketing-addons' );
+  $data['name'] = esc_html__( 'Custom Slider', 'marketing-addons' );
   $data['disabled'] = true; //disable it to not show in the default tab
   $data['image_path'] = preg_replace( '/\s/', '%20',  false );
   $data['sort_name'] = 'Slider';
   $data['custom_class'] = 'general slider';
   $data['content'] = <<<CONTENT
 [vc_row full_width="stretch_row_content_no_spaces" fluid="stretch_row_content"][vc_column][rs_hero_slider style="style6"][rs_hero_slider_item background="http://themebubble.com/demo/marketingpro/wp-content/uploads/2016/11/event.png"][/rs_hero_slider][/vc_column][/vc_row]
+CONTENT;
+  $templates[] = $data;
+
+
+  $data = array();
+  $data['name'] = esc_html__( 'Under construction', 'marketing-addons' );
+  $data['disabled'] = true; //disable it to not show in the default tab
+  $data['image_path'] = preg_replace( '/\s/', '%20',  false );
+  // $data['sort_name'] = '';
+  // $data['custom_class'] = '';
+  $data['content'] = <<<CONTENT
+[vc_row full_width="stretch_row_content_no_spaces" content_placement="middle" fluid="stretch_row_content"][vc_column][vc_empty_space height="170px"][vc_custom_heading text="Раздел в разработке" font_container="tag:h2|font_size:30|text_align:center" google_fonts="font_family:Roboto%3A100%2C100italic%2C300%2C300italic%2Cregular%2Citalic%2C500%2C500italic%2C700%2C700italic%2C900%2C900italic|font_style:400%20regular%3A400%3Anormal"][vc_empty_space height="50px"][vc_row_inner][vc_column_inner el_class="mb-3 mb-md-0" width="1/3" offset="vc_col-sm-offset-2 vc_col-sm-4 vc_col-xs-offset-3 vc_col-xs-6"][rs_button align="text-right" btn_text="На главную" btn_link="url:%2F|||"][/vc_column_inner][vc_column_inner width="1/3" offset="vc_col-sm-offset-0 vc_col-sm-4 vc_col-xs-offset-3 vc_col-xs-6"][rs_button btn_text="Назад" btn_link="url:javascript%3Ahistory.back(1)%3B|||"][/vc_column_inner][/vc_row_inner][vc_empty_space height="170px"][/vc_column][/vc_row]
 CONTENT;
   $templates[] = $data;
 
