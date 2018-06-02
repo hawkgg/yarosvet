@@ -586,25 +586,25 @@ ol.breadcrumb {
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
 footer form {
-  margin-top:5px;
+  margin-top: 5px;
 }
 
 footer form input {
-  height:32px;
-  font-size:16px;
-  border:none;
-  background:#eee;
-  padding-left:5px;
+  height: 32px;
+  font-size: 16px;
+  border: none;
+  background :#eee;
+  padding-left: 5px;
 }
 
 footer input[type="tel"]{
-  margin-right:10px;
-  margin-bottom:10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 footer input[type="submit"]{
-  cursor:pointer;
-  padding:1px 20px;
+  cursor: pointer;
+  padding: 1px 20px;
   color: #fff;
   font-weight: bold;
   background: #949494;
@@ -616,16 +616,16 @@ footer input[type="submit"]:hover{
 
 footer input[aria-invalid="true"]{
   border:1px solid #ff6868;
-  background-color:#ffcccc;
+  background-color: #ffcccc;
 }
 
 footer input[aria-invalid="true"]:focus{
-  background-color:#fff;
-  border:none;
+  background-color: #fff;
+  border: none;
 }
 
 footer .wpcf7-response-output, footer .wpcf7-not-valid-tip {
-  display:none!important;
+  display: none !important;
 }
 
 

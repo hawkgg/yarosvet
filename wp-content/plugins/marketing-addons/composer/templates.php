@@ -25,7 +25,7 @@ CONTENT;
   $data = array();
   $data['name'] = esc_html__( 'Slider Classic', 'marketing-addons' );
   $data['disabled'] = true; //disable it to not show in the default tab
-    $data['image_path'] = preg_replace( '/\s/', '%20',  plugins_url('/assets/img/templates/', __FILE__) . '/30.jpg' );
+  $data['image_path'] = preg_replace( '/\s/', '%20',  plugins_url('/assets/img/templates/', __FILE__) . '/30.jpg' );
   $data['sort_name'] = 'Slider';
   $data['custom_class'] = 'general slider';
   $data['content'] = <<<CONTENT
@@ -107,7 +107,7 @@ CONTENT;
   $data = array();
   $data['name'] = esc_html__( 'Under construction', 'marketing-addons' );
   $data['disabled'] = true; //disable it to not show in the default tab
-  $data['image_path'] = preg_replace( '/\s/', '%20',  false );
+  $data['image_path'] = preg_replace( '/\s/', '%20',  plugins_url('/assets/img/templates/', __FILE__) . '/42.jpg' );
   // $data['sort_name'] = '';
   // $data['custom_class'] = '';
   $data['content'] = <<<CONTENT
