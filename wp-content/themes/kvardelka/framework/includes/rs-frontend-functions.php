@@ -206,10 +206,10 @@ if(!function_exists('marketing_breadcrumbs')) {
             global $post;
 
             if($post->post_parent){
-              $anc = get_post_ancestors( $post->ID );
+              $anc = array_reverse(get_post_ancestors( $post->ID ));
               $title = get_the_title();
               foreach ( $anc as $ancestor ) {
-                $output_ancestor = $before.'<a href="'.esc_url(get_permalink($ancestor)).'" title="'.esc_attr(get_the_title($ancestor)).'"  rel="v:url" property="v:title">'.get_the_title($ancestor).'</a>'.$after.' ' . $separator;
+                $output_ancestor .= $before.'<a href="'.esc_url(get_permalink($ancestor)).'" title="'.esc_attr(get_the_title($ancestor)).'"  rel="v:url" property="v:title">'.get_the_title($ancestor).'</a>'.$after.' ' . $separator;
               }
               $output .= $output_ancestor;
               $output .= $before.$before_last.$title.$after_last.$after;

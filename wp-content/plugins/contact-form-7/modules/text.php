@@ -36,7 +36,7 @@ function wpcf7_text_form_tag_handler( $tag ) {
 
 	$atts = array();
 
-	// $atts['size'] = $tag->get_size_option( '40' );
+	$atts['size'] = $tag->get_size_option( '40' );
 	$atts['maxlength'] = $tag->get_maxlength_option();
 	$atts['minlength'] = $tag->get_minlength_option();
 
