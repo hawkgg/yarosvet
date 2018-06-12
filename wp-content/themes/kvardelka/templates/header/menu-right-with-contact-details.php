@@ -17,7 +17,7 @@
       </div>
     </div>
     <div class="toggle-block">
-      <div class="toggle-block-container d-flex align-items-center flex-column flex-lg-row">
+      <div class="toggle-block-container d-flex align-items-center justify-content-center flex-column flex-lg-row">
         <nav class="main-nav clearfix">
           <?php marketing_main_menu(); ?>
         </nav>
