@@ -450,12 +450,18 @@ ol.breadcrumb {
 
   /* Ширина меню */
   .tt-header .top-inner {
-    width:100%;
+    width: 100%;
   }
 
   /* Отступ от лого */
   .tt-header .toggle-block {
-    padding-top: 90px;
+    padding-top: 55px;
+  }
+}
+
+@media (max-width: 992px){
+  .tt-header .top-inner {
+    padding: 6px 0;
   }
 }
 
@@ -488,8 +494,16 @@ ol.breadcrumb {
   .tt-header .toggle-block {
     overflow: auto !important;
   }
+  .tt-header .toggle-block {
+    padding-top: 90px;
+  }
 }
 
+@media (min-width: 600px) and (max-width: 1200px) {
+  .tt-header .toggle-block > ul#mega-menu-primary-menu a.mega-menu-link {
+    height: 65px !important;
+  }
+}
 
 
 
@@ -865,7 +879,7 @@ footer ul li ul {
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
 .submenu {
-  max-width: 212px;
+  max-width: 211px;
 }
 
 .prices .submenu a {
@@ -887,9 +901,14 @@ footer ul li ul {
   color:#fff;
 }
 
+.prices .submenu .btn.green-custom.active {
+  background: #7ab55c;
+  color:#fff;
+}
+
 .prices .submenu-fixed {
   position: fixed;
-  top: 130px;
+  top: 115px;
 }
 
 .prices .submenu-fixed-bottom {
