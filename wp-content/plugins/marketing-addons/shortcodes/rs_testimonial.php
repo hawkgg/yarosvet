@@ -99,6 +99,10 @@ function rs_testimonial( $atts, $content = '', $id = '' ) {
   echo '<div class="swiper-button-next tt-arrow-right type-2 pos-1 hidden-xs"><span class="lnr lnr-chevron-right"></span></div>';
   echo '</div>';
 
+  echo '<div class="text-center leave-testimonial">';
+  echo '<a href="" class="leave-testimonial-link">Оставить отзыв</a>';
+  echo '</div>';
+
   $output = ob_get_clean();
 
   return $output;

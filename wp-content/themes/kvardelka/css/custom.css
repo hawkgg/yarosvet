@@ -843,6 +843,32 @@ footer ul li ul {
   right:-25px!important;
 }
 
+.leave-testimonial {
+  margin-top: 45px;
+}
+
+.leave-testimonial .leave-testimonial-link {
+  font-weight: 600;
+  border: 1px solid #7ab55c;
+  color: #7ab55c;
+  transition: .1s linear;
+  padding: 10px 35px;
+  display: inline-block;
+}
+
+.leave-testimonial .leave-testimonial-link:hover {
+  background: #7ab55c;
+  color: #fff;
+}
+
+.cp_id_1f8c9 label {
+  width: 100%;
+}
+
+.cp_id_1f8c9 .wpcf7-response-output.wpcf7-validation-errors {
+  display: none !important;
+}
+
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
@@ -965,8 +991,6 @@ footer ul li ul {
 .prices h4 {
   font-size: 16px;
 }
-
-
 
 @media (max-width: 1200px){
   .submenu {
