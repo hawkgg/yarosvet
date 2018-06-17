@@ -852,7 +852,7 @@ footer ul li ul {
   border: 1px solid #7ab55c;
   color: #7ab55c;
   transition: .1s linear;
-  padding: 10px 35px;
+  padding: 12px 55px;
   display: inline-block;
 }
 
@@ -865,18 +865,23 @@ footer ul li ul {
   width: 100%;
 }
 
-.cp_id_1f8c9 .wpcf7-response-output.wpcf7-validation-errors {
+.wpcf7-response-output.wpcf7-validation-errors {
   display: none !important;
 }
 
-
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
 
-/* FILTER CATEGORIES */
+/* ISOTOPE */
 
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
+
+.isotope {
+    transition: .2s linear;
+}
+
+.isotope-select {}
 
 .isotope-filter {
   display: flex;
@@ -1008,4 +1013,25 @@ footer ul li ul {
   .submenu {
     max-width: none;
   }
+}
+
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
+/* BLOG */
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+.zoom-hover {
+    overflow: hidden;
+    display: block;
+}
+.zoom-hover img {
+    transition: .12s ease-in-out;
+}
+.zoom-hover img:hover {
+    transform: scale(1.2);
 }

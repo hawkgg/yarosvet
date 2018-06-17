@@ -1718,9 +1718,19 @@ vc_map( array(
   'params'        => array(
     array(
       'type'        => 'textfield',
-      'heading'     => 'Slug Родительской категории',
+      'heading'     => 'Slug родительской категории',
       'param_name'  => 'slug',
       'description' => 'Имя родительской категории, по которому будут хвататься дочерние (не дальше 1 вложенности)',
+    ),
+    array(
+      'type'        => 'dropdown',
+      'heading'     => 'Style',
+      'param_name'  => 'style',
+      'value'       => array(
+        'Links' => 'type-1',
+        'Select'  => 'type-2',
+      ),
+      'description' => 'Выберите тип фильтрации',
     ),
      // Extras
     $vc_map_extra_id,

@@ -60,16 +60,16 @@ function rs_blog( $atts, $content = '', $id = '' ) {
     <?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
       <div <?php post_class('isotope-item col-lg-4 col-md-6 col-sm-12'); ?>>
         <div <?php post_class('tt-post'); ?>>
-          <a class="tt-post-img custom-hover" href="<?php echo esc_url(get_the_permalink()); ?>">
+          <a class="tt-post-img zoom-hover" href="<?php echo esc_url(get_the_permalink()); ?>">
             <?php the_post_thumbnail('marketing-medium', array('class' => 'img-responsive')); ?>
           </a>
           <div class="tt-post-info">
               <a class="tt-post-title c-h5" href="<?php echo esc_url(get_the_permalink()); ?>"><?php the_title(); ?></a>
-              <div class="tt-post-cat"><?php echo esc_html__('by', 'marketing-addons'); ?> <?php echo get_the_author(); ?></div>
+              <!-- <div class="tt-post-cat"><?php echo esc_html__('by', 'marketing-addons'); ?> <?php echo get_the_author(); ?></div> -->
               <div class="simple-text size-3">
                 <p><?php echo marketing_auto_post_excerpt(); ?></p>
               </div>
-              <a class="c-btn type-4" href="<?php echo esc_url(get_the_permalink()); ?>"><?php echo esc_html__('Read More', 'marketing-addons'); ?></a>
+              <a class="c-btn type-4" href="<?php echo esc_url(get_the_permalink()); ?>"><?php echo esc_html__('Читать далее', 'marketing-addons'); ?></a>
           </div>
         </div>
       </div>

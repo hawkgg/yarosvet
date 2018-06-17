@@ -87,9 +87,9 @@
         <?php marketing_related_post(); ?>
 
         <?php
-          if ( marketing_get_opt('single-post-comments-enable') && comments_open() || get_comments_number() ) :
-            comments_template();
-          endif;
+          // if ( marketing_get_opt('single-post-comments-enable') && comments_open() || get_comments_number() ) :
+          //   comments_template();
+          // endif;
         ?>
       <?php get_template_part('templates/global/page-after-content'); ?>
     <div class="empty-space marg-lg-b170 marg-sm-b50 marg-xs-b30"></div>

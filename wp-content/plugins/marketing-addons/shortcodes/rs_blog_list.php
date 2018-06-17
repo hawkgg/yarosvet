@@ -73,14 +73,14 @@ function rs_blog_list( $atts, $content = '', $id = '' ) {
         <h2><a class="tt-post-3-title c-h5" href="<?php echo esc_url(get_the_permalink()); ?>"><?php the_title(); ?></a></h2>
         <a class="tt-post-3-favourite" href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
         <div class="tt-post-3-label">
-          <span><?php echo esc_html__('by', 'marketing'); ?> <a href="#"><?php echo get_the_author(); ?></a></span>
+          <!-- <span><?php echo esc_html__('by', 'marketing'); ?> <a href="#"><?php echo get_the_author(); ?></a></span> -->
           <span><?php the_time('F d, Y'); ?></span>
           <span><?php echo get_the_category_list( esc_html__( ', ', 'marketing' ) );?></span>
         </div>
         <div class="simple-text size-3">
           <p><?php echo marketing_auto_post_excerpt(); ?></p>
         </div>
-        <a class="c-btn type-4" href="<?php echo esc_url(get_the_permalink()); ?>"><?php echo esc_html__('Read More', 'marketing'); ?> </a>
+        <a class="c-btn type-4" href="<?php echo esc_url(get_the_permalink()); ?>"><?php echo esc_html__('Читать далее', 'marketing'); ?> </a>
       </div>
     </div>
     <div class="empty-space marg-lg-b30"></div>

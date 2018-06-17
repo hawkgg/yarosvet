@@ -11,7 +11,7 @@
     <div class="tt-blog-cat"><?php echo get_the_category_list( esc_html__( ', ', 'marketing' ) );?></div>
     <h1 class="tt-blog-title c-h2"><?php the_title(); ?></h1>
     <div class="tt-blog-label">
-      <span><?php echo esc_html__('by', 'marketing'); ?> <a href="#"><?php echo get_the_author(); ?></a></span>
+      <!-- <span><?php echo esc_html__('by', 'marketing'); ?> <a href="#"><?php echo get_the_author(); ?></a></span> -->
       <span><?php the_time('F d, Y'); ?></span>
     </div>
     <div class="empty-space marg-lg-b30"></div>

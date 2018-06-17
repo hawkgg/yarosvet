@@ -499,6 +499,16 @@ jQuery(function($) {
       location.hash = 'filter=' + encodeURIComponent( filterAttr );
     });
 
+    // bind filter on select change
+    $('.isotope-select').on( 'change', function() {
+      // get filter value from option value
+      var filterValue = jQuery( this ).find('option:selected').attr('data-filter');
+
+      if (filterValue[0] != '*') filterValue = filterValue.slice(1);
+
+      location.hash = 'filter=' + encodeURIComponent( filterValue );
+    });
+
     var isIsotopeInit = false;
 
     function onHashchange() {
@@ -529,6 +539,7 @@ jQuery(function($) {
       if ( hashFilter ) {
         jQueryfilterButtonGroup.find('.is-checked').removeClass('is-checked');
         jQueryfilterButtonGroup.find('[data-filter="' + hashFilter + '"]').addClass('is-checked');
+        $('.isotope-select').find('[data-filter="' + hashFilter + '"]').attr('selected', 'selected');
       }
     }
 

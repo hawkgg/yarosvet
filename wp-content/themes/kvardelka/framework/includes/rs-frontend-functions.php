@@ -383,8 +383,9 @@ if(!function_exists('marketing_social_share')) {
       $pinterest_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'marketing-big' );
       ?>
         <div class="tt-share clearfix">
-          <div class="tt-share-left"><?php echo esc_html__('Social Shares', 'marketing'); ?></div>
+          <div class="tt-share-left"><?php echo esc_html__('Поделиться в социальных сетях:', 'marketing'); ?></div>
           <ul class="tt-share-right">
+            <li><a class="tt-share-link" href="https://vk.com/share.php?url=<?php echo esc_url(get_the_permalink()); ?>"><i class="fa fa-vk" aria-hidden="true"></i></a></li>
             <li><a class="tt-share-link" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_url(get_the_permalink()); ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
             <li><a class="tt-share-link color-2" href="https://twitter.com/home?status=<?php echo esc_url(get_the_permalink()); ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
             <li><a class="tt-share-link color-3" href="https://plus.google.com/share?url=<?php echo esc_url(get_the_permalink()); ?>"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
@@ -415,7 +416,7 @@ function marketing_comment( $comment, $args, $depth ) {
     case 'trackback' :
       ?>
       <li <?php comment_class('comment'); ?> id="li-comment-<?php comment_ID(); ?>">
-        <div class="media-body"><?php _e( 'Pingback:', 'marketing' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'Edit', 'marketing' ), ' ' ); ?></div>
+        <div class="media-body"><?php _e( 'Pingback:', 'marketing' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'Редактировать', 'marketing' ), ' ' ); ?></div>
       </li>
       <?php
     break;
@@ -445,7 +446,7 @@ function marketing_comment( $comment, $args, $depth ) {
 
             <div class="simple-text size-3">
               <?php if ( $comment->comment_approved == '0' ) : ?>
-                <em><?php _e( 'Your comment is awaiting moderation.', 'marketing' ); ?></em>
+                <em><?php _e( 'Ваш комментарий на модерации.', 'marketing' ); ?></em>
               <?php endif; ?>
               <?php comment_text(); ?>
             </div>
@@ -454,7 +455,7 @@ function marketing_comment( $comment, $args, $depth ) {
               if (!empty($reply)): ?>
                 <?php echo wp_kses_post($reply); ?>
               <?php endif;
-              edit_comment_link( __( 'Edit', 'marketing' ), '', '' );
+              edit_comment_link( __( 'Редактировать', 'marketing' ), '', '' );
             ?>
           </div>
         </div>
@@ -495,7 +496,7 @@ if(!function_exists('marketing_related_post')) {
       $simlar_tag = $tags[0]->term_id;
     ?>
 
-    <h4 class="c-h4"><?php echo esc_html__('Related Articles', 'marketing'); ?></h4>
+    <h4 class="c-h4"><?php echo esc_html__('Похожие статьи', 'marketing'); ?></h4>
     <div class="empty-space marg-lg-b15"></div>
 
     <!-- TT-Related ARTICLE -->
