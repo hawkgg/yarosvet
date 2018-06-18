@@ -12,13 +12,12 @@
     <h1 class="tt-blog-title c-h2"><?php the_title(); ?></h1>
     <div class="tt-blog-label">
       <!-- <span><?php echo esc_html__('by', 'marketing'); ?> <a href="#"><?php echo get_the_author(); ?></a></span> -->
-      <span><?php the_time('F d, Y'); ?></span>
+      <p><i class="fa fa-calendar mr-2"></i><span><?php the_time('F d, Y'); ?></span></p>
     </div>
     <div class="empty-space marg-lg-b30"></div>
     <div class="tt-devider"></div>
     <div class="empty-space marg-lg-b30"></div>
-  <?php get_template_part('templates/blog/blog-single/parts/single', 'media'); ?>
-  <div class="empty-space marg-lg-b45 marg-sm-b30"></div>
+  <!-- <?php get_template_part('templates/blog/blog-single/parts/single', 'media'); ?> -->
 
   <div class="simple-text">
     <?php the_content(); ?>
@@ -31,7 +30,6 @@
       'link_after'  => '</span>',
     ) );
   ?>
-  <div class="empty-space marg-lg-b55 marg-sm-b30"></div>
 
   <div class="tt-blog-tag">
     <?php echo get_the_tag_list('<span><i class="fa fa-tags"></i>Tags: ',', ','</span>'); ?>

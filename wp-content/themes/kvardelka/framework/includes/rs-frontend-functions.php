@@ -383,14 +383,16 @@ if(!function_exists('marketing_social_share')) {
       $pinterest_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'marketing-big' );
       ?>
         <div class="tt-share clearfix">
-          <div class="tt-share-left"><?php echo esc_html__('Поделиться в социальных сетях:', 'marketing'); ?></div>
-          <ul class="tt-share-right">
-            <li><a class="tt-share-link" href="https://vk.com/share.php?url=<?php echo esc_url(get_the_permalink()); ?>"><i class="fa fa-vk" aria-hidden="true"></i></a></li>
-            <li><a class="tt-share-link" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_url(get_the_permalink()); ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-            <li><a class="tt-share-link color-2" href="https://twitter.com/home?status=<?php echo esc_url(get_the_permalink()); ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-            <li><a class="tt-share-link color-3" href="https://plus.google.com/share?url=<?php echo esc_url(get_the_permalink()); ?>"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-            <li><a class="tt-share-link color-4" href="https://pinterest.com/pin/create/button/?url=&amp;media=<?php echo esc_url($pinterest_image[0]); ?>&amp;description=<?php echo urlencode(get_the_title()); ?>"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
-          </ul>
+          <div class="d-flex justify-content-md-between justify-content-lg-end flex-column flex-lg-row">
+            <div class="tt-share-left mr-4"><?php echo esc_html__('Поделиться в социальных сетях:', 'marketing'); ?></div>
+            <ul class="tt-share-right">
+              <li><a class="tt-share-link" href="https://vk.com/share.php?url=<?php echo esc_url(get_the_permalink()); ?>"><i class="fa fa-vk" aria-hidden="true"></i></a></li>
+              <li><a class="tt-share-link" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_url(get_the_permalink()); ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+              <li><a class="tt-share-link color-2" href="https://twitter.com/home?status=<?php echo esc_url(get_the_permalink()); ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+              <li><a class="tt-share-link color-3" href="https://plus.google.com/share?url=<?php echo esc_url(get_the_permalink()); ?>"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+              <li><a class="tt-share-link color-4" href="https://pinterest.com/pin/create/button/?url=&amp;media=<?php echo esc_url($pinterest_image[0]); ?>&amp;description=<?php echo urlencode(get_the_title()); ?>"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
           </div>
         <?php
         break;

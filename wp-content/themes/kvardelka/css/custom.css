@@ -881,7 +881,9 @@ footer ul li ul {
     transition: .2s linear;
 }
 
-.isotope-select {}
+.isotope-select {
+    -webkit-appearance: menulist;
+}
 
 .isotope-filter {
   display: flex;
@@ -913,8 +915,7 @@ footer ul li ul {
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
 .tt-post {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 
 
@@ -1028,10 +1029,37 @@ footer ul li ul {
 .zoom-hover {
     overflow: hidden;
     display: block;
+    position: relative;
+    height: 400px;
 }
 .zoom-hover img {
+    width: 100%;
     transition: .12s ease-in-out;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
 }
 .zoom-hover img:hover {
     transform: scale(1.2);
+}
+
+.read-more-link {
+    font-size: 14px !important;
+}
+
+
+.post p, .post span {
+    font-size: 20px;
+    line-height: 31px !important;
+    font-weight: 200;
+}
+
+.post ul {
+    font-size: 20px;
+    line-height: 24px !important;
+    margin-left: 20px;
+    font-weight: 200;
 }

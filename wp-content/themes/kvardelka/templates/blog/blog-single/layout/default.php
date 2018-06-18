@@ -92,7 +92,7 @@
           // endif;
         ?>
       <?php get_template_part('templates/global/page-after-content'); ?>
-    <div class="empty-space marg-lg-b170 marg-sm-b50 marg-xs-b30"></div>
+    <div class="empty-space marg-lg-b50 marg-sm-b50 marg-xs-b30"></div>
   </div>
 
 

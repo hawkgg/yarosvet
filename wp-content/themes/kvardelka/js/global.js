@@ -491,22 +491,22 @@ jQuery(function($) {
     // bind filter button click
     var jQueryfilterButtonGroup = jQuery('.isotope-filter');
     jQueryfilterButtonGroup.on( 'click', 'button', function() {
-      var filterAttr = jQuery( this ).attr('data-filter');
+      var buttonAttr = jQuery( this ).attr('data-filter');
       // set filter in hash
 
-      if (filterAttr[0] != '*') filterAttr = filterAttr.slice(1);
+      if (buttonAttr[0] != '*') buttonAttr = buttonAttr.slice(1);
 
-      location.hash = 'filter=' + encodeURIComponent( filterAttr );
+      location.hash = 'filter=' + encodeURIComponent( buttonAttr );
     });
 
     // bind filter on select change
     $('.isotope-select').on( 'change', function() {
       // get filter value from option value
-      var filterValue = jQuery( this ).find('option:selected').attr('data-filter');
+      var selectAttr = jQuery( this ).find('option:selected').attr('data-filter');
 
-      if (filterValue[0] != '*') filterValue = filterValue.slice(1);
+      if (selectAttr[0] != '*') selectAttr = selectAttr.slice(1);
 
-      location.hash = 'filter=' + encodeURIComponent( filterValue );
+      location.hash = 'filter=' + encodeURIComponent( selectAttr );
     });
 
     var isIsotopeInit = false;

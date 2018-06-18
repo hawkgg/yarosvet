@@ -41,8 +41,9 @@ function rs_filter_categories($atts) {
 
     <div class="isotope-filter">
 
-    <select name="" class="isotope-select">
+    <select name="" class="isotope-select form-control">
 
+      <option disabled selected>Выберите категорию</option>
       <option data-filter="*">Все</option>
 
       <?php foreach (get_categories(['child_of' => $category->term_id]) as $category): ?>

@@ -5,7 +5,7 @@
  * @package marketing
  */
 $layout    = marketing_get_opt('main-layout');
-$col_class = is_single() || is_home() || is_archive() || is_page_template('page-templates/blog-list.php' ) ? 'col-md-8 offset-md-2':'col-md-12';
+$col_class = is_single() || is_home() || is_archive() || is_page_template('page-templates/blog-list.php' ) ? 'col-lg-10 offset-lg-1':'col-md-12';
 if ($layout == 'left_sidebar'): ?>
   <div class="row">
     <?php get_sidebar(); ?>
