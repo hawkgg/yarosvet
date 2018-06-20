@@ -2,6 +2,10 @@ a{
     vertical-align: middle;
 }
 
+#content-wrapper p, #content-wrapper ul, #content-wrapper li, #content-wrapper span {
+    color: #353535;
+}
+
 .h-100vh{
   height:100vh!important;
 }
@@ -1050,16 +1054,27 @@ footer ul li ul {
     font-size: 14px !important;
 }
 
-
 .post p, .post span {
-    font-size: 20px;
-    line-height: 31px !important;
-    font-weight: 200;
+    font-size: 19px;
+    line-height: 29px !important;
+    font-weight: 300;
 }
 
 .post ul {
-    font-size: 20px;
-    line-height: 24px !important;
+    font-size: 19px;
+    line-height: 26px !important;
+    font-weight: 300;
+}
+
+.post p + ul {
     margin-left: 20px;
-    font-weight: 200;
+    margin-top: -20px;
+}
+
+.post ul li {
+    margin-bottom: 12px;
+}
+
+.simple-text h3 {
+    margin-bottom: 10px;
 }

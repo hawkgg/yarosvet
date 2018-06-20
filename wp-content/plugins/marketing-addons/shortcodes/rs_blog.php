@@ -64,7 +64,7 @@ function rs_blog( $atts, $content = '', $id = '' ) {
             <?php the_post_thumbnail('marketing-medium', array('class' => 'img-responsive')); ?>
           </a>
           <div class="tt-post-info">
-              <a class="tt-post-title c-h5" href="<?php echo esc_url(get_the_permalink()); ?>"><?php the_title(); ?></a>
+              <a class="tt-post-title c-h4" href="<?php echo esc_url(get_the_permalink()); ?>"><?php the_title(); ?></a>
               <!-- <div class="tt-post-cat"><?php echo esc_html__('by', 'marketing-addons'); ?> <?php echo get_the_author(); ?></div> -->
               <div class="simple-text size-3">
                 <p><?php echo marketing_auto_post_excerpt(); ?></p>
