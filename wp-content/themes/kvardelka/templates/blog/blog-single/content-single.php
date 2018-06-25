@@ -8,7 +8,14 @@
 ?>
 
 <article <?php post_class(); ?>>
-    <div class="tt-blog-cat"><?php echo get_the_category_list( esc_html__( ', ', 'marketing' ) );?></div>
+    <div class="tt-blog-cat">
+
+      <?php foreach ( array_slice(get_the_category(), 1) as $category): ?>
+        <?php $out .= '<a href="http://kvardelka.loc/blog/#'.$category->slug.'">'.$category->name.'</a>, '; ?>
+      <?php endforeach; ?>
+      <?php echo trim($out, ', '); ?>
+
+      </div>
     <h1 class="tt-blog-title c-h2"><?php the_title(); ?></h1>
     <div class="tt-blog-label">
       <!-- <span><?php echo esc_html__('by', 'marketing'); ?> <a href="#"><?php echo get_the_author(); ?></a></span> -->
