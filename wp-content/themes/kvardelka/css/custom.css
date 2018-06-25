@@ -1,8 +1,8 @@
-a{
+a {
     vertical-align: middle;
 }
 
-#content-wrapper p, #content-wrapper ul, #content-wrapper li, #content-wrapper span {
+article.type-post p, article.type-post ul, article.type-post li, article.type-post span {
     color: #353535;
 }
 
@@ -1020,7 +1020,18 @@ footer ul li ul {
   }
 }
 
+/*-------------------------------------------------------------------------------------------------------------------------------*/
 
+
+/* SIMPLE SCROLL TO TOP BUTTON */
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
+#ssttbutton {
+    bottom: 50px;
+}
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 

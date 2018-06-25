@@ -116,7 +116,7 @@ function rs_hero_slider( $atts, $content = '', $id = '' ) {
         }
         $output .=  '<div class="row">';
         $output .=  '<div class="col-sm-6 offset-sm-6">';
-        $output .=  '<h1 class="tt-mslide-2-title c-h1"'.$big_heading_color.'>'.esc_html($big_heading).'</h1>';
+        $output .=  '<p class="tt-mslide-2-title c-h2"'.$big_heading_color.'>'.esc_html($big_heading).'</p>';
         $output .=  '<div class="simple-text size-4">';
         $output .=  '<p'.$small_heading_color.'>'.esc_html($small_heading).'</p>';
         $output .=  '</div>';
@@ -330,18 +330,7 @@ function rs_hero_slider( $atts, $content = '', $id = '' ) {
 
       foreach ($rs_hero_slider as $key => $slide) {
         $image_id      = (isset($slide['atts']['background'])) ? $slide['atts']['background']:'';
-        $small_heading = (isset($slide['atts']['small_heading'])) ? $slide['atts']['small_heading']:'';
-        $btn_text      = (isset($slide['atts']['btn_text'])) ? $slide['atts']['btn_text']:'';
-        $btn_link      = (isset($slide['atts']['btn_link'])) ? $slide['atts']['btn_link']:'';
-        $big_heading   = (isset($slide['atts']['heading'])) ? $slide['atts']['heading']:'';
-
-        if (function_exists('vc_parse_multi_attribute')) {
-          $parse_args = vc_parse_multi_attribute($btn_link);
-          $href       = ( isset($parse_args['url']) ) ? $parse_args['url'] : '#';
-          $btn_title  = ( isset($parse_args['title']) ) ? $parse_args['title'] : 'button';
-          $target     = ( isset($parse_args['target']) ) ? trim($parse_args['target']) : '_self';
-        }
-
+        
         $active_class = ($key === 0) ? ' active':'';
         $image_url  = rs_get_image_src($image_id);
         if(!empty($image_url)) {

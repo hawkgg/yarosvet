@@ -43,4 +43,5 @@
 
 <?php
   wp_enqueue_script('maskedinput');
+  wp_enqueue_script('otherservices');
 ?>

@@ -164,6 +164,7 @@ if( !function_exists('marketing_enqueue_scripts')) {
     wp_register_script('map',                   get_template_directory_uri() .'/js/map.js',array('gmapsensor'), MARKETING_THEME_VERSION,true);
     //Custom
     wp_register_script('maskedinput',           get_template_directory_uri() .'/js/jquery.maskedinput.min.js',array('jquery'), MARKETING_THEME_VERSION,true);
+    wp_register_script('otherservices',           get_template_directory_uri() .'/js/otherservices.js', MARKETING_THEME_VERSION,true);
 
     wp_localize_script('map', 'get',
       array(
