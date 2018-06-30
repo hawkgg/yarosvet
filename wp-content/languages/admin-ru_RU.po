@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 4.9.x - Development - Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2018-05-21 14:48:16+0000\n"
+"PO-Revision-Date: 2018-06-30 04:24:20+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -271,7 +271,7 @@ msgstr "Веб-аналитика"
 
 #: wp-admin/includes/misc.php:1704
 msgid "These websites may collect data about you, use cookies, embed additional third-party tracking, and monitor your interaction with that embedded content, including tracing your interaction with the embedded content if you have an account and are logged in to that website."
-msgstr "Эти сайты могут собирать ваши данные, использовать куки, внедрять дополнительное отслеживание третьей стороной и следить за вашим взаимодействием с внедренным содержимым, включая отслеживание взвимодействия если у вас есть учетная запись и вы авторизовались на том сайте."
+msgstr "Эти сайты могут собирать ваши данные, использовать куки, внедрять дополнительное отслеживание третьей стороной и следить за вашим взаимодействием с внедренным содержимым, включая отслеживание взаимодействия, если у вас есть учетная запись и вы авторизовались на том сайте."
 
 #: wp-admin/includes/misc.php:1703
 msgid "Articles on this site may include embedded content (e.g. videos, images, articles, etc.). Embedded content from other websites behaves in the exact same way as if the visitor has visited the other website."
@@ -1273,14 +1273,14 @@ msgstr "%s добавлено к структуре постоянных ссы�
 msgid "%s (already used in permalink structure)"
 msgstr "%s (уже используется в структуре постоянных ссылок)"
 
-#: wp-admin/options-permalink.php:256
-msgid "Available tags:"
-msgstr "Имеющиеся метки:"
-
 #. translators: %s: permalink structure tag
 #: wp-admin/options-permalink.php:234
 msgid "%s (Category slug. Nested sub-categories appear as nested directories in the URL.)"
 msgstr "%s (Ярлык рубрики. Вложенные подрубрики появятся как вложенные директории в URL.)"
+
+#: wp-admin/options-permalink.php:256
+msgid "Available tags:"
+msgstr "Доступные элементы:"
 
 #. translators: %s: permalink structure tag
 #: wp-admin/options-permalink.php:218

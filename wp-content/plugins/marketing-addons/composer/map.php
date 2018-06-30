@@ -1435,11 +1435,6 @@ vc_map( array(
       'param_name'  => 'style',
       'value'       => array(
         'Style 1'   => 'style1',
-        'Style 2'   => 'style2',
-        'Style 3'   => 'style3',
-        'Style 4'   => 'style4',
-        'Style 5'   => 'style5',
-        'Style 6'   => 'style6',
       ),
     ),
     array(
@@ -1518,6 +1513,19 @@ vc_map( array(
   'as_child'                => array('only' => 'rs_hero_slider'),
   'params'  => array(
     array(
+      'type'        => 'dropdown',
+      'heading'     => 'Style',
+      'param_name'  => 'style',
+      'value'       => array(
+        'Style 1'   => 'style1',
+        'Style 2'   => 'style2',
+        'Style 3'   => 'style3',
+        'Style 4'   => 'style4',
+        'Style 5'   => 'style5',
+        'Style 6'   => 'style6',
+      ),
+    ),
+    array(
       'type'        => 'attach_image',
       'heading'     => 'Background',
       'param_name'  => 'background',
@@ -1530,7 +1538,8 @@ vc_map( array(
       'param_name'   => 'object',
       'admin_label'  => true,
       'value'        => '',
-      'descritption' => 'This is NOT for style5'
+      'descritption' => 'This is NOT for style5',
+      'dependency'  => array( 'element' => 'style', 'value' => array('style1', 'style2', 'style3', 'style4', 'style6') )
     ),
     array(
       'type'        => 'textfield',
@@ -1570,7 +1579,7 @@ vc_map( array(
       'param_name'   => 'btn_link',
       'value'        => '',
       'descritption' => 'This is NOT for style2',
-      'dependency'  => array( 'element' => 'btn_text', 'not_empty' => true )
+      'dependency'  => array( 'element' => 'style', 'value' => array('style1', 'style3', 'style4', 'style5', 'style6') )
     ),
   )
 

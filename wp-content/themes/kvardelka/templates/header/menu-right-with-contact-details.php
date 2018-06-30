@@ -32,7 +32,7 @@
           if(!empty($header_btn_text) && !empty($header_btn_text) && class_exists('ReduxFramework')):
         ?>
           <div class="nav-more p-0">
-            <a class="c-btn type-5" href="<?php echo esc_url(marketing_get_opt('header-btn-link')); ?>"><span><?php echo esc_html(marketing_get_opt('header-btn-text')); ?></span></a>
+            <a class="c-btn type-5 call-order-link" href=""><span><?php echo esc_html(marketing_get_opt('header-btn-text')); ?></span></a>
           </div>
         <?php endif; ?>
         </div>
