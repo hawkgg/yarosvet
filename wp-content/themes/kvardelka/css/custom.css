@@ -39,6 +39,11 @@ article.type-post p, article.type-post ul, article.type-post li, article.type-po
     padding:0;
 }
 
+@media (max-width: 768px) {
+  .cp-modal-body {
+    padding: 15px !important;
+  }
+}
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
 
@@ -1095,4 +1100,67 @@ footer ul li ul {
 
 .simple-text h3 {
     margin-bottom: 10px;
+}
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
+/* CALL ORDER */
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+.cp_id_7605b form {
+  margin-top: 20px;
+}
+
+.cp_id_7605b .wpcf7-not-valid-tip {
+  display: none;
+}
+
+.cp_id_7605b input.wpcf7-not-valid {
+  border: 1px solid red !important;
+}
+
+.cp_id_7605b input {
+  transition: .1s linear;
+  width: auto !important;
+  max-width: 50% !important;
+  display: inline !important;
+  margin-right: 10px;
+  font-size: 15px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  font-family: Tahoma;
+  color: rgb(153, 153, 153);
+  border: 1px solid rgb(191, 190, 190) !important;
+}
+
+.cp_id_7605b input[type="submit"] {
+  background: rgb(121, 181, 49);
+  line-height: 20.7px;
+  font-size: 18px;
+  color: #fff;
+  border: none !important;
+  font-weight: bold;
+  line-height: 23px;
+  padding-left: 35px;
+  padding-right: 35px;
+  position: relative;
+  top: 1px;
+}
+
+@media screen and (max-width : 980px) {
+  .cp_id_7605b input {
+    margin-right: 0;
+    margin-bottom: 10px;
+    max-width: 90% !important;
+    width: 90% !important;
+  }
+
+  .cp_id_7605b input[type="submit"] {
+    display: block !important;
+    margin: 0 auto;
+  }
 }
