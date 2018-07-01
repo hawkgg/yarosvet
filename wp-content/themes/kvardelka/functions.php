@@ -64,17 +64,4 @@ if ( ! isset( $content_width ) ) {
   $content_width = 1140;
 }
 
-
-//Маска ввода для инпута в футере
-add_action('wp_footer', 'wpmidia_activate_masked_input');
-function wpmidia_activate_masked_input(){
-?>
-<script type="text/javascript">
-jQuery( function($){
-$("footer .wpcf7-tel").mask("+7 (999) 999-9999");
-});
-</script>
-<?php
-}
-
 ?>
