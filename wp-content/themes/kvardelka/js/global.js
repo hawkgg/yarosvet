@@ -468,7 +468,9 @@ jQuery(function($) {
       $('.tt-header .toggle-block').css('display:block !important');
   });
 
-
+  $('.call-order-link').on('click', function(){
+    $('.cp_id_7605b input').focus();
+  });
   /*==================================================*/
   /* 11 - ISOTOPE FILTERING */
   /*==================================================*/
