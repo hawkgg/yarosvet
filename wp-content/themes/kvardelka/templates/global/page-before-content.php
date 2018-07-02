@@ -15,6 +15,6 @@ if ($layout == 'left_sidebar'): ?>
   <div class="row">
     <div class="col-md-8">
 <?php else: ?>
-  <div class="row">
+  <div class="">
   	<div class="<?php echo marketing_sanitize_html_classes($col_class);?>">
 <?php endif; ?>
