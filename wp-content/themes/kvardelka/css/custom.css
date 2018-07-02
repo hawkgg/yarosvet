@@ -39,11 +39,17 @@ article.type-post p, article.type-post ul, article.type-post li, article.type-po
     padding:0;
 }
 
+._show_1e.wrap_mW {
+  z-index: 1499 !important;
+}
+
 @media (max-width: 768px) {
   .cp-modal-body {
     padding: 15px !important;
   }
 }
+
+
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
 
@@ -512,8 +518,6 @@ ol.breadcrumb {
     height: 65px !important;
   }
 }
-
-
 
 
 
@@ -1111,6 +1115,15 @@ footer ul li ul {
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
+.cp_id_7605b .cp-modal {
+  transition: .2s linear;
+}
+
+.cp_id_7605b .cp-modal-body {
+  background-size: auto !important;
+  background-repeat: repeat !important;
+}
+
 .cp_id_7605b form {
   margin-top: 20px;
 }
@@ -1149,6 +1162,11 @@ footer ul li ul {
   padding-right: 35px;
   position: relative;
   top: 1px;
+}
+
+.call-order-success-message {
+  color: #fff !important;
+  font-size: 17px !important;
 }
 
 @media screen and (max-width : 980px) {

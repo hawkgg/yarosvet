@@ -468,9 +468,8 @@ jQuery(function($) {
       $('.tt-header .toggle-block').css('display:block !important');
   });
 
-  $('.call-order-link').on('click', function(){
-    $('.cp_id_7605b input').focus();
-  });
+
+
   /*==================================================*/
   /* 11 - ISOTOPE FILTERING */
   /*==================================================*/
@@ -549,5 +548,25 @@ jQuery(function($) {
 
     // trigger event handler to init Isotope
     onHashchange();
+
+
+
+
+
+
+  /*==================================================*/
+  /* 12 - CALL ORDER */
+  /*==================================================*/
+
+
+  $('.call-order-link').on('click', function(){
+    setTimeout(function(){
+      $('.cp_id_7605b p .your-phone input').focus();
+    },100);
+  });
+
+  $('.cp_id_7605b').on('submit', function(){
+    $('.modal-form-wrap').hide().after('<p class="text-center call-order-success-message">Успешно отправлено! Ждите звонка :)</p>');
+  });
 
 });
