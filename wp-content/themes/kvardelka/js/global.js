@@ -558,15 +558,14 @@ jQuery(function($) {
   /* 12 - CALL ORDER */
   /*==================================================*/
 
-
   $('.call-order-link').on('click', function(){
     setTimeout(function(){
       $('.cp_id_7605b p .your-phone input').focus();
     },100);
   });
 
-  $('.cp_id_7605b').on('submit', function(){
-    $('.modal-form-wrap').hide().after('<p class="text-center call-order-success-message">Успешно отправлено! Ждите звонка :)</p>');
-  });
+  // $('.wpcf7-form.sent').on('load', function(){
+  //   $(this).parent('.modal-form-wrap').hide().after('<p class="text-center call-order-success-message">Успешно отправлено! Ждите звонка :)</p>');
+  // });
 
 });

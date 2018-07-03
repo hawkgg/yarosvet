@@ -1169,6 +1169,12 @@ footer ul li ul {
   font-size: 17px !important;
 }
 
+.wpcf7-mail-sent-ok {
+  color: #fff !important;
+  font-size: 14px !important;
+  margin-top: 5px !important;
+}
+
 @media screen and (max-width : 980px) {
   .cp_id_7605b input {
     margin-right: 0;
