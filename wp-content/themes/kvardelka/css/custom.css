@@ -422,6 +422,19 @@ ol.breadcrumb {
 
 
 
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
+/* PHOTOSWIPE GALLERY */
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
+.pswp {
+  z-index: 1501;
+}
+
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
@@ -982,19 +995,23 @@ footer ul li ul {
   width: 100%;
 }
 
-.prices table caption {
-  display: table-cell;
+.prices table .prices-caption {
   padding-left: 10px;
   font-size: 17px;
   font-weight: bold;
   line-height: 45px;
 }
 
-.prices table, .prices th, .prices td, .prices caption {
+.prices table, .prices th, .prices td, .prices table .prices-caption {
   border: none;
   line-height: 24px;
   color: #495057;
 }
+
+.prices .prices-caption:hover {
+  background: none;
+}
+
 .prices th, .prices td {
   border-top: 1px solid #dee2e6;
 }
@@ -1039,7 +1056,8 @@ footer ul li ul {
 
 
 #ssttbutton {
-    bottom: 50px;
+  bottom: 50px;
+  z-index: 1500;
 }
 
 @media screen and (max-width: 980px) {
