@@ -19,44 +19,37 @@ function rs_filter_categories($atts) {
 
   switch ($style) {
 
-    case 'type-1': ?>
+    case 'type-1':
 
-    <div class="isotope-filter">
+      $output = '<div class="isotope-filter">';
 
-    <button type="button" data-filter="*" class="is-checked" >Все</li>
+      $output .= '<button type="button" data-filter="*" class="is-checked" >Все</li>';
 
-    <?php foreach (get_categories(['child_of' => $category->term_id]) as $category): ?>
+      foreach (get_categories(['child_of' => $category->term_id]) as $category) {
+        $output .= '<button type="button" data-filter=".category-'.$category->slug.'">'.$category->name.'</li>';
+      }
 
-      <button type="button" data-filter=".category-<?=$category->slug?>"><?=$category->name?></li>
+      $output .= '</div>';
 
-    <?php endforeach; ?>
-
-    </div>
-
-  <?php
-    # code...
     break;
 
-  case 'type-2':?>
+    case 'type-2':
 
-    <div class="isotope-filter">
+      $output .= '<div class="isotope-filter">';
 
-    <select name="" class="isotope-select form-control">
+      $output .= '<select name="" class="isotope-select form-control">';
 
-      <option disabled selected>Выберите категорию</option>
-      <option data-filter="*">Все</option>
+        $output .= '<option disabled selected>Выберите категорию</option>';
+        $output .= '<option data-filter="*">Все</option>';
 
-      <?php foreach (get_categories(['child_of' => $category->term_id]) as $category): ?>
+        foreach (get_categories(['child_of' => $category->term_id]) as $category) {
+          $output .= '<option data-filter=".category-'.$category->slug.'">'.$category->name.'</option>';
+        }
 
-        <option data-filter=".category-<?=$category->slug?>"><?=$category->name?></option>
+      $output .= '</select>';
 
-      <?php endforeach; ?>
+      $output .= '</div>';
 
-    </select>
-
-    </div>
-
-  <?php
     break;
 
   default:

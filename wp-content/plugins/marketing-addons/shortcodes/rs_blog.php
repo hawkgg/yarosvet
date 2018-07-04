@@ -58,7 +58,7 @@ function rs_blog( $atts, $content = '', $id = '' ) {
   ?>
   <div class="row isotope">
     <?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
-      <div <?php post_class('isotope-item col-lg-12 col-md-6 col-sm-12'); ?>>
+      <div <?php post_class('isotope-item col-lg-12 col-md-12 col-sm-12'); ?>>
         <div <?php post_class('tt-post'); ?>>
           <a class="tt-post-img <?php if(has_post_thumbnail()):?> zoom-hover <?php endif;?>" href="<?php echo esc_url(get_the_permalink()); ?>">
             <?php the_post_thumbnail('marketing-medium', array('class' => 'img-responsive')); ?>
