@@ -13,6 +13,9 @@ article.type-post p, article.type-post ul, article.type-post li, article.type-po
 .h-90vh{
   height:90vh!important;
 }
+.h-55vh{
+  height:55vh!important;
+}
 .h-600px{
   height:600px!important;
 }
@@ -24,19 +27,22 @@ article.type-post p, article.type-post ul, article.type-post li, article.type-po
 }
 
 .swiper-custom.tt-arrow-left, .swiper-custom.tt-arrow-right{
-    background:transparent !important;
-    border:none;
+  background:transparent !important;
+  border:none;
 }
+
 .swiper-custom span{
-    font-size:35px;
-    color:#fff;
-    background:transparent;
+  font-size:35px;
+  color:#fff;
+  background:transparent;
 }
+
 .pagination{
-    justify-content:center;
+  justify-content:center;
 }
+
 #content-wrapper.content {
-    padding:0;
+  padding:0;
 }
 
 ._show_1e.wrap_mW {
@@ -598,8 +604,14 @@ ol.breadcrumb {
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
+
+.contacts-info p {
+  color: #4f4f4f;
+}
+
 #form-contacts p {
   line-height: 30px;
+  color: #4f4f4f;
 }
 
 #form-contacts label{
@@ -608,29 +620,22 @@ ol.breadcrumb {
   font-size: 17px;
 }
 
-#form-contacts input, #form-contacts textarea{
+#form-contacts input, #form-contacts textarea {
+  width:100%;
+}
+
+#form-contacts input:not([type="submit"]), #form-contacts textarea{
   background-color:#eee;
   border:none;
-  width:100%;
   line-height:30px;
   font-size:18px;
+  padding: 1px 4px;
+  color: #4f4f4f;
 }
 
 #form-contacts textarea{
   resize:none;
   height:140px;
-}
-
-#form-contacts input[type="submit"]{
-  color:#777;
-  padding:7px;
-  font-size:15px;
-  border:none;
-  cursor:pointer;
-}
-#form-contacts input[type="submit"]:active{
-  border-top: 1px solid #aaa;
-  border-left: 1px solid #aaa;
 }
 
 
@@ -889,10 +894,26 @@ footer ul li ul {
 
 .cp_id_1f8c9 label {
   width: 100%;
+  font-size: 15px;
+}
+
+.cp_id_1f8c9 input, .cp_id_1f8c9 textarea{
+  margin-top: 2px;
+}
+
+.cp_id_1f8c9 input[type="submit"] {
+  border: none !important;
+  color: #fff !important;
 }
 
 .wpcf7-response-output.wpcf7-validation-errors {
   display: none !important;
+}
+
+@media (max-width: 768px){
+  .cp-modal-body.cp-blank {
+    text-align: initial !important;
+  }
 }
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
@@ -1122,6 +1143,15 @@ footer ul li ul {
 
 .simple-text h3 {
     margin-bottom: 10px;
+}
+
+@media (max-width: 767px){
+  .zoom-hover {
+    max-height: 200px;
+  }
+  .tt-post {
+    max-width: none;
+  }
 }
 
 

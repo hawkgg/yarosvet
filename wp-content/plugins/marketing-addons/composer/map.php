@@ -1470,6 +1470,7 @@ vc_map( array(
       'param_name'  => 'height',
       'value'       => array(
         '90vh'  => 'h-90vh',
+        '55vh'  => 'h-55vh',
         '400px'  => 'h-400px',
         '500px'  => 'h-500px',
         '600px'  => 'h-600px',
