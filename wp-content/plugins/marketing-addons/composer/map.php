@@ -1540,39 +1540,42 @@ vc_map( array(
       'admin_label'  => true,
       'value'        => '',
       'descritption' => 'This is NOT for style5',
-      'dependency'  => array( 'element' => 'style', 'value' => array('style1', 'style2', 'style3', 'style4', 'style6') )
+      'dependency'  => array( 'element' => 'style', 'value' => array('style1', 'style2', 'style3', 'style4') )
     ),
     array(
       'type'        => 'textfield',
       'heading'     => 'Small Heading',
       'param_name'  => 'small_heading',
       'holder'      => 'h6',
-      'value'       => ''
+      'value'       => '',
     ),
     array(
       'type'        => 'textfield',
       'heading'     => 'Heading',
       'param_name'  => 'heading',
       'holder'      => 'h3',
-      'value'       => ''
+      'value'       => '',
     ),
     array(
       'type'        => 'textfield',
       'heading'     => 'Name Placeholder',
       'param_name'  => 'name_placeholder',
-      'value'       => ''
+      'value'       => '',
+      'dependency'  => array( 'element' => 'style', 'value' => array('style1', 'style3', 'style4', 'style5',) ),
     ),
     array(
       'type'        => 'textfield',
       'heading'     => 'Email Placeholder',
       'param_name'  => 'email_placeholder',
-      'value'       => ''
+      'value'       => '',
+      'dependency'  => array( 'element' => 'style', 'value' => array('style1', 'style3', 'style4', 'style5',) ),
     ),
     array(
       'type'        => 'textfield',
       'heading'     => 'Button Text',
       'param_name'  => 'btn_text',
       'value'       => '',
+      'dependency'  => array( 'element' => 'style', 'value' => array('style1', 'style3', 'style4', 'style5',) ),
     ),
     array(
       'type'         => 'vc_link',
@@ -1581,6 +1584,30 @@ vc_map( array(
       'value'        => '',
       'descritption' => 'This is NOT for style2',
       'dependency'  => array( 'element' => 'style', 'value' => array('style1', 'style3', 'style4', 'style5', 'style6') )
+    ),
+    array(
+      'type'        => 'dropdown',
+      'heading'     => 'Button Link Type',
+      'param_name'  => 'btn_link_type',
+      'value'       => array(
+        'Type 1'   => 'type-1',
+        'Type 2'   => 'type-2',
+        'Type 3'   => 'type-3',
+        'Type 4'   => 'type-4',
+      ),
+      'dependency'  => array( 'element' => 'style', 'value' => array('style6') )
+    ),
+    array(
+      'type'        => 'dropdown',
+      'heading'     => 'Button Link Size',
+      'param_name'  => 'btn_link_size',
+      'value'       => array(
+        'Size 1'   => 'size-1',
+        'Size 2'   => 'size-2',
+        'Size 3'   => 'size-3',
+        'Size 4'   => 'size-4',
+      ),
+      'dependency'  => array( 'element' => 'style', 'value' => array('style6') )
     ),
   )
 

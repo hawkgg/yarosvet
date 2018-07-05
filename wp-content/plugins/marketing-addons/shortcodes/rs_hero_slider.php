@@ -84,6 +84,8 @@ function rs_hero_slider_item( $atts, $content = '', $id = '' ) {
     'email_placeholder'   => '',
     'btn_text'            => '',
     'btn_link'            => '',
+    'btn_link_type'       => '',
+    'btn_link_size'       => '',
     'style'               => 'style1',
   ), $atts ) );
 
@@ -320,16 +322,25 @@ function rs_hero_slider_item( $atts, $content = '', $id = '' ) {
         $image_id      = (isset($background)) ? $background:'';
         $active_class = ($key === 0) ? ' active':'';
         $image_url  = rs_get_image_src($image_id);
-        if(!empty($image_url)) {
-          $slide .=  '<div class="swiper-slide'.$active_class.'" data-val="'.esc_attr($key).'">';
-          $slide .=  '<div class="tt-mslide-3 background-block" style="background-image:url('.esc_url($image_url).');">';
-          $slide .=  '<div class="container">';
-          $slide .=  '<div class="tt-mslide-3-table text-center">';
-          $slide .=  '</div>';
-          $slide .=  '</div>';
-          $slide .=  '</div>';
-          $slide .=  '</div>';
+        $slide .=  '<div class="swiper-slide'.$active_class.'" data-val="'.esc_attr($key).'">';
+        $slide .=  '<div class="tt-mslide-3 background-block" style="background-image:url('.esc_url($image_url).');">';
+        $slide .=  '<div class="container">';
+        $slide .=  '<div class="tt-mslide-3-table text-center">';
+        if (!empty($heading)) { $slide .=  '<p>'.$heading.'</p>'; }
+        if (!empty($small_heading)) { $slide .=  '<p>'.$small_heading.'</p>'; }
+        if (!empty($btn_link)) {
+          if (function_exists('vc_parse_multi_attribute')) {
+            $parse_args = vc_parse_multi_attribute($btn_link);
+            $href       = ( isset($parse_args['url']) ) ? $parse_args['url'] : '#';
+            $btn_title  = ( isset($parse_args['title']) ) ? $parse_args['title'] : 'button';
+            $target     = ( isset($parse_args['target']) ) ? trim($parse_args['target']) : '_self';
+          }
+          $slide .=  '<a href="'.$href.'" target="'.$target.'" class="c-btn '.$btn_link_type.' '.$btn_link_size.'"><span>'.$btn_title.'</span></a>';
         }
+        $slide .=  '</div>';
+        $slide .=  '</div>';
+        $slide .=  '</div>';
+        $slide .=  '</div>';
     break;  
   }
   $rs_hero_slider[]  = $slide;

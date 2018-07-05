@@ -166,19 +166,19 @@ jQuery(function($) {
         breakpoints: {
             1600: {
               slidesPerView: lg,
-              spaceBetween: 40,
+              spaceBetween: 1,
             },
             1200: {
               slidesPerView: md,
-              spaceBetween: 40,
+              spaceBetween: 1,
             },
             992: {
               slidesPerView: sm,
-              spaceBetween: 20,
+              spaceBetween: 1,
             },
             768: {
               slidesPerView: xs,
-              spaceBetween: 30,
+              spaceBetween: 1,
             },
         },
         onSlideChangeEnd: function(swiper) {
