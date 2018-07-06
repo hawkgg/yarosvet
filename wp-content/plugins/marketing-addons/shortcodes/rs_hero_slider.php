@@ -17,14 +17,11 @@ function rs_hero_slider( $atts, $content = '', $id = '' ) {
     'id'                  => '',
     'class'               => '',
     'style'               => 'style1',
-    'big_heading_color'   => '',
     'height'              => '90vh',
     'autoplay'            => '0',
     'speed'               => '500',
     'loop'                => '0',
-    'small_heading_color' => '',
     'pagination'          => 'yes',
-    'btn_text_color'      => ''
   ), $atts ) );
 
   do_shortcode( $content );
@@ -34,9 +31,6 @@ function rs_hero_slider( $atts, $content = '', $id = '' ) {
   $output              = '';
   $id                  = ( $id ) ? ' id="'. esc_attr($id) .'"' : '';
   $class               = ( $class ) ? ' '. marketing_sanitize_html_classes($class) : '';
-  $big_heading_color   = ($big_heading_color) ? ' style="color:'.esc_attr($big_heading_color).';"':'';
-  $small_heading_color = ($small_heading_color) ? ' style="color:'.esc_attr($small_heading_color).';"':'';
-  $btn_text_color      = ($btn_text_color) ? ' style="color:'.esc_attr($btn_text_color).';"':'';
   $pagination_class    = ($pagination == 'no') ? ' d-none':''; // d-sm-none для включения на мобилках
   $height              = ($height == '90vh') ? ' h-90vh ': ' '.$height.' ';
 
@@ -87,7 +81,56 @@ function rs_hero_slider_item( $atts, $content = '', $id = '' ) {
     'btn_link_type'       => '',
     'btn_link_size'       => '',
     'style'               => 'style1',
+    'pos_horiz'           => 'left',
+    'pos_vert'            => 'top',
+    'text_align'          => 'left',
+    'big_heading_font'    => '',
+    'big_heading_color'   => '',
+    'big_heading_font_size' => '',
+    'big_heading_font_weight' => '',
+    'big_heading_font_style' => '',
+    'big_heading_line_height' => '',
+    'big_heading_letter_spacing' => '',
+    'small_heading_font'    => '',
+    'small_heading_color' => '',
+    'small_heading_font_size' => '',
+    'small_heading_font_weight' => '',
+    'small_heading_font_style' => '',
+    'small_heading_line_height' => '',
+    'small_heading_letter_spacing' => '',
+    'btn_text_font'    => '',
+    'btn_text_color'        => '',
+    'btn_text_font_size' => '',
+    'btn_text_font_weight' => '',
+    'btn_text_font_style' => '',
+    'btn_text_line_height' => '',
+    'btn_text_letter_spacing' => '',
   ), $atts ) );
+
+
+  $big_heading_font   = ($big_heading_font) ? ' font-family:'.esc_attr($big_heading_font).';':'';
+  $big_heading_color   = ($big_heading_color) ? ' color:'.esc_attr($big_heading_color).';':'';
+  $big_heading_font_size = ($big_heading_font_size) ? ' font-size:'.esc_attr($big_heading_font_size).'px;':'';
+  $big_heading_font_weight = ($big_heading_font_weight) ? ' font-weight:'.esc_attr($big_heading_font_weight).';':'';
+  $big_heading_font_style = ($big_heading_font_style) ? ' font-style:'.esc_attr($big_heading_font_style).';':'';
+  $big_heading_line_height = ($big_heading_line_height) ? ' line-height:'.esc_attr($big_heading_line_height).'px;':'';
+  $big_heading_letter_spacing = ($big_heading_letter_spacing) ? ' letter-spacing:'.esc_attr($big_heading_letter_spacing).'px;':'';
+
+  $small_heading_font   = ($small_heading_font) ? ' font-family:'.esc_attr($small_heading_font).';':'';
+  $small_heading_color   = ($small_heading_color) ? ' color:'.esc_attr($small_heading_color).';':'';
+  $small_heading_font_size = ($small_heading_font_size) ? ' font-size:'.esc_attr($small_heading_font_size).'px;':'';
+  $small_heading_font_weight = ($small_heading_font_weight) ? ' font-weight:'.esc_attr($small_heading_font_weight).';':'';
+  $small_heading_font_style = ($small_heading_font_style) ? ' font-style:'.esc_attr($small_heading_font_style).';':'';
+  $small_heading_line_height = ($small_heading_line_height) ? ' line-height:'.esc_attr($small_heading_line_height).'px;':'';
+  $small_heading_letter_spacing = ($small_heading_letter_spacing) ? ' letter-spacing:'.esc_attr($small_heading_letter_spacing).'px;':'';
+
+  $btn_text_font   = ($btn_text_font) ? ' font-family:'.esc_attr($btn_text_font).';':'';
+  $btn_text_color   = ($btn_text_color) ? ' color:'.esc_attr($btn_text_color).';':'';
+  $btn_text_font_size = ($btn_text_font_size) ? ' font-size:'.esc_attr($btn_text_font_size).'px;':'';
+  $btn_text_font_weight = ($btn_text_font_weight) ? ' font-weight:'.esc_attr($btn_text_font_weight).';':'';
+  $btn_text_font_style = ($btn_text_font_style) ? ' font-style:'.esc_attr($btn_text_font_style).';':'';
+  $btn_text_line_height = ($btn_text_line_height) ? ' line-height:'.esc_attr($btn_text_line_height).'px;':'';
+  $btn_text_letter_spacing = ($btn_text_letter_spacing) ? ' letter-spacing:'.esc_attr($btn_text_letter_spacing).'px;':'';
 
   switch ($style) {
 
@@ -325,18 +368,47 @@ function rs_hero_slider_item( $atts, $content = '', $id = '' ) {
         $slide .=  '<div class="swiper-slide'.$active_class.'" data-val="'.esc_attr($key).'">';
         $slide .=  '<div class="tt-mslide-3 background-block" style="background-image:url('.esc_url($image_url).');">';
         $slide .=  '<div class="container">';
-        $slide .=  '<div class="tt-mslide-3-table text-center">';
-        if (!empty($heading)) { $slide .=  '<p>'.$heading.'</p>'; }
-        if (!empty($small_heading)) { $slide .=  '<p>'.$small_heading.'</p>'; }
-        if (!empty($btn_link)) {
-          if (function_exists('vc_parse_multi_attribute')) {
-            $parse_args = vc_parse_multi_attribute($btn_link);
-            $href       = ( isset($parse_args['url']) ) ? $parse_args['url'] : '#';
-            $btn_title  = ( isset($parse_args['title']) ) ? $parse_args['title'] : 'button';
-            $target     = ( isset($parse_args['target']) ) ? trim($parse_args['target']) : '_self';
+        $slide .=  '<div class="tt-mslide-3-table d-flex align-items-'.$pos_vert.' justify-content-'.$pos_horiz.'">';
+        $slide .=  '<div class="slide-text text-'.$text_align.'">';
+          if (!empty($heading)) {
+            $slide .=  '<p style="'
+                         .$big_heading_font
+                         .$big_heading_color
+                         .$big_heading_font_size
+                         .$big_heading_font_weight
+                         .$big_heading_font_style
+                         .$big_heading_line_height
+                         .$big_heading_letter_spacing
+                    .'">'.$heading.'</p>';
           }
-          $slide .=  '<a href="'.$href.'" target="'.$target.'" class="c-btn '.$btn_link_type.' '.$btn_link_size.'"><span>'.$btn_title.'</span></a>';
-        }
+          if (!empty($small_heading)) {
+            $slide .=  '<p style="'
+                         .$small_heading_font
+                         .$small_heading_color
+                         .$small_heading_font_size
+                         .$small_heading_font_weight
+                         .$small_heading_font_style
+                         .$small_heading_line_height
+                         .$small_heading_letter_spacing
+                    .'">'.$small_heading.'</p>';
+          }
+          if (!empty($btn_link)) {
+            if (function_exists('vc_parse_multi_attribute')) {
+              $parse_args = vc_parse_multi_attribute($btn_link);
+              $href       = ( isset($parse_args['url']) ) ? $parse_args['url'] : '#';
+              $btn_title  = ( isset($parse_args['title']) ) ? $parse_args['title'] : 'button';
+              $target     = ( isset($parse_args['target']) ) ? trim($parse_args['target']) : '_self';
+            }
+
+            $slide .=  '<a href="'.$href.'" target="'.$target.'" class="c-btn '.$btn_link_type.' '.$btn_link_size.'" style="'.$btn_text_font
+                        .$btn_text_color
+                        .$btn_text_font_size
+                        .$btn_text_font_weight
+                        .$btn_text_font_style
+                        .$btn_text_line_height
+                        .$btn_text_letter_spacing.'"><span>'.$btn_title.'</span></a>';
+          }
+        $slide .=  '</div>';
         $slide .=  '</div>';
         $slide .=  '</div>';
         $slide .=  '</div>';

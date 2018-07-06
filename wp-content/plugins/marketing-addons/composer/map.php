@@ -1438,24 +1438,6 @@ vc_map( array(
       ),
     ),
     array(
-      'type'        => 'colorpicker',
-      'heading'     => 'Big Heading Color',
-      'param_name'  => 'big_heading_color',
-      'group'       => 'Custom Colors'
-    ),
-    array(
-      'type'        => 'colorpicker',
-      'heading'     => 'Small Heading Color',
-      'param_name'  => 'small_heading_color',
-      'group'       => 'Custom Colors'
-    ),
-    array(
-      'type'        => 'colorpicker',
-      'heading'     => 'Button Text color',
-      'param_name'  => 'btn_text_color',
-      'group'       => 'Custom Colors'
-    ),
-    array(
       'type'        => 'dropdown',
       'heading'     => 'Loop',
       'param_name'  => 'loop',
@@ -1543,18 +1525,38 @@ vc_map( array(
       'dependency'  => array( 'element' => 'style', 'value' => array('style1', 'style2', 'style3', 'style4') )
     ),
     array(
-      'type'        => 'textfield',
-      'heading'     => 'Small Heading',
-      'param_name'  => 'small_heading',
-      'holder'      => 'h6',
-      'value'       => '',
+      'type'        => 'dropdown',
+      'heading'     => 'Text Align',
+      'param_name'  => 'text_align',
+      'value'       => array(
+        'Left'       => 'left',
+        'Center'    => 'center',
+        'Right'    => 'right',
+      ),
+      'dependency'  => array( 'element' => 'style', 'value' => array('style6') )
     ),
     array(
-      'type'        => 'textfield',
-      'heading'     => 'Heading',
-      'param_name'  => 'heading',
-      'holder'      => 'h3',
+      'type'        => 'dropdown',
+      'heading'     => 'Horisontal position of text block',
+      'param_name'  => 'pos_horiz',
+      'value'       => array(
+        'Left'       => 'start',
+        'Center'    => 'center',
+        'Right'    => 'end',
+      ),
+      'dependency'  => array( 'element' => 'style', 'value' => array('style6') )
+    ),
+    array(
+      'type'        => 'dropdown',
+      'heading'     => 'Vertical position of text block',
+      'param_name'  => 'pos_vert',
       'value'       => '',
+      'value'       => array(
+        'Top'       => 'start',
+        'Center'    => 'center',
+        'Bottom'    => 'end',
+      ),
+      'dependency'  => array( 'element' => 'style', 'value' => array('style6') )
     ),
     array(
       'type'        => 'textfield',
@@ -1578,11 +1580,154 @@ vc_map( array(
       'dependency'  => array( 'element' => 'style', 'value' => array('style1', 'style3', 'style4', 'style5',) ),
     ),
     array(
+      'type'        => 'textfield',
+      'heading'     => 'Heading Text',
+      'param_name'  => 'heading',
+      'holder'      => 'h3',
+      'value'       => '',
+      'group'       => 'Заголовок',
+    ),
+    array(
+      'type'        => 'dropdown',
+      'heading'     => 'Big Heading Font',
+      'param_name'  => 'big_heading_font',
+      'group'       => 'Заголовок',
+      'value'       => array_flip(rs_get_font_choices(true)),
+      'dependency'  => array( 'element' => 'style', 'value' => array('style6') )
+    ),
+    array(
+      'type'        => 'colorpicker',
+      'heading'     => 'Big Heading Color',
+      'param_name'  => 'big_heading_color',
+      'group'       => 'Заголовок',
+      'dependency'  => array( 'element' => 'style', 'value' => array('style6') )
+    ),
+    array(
+      'type'        => 'textfield',
+      'heading'     => 'Big Heading Font Size',
+      'param_name'  => 'big_heading_font_size',
+      'description' => 'Enter the size in pixel e.g 100px',
+      'group'       => 'Заголовок',
+      'dependency'  => array( 'element' => 'style', 'value' => array('style6') )
+    ),
+    array(
+      'type'        => 'dropdown',
+      'heading'     => 'Big Heading Font Weight',
+      'param_name'  => 'big_heading_font_weight',
+      'value'       => array(
+        'Light'      => '300',
+        'Normal'     => '400',
+        'Bold'       => '600',
+        'Bold'       => '700',
+        'Extra Bold' => '800',
+      ),
+      'group'       => 'Заголовок',
+      'dependency'  => array( 'element' => 'style', 'value' => array('style6') )
+    ),
+    array(
+      'type'        => 'dropdown',
+      'heading'     => 'Big Heading Font Style',
+      'param_name'  => 'big_heading_font_style',
+      'value'       => array(
+        'Normal' => 'normal',
+        'Italic' => 'italic',
+      ),
+      'group'       => 'Заголовок',
+      'dependency'  => array( 'element' => 'style', 'value' => array('style6') )
+    ),
+    array(
+      'type'        => 'textfield',
+      'heading'     => 'Big Heading Line Height',
+      'param_name'  => 'big_heading_line_height',
+      'group'       => 'Заголовок',
+      'dependency'  => array( 'element' => 'style', 'value' => array('style6') )
+    ),
+    array(
+      'type'        => 'textfield',
+      'heading'     => 'Big Heading Letter Spacing',
+      'param_name'  => 'big_heading_letter_spacing',
+      'description' => 'Enter the size in pixel e.g 1px',
+      'group'       => 'Заголовок',
+      'dependency'  => array( 'element' => 'style', 'value' => array('style6') )
+    ),
+    array(
+      'type'        => 'textfield',
+      'heading'     => 'Small Heading Text',
+      'param_name'  => 'small_heading',
+      'holder'      => 'h6',
+      'value'       => '',
+      'group'       => 'Подзаголовок',
+    ),
+    array(
+      'type'        => 'dropdown',
+      'heading'     => 'Small Heading Font',
+      'param_name'  => 'small_heading_font',
+      'group'       => 'Подзаголовок',
+      'value'       => array_flip(rs_get_font_choices(true)),
+      'dependency'  => array( 'element' => 'style', 'value' => array('style6') )
+    ),
+    array(
+      'type'        => 'colorpicker',
+      'heading'     => 'Small Heading Color',
+      'param_name'  => 'small_heading_color',
+      'group'       => 'Подзаголовок',
+      'dependency'  => array( 'element' => 'style', 'value' => array('style6') )
+    ),
+    array(
+      'type'        => 'textfield',
+      'heading'     => 'Small Heading Font Size',
+      'param_name'  => 'small_heading_font_size',
+      'description' => 'Enter the size in pixel e.g 100px',
+      'group'       => 'Подзаголовок',
+      'dependency'  => array( 'element' => 'style', 'value' => array('style6') )
+    ),
+    array(
+      'type'        => 'dropdown',
+      'heading'     => 'Small Heading Font Weight',
+      'param_name'  => 'small_heading_font_weight',
+      'value'       => array(
+        'Light'      => '300',
+        'Normal'     => '400',
+        'Bold'       => '600',
+        'Bold'       => '700',
+        'Extra Bold' => '800',
+      ),
+      'group'       => 'Подзаголовок',
+      'dependency'  => array( 'element' => 'style', 'value' => array('style6') )
+    ),
+    array(
+      'type'        => 'dropdown',
+      'heading'     => 'Small Heading Font Style',
+      'param_name'  => 'small_heading_font_style',
+      'value'       => array(
+        'Normal' => 'normal',
+        'Italic' => 'italic',
+      ),
+      'group'       => 'Подзаголовок',
+      'dependency'  => array( 'element' => 'style', 'value' => array('style6') )
+    ),
+    array(
+      'type'        => 'textfield',
+      'heading'     => 'Small Heading Line Height',
+      'param_name'  => 'small_heading_line_height',
+      'group'       => 'Подзаголовок',
+      'dependency'  => array( 'element' => 'style', 'value' => array('style6') )
+    ),
+    array(
+      'type'        => 'textfield',
+      'heading'     => 'Small Heading Letter Spacing',
+      'param_name'  => 'small_heading_letter_spacing',
+      'description' => 'Enter the size in pixel e.g 1px',
+      'group'       => 'Подзаголовок',
+      'dependency'  => array( 'element' => 'style', 'value' => array('style6') )
+    ),
+    array(
       'type'         => 'vc_link',
       'heading'      => 'Button Link',
       'param_name'   => 'btn_link',
       'value'        => '',
       'descritption' => 'This is NOT for style2',
+      'group'       => 'Кнопка',
       'dependency'  => array( 'element' => 'style', 'value' => array('style1', 'style3', 'style4', 'style5', 'style6') )
     ),
     array(
@@ -1595,18 +1740,83 @@ vc_map( array(
         'Type 3'   => 'type-3',
         'Type 4'   => 'type-4',
       ),
+      'group'       => 'Кнопка',
       'dependency'  => array( 'element' => 'style', 'value' => array('style6') )
     ),
     array(
       'type'        => 'dropdown',
       'heading'     => 'Button Link Size',
       'param_name'  => 'btn_link_size',
+      'group'       => 'Кнопка',
       'value'       => array(
         'Size 1'   => 'size-1',
         'Size 2'   => 'size-2',
         'Size 3'   => 'size-3',
         'Size 4'   => 'size-4',
       ),
+      'dependency'  => array( 'element' => 'style', 'value' => array('style6') )
+    ),
+    array(
+      'type'        => 'dropdown',
+      'heading'     => 'Button Text Font',
+      'param_name'  => 'btn_text_font',
+      'group'       => 'Кнопка',
+      'value'       => array_flip(rs_get_font_choices(true)),
+      'dependency'  => array( 'element' => 'style', 'value' => array('style6') )
+    ),
+    array(
+      'type'        => 'colorpicker',
+      'heading'     => 'Button Text color',
+      'param_name'  => 'btn_text_color',
+      'group'       => 'Кнопка',
+      'dependency'  => array( 'element' => 'style', 'value' => array('style6') )
+    ),
+    array(
+      'type'        => 'textfield',
+      'heading'     => 'Button Text Font Size',
+      'param_name'  => 'btn_text_font_size',
+      'description' => 'Enter the size in pixel e.g 100px',
+      'group'       => 'Кнопка',
+      'dependency'  => array( 'element' => 'style', 'value' => array('style6') )
+    ),
+    array(
+      'type'        => 'dropdown',
+      'heading'     => 'Button Text Font Weight',
+      'param_name'  => 'btn_text_font_weight',
+      'value'       => array(
+        'Light'      => '300',
+        'Normal'     => '400',
+        'Bold'       => '600',
+        'Bold'       => '700',
+        'Extra Bold' => '800',
+      ),
+      'group'       => 'Кнопка',
+      'dependency'  => array( 'element' => 'style', 'value' => array('style6') )
+    ),
+    array(
+      'type'        => 'dropdown',
+      'heading'     => 'Button Text Font Style',
+      'param_name'  => 'btn_text_font_style',
+      'value'       => array(
+        'Normal' => 'normal',
+        'Italic' => 'italic',
+      ),
+      'group'       => 'Кнопка',
+      'dependency'  => array( 'element' => 'style', 'value' => array('style6') )
+    ),
+    array(
+      'type'        => 'textfield',
+      'heading'     => 'Button Text Line Height',
+      'param_name'  => 'btn_text_line_height',
+      'group'       => 'Кнопка',
+      'dependency'  => array( 'element' => 'style', 'value' => array('style6') )
+    ),
+    array(
+      'type'        => 'textfield',
+      'heading'     => 'Button Text Letter Spacing',
+      'param_name'  => 'btn_text_letter_spacing',
+      'description' => 'Enter the size in pixel e.g 1px',
+      'group'       => 'Кнопка',
       'dependency'  => array( 'element' => 'style', 'value' => array('style6') )
     ),
   )
