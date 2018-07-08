@@ -419,6 +419,7 @@ article.type-post p, article.type-post ul, article.type-post li, article.type-po
 ol.breadcrumb {
   justify-content: flex-end;
   font-size: 19px;
+  line-height: 29px;
 }
 
 #breadcrumbs-div {
@@ -885,9 +886,9 @@ footer ul li ul {
 
 
 .tt-mslide-3-table {
-    height: 100%; 
-    padding: 0;
-
+  height: 100%; 
+  padding: 0;
+}
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
