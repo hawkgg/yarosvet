@@ -68,69 +68,157 @@ function rs_hero_slider_item( $atts, $content = '', $id = '' ) {
   global $rs_hero_slider;
 
   extract( shortcode_atts( array(
-    'id'                  => '',
-    'class'               => '',
-    'background'          => '3',
-    'object'              => '',
-    'small_heading'       => '',
-    'heading'             => '',
-    'name_placeholder'    => '',
-    'email_placeholder'   => '',
-    'btn_text'            => '',
-    'btn_link'            => '',
-    'btn_link_type'       => '',
-    'btn_link_size'       => '',
-    'style'               => 'style1',
-    'pos_horiz'           => 'left',
-    'pos_vert'            => 'top',
-    'text_align'          => 'left',
-    'big_heading_font'    => '',
-    'big_heading_color'   => '',
-    'big_heading_font_size' => '',
-    'big_heading_font_weight' => '',
-    'big_heading_font_style' => '',
-    'big_heading_line_height' => '',
-    'big_heading_letter_spacing' => '',
-    'small_heading_font'    => '',
-    'small_heading_color' => '',
-    'small_heading_font_size' => '',
-    'small_heading_font_weight' => '',
-    'small_heading_font_style' => '',
-    'small_heading_line_height' => '',
+    'id'                           => '',
+    'class'                        => '',
+    'background'                   => '3',
+    'object'                       => '',
+    'name_placeholder'             => '',
+    'email_placeholder'            => '',
+    'btn_text'                     => '',
+    'style'                        => 'style1',
+    'pos_horiz'                    => 'left',
+    'pos_vert'                     => 'top',
+    'text_align'                   => 'left',
+    'heading'                      => '',
+    'big_heading_font'             => 'default',
+    'big_heading_color'            => '',
+    'big_heading_font_size'        => '',
+    'big_heading_font_weight'      => '300',
+    'big_heading_font_style'       => 'normal',
+    'big_heading_line_height'      => '',
+    'big_heading_letter_spacing'   => '',
+    'big_heading_class'            => '',
+    'big_heading_id'               => '',
+    'small_heading'                => '',
+    'small_heading_font'           => 'default',
+    'small_heading_color'          => '',
+    'small_heading_font_size'      => '',
+    'small_heading_font_weight'    => '300',
+    'small_heading_font_style'     => 'normal',
+    'small_heading_line_height'    => '',
     'small_heading_letter_spacing' => '',
-    'btn_text_font'    => '',
-    'btn_text_color'        => '',
-    'btn_text_font_size' => '',
-    'btn_text_font_weight' => '',
-    'btn_text_font_style' => '',
-    'btn_text_line_height' => '',
-    'btn_text_letter_spacing' => '',
+    'small_heading_class'          => '',
+    'small_heading_id'             => '',
+    'btn_link'                     => '',
+    'btn_link_size'                => 'size-1',
+    'btn_link_type'                => 'type-1',
+    'btn_link_font'                => 'default',
+    'btn_link_color'               => '',
+    'btn_link_font_size'           => '',
+    'btn_link_font_weight'         => '300',
+    'btn_link_font_style'          => 'normal',
+    'btn_link_line_height'         => '',
+    'btn_link_letter_spacing'      => '',
+    'btn_link_class'               => '',
+    'btn_link_id'                  => '',
+    'html_code'                    => '',
   ), $atts ) );
 
 
-  $big_heading_font   = ($big_heading_font) ? ' font-family:'.esc_attr($big_heading_font).';':'';
-  $big_heading_color   = ($big_heading_color) ? ' color:'.esc_attr($big_heading_color).';':'';
-  $big_heading_font_size = ($big_heading_font_size) ? ' font-size:'.esc_attr($big_heading_font_size).'px;':'';
-  $big_heading_font_weight = ($big_heading_font_weight) ? ' font-weight:'.esc_attr($big_heading_font_weight).';':'';
-  $big_heading_font_style = ($big_heading_font_style) ? ' font-style:'.esc_attr($big_heading_font_style).';':'';
-  $big_heading_line_height = ($big_heading_line_height) ? ' line-height:'.esc_attr($big_heading_line_height).'px;':'';
-  $big_heading_letter_spacing = ($big_heading_letter_spacing) ? ' letter-spacing:'.esc_attr($big_heading_letter_spacing).'px;':'';
+  $big_heading_customize = ($big_heading_font != 'default' || $big_heading_color || $big_heading_font_size || $big_heading_font_style != 'normal' || $big_heading_line_height || $big_heading_letter_spacing || $big_heading_font_weight != '300') ? true:false;
 
-  $small_heading_font   = ($small_heading_font) ? ' font-family:'.esc_attr($small_heading_font).';':'';
-  $small_heading_color   = ($small_heading_color) ? ' color:'.esc_attr($small_heading_color).';':'';
-  $small_heading_font_size = ($small_heading_font_size) ? ' font-size:'.esc_attr($small_heading_font_size).'px;':'';
-  $small_heading_font_weight = ($small_heading_font_weight) ? ' font-weight:'.esc_attr($small_heading_font_weight).';':'';
-  $small_heading_font_style = ($small_heading_font_style) ? ' font-style:'.esc_attr($small_heading_font_style).';':'';
-  $small_heading_line_height = ($small_heading_line_height) ? ' line-height:'.esc_attr($small_heading_line_height).'px;':'';
-  $small_heading_letter_spacing = ($small_heading_letter_spacing) ? ' letter-spacing:'.esc_attr($small_heading_letter_spacing).'px;':'';
+  if (!empty($heading)) {
+    if(strpos($big_heading_font, 'google') !== false) {
+      if ($big_heading_font_style == 'italic' && $big_heading_font_weight) {
+        $big_heading_font_weight_type = $big_heading_font_weight.$big_heading_font_style;
+      } else {
+        $big_heading_font_weight_type = $big_heading_font_weight;
+      }
+      $big_heading_font = str_replace('google_web_font_', '', $big_heading_font);
+      $slide .=  "<link href='http://fonts.googleapis.com/css?family="
+             .esc_attr(str_replace(' ', '+', $big_heading_font)).":"
+             .esc_attr($big_heading_font_weight_type).", 400, 300, 600' rel='stylesheet' type='text/css'>";
+    }
+    if ($big_heading_customize) {
+      $big_heading_uniqclass = wp_generate_uuid4();
+      $big_heading_custom_style =  '.custom-font-properties-'.$big_heading_uniqclass.'{';
+      $big_heading_custom_style .= ($big_heading_font != 'default') ? 'font-family:'.$big_heading_font.', san-serif;':'';
+      $big_heading_custom_style .= ($big_heading_color) ? 'color:'.esc_attr($big_heading_color).';':'';
+      $big_heading_custom_style .= ($big_heading_font_size) ? 'font-size:'.esc_attr($big_heading_font_size).'px;':'';
+      $big_heading_custom_style .= ($big_heading_font_weight) ? 'font-weight:'.esc_attr($big_heading_font_weight).';':'';
+      $big_heading_custom_style .= ($big_heading_font_style) ? 'font-style:'.esc_attr($big_heading_font_style).';':'';
+      $big_heading_custom_style .= ($big_heading_line_height) ? 'line-height:'.esc_attr($big_heading_line_height).'px;':'';
+      $big_heading_custom_style .= ($big_heading_letter_spacing) ? 'letter-spacing:'.esc_attr($big_heading_letter_spacing).'px;':'';
+      $big_heading_custom_style .= '}';
 
-  $btn_text_font   = ($btn_text_font) ? ' font-family:'.esc_attr($btn_text_font).';':'';
-  $btn_text_color   = ($btn_text_color) ? ' color:'.esc_attr($btn_text_color).';':'';
-  $btn_text_font_size = ($btn_text_font_size) ? ' font-size:'.esc_attr($btn_text_font_size).'px;':'';
-  $btn_text_font_weight = ($btn_text_font_weight) ? ' font-weight:'.esc_attr($btn_text_font_weight).';':'';
-  $btn_text_font_style = ($btn_text_font_style) ? ' font-style:'.esc_attr($btn_text_font_style).';':'';
-  $btn_text_line_height = ($btn_text_line_height) ? ' line-height:'.esc_attr($btn_text_line_height).'px;':'';
-  $btn_text_letter_spacing = ($btn_text_letter_spacing) ? ' letter-spacing:'.esc_attr($btn_text_letter_spacing).'px;':'';
+      marketing_add_inline_style( $big_heading_custom_style );
+      $big_heading_class .= marketing_sanitize_html_classes(' custom-font-properties-'.$big_heading_uniqclass);
+    }
+    $heading = '<p class="'.$big_heading_class.'" id="'.$big_heading_id.'">'.$heading.'</p>';
+  }
+
+
+  $small_heading_customize = ($small_heading_font != 'default' || $small_heading_color || $small_heading_font_size || $small_heading_font_style != 'normal' || $small_heading_line_height || $small_heading_letter_spacing || $small_heading_font_weight != '300') ? true:false;
+
+  if (!empty($small_heading)) {
+    if(strpos($small_heading_font, 'google') !== false) {
+      if ($small_heading_font_style == 'italic' && $small_heading_font_weight) {
+        $small_heading_font_weight_type = $small_heading_font_weight.$small_heading_font_style;
+      } else {
+        $small_heading_font_weight_type = $small_heading_font_weight;
+      }
+      $small_heading_font = str_replace('google_web_font_', '', $small_heading_font);
+      $slide .=  "<link href='http://fonts.googleapis.com/css?family="
+             .esc_attr(str_replace(' ', '+', $small_heading_font)).":"
+             .esc_attr($small_heading_font_weight_type).", 400, 300, 600' rel='stylesheet' type='text/css'>";
+    }
+    if ($small_heading_customize) {
+      $small_heading_uniqclass = wp_generate_uuid4();
+      $small_heading_custom_style =  '.custom-font-properties-'.$small_heading_uniqclass.'{';
+      $small_heading_custom_style .= ($small_heading_font != 'default') ? 'font-family:'.$small_heading_font.', san-serif;':'';
+      $small_heading_custom_style .= ($small_heading_color) ? 'color:'.esc_attr($small_heading_color).';':'';
+      $small_heading_custom_style .= ($small_heading_font_size) ? 'font-size:'.esc_attr($small_heading_font_size).'px;':'';
+      $small_heading_custom_style .= ($small_heading_font_weight) ? 'font-weight:'.esc_attr($small_heading_font_weight).';':'';
+      $small_heading_custom_style .= ($small_heading_font_style) ? 'font-style:'.esc_attr($small_heading_font_style).';':'';
+      $small_heading_custom_style .= ($small_heading_line_height) ? 'line-height:'.esc_attr($small_heading_line_height).'px;':'';
+      $small_heading_custom_style .= ($small_heading_letter_spacing) ? 'letter-spacing:'.esc_attr($small_heading_letter_spacing).'px;':'';
+      $small_heading_custom_style .= '}';
+
+      marketing_add_inline_style( $small_heading_custom_style );
+      $small_heading_class .= marketing_sanitize_html_classes(' custom-font-properties-'.$small_heading_uniqclass);
+    }
+    $small_heading = '<p class="'.$small_heading_class.'" id="'.$small_heading_id.'">'.$small_heading.'</p>';
+  }
+
+
+  $btn_link_customize = ($btn_link_font != 'default' || $btn_link_color || $btn_link_font_size || $btn_link_font_style != 'normal' || $btn_link_line_height || $btn_link_letter_spacing || $btn_link_font_weight != '300' || $btn_link_type != 'type-1' || $btn_link_size != 'size-1') ? true:false;
+
+  if (!empty($btn_link)) {
+    if (function_exists('vc_parse_multi_attribute')) {
+      $parse_args = vc_parse_multi_attribute($btn_link);
+      $href       = ( isset($parse_args['url']) ) ? $parse_args['url'] : '#';
+      $btn_title  = ( isset($parse_args['title']) ) ? $parse_args['title'] : 'button';
+      $target     = ( isset($parse_args['target']) ) ? trim($parse_args['target']) : '_self';
+    }
+
+    if(strpos($btn_link_font, 'google') !== false) {
+      if ($btn_link_font_style == 'italic' && $btn_link_font_weight) {
+        $btn_link_font_weight_type = $btn_link_font_weight.$btn_link_font_style;
+      } else {
+        $btn_link_font_weight_type = $btn_link_font_weight;
+      }
+      $btn_link_font = str_replace('google_web_font_', '', $btn_link_font);
+      $slide .=  "<link href='http://fonts.googleapis.com/css?family="
+                  .esc_attr(str_replace(' ', '+', $btn_link_font)).":"
+                  .esc_attr($btn_link_font_weight_type).", 400, 300, 600' rel='stylesheet' type='text/css'>";
+    }
+    if ($btn_link_customize) {
+      $btn_link_uniqclass = wp_generate_uuid4();
+      $btn_link_custom_style =  '.custom-font-properties-'.$btn_link_uniqclass.'{';
+      $btn_link_custom_style .= ($btn_link_font != 'default') ? 'font-family:'.$btn_link_font.', san-serif;':'';
+      $btn_link_custom_style .= ($btn_link_color) ? 'color:'.esc_attr($btn_link_color).';':'';
+      $btn_link_custom_style .= ($btn_link_font_size) ? 'font-size:'.esc_attr($btn_link_font_size).'px;':'';
+      $btn_link_custom_style .= ($btn_link_font_weight) ? 'font-weight:'.esc_attr($btn_link_font_weight).';':'';
+      $btn_link_custom_style .= ($btn_link_font_style) ? 'font-style:'.esc_attr($btn_link_font_style).';':'';
+      $btn_link_custom_style .= ($btn_link_line_height) ? 'line-height:'.esc_attr($btn_link_line_height).'px;':'';
+      $btn_link_custom_style .= ($btn_link_letter_spacing) ? 'letter-spacing:'.esc_attr($btn_link_letter_spacing).'px;':'';
+      $btn_link_custom_style .= '}';
+
+      marketing_add_inline_style( $btn_link_custom_style );
+      $btn_link_class .= marketing_sanitize_html_classes(' custom-font-properties-'.$btn_link_uniqclass);
+    }
+    $btn_link = '<a href="'.$href.'" target="'.$target.'" class="c-btn '.$btn_link_class.' '.$btn_link_type.' '.$btn_link_size.'" id="'.$btn_link_id.'"><span>'.$btn_title.'</span></a>';
+  }
 
   switch ($style) {
 
@@ -370,44 +458,12 @@ function rs_hero_slider_item( $atts, $content = '', $id = '' ) {
         $slide .=  '<div class="container">';
         $slide .=  '<div class="tt-mslide-3-table d-flex align-items-'.$pos_vert.' justify-content-'.$pos_horiz.'">';
         $slide .=  '<div class="slide-text text-'.$text_align.'">';
-          if (!empty($heading)) {
-            $slide .=  '<p style="'
-                         .$big_heading_font
-                         .$big_heading_color
-                         .$big_heading_font_size
-                         .$big_heading_font_weight
-                         .$big_heading_font_style
-                         .$big_heading_line_height
-                         .$big_heading_letter_spacing
-                    .'">'.$heading.'</p>';
-          }
-          if (!empty($small_heading)) {
-            $slide .=  '<p style="'
-                         .$small_heading_font
-                         .$small_heading_color
-                         .$small_heading_font_size
-                         .$small_heading_font_weight
-                         .$small_heading_font_style
-                         .$small_heading_line_height
-                         .$small_heading_letter_spacing
-                    .'">'.$small_heading.'</p>';
-          }
-          if (!empty($btn_link)) {
-            if (function_exists('vc_parse_multi_attribute')) {
-              $parse_args = vc_parse_multi_attribute($btn_link);
-              $href       = ( isset($parse_args['url']) ) ? $parse_args['url'] : '#';
-              $btn_title  = ( isset($parse_args['title']) ) ? $parse_args['title'] : 'button';
-              $target     = ( isset($parse_args['target']) ) ? trim($parse_args['target']) : '_self';
-            }
 
-            $slide .=  '<a href="'.$href.'" target="'.$target.'" class="c-btn '.$btn_link_type.' '.$btn_link_size.'" style="'.$btn_text_font
-                        .$btn_text_color
-                        .$btn_text_font_size
-                        .$btn_text_font_weight
-                        .$btn_text_font_style
-                        .$btn_text_line_height
-                        .$btn_text_letter_spacing.'"><span>'.$btn_title.'</span></a>';
-          }
+        $slide .= $heading;
+        $slide .= $small_heading;
+        $slide .= $btn_link;
+        $slide .= $html_code;
+
         $slide .=  '</div>';
         $slide .=  '</div>';
         $slide .=  '</div>';
