@@ -1080,6 +1080,10 @@ footer ul li ul {
   width: 80px;
 }
 
+.prices table tr td:not(:first-of-type) {
+  vertical-align: middle;
+}
+
 .prices table .col-price {
   width: 95px;
 }
