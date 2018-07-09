@@ -568,4 +568,24 @@ jQuery(function($) {
   //   $(this).parent('.modal-form-wrap').hide().after('<p class="text-center call-order-success-message">Успешно отправлено! Ждите звонка :)</p>');
   // });
 
+
+
+  /*==================================================*/
+  /* 13 - MENU OVERLAY */
+  /*==================================================*/
+
+  $('.cmn-toggle-switch').on('click', function(){
+    if ($('body').hasClass('overflow-hidden')) {
+      $('body').removeClass('overflow-hidden');
+      $('.menu-overlay').fadeOut();
+    } else {
+      $('.menu-overlay').fadeIn();
+      $('body').addClass('overflow-hidden');
+    }
+  });
+
+  $('.menu-overlay').on('click', function(){
+    $('.cmn-toggle-switch').click();
+  });
+
 });

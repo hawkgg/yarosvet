@@ -40,4 +40,5 @@
     </div>
   </div>
 </header>
+<div class="menu-overlay"></div>
 <?php marketing_header_height(marketing_get_opt('header-height-switch')); ?>

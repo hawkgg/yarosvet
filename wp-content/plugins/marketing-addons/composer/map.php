@@ -2019,9 +2019,10 @@ vc_map( array(
       'type'        => 'dropdown',
       'heading'     => 'Style',
       'param_name'  => 'style',
+      'holder'        => 'h4',
       'value'       => array(
-        'Links' => 'type-1',
-        'Select'  => 'type-2',
+        'Links' => 'links',
+        'Select'  => 'select',
       ),
       'description' => 'Выберите тип фильтрации',
     ),

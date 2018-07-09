@@ -10,7 +10,7 @@ function rs_filter_categories($atts) {
   extract(shortcode_atts(array(
     'id'            => '',
     'class'         => '',
-    'style'         => 'type-1',
+    'style'         => 'links',
   ), $atts));
 
   $class = ( $class ) ? ' ' .$class : '';
@@ -19,9 +19,9 @@ function rs_filter_categories($atts) {
 
   switch ($style) {
 
-    case 'type-1':
+    case 'links':
 
-      $output = '<div class="isotope-filter">';
+      $output = '<div class="isotope-filter '.$class.'" id="'.$id.'">';
 
       $output .= '<button type="button" data-filter="*" class="is-checked" >Все</li>';
 
@@ -33,9 +33,9 @@ function rs_filter_categories($atts) {
 
     break;
 
-    case 'type-2':
+    case 'select':
 
-      $output .= '<div class="isotope-filter">';
+      $output .= '<div class="isotope-filter '.$class.'" id="'.$id.'">';
 
       $output .= '<select name="" class="isotope-select form-control">';
 
