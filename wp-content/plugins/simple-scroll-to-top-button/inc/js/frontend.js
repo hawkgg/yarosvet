@@ -1,5 +1,5 @@
 /*
- * Plugin JavaScript and jQuery code for the front end of website
+ * WordPress plugin Simple Scroll to Top Button by Space X-Chimp ( https://www.spacexchimp.com ).
  *
  * @package     Simple Scroll to Top Button
  * @author      Arthur Gareginyan

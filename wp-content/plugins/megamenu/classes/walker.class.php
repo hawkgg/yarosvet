@@ -173,6 +173,10 @@ class Mega_Menu_Walker extends Walker_Nav_Menu {
                 $item_output .= "</span>";
             }
 
+			if ( in_array('menu-item-has-children', $classes ) ) {
+				$item_output .= '<span class="mega-indicator"></span>';
+			}
+
 			$item_output .= '</a>';
 			$item_output .= $args->after;
 

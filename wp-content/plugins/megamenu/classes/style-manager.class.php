@@ -253,12 +253,12 @@ final class Mega_Menu_Style_Manager {
             'mobile_menu_item_link_text_align'          => 'menu_item_link_text_align',
             'mobile_menu_item_link_color_hover'         => 'menu_item_link_color_hover',
             'mobile_menu_item_background_hover_from'    => 'menu_item_background_hover_from',
-            'mobile_menu_item_background_hover_to'      => 'menu_item_background_hover_to',
+            'mobile_menu_item_background_hover_to'      => 'menu_item_background_hover_to',            
             'disable_mobile_toggle'                     => 'off',
-            'custom_css'                                => '/** Push menu onto new line **/
-#{$wrap} {
-    clear: both;
-}'
+            'custom_css'                                => '/** Push menu onto new line **/ 
+#{$wrap} { 
+    clear: both; 
+}' 
         ) );
     }
 
@@ -489,7 +489,7 @@ final class Mega_Menu_Style_Manager {
 
         $upload_dir = wp_upload_dir();
         $filename = $this->get_css_filename();
-
+        
         $dir = trailingslashit( $upload_dir['basedir'] ) . 'maxmegamenu/';
 
         WP_Filesystem( false, $upload_dir['basedir'], true );
@@ -812,7 +812,9 @@ final class Mega_Menu_Style_Manager {
 
         $js_path = MEGAMENU_BASE_URL . "js/maxmegamenu.js";
 
-        wp_enqueue_script( 'megamenu', $js_path, array('jquery', 'hoverIntent'), MEGAMENU_VERSION, true );
+        $dependencies = apply_filters("megamenu_javascript_dependencies", array('jquery', 'hoverIntent'));
+
+        wp_enqueue_script( 'megamenu', $js_path, $dependencies, MEGAMENU_VERSION, true );
 
         $params = apply_filters("megamenu_javascript_localisation",
             array(
@@ -977,7 +979,7 @@ final class Mega_Menu_Style_Manager {
     public function head_css() {
 
         $method = $this->get_css_output_method();
-
+        
         if ( in_array( $method, array( 'disabled', 'fs' ) ) ) {
             echo "<style type=\"text/css\">/** Mega Menu CSS: {$method} **/</style>\n";
             return;

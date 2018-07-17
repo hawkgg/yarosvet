@@ -264,17 +264,15 @@ class Mega_Menu_Settings {
 
         do_action("megamenu_delete_cache");
 
-        // delete menu settings
+        // delete options
         delete_option("megamenu_settings");
-
-        // delete menu locations
         delete_option("megamenu_locations");
-
-        // delete toggle blocks
         delete_option("megamenu_toggle_blocks");
-
-        // delete version
         delete_option("megamenu_version");
+        delete_option("megamenu_initial_version");
+        delete_option("megamenu_themes_last_updated");
+        delete_option("megamenu_multisite_share_themes");
+
 
         // delete all widgets assigned to menus
         $widget_manager = new Mega_Menu_Widget_Manager();
@@ -730,7 +728,7 @@ class Mega_Menu_Settings {
                         <td class='mega-value'>
                             <select name='settings[css]' id='mega_css'>
                                 <option value='fs' <?php echo selected( $css == 'fs'); ?>><?php _e("Save to filesystem", "megamenu"); ?>
-                                    <?php
+                                    <?php 
                                         if ( get_transient('megamenu_failed_to_write_css_to_filesystem') ) {
                                             echo " " . __("(Action required: Check upload folder permissions)", "megamenu");
                                         }
@@ -858,7 +856,7 @@ class Mega_Menu_Settings {
                 }
             }
 
-            $all_locations = get_registered_nav_menus();
+            $all_locations = get_registered_nav_menus();      
         }
 
         $locations = array();
@@ -868,7 +866,7 @@ class Mega_Menu_Settings {
         if ( is_array( $custom_locations ) ) {
             $all_locations = array_merge( $custom_locations, $all_locations );
         }
-
+        
         if ( count( $all_locations ) ) {
 
             $megamenu_locations = array();
@@ -1135,7 +1133,7 @@ class Mega_Menu_Settings {
                         <div class='mega-description'><?php _e("Export a menu theme", "megamenu"); ?></div>
                     </td>
                     <td class='mega-value'>
-                        <form method="post" action="<?php admin_url( "admin.php?page=maxmegamenu&tab=tools") ?>">
+                        <form method="post" action="<?php echo admin_url( "admin.php?page=maxmegamenu_tools") ?>">
 
                             <?php
 
@@ -1652,7 +1650,7 @@ class Mega_Menu_Settings {
                                 'line_height' => array(
                                     'priority' => 30,
                                     'title' => __( "Line Height", "megamenu" ),
-                                    'description' => __( "Set the general line height to use in the panel contents.", "megamenu" ),
+                                    'description' => __( "Set the general line height to use in the submenu contents.", "megamenu" ),
                                     'settings' => array(
                                         array(
                                             'title' => "",
@@ -1664,7 +1662,7 @@ class Mega_Menu_Settings {
                                 'z_index' => array(
                                     'priority' => 40,
                                     'title' => __( "Z Index", "megamenu" ),
-                                    'description' => __( "Set the z-index to ensure the panels appear ontop of other content.", "megamenu" ),
+                                    'description' => __( "Set the z-index to ensure the submenus appear ontop of other content.", "megamenu" ),
                                     'settings' => array(
                                         array(
                                             'title' => "",
@@ -2133,8 +2131,8 @@ class Mega_Menu_Settings {
                             'settings' => array(
                                 'panel_background' => array(
                                     'priority' => 10,
-                                    'title' => __( "Panel Background", "megamenu" ),
-                                    'description' => __( "Set a background color for a whole panel.", "megamenu" ),
+                                    'title' => __( "Submenu Background", "megamenu" ),
+                                    'description' => __( "Set a background color for a whole submenu.", "megamenu" ),
                                     'settings' => array(
                                         array(
                                             'title' => __( "From", "megamenu" ),
@@ -2155,11 +2153,12 @@ class Mega_Menu_Settings {
                                 ),
                                 'panel_width' => array(
                                     'priority' => 20,
-                                    'title' => __( "Panel Width", "megamenu" ),
+                                    'title' => __( "Submenu Width", "megamenu" ),
                                     'description' => __( "Mega Panel width.", "megamenu" ),
                                     'info' => array(
-                                        __("A 100% wide panel will only ever be as wide as the menu itself. For a fixed panel width set this to a pixel value.", "megamenu"),
-                                        __("Advanced: Enter a jQuery selector to synchronize the width and position of the sub menu with existing page element (e.g. body, #container, .page).", "megamenu")
+                                        __("A 100% wide panel will only ever be as wide as the menu itself. For a fixed submenu width set this to a pixel value.", "megamenu"),
+                                        __("Advanced: Enter a jQuery selector to synchronize the width and position of the submenu with existing page element (e.g. body, #container, .page).", "megamenu"),
+                                        "<a href='https://www.megamenu.com/documentation/adjust-sub-menu-width/' target='blank'>" . __("Documentation: Configuring the sub menu width", "megamenu") . '</a>'
                                     ),
                                     'settings' => array(
                                         array(
@@ -2176,8 +2175,8 @@ class Mega_Menu_Settings {
                                 ),
                                 'panel_padding' => array(
                                     'priority' => 30,
-                                    'title' => __( "Panel Padding", "megamenu" ),
-                                    'description' => __( "Set the padding for the whole panel. Set these values 0px if you wish your panel content to go edge-to-edge.", "megamenu" ),
+                                    'title' => __( "Submenu Padding", "megamenu" ),
+                                    'description' => __( "Set the padding for the whole submenu. Set these values 0px if you wish your submenu content to go edge-to-edge.", "megamenu" ),
                                     'settings' => array(
                                         array(
                                             'title' => __( "Top", "megamenu" ),
@@ -2207,8 +2206,8 @@ class Mega_Menu_Settings {
                                 ),
                                 'panel_border' => array(
                                     'priority' => 40,
-                                    'title' => __( "Panel Border", "megamenu" ),
-                                    'description' => __( "Set the border to display on the Mega Panel.", "megamenu" ),
+                                    'title' => __( "Submenu Border", "megamenu" ),
+                                    'description' => __( "Set the border to display on the submenu.", "megamenu" ),
                                     'settings' => array(
                                         array(
                                             'title' => __( "Color", "megamenu" ),
@@ -2243,8 +2242,8 @@ class Mega_Menu_Settings {
                                 ),
                                 'panel_border_radius' => array(
                                     'priority' => 50,
-                                    'title' => __( "Panel Border Radius", "megamenu" ),
-                                    'description' => __( "Set rounded corners for the panel.", "megamenu" ),
+                                    'title' => __( "Submenu Border Radius", "megamenu" ),
+                                    'description' => __( "Set rounded corners for the submenu.", "megamenu" ),
                                     'settings' => array(
                                         array(
                                             'title' => __( "Top Left", "megamenu" ),
@@ -2274,8 +2273,8 @@ class Mega_Menu_Settings {
                                 ),
                                 'widget_padding' => array(
                                     'priority' => 60,
-                                    'title' => __( "Item Padding", "megamenu" ),
-                                    'description' => __( "Use this to define the spacing between each widget / set of menu items within the panel.", "megamenu" ),
+                                    'title' => __( "Submenu Items Padding", "megamenu" ),
+                                    'description' => __( "Use this to define the amount of space around each widget / set of menu items within the submenu.", "megamenu" ),
                                     'settings' => array(
                                         array(
                                             'title' => __( "Top", "megamenu" ),
@@ -2777,7 +2776,7 @@ class Mega_Menu_Settings {
                             'settings' => array(
                                 'flyout_menu_background' => array(
                                     'priority' => 10,
-                                    'title' => __( "Menu Background", "megamenu" ),
+                                    'title' => __( "Submenu Background", "megamenu" ),
                                     'description' => __( "Set the background color for the flyout menu.", "megamenu" ),
                                     'settings' => array(
                                         array(
@@ -2799,9 +2798,9 @@ class Mega_Menu_Settings {
                                 ),
                                 'flyout_menu_width' => array(
                                     'priority' => 20,
-                                    'title' => __( "Menu Width", "megamenu" ),
+                                    'title' => __( "Submenu Width", "megamenu" ),
                                     'description' => __( "The width of each flyout menu. This must be a fixed pixel value.", "megamenu" ),
-                                    'info' => array(
+                                    'info' => array( 
                                         __( "Set this value to the width of your longest menu item title to stop menu items wrapping onto 2 lines.", "megamenu" ),
                                         __( "Experimental: Set this value to 'auto' to use a flexible width.", "megamenu" )
                                     ),
@@ -2816,7 +2815,7 @@ class Mega_Menu_Settings {
                                 ),
                                 'flyout_menu_padding' => array(
                                     'priority' => 30,
-                                    'title' => __( "Menu Padding", "megamenu" ),
+                                    'title' => __( "Submenu Padding", "megamenu" ),
                                     'description' => __( "Set the padding for the whole flyout menu.", "megamenu" ),
                                     'info' => array( __( "Only suitable for single level flyout menus. If you're using multi level flyout menus set these values to 0px.", "megamenu" ) ),
                                     'settings' => array(
@@ -2848,7 +2847,7 @@ class Mega_Menu_Settings {
                                 ),
                                 'flyout_menu_border' => array(
                                     'priority' => 40,
-                                    'title' => __( "Menu Border", "megamenu" ),
+                                    'title' => __( "Submenu Border", "megamenu" ),
                                     'description' => __( "Set the border for the flyout menu.", "megamenu" ),
                                     'settings' => array(
                                         array(
@@ -2884,7 +2883,7 @@ class Mega_Menu_Settings {
                                 ),
                                 'flyout_menu_border_radius' => array(
                                     'priority' => 50,
-                                    'title' => __( "Menu Border Radius", "megamenu" ),
+                                    'title' => __( "Submenu Border Radius", "megamenu" ),
                                     'description' => __( "Set rounded corners for flyout menus. Rounded corners will be applied to all flyout menu levels.", "megamenu" ),
                                     'settings' => array(
                                         array(
@@ -2915,7 +2914,7 @@ class Mega_Menu_Settings {
                                 ),
                                 'flyout_menu_item_background' => array(
                                     'priority' => 60,
-                                    'title' => __( "Item Background", "megamenu" ),
+                                    'title' => __( "Menu Item Background", "megamenu" ),
                                     'description' => __( "Set the background color for a flyout menu item.", "megamenu" ),
                                     'settings' => array(
                                         array(
@@ -2937,7 +2936,7 @@ class Mega_Menu_Settings {
                                 ),
                                 'flyout_menu_item_background_hover' => array(
                                     'priority' => 70,
-                                    'title' => __( "Item Background (Hover)", "megamenu" ),
+                                    'title' => __( "Menu Item Background (Hover)", "megamenu" ),
                                     'description' => __( "Set the background color for a flyout menu item (on hover).", "megamenu" ),
                                     'settings' => array(
                                         array(
@@ -2959,7 +2958,7 @@ class Mega_Menu_Settings {
                                 ),
                                 'flyout_menu_item_height' => array(
                                     'priority' => 80,
-                                    'title' => __( "Item Height", "megamenu" ),
+                                    'title' => __( "Menu Item Height", "megamenu" ),
                                     'description' => __( "The height of each flyout menu item.", "megamenu" ),
                                     'settings' => array(
                                         array(
@@ -2972,7 +2971,7 @@ class Mega_Menu_Settings {
                                 ),
                                 'flyout_menu_item_padding' => array(
                                     'priority' => 90,
-                                    'title' => __( "Item Padding", "megamenu" ),
+                                    'title' => __( "Menu Item Padding", "megamenu" ),
                                     'description' => __( "Set the padding for each flyout menu item.", "megamenu" ),
                                     'settings' => array(
                                         array(
@@ -3003,7 +3002,7 @@ class Mega_Menu_Settings {
                                 ),
                                 'flyout_menu_item_font' => array(
                                     'priority' => 100,
-                                    'title' => __( "Item Font", "megamenu" ),
+                                    'title' => __( "Menu Item Font", "megamenu" ),
                                     'description' => __( "Set the font for the flyout menu items.", "megamenu" ),
                                     'settings' => array(
                                         array(
@@ -3041,7 +3040,7 @@ class Mega_Menu_Settings {
                                 ),
                                 'flyout_menu_item_font_hover' => array(
                                     'priority' => 110,
-                                    'title' => __( "Item Font (Hover)", "megamenu" ),
+                                    'title' => __( "Menu Item Font (Hover)", "megamenu" ),
                                     'description' => __( "Set the font for the flyout menu items.", "megamenu" ),
                                     'settings' => array(
                                         array(
@@ -3063,7 +3062,7 @@ class Mega_Menu_Settings {
                                 ),
                                 'flyout_menu_item_divider' => array(
                                     'priority' => 120,
-                                    'title' => __( "Item Divider", "megamenu" ),
+                                    'title' => __( "Menu Item Divider", "megamenu" ),
                                     'description' => __( "Show a line divider below each menu item.", "megamenu" ),
                                     'settings' => array(
                                         array(
@@ -3465,7 +3464,7 @@ class Mega_Menu_Settings {
     /**
      * Check for installed caching/minification/CDN plugins and output a warning if one is found to be
      * installed and activated
-     */
+     */ 
     private function show_cache_warning() {
 
         $active_plugins = max_mega_menu_get_active_caching_plugins();
@@ -3881,7 +3880,12 @@ class Mega_Menu_Settings {
             'dash-f343' => 'dashicons-arrow-up-alt2',
             'dash-f347' => 'dashicons-arrow-down-alt2',
             'dash-f341' => 'dashicons-arrow-left-alt2',
-            'dash-f345' => 'dashicons-arrow-right-alt2'
+            'dash-f345' => 'dashicons-arrow-right-alt2',
+            'dash-f132' => 'dashicons-plus',
+            'dash-f460' => 'dashicons-minus',
+            'dash-f158' => 'dashicons-no',
+            'dash-f335' => 'dashicons-no-alt',
+
         );
 
         $icons = apply_filters( "megamenu_arrow_icons", $icons );

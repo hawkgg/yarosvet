@@ -3,7 +3,7 @@ Contributors: megamenu
 Tags: menu, megamenu, mega menu, navigation, widget, dropdown menu, drag and drop, mobile, responsive, retina, theme editor, widget, shortcode, sidebar, icons, dashicons
 Requires at least: 3.8
 Tested up to: 4.9
-Stable tag: 2.4.1.5
+Stable tag: 2.4.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -107,6 +107,17 @@ See https://www.megamenu.com for more screenshots
 5. Back end: Use the theme editor to change the appearance of your menus
 
 == Changelog ==
+
+= 2.5 =
+
+* New Feature: On mobile, clicking the "Up" arrow (indicating that a sub menu is open) will close the sub menu. This feature will be enabled the next time the CSS is regenerated for the menu, or can be manually activated by going to Mega Menu > Tools > Clear CSS Cache.
+* Fix: Menu Themes will no longer be shared across sites in a multi site network (for new installations only, existing installations will not be affected)
+* Fix: PHP Warning in Mega_Menu_Menu_Item_Manager::get_grid_column()
+* Fix: Theme export URL
+* Improvement: Add megamenu_javascript_dependencies filter
+* Improvement: Styling resets added (max-height, pointer-events and sub menu arrow indicators) for improved theme compatibility
+* Improvement: Add support for "disable-collapse" class on menu items, to stop sub menus disappearing until the page background is clicked
+* Improvement: Improved RTL admin styling
 
 = 2.4.2 =
 

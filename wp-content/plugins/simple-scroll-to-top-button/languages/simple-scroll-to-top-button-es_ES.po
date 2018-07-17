@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Simple Scroll to Top Button\n"
-"POT-Creation-Date: 2018-04-20 01:36+0300\n"
-"PO-Revision-Date: 2018-04-20 01:36+0300\n"
+"POT-Creation-Date: 2018-07-11 20:00+0300\n"
+"PO-Revision-Date: 2018-07-11 20:00+0300\n"
 "Last-Translator: Arthur Gareginyan\n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
@@ -224,6 +224,7 @@ msgid "I love this plugin! Can I help somehow?"
 msgstr "Me encanta este complemento! ¿Puedo ayudar de alguna manera?"
 
 #: inc/php/page.php:164
+#, php-format
 msgid "Yes, any contributions are very welcome! Please visit %s our donation page %s. Thank you!"
 msgstr "Sí, cualquier contribución financiera es bienvenida! Simplemente visita %s mi sitio web %s, has clic en el botón DONAR y gracias!"
 

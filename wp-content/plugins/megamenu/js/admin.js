@@ -130,10 +130,9 @@
                         }
 
                         if (idx === "general_settings") {
-
-                            $("select#mega-item-align").on("change", function() {
-                                var select = jQuery(this);
-                                var selected = jQuery(this).val();
+                            content.find("select#mega-item-align").on("change", function() {
+                                var select = $(this);
+                                var selected = $(this).val();
                                 select.next().children().hide();
                                 select.next().children("." + selected).show();
                             });

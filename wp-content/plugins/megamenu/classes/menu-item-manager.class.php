@@ -485,7 +485,7 @@ class Mega_Menu_Menu_Item_Manager {
 
         $col_class = isset( $col_data['meta']['class'] ) ? $col_data['meta']['class'] : "";
 
-        $return .= "<div class='mega-col' data-span='{$col_span}'>";
+        $return = "<div class='mega-col' data-span='{$col_span}'>";
         $return .= "    <div class='mega-col-wrap'>";
         $return .= "        <div class='mega-col-header'>";
         $return .= "            <div class='mega-col-description'>";

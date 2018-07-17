@@ -4,7 +4,7 @@
  * Plugin Name: Max Mega Menu
  * Plugin URI:  https://www.megamenu.com
  * Description: Easy to use drag & drop WordPress Mega Menu plugin. Create Mega Menus using Widgets. Responsive, retina & touch ready.
- * Version:     2.4.2
+ * Version:     2.5
  * Author:      Tom Hemsley
  * Author URI:  https://www.megamenu.com
  * License:     GPL-2.0+
@@ -26,7 +26,7 @@ final class Mega_Menu {
     /**
      * @var string
      */
-    public $version = '2.4.2';
+    public $version = '2.5';
 
 
     /**
@@ -246,6 +246,8 @@ final class Mega_Menu {
         } else {
 
             add_option( "megamenu_version", $this->version );
+            add_option( "megamenu_initial_version", $this->version );
+            add_option( "megamenu_multisite_share_themes", 'false' );
 
             do_action( "megamenu_after_install" );
 
@@ -1282,13 +1284,22 @@ if ( ! function_exists( 'max_mega_menu_is_enabled' ) ) {
 
 if ( ! function_exists('max_mega_menu_share_themes_across_multisite') ) {
     /*
-     * Return saved themes
+     * In the first version of MMM, themes were (incorrectly) shared between all sites in a multi site network.
+     * Themes will not be shared across sites for new users installing v2.4.3 onwards, but they will be shared for existing (older) users.
      *
      * @since 2.3.7
      */
     function max_mega_menu_share_themes_across_multisite() {
 
         if ( defined('MEGAMENU_SHARE_THEMES_MULTISITE') && MEGAMENU_SHARE_THEMES_MULTISITE === false ) {
+            return false;
+        }
+
+        if ( defined('MEGAMENU_SHARE_THEMES_MULTISITE') && MEGAMENU_SHARE_THEMES_MULTISITE === true ) {
+            return true;
+        }
+
+        if ( get_option('megamenu_multisite_share_themes') === 'false' ) { // only exists if initially installed version is 2.4.3+
             return false;
         }
 

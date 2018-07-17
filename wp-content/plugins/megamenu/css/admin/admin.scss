@@ -10,6 +10,43 @@ $red: #D0011B;
 $orange: #ffb900;
 $green: #46b450;
 
+.rtl.nav-menus-php {
+	.mm_launch {
+		margin-left: 0;
+		margin-right: 10px;
+
+		&:before {
+			margin-left: 2px;
+			margin-right: 0;
+		}
+	}
+	#cboxContent .mm_tab_container {
+		float: right;
+	}
+	#cboxContent .mega_menu .mm_panel_options {
+		float: left;
+	}
+	#cboxContent .mm_header_container .mm_title {
+		float: right;
+	}
+	#cboxContent table .mega-menu-item-align td.mega-value select {
+		float: right;
+	}
+	#cboxContent table .mega-menu-item-align td.mega-value .mega-description {
+		float: right;
+		margin-right: 10px;
+	}
+	#cboxContent .mm_tab_container .mm_tab.active:after {
+		right: auto;
+		left: 0;
+	}
+	#cboxContent .mega_menu .widget-title-action {
+		direction: ltr;
+	}
+	.mega_menu_meta_box div table td:nth-child(2) {
+		text-align: left;
+	}
+}
 .nav-menus-php {
 
 	#cboxContent {
@@ -184,7 +221,7 @@ $green: #46b450;
 				color: $text_grey;
 				width: 100%;
 				display: block;
-				padding: 10px 0px 10px 20px;
+				padding: 10px 10px 10px 20px;
 				box-sizing: border-box;
 				outline: 0;
 				position: relative;
@@ -638,7 +675,7 @@ $green: #46b450;
 			select#mm_enable_mega_menu {
 				margin-bottom: 0;
 				font-size: 0.9em;
-				margin-left: 5px;
+				margin: 0 5px;
 			}
 
 			select#mm_widget_selector {
@@ -1194,7 +1231,6 @@ $green: #46b450;
 			td.mega-name {
 				width: 27%;
 				line-height: 2em;
-				padding-right: 30px;
 				vertical-align: top;
 				font-size: 12px;
 
@@ -1241,11 +1277,11 @@ $green: #46b450;
 				td.mega-value {
 					select {
 						float: left;
-						margin-right: 10px;
 					}
 					.mega-description {
 						float: left;
-						margin-right: 10px;
+						margin-left: 10px;
+						font-style: italic;
 					}
 				}
 			}

@@ -1,3 +1,36 @@
+.rtl.nav-menus-php .mm_launch {
+  margin-left: 0;
+  margin-right: 10px; }
+  .rtl.nav-menus-php .mm_launch:before {
+    margin-left: 2px;
+    margin-right: 0; }
+
+.rtl.nav-menus-php #cboxContent .mm_tab_container {
+  float: right; }
+
+.rtl.nav-menus-php #cboxContent .mega_menu .mm_panel_options {
+  float: left; }
+
+.rtl.nav-menus-php #cboxContent .mm_header_container .mm_title {
+  float: right; }
+
+.rtl.nav-menus-php #cboxContent table .mega-menu-item-align td.mega-value select {
+  float: right; }
+
+.rtl.nav-menus-php #cboxContent table .mega-menu-item-align td.mega-value .mega-description {
+  float: right;
+  margin-right: 10px; }
+
+.rtl.nav-menus-php #cboxContent .mm_tab_container .mm_tab.active:after {
+  right: auto;
+  left: 0; }
+
+.rtl.nav-menus-php #cboxContent .mega_menu .widget-title-action {
+  direction: ltr; }
+
+.rtl.nav-menus-php .mega_menu_meta_box div table td:nth-child(2) {
+  text-align: left; }
+
 .nav-menus-php #cboxContent {
   padding: 0;
   -webkit-user-select: none;
@@ -119,7 +152,7 @@
       color: #444;
       width: 100%;
       display: block;
-      padding: 10px 0px 10px 20px;
+      padding: 10px 10px 10px 20px;
       box-sizing: border-box;
       outline: 0;
       position: relative;
@@ -549,7 +582,7 @@
   .nav-menus-php #cboxContent .mega_menu select#mm_enable_mega_menu {
     margin-bottom: 0;
     font-size: 0.9em;
-    margin-left: 5px; }
+    margin: 0 5px; }
   .nav-menus-php #cboxContent .mega_menu select#mm_widget_selector {
     font-size: 0.9em;
     float: right;
@@ -880,7 +913,6 @@
     .nav-menus-php #cboxContent table td.mega-name {
       width: 27%;
       line-height: 2em;
-      padding-right: 30px;
       vertical-align: top;
       font-size: 12px; }
       .nav-menus-php #cboxContent table td.mega-name .mega-description {
@@ -912,11 +944,11 @@
         text-indent: 2px;
         margin-top: 5px; }
     .nav-menus-php #cboxContent table .mega-menu-item-align td.mega-value select {
-      float: left;
-      margin-right: 10px; }
+      float: left; }
     .nav-menus-php #cboxContent table .mega-menu-item-align td.mega-value .mega-description {
       float: left;
-      margin-right: 10px; }
+      margin-left: 10px;
+      font-style: italic; }
     .nav-menus-php #cboxContent table .mega-sub-menu-align td.mega-value select {
       float: left;
       margin-right: 10px; }
