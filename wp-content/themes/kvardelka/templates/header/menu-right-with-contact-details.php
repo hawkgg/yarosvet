@@ -12,7 +12,7 @@
   <div class="container">
     <div class="top-inner clearfix">
       <div class="top-inner-container">
-        <?php marketing_logo('logo', get_template_directory_uri().'/img/logo.png'); ?>
+        <?php marketing_logo('logo', get_template_directory_uri().'/img/logo.svg'); ?>
         <button class="cmn-toggle-switch"><span></span></button>
       </div>
     </div>
