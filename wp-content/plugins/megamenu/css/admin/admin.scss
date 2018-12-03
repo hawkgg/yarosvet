@@ -265,13 +265,38 @@ $green: #46b450;
 			position: relative;
 		}
 
-		.mega_menu {
+		.mm_content.mega_menu {
+			#widgets,
+			#mm_widget_selector,
+			#mm_number_of_columns,
+			#megamenu-grid {
+				display: none;
+			}
+		}
+
+		.mm_content.mega_menu[data-type='grid'] {
+			#megamenu-grid,
+			#mm_widget_selector {
+				display: block;
+			}
+		}
+
+		.mm_content.mega_menu[data-type='megamenu'] {
+			#widgets,
+			#mm_widget_selector,
+			#mm_number_of_columns {
+				display: block !important;/* @todo remove !important once MMM Pro 1.7.1 is released */
+			}
+		}
+
+		.mm_content.mega_menu {
 
 			.mm_panel_options {
 				float: right;
 			}
 
 			#megamenu-grid {
+				margin-top: 20px;
 
 				button.mega-add-row,
 				button.mega-add-column {
@@ -302,6 +327,10 @@ $green: #46b450;
 					box-sizing: border-box;
 					position: relative;
 					min-height: 100%;
+
+					&:first-child {
+						margin-top: 0;
+					}
 
 					.mega-row-header {
 						display: inline-block;
@@ -684,7 +713,7 @@ $green: #46b450;
 				margin-right: 5px;
 			}
 
-			#mm_number_of_columns {
+			select#mm_number_of_columns {
 				font-size: 0.9em;
 				float: right;
 				margin-right: 10px;
@@ -1107,22 +1136,6 @@ $green: #46b450;
 				}
 				.widget[data-columns='9'] {
 					width: 100%;
-				}
-			}
-
-			#widgets.disabled {
-				opacity: 0.5;
-
-				&:after {
-					background: $grey;
-					display: block;
-					position: absolute;
-					top: 0;
-					left: 0;
-					height: 100%;
-					width: 100%;
-					content: "";
-					opacity: 0.3;
 				}
 			}
 		}
@@ -1881,6 +1894,7 @@ body.toplevel_page_maxmegamenu {
 	}
 
 	.megamenu_wrap .success,
+	.megamenu_wrap .warning,
 	.megamenu_wrap .fail {
 	    background: $white;
 	    border-left: 4px solid $green;
@@ -1895,7 +1909,10 @@ body.toplevel_page_maxmegamenu {
 	}
 
 	.megamenu_wrap .fail {
-		border-left: 4px solid $red;
+		border-left-color: $red;
+	}
+	.megamenu_wrap .warning {
+		border-left-color: #ffb900;
 	}
 
 	.mm-picker-container {
@@ -2439,7 +2456,9 @@ body.toplevel_page_maxmegamenu {
 			    &.mega-toggle-disabled {
 			    	.mega-toggle_blocks td:after,
 			    	.mega-toggle_bar_background td:after,
-			    	.mega-toggle_bar_height td:after {
+			    	.mega-toggle_bar_height td:after,
+			    	.mega-mobile_menu_overlay td:after,
+			    	.mega-mobile_menu_force_width td:after {
 			    		background: $mid_grey;
 					    display: block;
 					    position: absolute;

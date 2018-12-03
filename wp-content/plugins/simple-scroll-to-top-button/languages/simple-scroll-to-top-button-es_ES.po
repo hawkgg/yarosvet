@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Simple Scroll to Top Button\n"
-"POT-Creation-Date: 2018-07-11 20:00+0300\n"
-"PO-Revision-Date: 2018-07-11 20:00+0300\n"
+"POT-Creation-Date: 2018-10-09 09:39+0300\n"
+"PO-Revision-Date: 2018-10-09 09:39+0300\n"
 "Last-Translator: Arthur Gareginyan\n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.1.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: simple-scroll-to-top-button.php\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
@@ -31,7 +31,7 @@ msgstr "Donar"
 
 #: inc/php/core.php:52
 msgid "Scroll to Top"
-msgstr "Ir al inicio de la página"
+msgstr "Scroll to Top"
 
 #: inc/php/messages.php:26
 msgid "Hello. We are the team of Space X-Chimp."
@@ -67,7 +67,7 @@ msgstr "Uso"
 msgid "F.A.Q."
 msgstr "Preguntas ?"
 
-#: inc/php/page.php:46 inc/php/settings.php:126 inc/php/sidebar.php:30
+#: inc/php/page.php:46 inc/php/settings.php:126 inc/php/sidebar.php:39
 msgid "Support"
 msgstr "Soporte"
 
@@ -84,7 +84,7 @@ msgid "To display the \"Scroll to Top\" button on the front end of your website,
 msgstr ""
 
 #: inc/php/page.php:67
-msgid "Go to the \"Settings\" tab."
+msgid "Go to the \"Settings\" tab on this page."
 msgstr "Debes ir a la pestaña “Ajustes”."
 
 #: inc/php/page.php:68
@@ -109,7 +109,7 @@ msgstr "¡Nota!"
 
 #: inc/php/page.php:73
 #, php-format
-msgid "If you want more options then %s tell us %s and we will be happy to add it."
+msgid "If you want more options, then %s let us know %s and we will be happy to add them."
 msgstr "Si quieres más opciones, %s díganos %s y estaremos encantados de añadirlo."
 
 #: inc/php/page.php:87
@@ -238,28 +238,28 @@ msgid "You can ask your question on %s this page %s. But please keep in mind tha
 msgstr "Puede hacer tu pregunta en %s la página de soporte del complementos %s. Pero ten en cuenta que este complemento es gratuito, y no hay un equipo de soporte especial, así que no tengo forma de responder a todos."
 
 #: inc/php/page.php:186
-msgid "Support Me"
-msgstr "Apoyarme!"
+msgid "Support Us"
+msgstr "¡Apoyanos!"
 
-#: inc/php/page.php:194 inc/php/settings.php:133 inc/php/sidebar.php:37
+#: inc/php/page.php:194 inc/php/settings.php:133 inc/php/sidebar.php:46
 msgid "Donate with PayPal"
 msgstr "Donar con PayPal"
 
 #: inc/php/page.php:199
 #, php-format
-msgid "Hello! My name is %s Arthur Gareginyan %s and I'm the founder of %s Space X-Chimp %s."
-msgstr "¡Hola! Mi nombre es %s Arthur Gareginyan %s y soy el fundador de %s Space X-Chimp %s."
+msgid "Hello! My name is %s Arthur %s, I'm the founder of %s Space X-Chimp %s, which unites a small international team of young people."
+msgstr ""
 
 #: inc/php/page.php:207
-msgid "My intention is to create projects that will make this world a better place. I'm really passionate about my work, I like what I'm doing and hope that you will be enriched by my projects too."
-msgstr "Mi intención es crear proyectos que hagan de este mundo un lugar mejor. Soy realmente apasionado por mi trabajo, me gusta lo que estoy haciendo y espero que tú también te enriquezcas con mis proyectos."
+msgid "Our intention is to create projects that will make this world a better place. Our motto is - «Follow your dreams and don’t give up». We are really passionate about our work, we like what we are doing and hope that you will be enriched by our projects too."
+msgstr ""
 
 #: inc/php/page.php:208
-msgid "I spend a lot of time and effort trying to make sure that the themes, plugins and other things I build are useful, and the ultimate proof of that for me is that you actually want to use them. But, I’m an independent developer, without a regular income, so every little contribution helps cover my costs and lets me spend more time building things for people like you to enjoy."
+msgid "We spend a lot of time and effort trying to make sure that the themes, plugins and other things we build are useful, and the ultimate proof of that for us is that you actually want to use them. But we are an independent developers, without a regular income, so every little contribution helps to cover our costs and allows us to spend more time creating things for awesome people like you to enjoy."
 msgstr "Paso mucho tiempo y esfuerzo tratando de asegurarme que los temas, complementos y otras cosas que construyo sean útiles, y la prueba definitiva para mí de que son útiles, es que realmente desea utilizarlos. Pero, soy un desarrollador independiente, sin un ingreso regular, por lo que cada pequeña contribución me ayuda a cubrir mis costos y me deja pasar más tiempo construyendo cosas para que la gente como tú lo disfrute."
 
 #: inc/php/page.php:209
-msgid "If you appreciate my work, you can buy me a coffee!"
+msgid "If you appreciate our work, you can buy us a cup of coffee!"
 msgstr "Si aprecias mi trabajo, puedes comprarme un café!"
 
 #: inc/php/page.php:210
@@ -347,7 +347,7 @@ msgid "Duration is given in milliseconds. Higher values indicate slower animatio
 msgstr ""
 
 #: inc/php/settings.php:99
-msgid "Full Website"
+msgid "Every frontend page"
 msgstr "En todo el sitio web"
 
 #: inc/php/settings.php:100
@@ -366,27 +366,31 @@ msgstr "Selecciona dónde quieres que aparezca el botón."
 msgid "Live Preview"
 msgstr "Vista Previa"
 
-#: inc/php/settings.php:128 inc/php/sidebar.php:32
-msgid "I'm an independent developer, without a regular income, so every little contribution helps cover my costs and lets me spend more time building things for people like you to enjoy."
+#: inc/php/settings.php:128 inc/php/sidebar.php:41
+msgid "Every little contribution helps to cover our costs and allows us to spend more time creating things for awesome people like you to enjoy."
 msgstr "Soy un desarrollador independiente, sin un ingreso regular, por lo que cada pequeña contribución ayuda a cubrir mis costos y me deja pasar más tiempo construyendo cosas para que personas como tú las disfruten."
 
-#: inc/php/settings.php:135 inc/php/sidebar.php:39
+#: inc/php/settings.php:135 inc/php/sidebar.php:48
 msgid "Thanks for your support!"
 msgstr "¡Gracias por tu apoyo!"
 
 #: inc/php/sidebar.php:16
+msgid "We are «Space X-Chimp»"
+msgstr ""
+
+#: inc/php/sidebar.php:25
 msgid "About"
 msgstr "Acerca de"
 
-#: inc/php/sidebar.php:18
+#: inc/php/sidebar.php:27
 msgid "This plugin allows you to easily add the \"Scroll to Top\" button to your website in a simple and elegant way."
 msgstr "Este plugin permite añadir en tu sitio web un botón de \"Ir al Inicio de la Página\" de forma simple y elegante."
 
-#: inc/php/sidebar.php:23
+#: inc/php/sidebar.php:32
 msgid "Help"
 msgstr "Ayuda"
 
-#: inc/php/sidebar.php:25
+#: inc/php/sidebar.php:34
 msgid "If you have a question, please read the information in the FAQ section."
 msgstr "Si tiene alguna pregunta, lee la información en la sección de preguntas frecuentes."
 
@@ -409,3 +413,9 @@ msgstr "Space X-Chimp"
 #. Author URI of the plugin/theme
 msgid "https://www.spacexchimp.com"
 msgstr "https://www.spacexchimp.com"
+
+#~ msgid "Hello! My name is %s Arthur %s and I'm the founder of %s Space X-Chimp %s."
+#~ msgstr "¡Hola! Mi nombre es %s Arthur %s y soy el fundador de %s Space X-Chimp %s."
+
+#~ msgid "My intention is to create projects that will make this world a better place. I'm really passionate about my work, I like what I'm doing and hope that you will be enriched by my projects too."
+#~ msgstr "Mi intención es crear proyectos que hagan de este mundo un lugar mejor. Soy realmente apasionado por mi trabajo, me gusta lo que estoy haciendo y espero que tú también te enriquezcas con mis proyectos."

@@ -6,28 +6,33 @@
 defined( 'ABSPATH' ) or die( "Restricted access!" );
 
 /**
- * Base for the _load_scripts hook
+ * Callback for the dynamic JavaScript
  */
-function spacexchimp_p008_load_scripts_base( $options ) {
+function spacexchimp_p008_load_scripts_dynamic_js( $options, $prefix ) {
 
-    // Put value of constants to variables for easier access
-    $prefix = SPACEXCHIMP_P008_PREFIX;
-    $url = SPACEXCHIMP_P008_URL;
-    $version = SPACEXCHIMP_P008_VERSION;
+    // Get settings and put them in variables
+    $scroll_duration = !empty( $options['scroll_duration'] ) ? $options['scroll_duration'] : '300';
 
-    // Load jQuery library
-    wp_enqueue_script( 'jquery' );
+    // Create an array (JS object) with all the settings
+    $script_params = array(
+                           'scroll_duration' => $scroll_duration,
+                           );
 
-    // Style sheet
-    wp_enqueue_style( $prefix . '-frontend-css', $url . 'inc/css/frontend.css', array(), $version, 'all' );
+    // Inject the array into the JavaScript file
+    wp_localize_script( $prefix . '-frontend-js', $prefix . '_scriptParams', $script_params );
+}
 
-    // JavaScript
-    wp_enqueue_script( $prefix . '-frontend-js', $url . 'inc/js/frontend.js', array('jquery'), $version, true );
+/**
+ * Callback for the dynamic CSS
+ */
+function spacexchimp_p008_load_scripts_dynamic_css( $options, $prefix ) {
 
-    // Dynamic CSS. Create CSS and injected it into the stylesheet
+    // Get settings and put them in variables
     $backgroun_color = !empty( $options['background-color'] ) ? $options['background-color'] : '#000';
     $symbol_color = !empty( $options['symbol-color'] ) ? $options['symbol-color'] : '#fff';
     $size_button = !empty( $options['size_button'] ) ? $options['size_button'] : '32';
+
+    // Create an array with all the settings (CSS code)
     $custom_css = "
                     #ssttbutton {
                         font-size: " . $size_button . "px;
@@ -39,15 +44,9 @@ function spacexchimp_p008_load_scripts_base( $options ) {
                         color: " . $symbol_color . ";
                     }
                   ";
+
+    // Inject the array into the stylesheet
     wp_add_inline_style( $prefix . '-frontend-css', $custom_css );
-
-    // Dynamic JS. Create JS object and injected it into the JS file
-    $scroll_duration = !empty( $options['scroll_duration'] ) ? $options['scroll_duration'] : '300';
-    $script_params = array(
-                           'scroll_duration' => $scroll_duration,
-                           );
-    wp_localize_script( $prefix . '-frontend-js', $prefix . '_scriptParams', $script_params );
-
 }
 
 /**
@@ -69,6 +68,9 @@ function spacexchimp_p008_load_scripts_admin( $hook ) {
     // Read options from database
     $options = get_option( $settings . '_settings' );
 
+    // Load jQuery library
+    wp_enqueue_script( 'jquery' );
+
     // Load WordPress Color Picker library
     wp_enqueue_style( 'wp-color-picker' );
 
@@ -85,12 +87,17 @@ function spacexchimp_p008_load_scripts_admin( $hook ) {
 
     // Style sheet
     wp_enqueue_style( $prefix . '-admin-css', $url . 'inc/css/admin.css', array(), $version, 'all' );
+    wp_enqueue_style( $prefix . '-frontend-css', $url . 'inc/css/frontend.css', array(), $version, 'all' );
 
     // JavaScript
     wp_enqueue_script( $prefix . '-admin-js', $url . 'inc/js/admin.js', array('wp-color-picker'), $version, true );
+    wp_enqueue_script( $prefix . '-frontend-js', $url . 'inc/js/frontend.js', array('jquery'), $version, true );
 
-    // Call the function that contain a basis of scripts
-    spacexchimp_p008_load_scripts_base( $options );
+    // Call the function that contains the dynamic JavaScript
+    spacexchimp_p008_load_scripts_dynamic_js( $options, $prefix );
+
+    // Call the function that contains the dynamic CSS
+    spacexchimp_p008_load_scripts_dynamic_css( $options, $prefix );
 
 }
 add_action( 'admin_enqueue_scripts', 'spacexchimp_p008_load_scripts_admin' );
@@ -116,11 +123,23 @@ function spacexchimp_p008_load_scripts_frontend() {
     // If enabled on current page
     if ( $display_on == '' OR $display_on == 'Home Page Only' AND is_home() OR $display_on == 'Home Page Only' AND is_front_page() ) {
 
-        // Call the function that contain a basis of scripts
-        spacexchimp_p008_load_scripts_base( $options );
+        // Load jQuery library
+        wp_enqueue_script( 'jquery' );
 
         // Font Awesome library
         wp_enqueue_style( $prefix . '-font-awesome-css-frontend', $url . 'inc/lib/font-awesome/css/font-awesome.css', array(), $version, 'screen' );
+
+        // Style sheet
+        wp_enqueue_style( $prefix . '-frontend-css', $url . 'inc/css/frontend.css', array(), $version, 'all' );
+
+        // JavaScript
+        wp_enqueue_script( $prefix . '-frontend-js', $url . 'inc/js/frontend.js', array('jquery'), $version, true );
+
+        // Call the function that contains the dynamic JavaScript
+        spacexchimp_p008_load_scripts_dynamic_js( $options, $prefix );
+
+        // Call the function that contains the dynamic CSS
+        spacexchimp_p008_load_scripts_dynamic_css( $options, $prefix );
 
     }
 

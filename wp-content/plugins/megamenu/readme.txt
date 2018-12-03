@@ -2,8 +2,8 @@
 Contributors: megamenu
 Tags: menu, megamenu, mega menu, navigation, widget, dropdown menu, drag and drop, mobile, responsive, retina, theme editor, widget, shortcode, sidebar, icons, dashicons
 Requires at least: 3.8
-Tested up to: 4.9
-Stable tag: 2.4.2
+Tested up to: 5.0
+Stable tag: 2.5.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -47,6 +47,7 @@ Max Mega Menu is developed with a focus on code quality, performance and usabili
 
 ####Pro Features:
 
+> * Tabbed Mega Menus
 > * Sticky Menu
 > * Vertical & Accordion Menus
 > * FontAwesome, Genericon & Custom Icons
@@ -56,7 +57,7 @@ Max Mega Menu is developed with a focus on code quality, performance and usabili
 > * WooCommerce & EDD support
 > * Google Fonts
 > * Roles & Restrictions
-> * Search, icon, HTML and logo mobile toggle blocks
+> * Extra mobile toggle blocks
 > * Automatic updates
 > * Priority Support
 >
@@ -107,6 +108,32 @@ See https://www.megamenu.com for more screenshots
 5. Back end: Use the theme editor to change the appearance of your menus
 
 == Changelog ==
+
+= 2.5.2 =
+
+* Fix: Revert "When WPML is installed, do not override the wp_nav_menu_args "menu" parameter to allow WPML to display the correct menu (removing the requirement to enable the WPML "Adjust IDs for multilingual functionality" option)"
+* Improvement: Make PHP Function and Shortcode textareas readonly
+
+= 2.5.1 =
+
+* Improvement: Redirect to theme editor page after importing a menu theme
+* Improvement: Show a warning if attempting to edit a menu theme that is not actually applied to a menu
+* Improvement: Add warning to the auto generated style.css file not to manually edit auto generated CSS
+* Improvement: Add clearfix to mobile menu
+* Improvement: Add notice to Navigation Menu widget to let users know that the Max Mega Menu widget should be used, if the intention is to display a mega menu
+* Improvement: Rename admin JS and CSS handles to "maxmegamenu" (from "mega-menu") to avoid conflicts
+* Improvement: Detect when Clearfy plugin is installed and 'disable dashicons' has been enabled
+* Improvement: Styling reset added (transition) for improved theme compatibility
+* Improvement: Detect and clear "Breeze" cache when changes are made to a menu
+* New Feature: Add "Mobile Sub Menu - Overlay Content" option to theme editor
+* New Feature: Add "Mobile Sub Menu - Force Width" option to theme editor
+* Fix: Unbind events from li.mega-menu-column and li.mega-menu-row elements (when Unbind Events is set to true)
+* Fix: Hide widget and column selector from mega menu builder when sub menu type is set to "Mega Menu - Tabbed"
+* Fix: Strip slashes when using shortcodes in Menu Toggle mobile toggle block
+* Fix: When WPML is installed, do not override the wp_nav_menu_args "menu" parameter to allow WPML to display the correct menu (removing the requirement to enable the WPML "Adjust IDs for multilingual functionality" option)
+* Fix: Remove box-shadow from menu items on mobile menu when Menu Item Divider is enabled
+* Fix: Apply CSS resets to mega-menu-row and mega-menu-column elements
+* Fix: Apply 'mega-megamenu' class to standard layout sub menus within tabbed mega menus
 
 = 2.5 =
 

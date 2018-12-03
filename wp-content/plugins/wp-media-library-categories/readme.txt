@@ -3,8 +3,8 @@ Contributors: jeffrey-wp
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=SSNQMST6R28Q2
 Tags: category, categories, media, library, medialibrary, image, images, media category, media categories
 Requires at least: 3.1
-Tested up to: 4.9.5
-Stable tag: 1.6.1
+Tested up to: 5.0
+Stable tag: 1.7
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,11 +23,11 @@ There is even an option to filter on categories when using the gallery shortcode
 * filter on categories in the media library
 * filter on categories in the gallery shortcode
 * taxonomy filter
-* support for WordPress 3.1 – 4.9
+* support for WordPress 3.1 – 5.0
 
 > <strong>Try Premium version - 100% money back guarantee</strong>
 > WordPress Media Library Categories Premium adds the option to filter on categories when inserting media into a post or page.
-> [Try now - 100% money back guarantee](https://codecanyon.net/item/media-library-categories-premium/6691290?ref=jeffrey-wp)
+> [Try now - 100% money back guarantee](https://1.envato.market/c/1206953/275988/4415?subId1=wpmlcp&subId2=readme&u=https%3A%2F%2Fcodecanyon.net%2Fitem%2Fmedia-library-categories-premium%2F6691290)
 
 == Installation ==
 
@@ -80,7 +80,7 @@ In this example the slug is used, but you could also use the term_id.
 
 
 = How can I filter on categories when inserting media into a post or page? =
-This feature is only available in the [premium version](https://codecanyon.net/item/media-library-categories-premium/6691290?ref=jeffrey-wp)
+This feature is only available in the [premium version](https://1.envato.market/c/1206953/275988/4415?subId1=wpmlcp&subId2=readme&u=https%3A%2F%2Fcodecanyon.net%2Fitem%2Fmedia-library-categories-premium%2F6691290)
 
 
 = I want to thank you, where can I make a donation? =
@@ -91,9 +91,15 @@ Maintaining a plugin and keeping it up to date is hard work. Please support me b
 
 1. Filter by category in the media library. Use bulk actions to add and remove categories of multiple images at once.
 2. Manage categories in the media library
-3. Filter by category when inserting media [(premium version)](https://codecanyon.net/item/media-library-categories-premium/6691290?ref=jeffrey-wp)
+3. Filter by category when inserting media [(premium version)](https://1.envato.market/c/1206953/275988/4415?subId1=wpmlcp&subId2=readme&u=https%3A%2F%2Fcodecanyon.net%2Fitem%2Fmedia-library-categories-premium%2F6691290)
 
 == Changelog ==
+
+= 1.7 =
+* Support WordPress 5.0
+* Support multiple slugs and id's in gallery shortcode
+* Support WordPress Coding Standards 1.1.0
+* Add support for [Dark Mode](https://wordpress.org/plugins/dark-mode/) in WordPress
 
 = 1.6.1 =
 * Support for SCRIPT_DEBUG.
@@ -159,7 +165,7 @@ Maintaining a plugin and keeping it up to date is hard work. Please support me b
 = 1.4.10 =
 * Stay on active page in the media library when changing categories.
 * Fixed PHP 5.4 strict warning.
-* Added hierarchical display of the filter menu when inserting media. [(premium only)](https://codecanyon.net/item/media-library-categories-premium/6691290?ref=jeffrey-wp)
+* Added hierarchical display of the filter menu when inserting media. [(premium only)](https://1.envato.market/c/1206953/275988/4415?subId1=wpmlcp&subId2=readme&u=https%3A%2F%2Fcodecanyon.net%2Fitem%2Fmedia-library-categories-premium%2F6691290)
 
 = 1.4.9 =
 * Fixed error message which in some cases appears when updating multiple items at once. [View support question](https://wordpress.org/support/topic/error-after-latest-update-3)
@@ -182,14 +188,14 @@ Maintaining a plugin and keeping it up to date is hard work. Please support me b
 * By default the WordPress Media Library uses the same categories as WordPress does (such as posts & pages). Now you can use separate categories for the WordPress Media Library. [Read the FAQ for howto](https://wordpress.org/plugins/wp-media-library-categories/faq/)
 
 = 1.4.2 & 1.4.3 =
-* [(Premium only)](https://codecanyon.net/item/media-library-categories-premium/6691290?ref=jeffrey-wp)
+* [(Premium only)](https://1.envato.market/c/1206953/275988/4415?subId1=wpmlcp&subId2=readme&u=https%3A%2F%2Fcodecanyon.net%2Fitem%2Fmedia-library-categories-premium%2F6691290)
 
 = 1.4.1 =
 * Improved bulk actions: added option to remove category from multiple media items at once
 * Improved bulk actions: arranged options in option group
 
 = 1.4 =
-* Filter on categories when inserting media [(premium only)](https://codecanyon.net/item/media-library-categories-premium/6691290?ref=jeffrey-wp)
+* Filter on categories when inserting media [(premium only)](https://1.envato.market/c/1206953/275988/4415?subId1=wpmlcp&subId2=readme&u=https%3A%2F%2Fcodecanyon.net%2Fitem%2Fmedia-library-categories-premium%2F6691290)
 
 = 1.3.2 =
 * [Added taxonomy filter](https://wordpress.org/support/topic/added-taxonomy-filter)

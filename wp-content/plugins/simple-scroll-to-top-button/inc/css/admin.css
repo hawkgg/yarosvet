@@ -22,7 +22,7 @@ p {
 
 /* Title and Description of page
  -------------------------------------------------------------- */
-h2 {
+.sxc-header {
     padding: 30px !important;
     background-color: #333;
     color: #e0dfdc;
@@ -46,7 +46,7 @@ h2 {
     line-height: 50px !important;
     overflow: hidden;
 }
-h2 span {
+.sxc-header span {
     content: '\A';
     display: block;
     margin-top: 15px;
@@ -55,11 +55,11 @@ h2 span {
     text-shadow: none;
     line-height: 20px;
 }
-h2 span a,
-h2 span a:hover {
+.sxc-header span a,
+.sxc-header span a:hover {
     color: #fff;
 }
-h2 span a:hover {
+.sxc-header span a:hover {
     text-shadow: none;
     text-decoration: none;
     -webkit-transition: all 0.2s ease-in-out;
@@ -67,7 +67,7 @@ h2 span a:hover {
     -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
 }
-h2 .version {
+.sxc-header .version {
     position: absolute;
     right: 40px;
     color: #a6a6a6;
@@ -99,6 +99,11 @@ h2 .version {
 #side-sortables .banner img {
     width: 265px;
 }
+#side-sortables .banner .btn {
+    width: 95%;
+    height: 40px;
+    margin-bottom: 0;
+}
 
 /* Support - Tab and Addition section
  -------------------------------------------------------------- */
@@ -110,6 +115,7 @@ h2 .version {
 }
 #support-addition {
     display: none;
+    margin-top: 30px;
 }
 
 /* Responsive page
@@ -330,6 +336,7 @@ h2 .version {
 }
 .panel-body {
     display: inline-block;
+    width: 100%;
     font-family: Verdana, Geneva, sans-serif;
     font-size: 13px;
 }
@@ -393,7 +400,6 @@ h2 .version {
     color: #32689a;
     font-family: "Lucida Grande", Tahoma, sans-serif;
     font-size: 18px;
-    font-weight: 600;
     text-shadow: 1px 1px 0 #fff;
     border-bottom-color: rgba(0, 0, 0, 0.4);
     -webkit-border-radius: 3px !important;
@@ -479,6 +485,8 @@ h2 .version {
 .form-table {
     clear: none;
     margin-left: 20px;
+    width: -webkit-calc(100% - 40px);
+    width: calc(100% - 40px);
     font-family: Verdana, Geneva, sans-serif;
     font-size: 13px;
 }
@@ -489,11 +497,13 @@ h2 .version {
 .form-table td {
     padding-bottom: 10px;
 }
+.form-table th[scope="row"] {
+    font-weight: normal;
+}
 
 /* Help text
  -------------------------------------------------------------- */
 td.help-text {
-    width: 90%;
     font-family: Verdana, Geneva, sans-serif;
     font-size: 12px;
     font-style: italic;
@@ -510,7 +520,7 @@ td.help-text {
 .control-textarea {
     position: relative;
     max-width: 600px;
-    width: 90%;
+    width: 100%;
     padding-top: 5px;
     background: #fcfcfc;
     -webkit-border-radius: 3px;

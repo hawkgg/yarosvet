@@ -185,9 +185,9 @@ class Mega_Menu_Nav_Menus {
         wp_deregister_style('wmu-colorbox-css');
 
         wp_enqueue_style( 'colorbox', MEGAMENU_BASE_URL . 'js/colorbox/colorbox.css', false, MEGAMENU_VERSION );
-        wp_enqueue_style( 'mega-menu', MEGAMENU_BASE_URL . 'css/admin/admin.css', false, MEGAMENU_VERSION );
+        wp_enqueue_style( 'maxmegamenu', MEGAMENU_BASE_URL . 'css/admin/admin.css', false, MEGAMENU_VERSION );
 
-        wp_enqueue_script( 'mega-menu', MEGAMENU_BASE_URL . 'js/admin.js', array(
+        wp_enqueue_script( 'maxmegamenu', MEGAMENU_BASE_URL . 'js/admin.js', array(
             'jquery',
             'jquery-ui-core',
             'jquery-ui-sortable',
@@ -200,7 +200,7 @@ class Mega_Menu_Nav_Menus {
 
         $prefix = isset( $settings['prefix'] ) ? $settings['prefix'] : 'true';
 
-        wp_localize_script( 'mega-menu', 'megamenu',
+        wp_localize_script( 'maxmegamenu', 'megamenu',
             array(
                 'debug_launched' => __("Launched for Menu ID", "megamenu"),
                 'launch_lightbox' => __("Mega Menu", "megamenu"),

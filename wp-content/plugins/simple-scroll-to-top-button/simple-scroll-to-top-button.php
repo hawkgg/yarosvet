@@ -5,7 +5,7 @@
  * Description: Easily add cross browser "Scroll to Top" button to your website. It will be responsive and compatible with all major browsers. It will work with any theme!
  * Author: Space X-Chimp
  * Author URI: https://www.spacexchimp.com
- * Version: 4.21
+ * Version: 4.25
  * License: GPL3
  * Text Domain: simple-scroll-to-top-button
  * Domain Path: /languages/

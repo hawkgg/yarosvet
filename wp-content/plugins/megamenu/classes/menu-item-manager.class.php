@@ -222,10 +222,8 @@ class Mega_Menu_Menu_Item_Manager {
 
         $all_widgets = $widget_manager->get_available_widgets();
 
-        $display = $menu_item_meta['type'] == 'grid' ? 'none' : 'block';
-
         $return .= "<div class='mm_panel_options'>";
-        $return .= "    <select id='mm_number_of_columns' name='settings[panel_columns]' style='display: {$display}'>";
+        $return .= "    <select id='mm_number_of_columns' name='settings[panel_columns]'>";
         $return .= "        <option value='1' " . selected( $menu_item_meta['panel_columns'], 1, false ) . ">1 " . __("column", "megamenu") . "</option>";
         $return .= "        <option value='2' " . selected( $menu_item_meta['panel_columns'], 2, false ) . ">2 " . __("columns", "megamenu") . "</option>";
         $return .= "        <option value='3' " . selected( $menu_item_meta['panel_columns'], 3, false ) . ">3 " . __("columns", "megamenu") . "</option>";
@@ -268,12 +266,9 @@ class Mega_Menu_Menu_Item_Manager {
      */
     public function get_megamenu_grid_html( $menu_item_id, $menu_id, $menu_item_depth, $menu_item_meta ) {
 
-        $class = $menu_item_meta['type'] == 'grid' ? 'enabled' : 'disabled';
-        $display = $menu_item_meta['type'] == 'grid' ? 'block' : 'none';
-
         $css_version = get_transient("megamenu_css_version");
 
-        $return = "<div id='megamenu-grid' class='{$class}' style='display: {$display}'>";
+        $return = "<div id='megamenu-grid'>";
 
         if ( $css_version && version_compare( $css_version, '2.3.9', '<=' ) ) {
             $link = "<a href='" . esc_attr( admin_url( 'admin.php?page=maxmegamenu_tools' ) ) . "'>" . __("Mega Menu") . " > " . __("Tools") . "</a>";
@@ -544,12 +539,8 @@ class Mega_Menu_Menu_Item_Manager {
 
         $widget_manager = new Mega_Menu_Widget_Manager();
 
-        $class = $menu_item_meta['type'] == 'megamenu' ? 'enabled' : 'disabled';
-        $display = $menu_item_meta['type'] == 'grid' ? 'none' : 'block';
-
-
-        $return = "<div id='widgets' class='{$class}' style='display: {$display}' data-columns='{$menu_item_meta['panel_columns']}'>";
-
+        $return = "<div id='widgets' data-columns='{$menu_item_meta['panel_columns']}'>";
+        
         $items = $widget_manager->get_widgets_and_menu_items_for_menu_id( $menu_item_id, $menu_id );
 
         if ( count ( $items ) ) {

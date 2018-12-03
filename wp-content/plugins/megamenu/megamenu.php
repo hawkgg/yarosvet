@@ -3,9 +3,9 @@
 /*
  * Plugin Name: Max Mega Menu
  * Plugin URI:  https://www.megamenu.com
- * Description: Easy to use drag & drop WordPress Mega Menu plugin. Create Mega Menus using Widgets. Responsive, retina & touch ready.
- * Version:     2.5
- * Author:      Tom Hemsley
+ * Description: An easy to use mega menu plugin. Written the WordPress way.
+ * Version:     2.5.2
+ * Author:      megamenu.com
  * Author URI:  https://www.megamenu.com
  * License:     GPL-2.0+
  * Copyright:   2018 Tom Hemsley (https://www.megamenu.com)
@@ -26,7 +26,7 @@ final class Mega_Menu {
     /**
      * @var string
      */
-    public $version = '2.5';
+    public $version = '2.5.2';
 
 
     /**
@@ -59,6 +59,8 @@ final class Mega_Menu {
         add_action( 'admin_init', array( $this, 'install_upgrade_check' ) );
         add_action( 'admin_notices', array( $this, 'admin_notices' ) );
         add_action( 'widgets_init', array( $this, 'register_widget' ) );
+        add_filter( 'in_widget_form', array( $this, 'add_notice_to_nav_menu_widget' ) , 10, 3 );
+
         add_action( 'after_setup_theme', array( $this, 'register_nav_menus' ) );
 
         add_filter( 'wp_nav_menu_args', array( $this, 'modify_nav_menu_args' ), 99999 );
@@ -99,7 +101,6 @@ final class Mega_Menu {
 
         $mega_menu_style_manager = new Mega_Menu_Style_Manager();
         $mega_menu_style_manager->setup_actions();
-
     }
 
 
@@ -131,11 +132,9 @@ final class Mega_Menu {
      * @since 1.8.3
      */
     public function admin_enqueue_scripts( $hook ) {
-
         wp_enqueue_style( 'maxmegamenu-global', MEGAMENU_BASE_URL . 'css/admin/global.css', array(), MEGAMENU_VERSION );
 
-        if ( ! wp_script_is('mega-menu') ) {
-
+        if ( ! wp_script_is('maxmegamenu') ) {
             if ( 'nav-menus.php' == $hook ) {
                 // load widget scripts and styles first to allow us to dequeue conflicting colorbox scripts from other plugins
                 do_action( 'sidebar_admin_setup' );
@@ -146,9 +145,7 @@ final class Mega_Menu {
             if ( strpos( $hook, 'maxmegamenu' ) !== false ) {
                 do_action( 'megamenu_admin_scripts', $hook );
             }
-
         }
-
     }
 
 
@@ -158,9 +155,7 @@ final class Mega_Menu {
      * @since 2.3.7
      */
     public function admin_print_footer_scripts( $hook ) {
-
         do_action( 'admin_footer-widgets.php' );
-
     }
 
 
@@ -170,9 +165,7 @@ final class Mega_Menu {
      * @since 2.3.7
      */
     public function admin_print_scripts( $hook ) {
-
         do_action( 'admin_print_scripts-widgets.php' );
-
     }
 
 
@@ -182,9 +175,7 @@ final class Mega_Menu {
      * @since 2.3.7
      */
     public function admin_print_styles( $hook ) {
-
         do_action( 'admin_print_styles-widgets.php' );
-
     }
 
 
@@ -198,15 +189,10 @@ final class Mega_Menu {
         $locations = get_option('megamenu_locations');
 
         if ( is_array( $locations ) && count( $locations ) ) {
-
             foreach ( $locations as $key => $val ) {
-
-              register_nav_menu( $key, $val );
-
+                register_nav_menu( $key, $val );
             }
-
         }
-
     }
 
 
@@ -230,7 +216,6 @@ final class Mega_Menu {
      * @since 1.3
      */
     public function install_upgrade_check() {
-
         $version = get_option( "megamenu_version" );
 
         if ( $version ) {
@@ -260,9 +245,7 @@ final class Mega_Menu {
 
                 add_option( "megamenu_settings", $settings);
             }
-
         }
-
     }
 
 
@@ -272,9 +255,7 @@ final class Mega_Menu {
      * @since 1.7.4
      */
     public function register_widget() {
-
         register_widget( 'Mega_Menu_Widget' );
-
     }
 
 
@@ -285,7 +266,6 @@ final class Mega_Menu {
      * @return string
      */
     public function register_shortcode( $atts ) {
-
         if ( ! isset( $atts['location'] ) ) {
             return false;
         }
@@ -305,9 +285,7 @@ final class Mega_Menu {
      * @since 1.0
      */
     public function load_plugin_textdomain() {
-
         load_plugin_textdomain( 'megamenu', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
-
     }
 
 
@@ -317,11 +295,9 @@ final class Mega_Menu {
      * @since 1.0
      */
     private function define_constants() {
-
         define( 'MEGAMENU_VERSION',    $this->version );
         define( 'MEGAMENU_BASE_URL',   trailingslashit( plugins_url( 'megamenu' ) ) );
         define( 'MEGAMENU_PATH',       plugin_dir_path( __FILE__ ) );
-
     }
 
 
@@ -331,7 +307,6 @@ final class Mega_Menu {
      * @since 1.0
      */
     private function plugin_classes() {
-
         $classes = array(
             'mega_menu_walker'            => MEGAMENU_PATH . 'classes/walker.class.php',
             'mega_menu_widget_manager'    => MEGAMENU_PATH . 'classes/widget-manager.class.php',
@@ -354,7 +329,6 @@ final class Mega_Menu {
      * @since 1.0
      */
     private function includes() {
-
         $autoload_is_disabled = defined( 'MEGAMENU_AUTOLOAD_CLASSES' ) && MEGAMENU_AUTOLOAD_CLASSES === false;
 
         if ( function_exists( "spl_autoload_register" ) && ! $autoload_is_disabled ) {
@@ -411,7 +385,6 @@ final class Mega_Menu {
         if ( isset( $classes[ $class_name ] ) && is_readable( $classes[ $class_name ] ) ) {
             require_once $classes[ $class_name ];
         }
-
     }
 
 
@@ -468,7 +441,6 @@ final class Mega_Menu {
      * @since 1.3
      */
     public function add_responsive_toggle( $nav_menu, $args ) {
-
         // make sure we're working with a Mega Menu
         if ( ! is_a( $args->walker, 'Mega_Menu_Walker' ) )
             return $nav_menu;
@@ -484,7 +456,6 @@ final class Mega_Menu {
         $replace = $find . '<div class="mega-menu-toggle" tabindex="0">' . $content . '</div>';
 
         return str_replace( $find, $replace, $nav_menu );
-
     }
 
 
@@ -498,7 +469,6 @@ final class Mega_Menu {
      * @return array - Menu objects including widgets
      */
     public function add_widgets_to_menu( $items, $args ) {
-
         // make sure we're working with a Mega Menu
         if ( ! is_a( $args->walker, 'Mega_Menu_Walker' ) ) {
             return $items;
@@ -519,6 +489,10 @@ final class Mega_Menu {
             if ( $item->depth === 0 && $item->megamenu_settings['type'] == 'megamenu' || ( $item->depth === 1 && $item->parent_submenu_type == 'tabbed' && $item->megamenu_settings['type'] != 'grid' ) ) {
 
                 $panel_widgets = $widget_manager->get_widgets_for_menu_id( $item->ID, $args->menu );
+
+                if ( ! in_array( 'menu-megamenu', $item->classes ) ) {
+                    $item->classes[] = 'menu-megamenu';
+                }
 
                 if ( count( $panel_widgets ) ) {
 
@@ -831,9 +805,10 @@ final class Mega_Menu {
         // reorder menu items within mega menus based on internal ordering
         foreach ( $items as $item ) {
             // items ordered with 'forced' ordering
-            if ( $item->parent_submenu_type == 'megamenu' && isset( $item->megamenu_order ) && $item->megamenu_order !== 0 ) {
-                $parent_post = get_post( $item->menu_item_parent );
-                $item->menu_order = $parent_post->menu_order * 1000 + $item->megamenu_order;
+            if ( property_exists( $item, 'parent_submenu_type' ) && $item->parent_submenu_type == 'megamenu' && property_exists( $item, 'megamenu_order' ) && $item->megamenu_order !== 0 ) {
+                if ( $parent_menu_item = get_post( $item->menu_item_parent ) ) {
+                    $item->menu_order = $parent_menu_item->menu_order * 1000 + $item->megamenu_order;
+                }
             }
         }
 
@@ -849,9 +824,7 @@ final class Mega_Menu {
         ksort( $new_items );
 
         return array_merge( $new_items, $wpml_lang_items );
-
     }
-
 
 
     /**
@@ -882,6 +855,7 @@ final class Mega_Menu {
         return $items;
     }
 
+
     /**
      * Apply column and clear classes to menu items (inc. widgets)
      *
@@ -891,7 +865,6 @@ final class Mega_Menu {
      * @return array
      */
     public function apply_classes_to_menu_items( $items, $args ) {
-
         $parents = array();
 
         foreach ( $items as $item ) {
@@ -1060,6 +1033,16 @@ final class Mega_Menu {
                 }
             }
 
+            $mobile_force_width = 'false';
+            
+            if ( isset( $menu_theme['mobile_menu_force_width'] ) && $menu_theme['mobile_menu_force_width'] == 'on' ) {
+                if ( isset( $menu_theme['mobile_menu_force_width_selector'] ) ) {
+                    $mobile_force_width = $menu_theme['mobile_menu_force_width_selector'];
+                } else {
+                    $mobile_force_width = 'body';
+                }
+            }
+
             $wrap_attributes = apply_filters("megamenu_wrap_attributes", array(
                 "id" => '%1$s',
                 "class" => '%2$s mega-no-js',
@@ -1070,6 +1053,7 @@ final class Mega_Menu {
                 "data-effect-speed-mobile" => isset( $menu_settings['effect_speed_mobile'] ) ? $menu_settings['effect_speed_mobile'] : '200',
                 "data-panel-width" => preg_match('/^\d/', $menu_theme['panel_width']) !== 1 ? $menu_theme['panel_width'] : '',
                 "data-panel-inner-width" => substr( $menu_theme['panel_inner_width'], -1 ) !== '%' ? $menu_theme['panel_inner_width'] : '',
+                "data-mobile-force-width" => $mobile_force_width,
                 "data-second-click" => $second_click,
                 "data-document-click" => 'collapse',
                 "data-vertical-behaviour" => $vertical_behaviour,
@@ -1178,6 +1162,22 @@ final class Mega_Menu {
      */
     public function conditional_menus_restore_theme_location( $location, $new_args, $old_args ) {
         return $old_args['theme_location'];
+    }
+
+    /**
+     * Add a note to the Navigation Widget to explain that Max Mega Menu will not work with it.
+     *
+     * @since 2.5.1
+     */
+    public function add_notice_to_nav_menu_widget( $widget, $return, $instance ) {
+        if ( 'nav_menu' == $widget->id_base ) {
+            ?>
+                <p style="font-size: 11px; font-style: italic;">
+                    <?php _e("If you are trying to display Max Mega Menu here, use the 'Max Mega Menu' widget instead.", "megamenu"); ?>
+                    <a href="https://www.megamenu.com/documentation/widget/" target="_blank"><?php _e("More information", "megamenu"); ?></a>
+                </p>
+            <?php
+        }
     }
 
 }
@@ -1460,7 +1460,8 @@ if ( ! function_exists('max_mega_menu_get_active_caching_plugins') ) {
             'remove-query-strings-from-static-resources/remove-query-strings.php',
             'query-strings-remover/query-strings-remover.php',
             'wp-rocket/wp-rocket.php',
-            'hummingbird-performance/wp-hummingbird.php'
+            'hummingbird-performance/wp-hummingbird.php',
+            'breeze/breeze.php'
         ));
 
         $active_plugins = array();

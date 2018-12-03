@@ -3,11 +3,11 @@
  * Plugin Name: Media Library Categories
  * Plugin URI: https://wordpress.org/plugins/wp-media-library-categories/
  * Description: Adds the ability to use categories in the media library.
- * Version: 1.6.1
+ * Version: 1.7
  * Author: Jeffrey-WP
  * Text Domain: wp-media-library-categories
  * Domain Path: /languages
- * Author URI: https://codecanyon.net/user/jeffrey-wp/?ref=jeffrey-wp
+ * Author URI: https://1.envato.market/c/1206953/275988/4415?subId1=profile&subId2=plugin&subId3=wpmlc&u=https%3A%2F%2Fcodecanyon.net%2Fuser%2Fjeffrey-wp%2F
  */
 
 /** If this file is called directly, abort. */
@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class wpMediaLibraryCategories {
 
-    public $plugin_version = '1.6.1';
+    public $plugin_version = '1.7';
 
     /**
      * Initialize the hooks and filters
@@ -89,8 +89,7 @@ class wpMediaLibraryCategories {
                 ?>
                 <div class="notice notice-info is-dismissible">
                     <p><?php _e( 'Thank you for using the <strong>Media Library Categories</strong> plugin.', 'wp-media-library-categories' ); ?></p>
-                    <p><?php _e( 'By default the WordPress Media Library uses the same categories as WordPress does (such as in posts &amp; pages).<br />
-                    If you want to use separate categories for the WordPress Media Library take a look at our <a href="https://wordpress.org/plugins/wp-media-library-categories/#faq" target="_blank">Frequently asked questions</a>.', 'wp-media-library-categories' ); ?></p>
+                    <p><?php _e( 'By default the WordPress Media Library uses the same categories as WordPress does (such as in posts &amp; pages).<br />If you want to use separate categories for the WordPress Media Library take a look at our <a href="https://wordpress.org/plugins/wp-media-library-categories/#faq" target="_blank">Frequently asked questions</a>.', 'wp-media-library-categories' ); ?></p>
                 </div>
                 <?php
             }
@@ -191,106 +190,97 @@ class wpMediaLibraryCategories {
             $taxonomy = apply_filters( 'wpmediacategory_taxonomy', $taxonomy );
 
             $category = $atts['category'];
+            $include  = isset( $result['include'] ) ? $result['include'] : '';
 
-            // category slug?
-            if ( ! is_numeric( $category ) ) {
+            $categories = explode( ',', $category );
+            foreach ( $categories as $category ) {
 
-                if ( $taxonomy != 'category' ) {
+                // category slug?
+                if ( ! is_numeric( $category ) ) {
 
-                    $term = get_term_by( 'slug', $category, $taxonomy );
-                    if ( false !== $term ) {
-                        $category = $term->term_id;
-                    } else {
-                        // not existing category slug
-                        $category = '';
-                    }
+                    if ( $taxonomy != 'category' ) {
 
-                } else {
-
-                    $categoryObject = get_category_by_slug( $category );
-                    if ( false !== $categoryObject ) {
-                        $category = $categoryObject->term_id;
-                    } else {
-                        // not existing category slug
-                        $category = '';
-                    }
-                }
-
-            }
-
-            if ( $category != '' ) {
-
-                $ids_new = array();
-
-                if ( $taxonomy != 'category' ) {
-
-                    $args = array(
-                        'post_type'   => 'attachment',
-                        'numberposts' => -1,
-                        'post_status' => null,
-                        'tax_query'   => array(
-                            array(
-                                'taxonomy' => $taxonomy,
-                                'field'    => 'id',
-                                'terms'    => $category
-                            )
-                        )
-                    );
-
-                } else {
-
-                    $args = array(
-                        'post_type'   => 'attachment',
-                        'numberposts' => -1,
-                        'post_status' => null,
-                        'category'    => $category
-                    );
-
-                }
-
-                // use id attribute and show attachments in selected category and uploaded to post ID
-                if ( isset( $atts['id'] ) ) {
-                    if ( empty( $atts['id'] ) ) {
-                        $args['post_parent'] = get_the_ID(); // get ID of the current post if id attribute is empty
-                    } else {
-                        $args['post_parent'] = $atts['id'];
-                    }
-                }
-
-                $attachments = get_posts( $args );
-
-                if ( ! empty( $attachments ) ) {
-
-                    // ids attribute already present?
-                    if ( isset( $atts['ids'] ) ) {
-                        $ids_old = explode( ',', $atts['ids'] );
-                        foreach ( $attachments as $attachment ) {
-                            // preserve id if in the selected category
-                            if ( in_array( $attachment->ID, $ids_old ) ) {
-                                $ids_new[] = $attachment->ID;
-                            }
+                        $term = get_term_by( 'slug', $category, $taxonomy );
+                        if ( false !== $term ) {
+                            $category = $term->term_id;
+                        } else {
+                            // not existing category slug
+                            $category = '';
                         }
+
                     } else {
+
+                        $categoryObject = get_category_by_slug( $category );
+                        if ( false !== $categoryObject ) {
+                            $category = $categoryObject->term_id;
+                        } else {
+                            // not existing category slug
+                            $category = '';
+                        }
+                    }
+
+                }
+
+                if ( $category != '' ) {
+
+                    $ids_new = array();
+
+                    if ( $taxonomy != 'category' ) {
+
+                        $args = array(
+                            'post_type'   => 'attachment',
+                            'numberposts' => -1,
+                            'post_status' => null,
+                            'tax_query'   => array(
+                                array(
+                                    'taxonomy' => $taxonomy,
+                                    'field'    => 'id',
+                                    'terms'    => $category
+                                )
+                            )
+                        );
+
+                    } else {
+
+                        $args = array(
+                            'post_type'   => 'attachment',
+                            'numberposts' => -1,
+                            'post_status' => null,
+                            'category'    => $category
+                        );
+
+                    }
+
+                    // use id attribute and show attachments in selected category and uploaded to post ID
+                    if ( isset( $atts['id'] ) ) {
+                        if ( empty( $atts['id'] ) ) {
+                            $args['post_parent'] = get_the_ID(); // get ID of the current post if id attribute is empty
+                        } else {
+                            $args['post_parent'] = $atts['id'];
+                        }
+                    }
+
+                    $attachments = get_posts( $args );
+
+                    if ( ! empty( $attachments ) ) {
                         foreach ( $attachments as $attachment ) {
                             $ids_new[] = $attachment->ID;
                         }
                     }
 
-                    $atts['ids'] = $ids_new;
-                } else {
-                    $atts['ids'] = array(-1); // don't display images if category is empty
+                    if ( ! empty( $ids_new ) ) {
+                        $include .= ',' . implode( ',', $ids_new );
+                        $atts['ids'] = '';
+                    }
+
                 }
+            }
 
-            }
-            if ( isset( $atts['ids'] ) ) {
-                $result['include'] = implode( ',', $atts['ids'] );
-            }
+            $result['include'] = trim( $include, ',' );
             $result['category'] = $atts['category'];
-
         }
 
         return $result;
-
     }
 
 
@@ -530,7 +520,7 @@ class wpMediaLibraryCategories {
         return array_merge(
             array(
                 'settings' => '<a href="' . get_bloginfo( 'wpurl' ) . '/wp-admin/edit-tags.php?taxonomy=' . $taxonomy . '&amp;post_type=attachment">' . __( 'Categories', 'wp-media-library-categories' ) . '</a>',
-                'premium' => '<a href="https://codecanyon.net/item/media-library-categories-premium/6691290?ref=jeffrey-wp" style="color:#60a559;" target="_blank" title="' . __( 'Try Media Library Categories Premium today for just $20 - 100% money back guarantee', 'wp-media-library-categories' ) . '">' . __( 'Try Premium Version', 'wp-media-library-categories' ) . '</a>'
+                'premium' => '<a href="https://1.envato.market/c/1206953/275988/4415?subId1=wpmlcp&subId2=plugin&u=https%3A%2F%2Fcodecanyon.net%2Fitem%2Fmedia-library-categories-premium%2F6691290" style="color:#60a559;" target="_blank" title="' . __( 'Try Media Library Categories Premium today - 100% money back guarantee', 'wp-media-library-categories' ) . '">' . __( 'Try Premium Version', 'wp-media-library-categories' ) . '</a>'
             ),
             $links
         );
@@ -619,8 +609,8 @@ class wpMediaLibraryCategories {
             echo '</script>';
 
             wp_enqueue_script( 'wpmediacategory-media-views', plugins_url( 'js/wpmediacategory-media-views' . $suffix . '.js', __FILE__ ), array( 'media-views' ), $plugin_version, true );
-            wp_enqueue_style( 'wpmediacategory', plugins_url( 'css/wpmediacategory' . $suffix . '.css', __FILE__ ), array(), $plugin_version );
         }
+        wp_enqueue_style( 'wpmediacategory', plugins_url( 'css/wpmediacategory' . $suffix . '.css', __FILE__ ), array(), $plugin_version );
     }
 
 

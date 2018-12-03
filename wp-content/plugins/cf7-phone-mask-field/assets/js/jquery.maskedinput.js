@@ -193,7 +193,6 @@
                 
                 if ( data_mask.indexOf('*') == -1 && data_mask.indexOf('a') == -1 ) {
                     $this.attr({
-                        'pattern': '\\d*',
                         'inputmode': 'numeric'
                     });
                 }                

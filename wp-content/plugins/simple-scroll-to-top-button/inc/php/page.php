@@ -23,7 +23,7 @@ function spacexchimp_p008_render_submenu_page() {
     // Layout of page
     ?>
     <div class="wrap">
-        <h2>
+        <h2 class="sxc-header">
             <?php echo $name; ?>
             <span>
                 <?php printf(
@@ -64,13 +64,13 @@ function spacexchimp_p008_render_submenu_page() {
                     <div class="inside">
                         <p><?php _e( 'To display the "Scroll to Top" button on the front end of your website, simply follow these steps:', $text ); ?></p>
                         <ol class="custom-counter">
-                            <li><?php _e( 'Go to the "Settings" tab.', $text ); ?></li>
+                            <li><?php _e( 'Go to the "Settings" tab on this page.', $text ); ?></li>
                             <li><?php _e( 'Select the desired settings.', $text ); ?></li>
                             <li><?php _e( 'Click the "Save changes" button.', $text ); ?></li>
                             <li><?php _e( 'Enjoy your fancy "Scroll to Top" button.', $text ); ?> <?php _e( 'It\'s that simple!', $text ); ?></li>
                         </ol>
                         <p class="note"><b><?php _e( 'Note!', $text ); ?></b> <?php printf(
-                                                                                            __( 'If you want more options then %s tell us %s and we will be happy to add it.', $text ),
+                                                                                            __( 'If you want more options, then %s let us know %s and we will be happy to add them.', $text ),
                                                                                                 '<a href="https://www.spacexchimp.com/contact.html" target="_blank">',
                                                                                                 '</a>'
                                                                                           );
@@ -183,7 +183,7 @@ function spacexchimp_p008_render_submenu_page() {
             <!-- TAB 4 -->
             <div class="tab-page fade" id="tab-support">
                 <div class="postbox">
-                    <h3 class="title"><?php _e( 'Support Me', $text ); ?></h3>
+                    <h3 class="title"><?php _e( 'Support Us', $text ); ?></h3>
                     <div class="inside">
                         <span class="image-with-button pull-left">
                             <img src="<?php echo SPACEXCHIMP_P008_URL . 'inc/img/thanks.png'; ?>" alt="Thanks!">
@@ -196,17 +196,17 @@ function spacexchimp_p008_render_submenu_page() {
                         </span>
                         <p><?php
                                  printf(
-                                         __( 'Hello! My name is %s Arthur Gareginyan %s and I\'m the founder of %s Space X-Chimp %s.', $text ),
-                                         '<a href="https://www.arthurgareginyan.com" target="_blank">',
+                                         __( 'Hello! My name is %s Arthur %s, I\'m the founder of %s Space X-Chimp %s, which unites a small international team of young people.', $text ),
+                                         '<a href="https://www.instagram.com/arthur_gareginyan/" target="_blank">',
                                          '</a>',
                                          '<a href="https://www.spacexchimp.com" target="_blank">',
                                          '</a>'
                                        );
                            ?>
                         </p>
-                        <p><?php _e( 'My intention is to create projects that will make this world a better place. I\'m really passionate about my work, I like what I\'m doing and hope that you will be enriched by my projects too.', $text ); ?></p>
-                        <p><?php _e( 'I spend a lot of time and effort trying to make sure that the themes, plugins and other things I build are useful, and the ultimate proof of that for me is that you actually want to use them. But, I’m an independent developer, without a regular income, so every little contribution helps cover my costs and lets me spend more time building things for people like you to enjoy.', $text ); ?></p>
-                        <p><?php _e( 'If you appreciate my work, you can buy me a coffee!', $text ); ?></p>
+                        <p><?php _e( 'Our intention is to create projects that will make this world a better place. Our motto is - «Follow your dreams and don’t give up». We are really passionate about our work, we like what we are doing and hope that you will be enriched by our projects too.', $text ); ?></p>
+                        <p><?php _e( 'We spend a lot of time and effort trying to make sure that the themes, plugins and other things we build are useful, and the ultimate proof of that for us is that you actually want to use them. But we are an independent developers, without a regular income, so every little contribution helps to cover our costs and allows us to spend more time creating things for awesome people like you to enjoy.', $text ); ?></p>
+                        <p><?php _e( 'If you appreciate our work, you can buy us a cup of coffee!', $text ); ?></p>
                         <p><?php _e( 'Thank you for your support!', $text ); ?></p>
                     </div>
                 </div>

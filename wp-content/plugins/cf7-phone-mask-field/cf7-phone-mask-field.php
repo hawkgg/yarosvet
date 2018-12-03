@@ -2,7 +2,7 @@
 /*
 Plugin Name: Contact Form 7 - Phone mask field
 Description: This plugin adds a new field in which you can set the phone number entry mask or other to Contact Form 7.
-Version: 1.0
+Version: 1.1
 Author: Ruslan Heorhiiev
 Text Domain: cf7-phone-mask-field
 Domain Path: /assets/languages/
@@ -42,6 +42,8 @@ add_action( 'wp_enqueue_scripts', 'wpcf7mf_do_enqueue_scripts' );
  * @version 1.0
 **/
 function wpcf7mf_add_shortcode_mask() {
+    if ( ! function_exists('wpcf7_add_form_tag') ) return;    
+    
 	wpcf7_add_form_tag(
 		array( 'mask' , 'mask*' ),
 		'wpcf7mf_mask_shortcode_handler', true );
@@ -53,6 +55,8 @@ function wpcf7mf_add_shortcode_mask() {
  * @version 1.0
 **/
 function wpcf7mf_mask_shortcode_handler( $tag ) {
+    if ( ! class_exists( 'WPCF7_FormTag' ) ) return;
+    
 	$tag = new WPCF7_FormTag( $tag );
 
 	if ( empty( $tag->name ) )
@@ -87,20 +91,32 @@ function wpcf7mf_mask_shortcode_handler( $tag ) {
 		$atts['aria-required'] = 'true';
 
 	$atts['aria-invalid'] = $validation_error ? 'true' : 'false';
-
-	$value = (string) reset( $tag->values );
     
-    $value = $tag->get_default_option( $value );
+    /** @var array $tag->values $values */
+    $values = $tag->values;
     
-    $atts['placeholder'] = $value;
-
-    $atts['value'] = '';
+    $mask = $values[0];    
+    $value = $mask;
     
-    $atts['data-mask'] = $value;
-        	
-    $atts['type'] = 'text';
-
-	$atts['name'] = $tag->name;
+    if (1 < count($values)) {
+        // если value значений больше одного предпологается, что необходимо разделать маску и placeholder поле        
+        foreach ($values as $val) {
+            if (!strrpos($val, '_' )) {
+                continue;
+            }
+            
+            $mask = $val;
+            $value = end($values) !== $mask ? end($values) : $values[0];
+            
+            break;            
+        }
+    }
+    
+    $atts['placeholder'] = $value;    
+    $atts['data-mask'] = $mask;    
+    $atts['name'] = $tag->name;    
+    $atts['value'] = '';                        	
+    $atts['type'] = 'text';	
     
 	$atts = wpcf7_format_atts( $atts );
 
@@ -118,6 +134,8 @@ function wpcf7mf_mask_shortcode_handler( $tag ) {
 **/
 
 function wpcf7mf_mask_validation_filter( $result, $tag ) {
+    if ( ! class_exists( 'WPCF7_FormTag' ) ) return;
+    
 	$tag = new WPCF7_FormTag( $tag );
 
 	$name = $tag->name;

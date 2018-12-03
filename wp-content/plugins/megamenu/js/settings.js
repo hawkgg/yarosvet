@@ -11,7 +11,7 @@ jQuery(function ($) {
     }
 
     $('input.mega-setting-responsive_breakpoint').on("keyup", function() {
-        if ( $(this).val() == '0px') {
+        if ( $(this).val() == '0px' || $(this).val() == '0') {
             $('.mega-tab-content-mobile_menu').addClass('mega-mobile-disabled');
         } else {
             $('.mega-tab-content-mobile_menu').removeClass('mega-mobile-disabled');

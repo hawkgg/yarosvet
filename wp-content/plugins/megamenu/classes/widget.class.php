@@ -98,6 +98,7 @@ class Mega_Menu_Widget extends WP_Widget {
 					<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 				</p>
 				<label for="<?php echo $this->get_field_id( 'location' ); ?>"><?php _e( 'Menu Location:', 'megamenu' ); ?></label>
+
 				<select id="<?php echo $this->get_field_id( 'location' ); ?>" name="<?php echo $this->get_field_name( 'location' ); ?>">
 					<?php 
 						if ( $selected_location === 0 ) {
@@ -106,8 +107,36 @@ class Mega_Menu_Widget extends WP_Widget {
 					?>
 
 					<?php
+
+						$enabled_locations = array();
+						$disabled_locations = array();
+
 						foreach ( $locations as $location => $description ) {
-							echo "<option value='{$location}'" . selected($location, $selected_location) . ">{$description}</option>";
+							if ( max_mega_menu_is_enabled( $location ) ) {
+								$enabled_locations[$location] = $description;
+							} else {
+								$disabled_locations[$location] = $description;
+							}
+						}
+
+						if ( count( $enabled_locations ) ) {
+							echo "<optgroup label='&#10003; " . __("Active locations", "megamenu") ."'>";
+							
+							foreach ( $enabled_locations as $location => $description ) {
+								echo "<option value='{$location}'" . selected( $location, $selected_location ) . ">{$description}</option>";
+							}
+							
+							echo "</optgroup>";
+						}
+
+						if ( count( $disabled_locations ) ) {
+							echo "<optgroup label='&#x2718; " . __("Inactive locations", "megamenu") ."'>";
+
+							foreach ( $disabled_locations as $location => $description ) {
+								echo "<option value='{$location}'" . selected( $location, $selected_location ) . ">{$description}</option>";
+							}
+	
+							echo "</optgroup>";
 						}
 					?>
 				</select>

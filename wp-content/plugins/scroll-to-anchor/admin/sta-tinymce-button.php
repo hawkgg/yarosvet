@@ -13,9 +13,19 @@ if ( ! function_exists( 'sta_tinymce_button' ) ) {
 			return;
 		}
 		// verify the post type
-		if ( ! in_array( $typenow, array( 'post', 'page' ) ) ) {
+		$allowedposttypes = array( 'post', 'page' );
+		// let's see if other custom post types were selected in the settings
+		$pluginoptions = get_option( 'scroll_to_anchor' );
+		if ( isset( $pluginoptions['posttypes'] ) ) {
+			foreach ( $pluginoptions['posttypes'] as $key => $val ) {
+				$allowedposttypes[] = esc_attr( $val );
+			}
+		}
+
+		if ( ! in_array( $typenow, $allowedposttypes ) ) {
 			return;
 		}
+
 		// check if WYSIWYG is enabled
 		if ( get_user_option( 'rich_editing' ) == 'true' ) {
 			add_filter( 'mce_external_plugins', 'sta_add_tinymce_plugin' );

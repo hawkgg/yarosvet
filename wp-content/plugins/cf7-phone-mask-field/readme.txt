@@ -3,7 +3,7 @@ Contributors: heorhiiev
 Tags: Contact Form 7, Contact Form 7 phone, mask, mask field, phone field, telephone field, telephone, custom mask, custom mask field, cf7, contact form 7 mask field, contact form 7 phone mask, contact form 7 phone field, маска ввода, маска телефонного номера
 Requires at least: 4.0
 Tested up to: 4.9
-Stable tag: 1.0
+Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,9 +13,11 @@ This plugin adds a new field in which you can set the phone number mask or other
 
 This plugin adds a new field in which you can set the phone number mask or other to Contact Form 7.
 
-Please notice that Contact Form 7 must be installed and active.
+Please notice that Contact Form 7 (version 5.0.3 or latest) must be installed and active.
 
 A new field &quot;mask field&quot; will be added to the Contact Form 7 panel buttons.
+
+Example of shortcode: [mask* your-tel &quot;your_mask&quot;  &quot;Your placeholder&quot;] 
 
 
 == Installation ==
@@ -36,3 +38,6 @@ Just install from your WordPress "Plugins > Add New" screen and all will be well
 
 = 1.0 =
 * First released version.
+
+= 1.1 =
+* Added support for the placeholder field.

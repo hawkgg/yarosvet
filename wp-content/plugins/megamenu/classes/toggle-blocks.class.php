@@ -56,9 +56,9 @@ class Mega_Menu_Toggle_Blocks {
         // only use HTML version of toggle block if CSS version is above 2.4.0.2
         // if transient is missing, assume the latest version of the CSS is present and use Flex layout
         if ( ! $css_version || version_compare($css_version, '2.4.0.2') >= 0 ) {
-            $closed_text = isset( $settings['closed_text'] ) ? do_shortcode( $settings['closed_text'] ) : "MENU";
-            $open_text = isset( $settings['open_text'] ) ? do_shortcode( $settings['open_text'] ) : "MENU";
-
+            $closed_text = isset( $settings['closed_text'] ) ? do_shortcode( stripslashes( $settings['closed_text'] ) ) : "MENU";
+            $open_text = isset( $settings['open_text'] ) ? do_shortcode( stripslashes( $settings['open_text'] ) ) : "MENU";
+            
             $html = "<span class='mega-toggle-label'><span class='mega-toggle-label-closed'>{$closed_text}</span><span class='mega-toggle-label-open'>{$open_text}</span></span>";
         } else {
             $html = "";
@@ -116,8 +116,8 @@ class Mega_Menu_Toggle_Blocks {
             'closed_icon' => 'dash-f333',
             'open_icon' => 'dash-f153',
             'icon_position' => 'after',
-            'text_color' => isset($menu_theme['toggle_font_color']) ? $menu_theme['toggle_font_color'] : '#fff',
-            'icon_color' => isset($menu_theme['toggle_font_color']) ? $menu_theme['toggle_font_color'] : '#fff',
+            'text_color' => isset($menu_theme['toggle_font_color']) ? $menu_theme['toggle_font_color'] : 'rgb(221, 221, 221)',
+            'icon_color' => isset($menu_theme['toggle_font_color']) ? $menu_theme['toggle_font_color'] : 'rgb(221, 221, 221)',
             'text_size' => '14px',
             'icon_size' => '24px'
         );
@@ -761,11 +761,11 @@ class Mega_Menu_Toggle_Blocks {
                     <?php _e("Text Size", "megamenu") ?><input type='text' class='text_size' name='toggle_blocks[<?php echo $block_id; ?>][text_size]' value='<?php echo stripslashes( esc_attr( $settings['text_size']  ) ) ?>' />
                 </label>
                 <label>
-                    <?php _e("Icon Size", "megamenu") ?><input type='text' class='icon_size' name='toggle_blocks[<?php echo $block_id; ?>][icon_size]' value='<?php echo stripslashes( esc_attr( $settings['icon_size']  ) ) ?>' />
-                </label>
-                <label>
                     <?php _e("Icon Color", "megamenu") ?>
                     <?php $this->print_toggle_color_option( 'icon_color', $block_id, $settings['icon_color'] ); ?>
+                </label>
+                <label>
+                    <?php _e("Icon Size", "megamenu") ?><input type='text' class='icon_size' name='toggle_blocks[<?php echo $block_id; ?>][icon_size]' value='<?php echo stripslashes( esc_attr( $settings['icon_size']  ) ) ?>' />
                 </label>
                 <label>
                     <?php _e("Icon Position", "megamenu") ?><select name='toggle_blocks[<?php echo $block_id; ?>][icon_position]'>
