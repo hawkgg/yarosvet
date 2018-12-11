@@ -1829,14 +1829,18 @@ body.toplevel_page_maxmegamenu .megamenu_right {
         font-size: 1em; }
       body[class*='_page_maxmegamenu_'] .megamenu_right .menu_settings table label.mega-toggle_blocks .toggle-bar-designer .block-settings label input,
       body[class*='_page_maxmegamenu_'] .megamenu_right .menu_settings table label.mega-toggle_blocks .toggle-bar-designer .block-settings label select,
-      body[class*='_page_maxmegamenu_'] .megamenu_right .menu_settings table label.mega-toggle_blocks .toggle-bar-designer .block-settings label input,
+      body[class*='_page_maxmegamenu_'] .megamenu_right .menu_settings table label.mega-toggle_blocks .toggle-bar-designer .block-settings label input[type=number],
       body[class*='_page_maxmegamenu_'] .megamenu_right .menu_settings table label.mega-toggle_blocks .toggle-bar-designer .block-settings label .icon_dropdown,
       body.toplevel_page_maxmegamenu .megamenu_right .menu_settings table label.mega-toggle_blocks .toggle-bar-designer .block-settings label input,
       body.toplevel_page_maxmegamenu .megamenu_right .menu_settings table label.mega-toggle_blocks .toggle-bar-designer .block-settings label select,
-      body.toplevel_page_maxmegamenu .megamenu_right .menu_settings table label.mega-toggle_blocks .toggle-bar-designer .block-settings label input,
+      body.toplevel_page_maxmegamenu .megamenu_right .menu_settings table label.mega-toggle_blocks .toggle-bar-designer .block-settings label input[type=number],
       body.toplevel_page_maxmegamenu .megamenu_right .menu_settings table label.mega-toggle_blocks .toggle-bar-designer .block-settings label .icon_dropdown {
         float: right;
         font-size: 0.9em; }
+      body[class*='_page_maxmegamenu_'] .megamenu_right .menu_settings table label.mega-toggle_blocks .toggle-bar-designer .block-settings label input[type=number],
+      body.toplevel_page_maxmegamenu .megamenu_right .menu_settings table label.mega-toggle_blocks .toggle-bar-designer .block-settings label input[type=number] {
+        height: 28px;
+        line-height: 28px; }
       body[class*='_page_maxmegamenu_'] .megamenu_right .menu_settings table label.mega-toggle_blocks .toggle-bar-designer .toggle-left,
       body.toplevel_page_maxmegamenu .megamenu_right .menu_settings table label.mega-toggle_blocks .toggle-bar-designer .toggle-left {
         border-right: 1px dashed #ccc; }

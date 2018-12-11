@@ -2370,10 +2370,15 @@ body.toplevel_page_maxmegamenu {
 
 						.block-settings label input,
 						.block-settings label select,
-						.block-settings label input,
+						.block-settings label input[type=number],
 						.block-settings label .icon_dropdown {
 							float: right;
 							font-size: 0.9em;
+						}
+
+						.block-settings label input[type=number] {
+							height: 28px;
+							line-height: 28px;
 						}
 
 						.toggle-left {

@@ -984,11 +984,17 @@ class Mega_Menu_Widget_Manager {
      */
     public function update_menu_item_columns( $menu_item_id, $columns ) {
 
-        $settings = get_post_meta( $menu_item_id, '_megamenu', true);
+        $existing_settings = get_post_meta( $menu_item_id, '_megamenu', true);
 
-        $settings['mega_menu_columns'] = absint( $columns );
+        $submitted_settings = array(
+            'mega_menu_columns' => absint( $columns )
+        );
 
-        update_post_meta( $menu_item_id, '_megamenu', $settings );
+        if ( is_array( $existing_settings ) ) {
+            $submitted_settings = array_merge( $existing_settings, $submitted_settings );
+        }
+
+        update_post_meta( $menu_item_id, '_megamenu', $submitted_settings );
 
         return true;
 

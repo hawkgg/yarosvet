@@ -202,7 +202,7 @@ final class Mega_Menu_Style_Manager {
             'panel_third_level_padding_right'           => '0px',
             'panel_third_level_padding_top'             => '0px',
             'panel_third_level_padding_bottom'          => '0px',
-            'flyout_width'                              => '150px',
+            'flyout_width'                              => '250px',
             'flyout_menu_background_from'               => '#f1f1f1',
             'flyout_menu_background_to'                 => '#f1f1f1',
             'flyout_border_color'                       => '#ffffff',
@@ -569,7 +569,7 @@ final class Mega_Menu_Style_Manager {
          * _will_ become outdated as the plugin is updated and the menu HTML changes.
          *
          * Instead of using a custom SCSS file, override only the absolute minimum CSS in the
-         * Menu Theme > Custom Styling section.
+         * Mega Menu > Menu Themes > Custom Styling section.
          */
         $scss  = file_get_contents( MEGAMENU_PATH . trailingslashit('css') . 'mixin.scss' );
         $scss .= file_get_contents( MEGAMENU_PATH . trailingslashit('css') . 'reset.scss' );
@@ -589,6 +589,8 @@ final class Mega_Menu_Style_Manager {
             }
 
         }
+
+        $scss .= file_get_contents( MEGAMENU_PATH . trailingslashit('css') . 'compatibility.scss' );
 
         return apply_filters( "megamenu_load_scss_file_contents", $scss);
 
@@ -672,6 +674,15 @@ final class Mega_Menu_Style_Manager {
         $vars['menu'] = "'$menu_selector'";
         $vars['location'] = "'$sanitized_location'";
         $vars['menu_id'] = "'$menu_id'";
+        $vars['elementor_pro_active'] = 'false';
+
+        if ( ! function_exists( 'is_plugin_active' )) {
+            include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+        }
+
+        if ( function_exists( 'is_plugin_active' ) && is_plugin_active( 'elementor-pro/elementor-pro.php' ) ) {
+            $vars['elementor_pro_active'] = 'true';
+        }
 
         $settings = $this->get_menu_settings_for_location( $location );
 

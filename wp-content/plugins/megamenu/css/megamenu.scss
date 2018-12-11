@@ -17,9 +17,6 @@
 #{$wrap} #{$menu} li.mega-menu-row,
 #{$wrap} #{$menu} li.mega-menu-column,
 #{$wrap} #{$menu} a.mega-menu-link {
-    -moz-transition: none;
-    -o-transition: none;
-    -webkit-transition: none;
     transition: none;
     @include border-radius(0, 0, 0, 0);
     @include box-shadow(none);
@@ -64,13 +61,31 @@
 }
 
 #{$wrap} {
-    @include background($container_background_from, $container_background_to);
+    @include desktop {
+        @include background($container_background_from, $container_background_to);
+    }
+
     @include border-radius($container_border_radius_top_left, $container_border_radius_top_right, $container_border_radius_bottom_right, $container_border_radius_bottom_left);
 
-    &.mega-keyboard-navigation .mega-menu-toggle:focus,
-    &.mega-keyboard-navigation #{$menu} a:focus,
-    &.mega-keyboard-navigation #{$menu} input:focus {
-        @include box-shadow(inset 0px 0px 3px 1px #00FFFF);
+    &.mega-keyboard-navigation {
+        .mega-menu-toggle:focus,
+        #{$menu} a:focus,
+        #{$menu} input:focus {
+            @include box-shadow(inset 0px 0px 3px 1px #00FFFF);
+        }
+
+        > li.mega-menu-item > a.mega-menu-link:focus {
+            @include background($menu_item_background_hover_from, $menu_item_background_hover_to);
+            color: $menu_item_link_color_hover;
+            font-weight: $menu_item_link_weight_hover;
+            text-decoration: $menu_item_link_text_decoration_hover;
+            border-color: $menu_item_border_color_hover;
+
+            @include mobile {
+                color: $mobile_menu_item_link_color_hover;
+                @include background($mobile_menu_item_background_hover_from, $mobile_menu_item_background_hover_to);
+            }
+        }
     }
 
     #{$menu} {
@@ -78,25 +93,12 @@
         text-align: $menu_item_align;
         padding: $container_padding_top $container_padding_right $container_padding_bottom $container_padding_left;
 
-        @if $container_background_from != $mobile_background_from {
-            @include mobile {
-                @include background($mobile_background_from, $mobile_background_to);
-            }
-        }
-
-        @include mobile {
-            padding: 0;
-        }
-
         a.mega-menu-link {
             cursor: pointer;
             display: inline;
 
             @if $transitions == 'on' {
-                -webkit-transition: background 200ms linear, color 200ms linear;
-                -moz-transition: background 200ms linear, color 200ms linear;
-                -o-transition: background 200ms linear, color 200ms linear;
-                transition: background 200ms linear, color 200ms linear;
+                transition: background 200ms linear, color 200ms linear, border 200ms linear;
             }
 
             .mega-description-group {
@@ -189,12 +191,9 @@
 
         @include desktop {
             &[data-effect="fade"] {
-
                 li.mega-menu-item > ul.mega-sub-menu {
                     opacity: 0;
-                    transition-duration: $effect_speed;
-                    transition-timing-function: ease-in;
-                    transition-property: opacity, visibility;
+                    transition: opacity $effect_speed ease-in, visibility $effect_speed ease-in;
                 }
 
                 &.mega-no-js li.mega-menu-item:hover > ul.mega-sub-menu,
@@ -203,18 +202,14 @@
                 li.mega-menu-item.mega-menu-megamenu.mega-toggle-on ul.mega-sub-menu {
                     opacity: 1;
                 }
-
             }
 
             &[data-effect="fade_up"] {
-
                 li.mega-menu-item.mega-menu-megamenu > ul.mega-sub-menu,
                 li.mega-menu-item.mega-menu-flyout ul.mega-sub-menu {
                     opacity: 0;
-                    margin-top: 10px;
-                    transition-duration: $effect_speed;
-                    transition-timing-function: ease-in;
-                    transition-property: opacity, margin-top, visibility;
+                    transform: translate(0, 10px);
+                    transition: opacity $effect_speed ease-in, transform $effect_speed ease-in, visibility $effect_speed ease-in;
                 }
 
                 &.mega-no-js li.mega-menu-item:hover > ul.mega-sub-menu,
@@ -222,28 +217,23 @@
                 li.mega-menu-item.mega-toggle-on > ul.mega-sub-menu,
                 li.mega-menu-item.mega-menu-megamenu.mega-toggle-on ul.mega-sub-menu {
                     opacity: 1;
-                    margin-top: 0;
+                    transform: translate(0, 0);
                 }
-
             }
 
             &[data-effect="slide_up"] {
-
                 li.mega-menu-item.mega-menu-megamenu > ul.mega-sub-menu,
                 li.mega-menu-item.mega-menu-flyout ul.mega-sub-menu {
-                    margin-top: 10px;
-                    transition-duration: $effect_speed;
-                    transition-timing-function: ease-in;
-                    transition-property: margin-top, visibility;
+                    transform: translate(0, 10px);
+                    transition: transform $effect_speed ease-in, visibility $effect_speed ease-in;
                 }
 
                 &.mega-no-js li.mega-menu-item:hover > ul.mega-sub-menu,
                 &.mega-no-js li.mega-menu-item:focus > ul.mega-sub-menu,
                 li.mega-menu-item.mega-toggle-on > ul.mega-sub-menu,
                 li.mega-menu-item.mega-menu-megamenu.mega-toggle-on ul.mega-sub-menu {
-                    margin-top: 0;
+                    transform: translate(0, 0);
                 }
-
             }
         }
 
@@ -347,9 +337,17 @@
                 }
             }
 
-            &.mega-toggle-on > a.mega-menu-link,
-            > a.mega-menu-link:hover,
-            > a.mega-menu-link:focus {
+            @include desktop {
+                > a.mega-menu-link:hover {
+                    @include background($menu_item_background_hover_from, $menu_item_background_hover_to);
+                    color: $menu_item_link_color_hover;
+                    font-weight: $menu_item_link_weight_hover;
+                    text-decoration: $menu_item_link_text_decoration_hover;
+                    border-color: $menu_item_border_color_hover;
+                }
+            }
+
+            &.mega-toggle-on > a.mega-menu-link {
                 @include background($menu_item_background_hover_from, $menu_item_background_hover_to);
                 color: $menu_item_link_color_hover;
                 font-weight: $menu_item_link_weight_hover;
@@ -824,6 +822,8 @@
                 background: transparent;
                 height: auto;
                 width: auto;
+                right: auto;
+                line-height: inherit;
             }
 
             > a.mega-menu-link > span.mega-indicator {
@@ -834,6 +834,11 @@
                 background: transparent;
                 position: relative;
                 pointer-events: auto;
+                left: auto;
+                min-width: auto;
+                line-height: inherit;
+                color: inherit;
+                font-size: inherit;
 
                 &:after {
                     content: $arrow_up;
@@ -931,14 +936,16 @@
 
         @include mobile {
             li.mega-hide-on-mobile,
-            > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-hide-on-mobile {
+            > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-hide-on-mobile,
+            > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item.mega-hide-on-mobile {
                 display: none;
             }
         }
 
         @include desktop {
             li.mega-hide-on-desktop,
-            > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-hide-on-desktop {
+            > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-hide-on-desktop,
+            > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item.mega-hide-on-desktop {
                 display: none;
             }
         }
@@ -1070,7 +1077,9 @@
 
         @include mobile {
             + #{$menu} {
-
+                @include background($mobile_background_from, $mobile_background_to);
+                padding: 0;
+                
                 @if $disable_mobile_toggle == on {
                     display: block; 
                 } @else {

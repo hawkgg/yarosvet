@@ -8,6 +8,7 @@
     $.maxmegamenu = function(menu, options) {
         var plugin = this;
         var $menu = $(menu);
+        var $toggle_bar = $menu.siblings(".mega-menu-toggle");
 
         var defaults = {
             event: $menu.attr("data-event"),
@@ -131,7 +132,7 @@
 
         plugin.calculateDynamicSubmenuWidths = function(anchor) {
             // apply dynamic width and sub menu position (only to top level mega menus)
-            if (anchor.parent().hasClass("mega-menu-megamenu") && anchor.parent().parent().hasClass('mega-menu') && plugin.settings.panel_width && $(plugin.settings.panel_width).length > 0) {
+            if (anchor.parent().hasClass("mega-menu-megamenu") && anchor.parent().parent().hasClass("max-mega-menu") && plugin.settings.panel_width && $(plugin.settings.panel_width).length > 0) {
                 if (plugin.isDesktopView()) {
                     var submenu_offset = $menu.offset();
                     var target_offset = $(plugin.settings.panel_width).offset();
@@ -149,7 +150,7 @@
             }
 
             // apply inner width to sub menu by adding padding to the left and right of the mega menu
-            if (anchor.parent().hasClass("mega-menu-megamenu") && anchor.parent().parent().hasClass('mega-menu') && plugin.settings.panel_inner_width && $(plugin.settings.panel_inner_width).length > 0) {
+            if (anchor.parent().hasClass("mega-menu-megamenu") && anchor.parent().parent().hasClass("max-mega-menu") && plugin.settings.panel_inner_width && $(plugin.settings.panel_inner_width).length > 0) {
                 var target_width = 0;
 
                 if ($(plugin.settings.panel_inner_width).length) {
@@ -187,16 +188,17 @@
             $(document).on("click touchend", function(e) { // hide menu when clicked away from
                 if (!dragging && plugin.settings.document_click === "collapse" && ! $(e.target).closest(".max-mega-menu li").length && ! $(e.target).closest(".mega-menu-toggle").length ) {
                     plugin.hideAllPanels();
+                    plugin.hideMobileMenu();
                 }
                 dragging = false;
             });
 
-            $("> a.mega-menu-link", items_with_submenus).on("click.megamenu touchend.megamenu", function(e) {
-                if (e.type === 'touchend') {
-                    // prevent mouseenter events once touch has been detected
-                    plugin.unbindHoverEvents();
-                    plugin.unbindHoverIntentEvents();
-                }
+            $("> a.mega-menu-link", items_with_submenus).on("touchend.megamenu", function(e) {
+                plugin.unbindHoverEvents();
+                plugin.unbindHoverIntentEvents();
+            });
+
+            $("> a.mega-menu-link", items_with_submenus).on("click.megamenu", function(e) {
                 if (plugin.isDesktopView() && $(this).parent().hasClass("mega-toggle-on") && $(this).parent().parent().parent().hasClass("mega-menu-tabbed") ) {
                     if (plugin.settings.second_click === "go") {
                         return;
@@ -279,7 +281,7 @@
                     plugin.hideAllPanels();
 
                     if ( plugin.isMobileView() ) {
-                        $menu.siblings('.mega-menu-toggle').removeClass('mega-menu-open');
+                        plugin.hideMobileMenu();
                     }
                 }
             });
@@ -298,7 +300,7 @@
                     }
 
                     if ( active_link.hasClass("mega-menu-toggle") ) {
-                        active_link.addClass("mega-menu-open");
+                        plugin.showMobileMenu();
                     }
                 }
             });
@@ -371,7 +373,7 @@
                 plugin.switchToDesktop();
             }
 
-            plugin.calculateDynamicSubmenuWidths($("li.mega-menu-megamenu.mega-toggle-on > a.mega-menu-link", $menu));
+            plugin.calculateDynamicSubmenuWidths($("li.mega-menu-megamenu > a.mega-menu-link", $menu));
         };
 
         plugin.reverseRightAlignedItems = function() {
@@ -406,7 +408,68 @@
                 display: ''
             });
 
-            $menu.siblings(".mega-menu-toggle").removeClass('mega-menu-open');
+            $toggle_bar.removeClass('mega-menu-open');
+        };
+
+        plugin.initToggleBar = function() {
+            // mobile menu
+            $toggle_bar.on("click", function(e) {
+                if ( $(e.target).is(".mega-menu-toggle, .mega-menu-toggle-block, .mega-menu-toggle-animated-block, .mega-menu-toggle-animated-block *, .mega-toggle-blocks-left, .mega-toggle-blocks-center, .mega-toggle-blocks-right, .mega-toggle-label, .mega-toggle-label span") ) {
+                    if ($(this).hasClass("mega-menu-open")) {
+                        plugin.hideMobileMenu();
+                    } else {
+                        plugin.showMobileMenu();
+                    }
+                }
+            });
+        };
+
+        plugin.hideMobileMenu = function() {
+            if (plugin.isDesktopView() || ! $toggle_bar.is(":visible")) {
+                return;
+            }
+
+            $('body').removeClass($menu.attr('id') + "-mobile-open");
+
+            if (plugin.settings.effect_mobile == 'slide') {
+                $menu.animate({'height':'hide'}, plugin.settings.effect_speed_mobile, function() {
+                    $menu.css({
+                        width: '',
+                        left: '',
+                        display: ''
+                    });
+                });
+            }
+
+            $toggle_bar.removeClass("mega-menu-open");
+        };
+
+        plugin.showMobileMenu = function() {
+            if (plugin.isDesktopView() || ! $toggle_bar.is(":visible")) {
+                return;
+            }
+
+            $('body').addClass($menu.attr('id') + "-mobile-open");
+
+            plugin.toggleBarForceWidth();
+
+            if (plugin.settings.effect_mobile == 'slide') {
+                $menu.animate({'height':'show'}, plugin.settings.effect_speed_mobile);
+            }
+
+            $toggle_bar.addClass("mega-menu-open");
+        };
+
+        plugin.toggleBarForceWidth = function() {
+            if ($(plugin.settings.mobile_force_width).length) {
+                var submenu_offset = $toggle_bar.offset();
+                var target_offset = $(plugin.settings.mobile_force_width).offset();
+
+                $menu.css({
+                    width: $(plugin.settings.mobile_force_width).outerWidth(),
+                    left: (target_offset.left - submenu_offset.left) + "px"
+                });
+            }
         };
 
         plugin.init = function() {
@@ -414,39 +477,7 @@
             plugin.settings = $.extend({}, defaults, options);
             $menu.removeClass("mega-no-js");
 
-            // mobile menu
-            $menu.siblings(".mega-menu-toggle").on("click", function(e) {
-
-                var toggle_bar = $(this);
-
-                if ( $(e.target).is(".mega-menu-toggle-block, .mega-toggle-blocks-left, .mega-toggle-blocks-center, .mega-toggle-blocks-right, .mega-toggle-label, .mega-toggle-label span") ) {
-
-                    if ($(plugin.settings.mobile_force_width).length) {
-                        var submenu_offset = toggle_bar.offset();
-                        var target_offset = $(plugin.settings.mobile_force_width).offset();
-
-                        $menu.css({
-                            width: $(plugin.settings.mobile_force_width).outerWidth(),
-                            left: (target_offset.left - submenu_offset.left) + "px"
-                        });
-                    }
-
-                    if (plugin.settings.effect_mobile == 'slide') {
-                        if ($(this).hasClass("mega-menu-open")) {
-                            $menu.animate({'height':'hide'}, plugin.settings.effect_speed_mobile, function() {
-                                $menu.css({
-                                    width: '',
-                                    left: '',
-                                    display: ''
-                                });
-                            });
-                        } else {
-                            $menu.animate({'height':'show'}, plugin.settings.effect_speed_mobile);
-                        }
-                    }
-                    $(this).toggleClass("mega-menu-open");
-                }
-            });
+            plugin.initToggleBar();
             
             if (plugin.settings.unbind_events == 'true') {
                 plugin.unbindAllEvents();
@@ -456,6 +487,10 @@
                 e.preventDefault();
                 e.stopPropagation();
                 plugin.hidePanel($(this).parent(), false);
+            });
+
+            $(window).load(function() {
+                plugin.calculateDynamicSubmenuWidths($("li.mega-menu-megamenu > a.mega-menu-link", $menu));
             });
 
             plugin.bindMegaMenuEvents();

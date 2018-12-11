@@ -3242,8 +3242,8 @@ class Mega_Menu_Settings {
                                 ),
                                 'mobile_background_hover' => array(
                                     'priority' => 45,
-                                    'title' => __( "Menu Item Background (Hover)", "megamenu" ),
-                                    'description' => __( "The background color for each top level item the mobile menu on hover (or when the menu item is clicked/active).", "megamenu" ),
+                                    'title' => __( "Menu Item Background (Active)", "megamenu" ),
+                                    'description' => __( "The background color for each top level menu item in the mobile menu when the sub menu is open.", "megamenu" ),
                                     'settings' => array(
                                         array(
                                             'title' => __( "From", "megamenu" ),
@@ -3287,8 +3287,8 @@ class Mega_Menu_Settings {
                                 ),
                                 'mobile_menu_item_font_hover' => array(
                                     'priority' => 55,
-                                    'title' => __( "Font (Hover)", "megamenu" ),
-                                    'description' => __( "The font color to use for each top level menu item in the mobile menu on hover (or when the menu item is clicked/active).", "megamenu" ),
+                                    'title' => __( "Font (Active)", "megamenu" ),
+                                    'description' => __( "The font color for each top level menu item in the mobile menu when the sub menu is open.", "megamenu" ),
                                     'settings' => array(
                                         array(
                                             'title' => __( "Color", "megamenu" ),

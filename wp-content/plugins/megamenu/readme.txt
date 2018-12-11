@@ -3,7 +3,7 @@ Contributors: megamenu
 Tags: menu, megamenu, mega menu, navigation, widget, dropdown menu, drag and drop, mobile, responsive, retina, theme editor, widget, shortcode, sidebar, icons, dashicons
 Requires at least: 3.8
 Tested up to: 5.0
-Stable tag: 2.5.1
+Stable tag: 2.5.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -108,6 +108,20 @@ See https://www.megamenu.com for more screenshots
 5. Back end: Use the theme editor to change the appearance of your menus
 
 == Changelog ==
+
+= 2.5.3 =
+
+* New: Animated Menu Toggle Block
+* Fix: Unable to change the number of columns on a newly added menu items within the "Mega Menu - Standard Layout" sub menu builder
+* Fix: Hide on mobile/desktop options for items within Mega Menu - Grid Layout sub menus
+* Fix: Residual Styling for :before :after pseudo elements
+* Fix: Conflict with uikit.js
+* Fix: Calculate dynamic submenu widths on page load (thanks to floq-design for the suggested fix!)
+* Fix: Remove hover styling from top level menu items on mobile (as Safari continues to apply the hover styling even once the item is deselected).
+[How to apply hover styling for your mobile menu](https://www.megamenu.com/documentation/how-to-apply-hover-styling-to-top-level-items-on-mobile/)
+* Fix: Close mobile menu when page background is clicked
+* Fix: Compatibility with Elementor Pro sticky header
+* Fix: Residual styling on span.mega-indicator
 
 = 2.5.2 =
 
