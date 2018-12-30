@@ -15,7 +15,7 @@ function rs_testimonial( $atts, $content = '', $id = '' ) {
     'class' => '',
     'cats'  => 0,
     'style' => 'type-1',
-    'limit' => '1',
+    'limit' => '9999',
   ), $atts ) );
 
   $id    = ( $id ) ? ' id="'. esc_attr($id) .'"' : '';
@@ -55,6 +55,9 @@ function rs_testimonial( $atts, $content = '', $id = '' ) {
       $data_lg_slides       = ' data-lg-slides="2"';
       $data_add_slides      = ' data-add-slides="2"';
       break;
+
+    case 'type-4':
+      break;
   }
 
   $args = array(
@@ -75,34 +78,60 @@ function rs_testimonial( $atts, $content = '', $id = '' ) {
   $the_query = new WP_Query( $args );
 
   ob_start(); 
+  if ($style != 'type-4') {
+    echo '<div class="testimonial-swiper-slider swiper-container" '.$data_autoplay.$data_loop.$data_slides_per_view.$data_xs_slides.$data_sm_slides.$data_md_slides.$data_lg_slides.$data_add_slides.' data-speed="400" data-center="0" data-sb-lg="10">';
+    echo '<div class="swiper-wrapper clearfix">';
+      $i = 0;
+      while( $the_query->have_posts()) : $the_query->the_post();
+        $item_args = array(
+          'style'       => $style,
+          'count'       => $i,
+          'author_name' => marketing_get_post_opt('testimonial-author'),
+          'position'    => marketing_get_post_opt('testimonial-position'),
+        );
+        rs_testimonial_slide_item($item_args);
+        $i++;
+      endwhile;
+      wp_reset_query();
+    echo '</div>';
+    // echo '<div class="swiper-pagination type-1 visible-xs-block"></div>';
 
-  echo '<div class="testimonial-swiper-slider swiper-container" '.$data_autoplay.$data_loop.$data_slides_per_view.$data_xs_slides.$data_sm_slides.$data_md_slides.$data_lg_slides.$data_add_slides.' data-speed="400" data-center="0" data-sb-lg="10">';
-  echo '<div class="swiper-wrapper clearfix">';
-    $i = 0;
-    while( $the_query->have_posts()) : $the_query->the_post();
-      $item_args = array(
-        'style'       => $style,
-        'count'       => $i,
-        'author_name' => marketing_get_post_opt('testimonial-author'),
-        'position'    => marketing_get_post_opt('testimonial-position'),
-      );
-      rs_testimonial_item($item_args);
-      $i++;
-    endwhile;
-    wp_reset_query();
-  echo '</div>';
-  // echo '<div class="swiper-pagination type-1 visible-xs-block"></div>';
+    echo '</div>';
+    echo '<div class="tt-swiper-arrow-center for-testimonials">';
+    echo '<div class="swiper-button-prev tt-arrow-left type-2 pos-1 hidden-xs"><span class="lnr lnr-chevron-left"></span></div>';
+    echo '<div class="swiper-button-next tt-arrow-right type-2 pos-1 hidden-xs"><span class="lnr lnr-chevron-right"></span></div>';
+    echo '</div>';
 
-  echo '</div>';
-  echo '<div class="tt-swiper-arrow-center for-testimonials">';
-  echo '<div class="swiper-button-prev tt-arrow-left type-2 pos-1 hidden-xs"><span class="lnr lnr-chevron-left"></span></div>';
-  echo '<div class="swiper-button-next tt-arrow-right type-2 pos-1 hidden-xs"><span class="lnr lnr-chevron-right"></span></div>';
-  echo '</div>';
+    echo '<div class="text-center leave-testimonial">';
+    echo '<a href="" class="mx-3 my-2 leave-testimonial-link">Оставить отзыв</a>';
+    echo '<a href="/testimonials" class="leave-testimonial-link">Смотреть другие отзывы</a>';
+    echo '</div>';
+  } else {
 
-  echo '<div class="text-center leave-testimonial">';
-  echo '<a href="" class="mx-3 my-2 leave-testimonial-link">Оставить отзыв</a>';
-  echo '<a href="/testimonials" class="leave-testimonial-link">Смотреть другие отзывы</a>';
-  echo '</div>';
+
+
+
+    echo '<div class="testimonials">';
+      $i = 0;
+      while( $the_query->have_posts()) : $the_query->the_post();
+        $item_args = array(
+          'style'       => $style,
+          'count'       => $i,
+          'author_name' => marketing_get_post_opt('testimonial-author'),
+          'position'    => marketing_get_post_opt('testimonial-position'),
+        );
+        rs_testimonial_item($item_args);
+        $i++;
+      endwhile;
+      wp_reset_query();
+    echo '</div>';
+    echo '<div class="text-center leave-testimonial">';
+    echo '<a href="" class="mx-3 my-2 leave-testimonial-link">Оставить отзыв</a>';
+    echo '</div>';
+
+
+  }
+
 
   $output = ob_get_clean();
 
@@ -112,11 +141,33 @@ add_shortcode( 'rs_testimonial', 'rs_testimonial');
 
 
 if(!function_exists('rs_testimonial_item')) {
-  function rs_testimonial_item($item_args) {
+  function rs_testimonial_slide_item($item_args) {
     extract($item_args); 
     $active_class = ($count == 0) ? ' active':''; 
   ?>
     <div class="swiper-slide <?php echo sanitize_html_class($active_class); ?>" data-val="<?php echo esc_attr($count); ?>">
+      <div class="tt-testimonial <?php echo sanitize_html_class($style); ?> clearfix">
+        <div class="tt-testimonial-icon">
+          <?php the_post_thumbnail('full'); ?>
+        </div>
+        <div class="tt-testimonial-info">
+          <div class="simple-text">
+            <?php the_content(); ?>
+          </div>
+          <div class="tt-testimonial-label">
+            - <?php echo esc_html($author_name); ?> <!-- <a href="#"><?php echo esc_html($position); ?></a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  <?php
+  }
+
+  function rs_testimonial_item($item_args) {
+    extract($item_args); 
+    $active_class = ($count == 0) ? ' active':''; 
+  ?>
+    <div class="mb-5 <?php echo sanitize_html_class($active_class); ?>" data-val="<?php echo esc_attr($count); ?>">
       <div class="tt-testimonial <?php echo sanitize_html_class($style); ?> clearfix">
         <div class="tt-testimonial-icon">
           <?php the_post_thumbnail('full'); ?>

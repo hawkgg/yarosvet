@@ -114,9 +114,10 @@ vc_map( array(
       'heading'     => 'Style',
       'param_name'  => 'style',
       'value'       => array(
-        'Style 1'   => 'type-1',
-        'Style 2'   => 'type-2',
-        'Style 3'   => 'type-3',
+        'Slider - 1 item'   => 'type-1',
+        'Slider - 3 items'  => 'type-2',
+        'Slider - 2 items'  => 'type-3',
+        'Column'            => 'type-4',
       ),
     ),
     array(
