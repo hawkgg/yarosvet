@@ -790,11 +790,13 @@ footer .wpcf7-response-output, footer .wpcf7-not-valid-tip {
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
-footer .widget_nav_menu ul#menu-main-menu{
-  height: 170px;
+footer .widget_nav_menu ul#menu-menu-footer{
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
+}
+
+footer .widget_nav_menu ul#menu-menu-footer li {
+  margin-right: 15px;
 }
 
 footer ul li ul {
@@ -807,9 +809,6 @@ footer ul li ul {
     height: auto;
     flex-direction: row;
     align-content: flex-start;
-  }
-  footer .widget_nav_menu ul#menu-main-menu li{
-    margin-right: 20px;
   }
 }
 
