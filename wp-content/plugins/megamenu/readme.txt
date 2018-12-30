@@ -3,7 +3,7 @@ Contributors: megamenu
 Tags: menu, megamenu, mega menu, navigation, widget, dropdown menu, drag and drop, mobile, responsive, retina, theme editor, widget, shortcode, sidebar, icons, dashicons
 Requires at least: 3.8
 Tested up to: 5.0
-Stable tag: 2.5.2
+Stable tag: 2.5.3.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -108,6 +108,17 @@ See https://www.megamenu.com for more screenshots
 5. Back end: Use the theme editor to change the appearance of your menus
 
 == Changelog ==
+
+= 2.5.3.2 =
+
+* Fix: Dynamic Sub Menu Widths for tabbed sub menus
+* Fix: Remove outline from animated toggle block
+
+= 2.5.3.1 =
+
+* Fix: jQuery v3 compatibility
+* Fix: Mobile Menu not working in FireFox dev tools
+* Fix: Animated toggle block vertical positioning
 
 = 2.5.3 =
 

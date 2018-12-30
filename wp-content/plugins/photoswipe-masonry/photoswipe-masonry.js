@@ -16,8 +16,6 @@ var photoswipe_masonry = function($){
 			var items = [];
 			$pic.find('a').each(function() {
 
-				if ($(this).parent().css('display') == 'none') return;
-
 				var $href   = $(this).attr('href'),
 					$size   = $(this).data('size').split('x'),
 					$width  = $size[0],
@@ -36,12 +34,17 @@ var photoswipe_masonry = function($){
 			return items;
 		}
 
+		var items = getItems();
+
+		$.each(items, function(index, value) {
+			image[index]     = new Image();
+			image[index].src = value['src'];
+		});
+
 		$pic.on('click', 'figure', function(event) {
 
-			var items = getItems();
-
 			event.preventDefault();
-			var $index = $(this).siblings(":visible").andSelf().index($(this));
+			var $index = $(this).index();
 
 			var options = {
 				index: $index,

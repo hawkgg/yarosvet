@@ -64,14 +64,14 @@ msgid "Dark Gray"
 msgstr "Темно-серая"
 
 #. translators: %s: Name of current post
-#: template-parts/content.php:28 inc/template-tags.php:184
+#: inc/template-tags.php:184 template-parts/content.php:28
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr "Читать далее<span class=\"screen-reader-text\"> «%s»</span>"
 
 #. translators: %s: Name of current post
-#: template-parts/content.php:49 template-parts/content-page.php:37
-#: template-parts/content-search.php:28 template-parts/content-search.php:43
-#: template-parts/content-single.php:45 image.php:84
+#: image.php:84 template-parts/content.php:49
+#: template-parts/content-single.php:45 template-parts/content-search.php:28
+#: template-parts/content-search.php:43 template-parts/content-page.php:37
 msgid "Edit<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr "Изменить<span class=\"screen-reader-text\"> «%s»</span>"
 
@@ -244,8 +244,8 @@ msgctxt "Used before full size attachment link."
 msgid "Full size"
 msgstr "Полный размер"
 
-#: template-parts/content.php:33 template-parts/content-page.php:23
-#: template-parts/content-single.php:25 image.php:56
+#: image.php:56 template-parts/content.php:33
+#: template-parts/content-single.php:25 template-parts/content-page.php:23
 msgid "Pages:"
 msgstr "Страницы:"
 
@@ -313,11 +313,11 @@ msgstr "off"
 msgid "Sidebar"
 msgstr "Боковая колонка"
 
-#: functions.php:89 header.php:62
+#: header.php:62 functions.php:89
 msgid "Social Links Menu"
 msgstr "Меню социальных ссылок"
 
-#: functions.php:88 header.php:51
+#: header.php:51 functions.php:88
 msgid "Primary Menu"
 msgstr "Основное меню"
 
@@ -338,17 +338,17 @@ msgstr[0] "%2$s: %1$s комментарий"
 msgstr[1] "%2$s: %1$s комментария"
 msgstr[2] "%2$s: %1$s комментариев"
 
-#: archive.php:51 template-parts/content.php:37
-#: template-parts/content-page.php:27 template-parts/content-single.php:29
-#: search.php:39 index.php:48 image.php:60
+#: index.php:48 archive.php:51 search.php:39 image.php:60
+#: template-parts/content.php:37 template-parts/content-single.php:29
+#: template-parts/content-page.php:27
 msgid "Page"
 msgstr "Страница"
 
-#: archive.php:50 search.php:38 index.php:47
+#: index.php:47 archive.php:50 search.php:38
 msgid "Next page"
 msgstr "Следующая страница"
 
-#: archive.php:49 search.php:37 index.php:46
+#: index.php:46 archive.php:49 search.php:37
 msgid "Previous page"
 msgstr "Предыдущая страница"
 

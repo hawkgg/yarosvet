@@ -124,6 +124,8 @@
                     margin: 0;
                     overflow: visible;
                     transform: scale($scale);
+                    align-self: center;
+                    outline: 0;
                 }
                 .mega-toggle-animated-box {
                     width: 40px;

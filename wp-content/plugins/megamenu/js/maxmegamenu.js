@@ -373,7 +373,7 @@
                 plugin.switchToDesktop();
             }
 
-            plugin.calculateDynamicSubmenuWidths($("li.mega-menu-megamenu > a.mega-menu-link", $menu));
+            plugin.calculateDynamicSubmenuWidths($("> li.mega-menu-megamenu > a.mega-menu-link", $menu));
         };
 
         plugin.reverseRightAlignedItems = function() {
@@ -425,7 +425,7 @@
         };
 
         plugin.hideMobileMenu = function() {
-            if (plugin.isDesktopView() || ! $toggle_bar.is(":visible")) {
+            if ( ! $toggle_bar.is(":visible")) {
                 return;
             }
 
@@ -445,7 +445,7 @@
         };
 
         plugin.showMobileMenu = function() {
-            if (plugin.isDesktopView() || ! $toggle_bar.is(":visible")) {
+            if ( ! $toggle_bar.is(":visible")) {
                 return;
             }
 
@@ -489,8 +489,8 @@
                 plugin.hidePanel($(this).parent(), false);
             });
 
-            $(window).load(function() {
-                plugin.calculateDynamicSubmenuWidths($("li.mega-menu-megamenu > a.mega-menu-link", $menu));
+            $(window).on("load", function() {
+                plugin.calculateDynamicSubmenuWidths($("> li.mega-menu-megamenu > a.mega-menu-link", $menu));
             });
 
             plugin.bindMegaMenuEvents();
