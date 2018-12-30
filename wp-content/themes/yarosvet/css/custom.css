@@ -2,8 +2,16 @@ a {
     vertical-align: middle;
 }
 
-article.type-post p, article.type-post ul, article.type-post li, article.type-post span {
-    color: #353535;
+html, body, p, span, div, table, tr, td, h1, h2, h3, h4, h5, h6 {
+  color: #353535;
+}
+
+a span {
+  color: inherit;
+}
+
+footer, footer p {
+  color: #949494;
 }
 
 .simple-text h4, .c-h4, .comment-reply-title {
@@ -470,8 +478,9 @@ ol.breadcrumb {
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
 .tt-header .logo {
-  width: 155px;
-  line-height:50px;
+  width: 170px;
+  line-height:55px;
+  height: 55px;
 }
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
@@ -506,7 +515,7 @@ ol.breadcrumb {
 
 /* Отступы контейнера с лого */
 .tt-header .top-inner {
-  padding: 8px 0 !important;
+  padding: 5px 0 !important;
 }
 
 .tt-header-margin {
@@ -990,6 +999,10 @@ footer ul li ul {
   border:none;
 }
 
+.tt-testimonial-info {
+  padding-top: 0;
+}
+
 .tt-testimonial-label{
   color: #30373b
 }
@@ -1069,6 +1082,7 @@ footer ul li ul {
 .isotope-filter button {
   padding:15px 20px;
   background: #e0e0e0;
+  color: #454545;
   cursor: pointer;
   margin: 5px;
   border: none;
@@ -1255,6 +1269,10 @@ footer ul li ul {
 
 .read-more-link {
     font-size: 14px !important;
+}
+
+.post p, .post ul, .post li, .post span {
+    color: #353535;
 }
 
 .post p, .post span {

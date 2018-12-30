@@ -459,7 +459,7 @@ function photoswipe_shortcode( $attr ) {
 		$size_class = sanitize_html_class( $args['size'] );
 		$output_buffer .=' <div style="clear:both"></div>
 
-		<div id="psgal_'.$post_id.'" class="psgal gallery-columns-'.$columns.' gallery-size-'.$size_class.'" itemscope itemtype="http://schema.org/ImageGallery" >';
+		<div id="psgal_'.$post_id.'" class="fitWidth isotope psgal gallery-columns-'.$columns.' gallery-size-'.$size_class.'" itemscope itemtype="http://schema.org/ImageGallery" >';
 
 
 		if ( !empty($attachments) ) {
@@ -472,22 +472,23 @@ function photoswipe_shortcode( $attr ) {
 				$_post = get_post($aid);
 
 				$image_title = esc_attr($_post->post_title);
+				$image_category = end(get_the_category($aid))->slug ?
+								  'category-' . end(get_the_category($aid))->slug :
+								  '';
 				$image_alttext = get_post_meta($aid, '_wp_attachment_image_alt', true);
 				$image_caption = $_post->post_excerpt;
 				$image_description = $_post->post_content;
 
 				$output_buffer .='
-				<figure class="msnry_item" itemscope itemtype="http://schema.org/ImageObject">
+				<figure class="isotope-item msnry_item '. $image_category .'" itemscope itemtype="http://schema.org/ImageObject" data-category="'. $image_category .'">
 					<a href="'. $full[0] .'" itemprop="contentUrl" data-size="'.$full[1].'x'.$full[2].'" data-caption="'. $image_caption .'" >
 				        <img src='. $thumb[0] .' itemprop="thumbnail" alt="'.$image_alttext.'"  />
 				    </a>
 				    <figcaption class="photoswipe-gallery-caption" >'. $image_caption .'</figcaption>
 			    </figure>
 				';
-
 			}
 		}
-
 
 
 		$output_buffer .="</div>

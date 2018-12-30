@@ -148,6 +148,9 @@ jQuery(function($) {
       if (!(sb_sm = parseInt($t.attr('data-sb-sm'), 10))) sb_sm = 1;
       if (!(sb_xs = parseInt($t.attr('data-sb-xs'), 10))) sb_xs = 1;
 
+      var autoHeightVar;
+      if (!(autoHeightVar = $t.attr('data-auto-height'))) autoHeightVar = false;
+
       swipers['swiper-' + index] = new Swiper('.swiper-' + index, {
         speed: speedVar,
         pagination: {
@@ -164,6 +167,7 @@ jQuery(function($) {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
         },
+        autoHeight: autoHeightVar,
         parallax: true,
         simulateTouch: simVar,
         centeredSlides: centerVar,

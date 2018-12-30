@@ -25,6 +25,7 @@ function rs_testimonial( $atts, $content = '', $id = '' ) {
     case 'type-1':
       $data_autoplay        = ' data-autoplay="0"';
       $data_loop            = ' data-loop="1"';
+      $data_auto_height     = ' data-auto-height="1"';
       $data_slides_per_view = ' data-slides-per-view-for-all="1"';
       $data_xs_slides       = '';
       $data_sm_slides       = '';
@@ -36,6 +37,7 @@ function rs_testimonial( $atts, $content = '', $id = '' ) {
     case 'type-2':
       $data_autoplay        = ' data-autoplay="5000"';
       $data_loop            = ' data-loop="0"';
+      $data_auto_height     = ' data-auto-height="1"';
       $data_slides_per_view = ' data-slides-per-view="responsive"';
       $data_xs_slides       = ' data-xs-slides="1"';
       $data_sm_slides       = ' data-sm-slides="2"';
@@ -48,6 +50,7 @@ function rs_testimonial( $atts, $content = '', $id = '' ) {
     default:
       $data_autoplay        = ' data-autoplay="5000"';
       $data_loop            = ' data-loop="1"';
+      $data_auto_height     = ' data-auto-height="1"';
       $data_slides_per_view = ' data-slides-per-view="responsive"';
       $data_xs_slides       = ' data-xs-slides="1"';
       $data_sm_slides       = ' data-sm-slides="1"';
@@ -79,7 +82,7 @@ function rs_testimonial( $atts, $content = '', $id = '' ) {
 
   ob_start(); 
   if ($style != 'type-4') {
-    echo '<div class="testimonial-swiper-slider swiper-container" '.$data_autoplay.$data_loop.$data_slides_per_view.$data_xs_slides.$data_sm_slides.$data_md_slides.$data_lg_slides.$data_add_slides.' data-speed="400" data-center="0" data-sb-lg="10">';
+    echo '<div class="testimonial-swiper-slider swiper-container" '.$data_autoplay.$data_loop.$data_auto_height.$data_slides_per_view.$data_xs_slides.$data_sm_slides.$data_md_slides.$data_lg_slides.$data_add_slides.' data-speed="400" data-center="0" data-sb-lg="10">';
     echo '<div class="swiper-wrapper clearfix">';
       $i = 0;
       while( $the_query->have_posts()) : $the_query->the_post();
