@@ -20,7 +20,7 @@
 
 // ** Параметры MySQL: Эту информацию можно получить у вашего хостинг-провайдера ** //
 /** Имя базы данных для WordPress */
-define('DB_NAME', 'kvardelka');
+define('DB_NAME', 'yarosvet');
 
 /** Имя пользователя MySQL */
 define('DB_USER', 'root');
