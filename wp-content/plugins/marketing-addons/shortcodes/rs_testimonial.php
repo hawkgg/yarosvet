@@ -107,7 +107,7 @@ function rs_testimonial( $atts, $content = '', $id = '' ) {
 
     echo '<div class="text-center leave-testimonial">';
     echo '<a href="" class="mx-3 my-2 leave-testimonial-link">Оставить отзыв</a>';
-    echo '<a href="/otzivi" class="leave-testimonial-link">Смотреть другие отзывы</a>';
+    echo '<a href="/otzivi">Смотреть другие отзывы</a>';
     echo '</div>';
   } else {
 

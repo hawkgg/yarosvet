@@ -14,38 +14,42 @@ footer, footer p {
   color: #949494;
 }
 
+.fz-17 {
+  font-size: 17px;
+}
+
 .simple-text h4, .c-h4, .comment-reply-title {
   font-size: 17px;
 }
 
 
-@media (max-width: 1200px){
+@media (max-width: 1200px) {
   .simple-text h4, .c-h4, .comment-reply-title {
     font-size: 16px;
   }
 }
 
-.h-100vh{
+.h-100vh {
   height:100vh!important;
 }
 
-.h-90vh{
+.h-90vh {
   height:90vh!important;
 }
-.h-55vh{
+.h-55vh {
   height:55vh!important;
 }
-.h-600px{
+.h-600px {
   height:600px!important;
 }
-.h-500px{
+.h-500px {
   height:500px!important;
 }
-.h-400px{
+.h-400px {
   height:400px!important;
 }
 
-.swiper-custom.tt-arrow-left, .swiper-custom.tt-arrow-right{
+.swiper-custom.tt-arrow-left, .swiper-custom.tt-arrow-right {
   background:transparent !important;
   border:none;
 }
@@ -56,7 +60,7 @@ footer, footer p {
   background:transparent;
 }
 
-.pagination{
+.pagination {
   justify-content:center;
 }
 
@@ -115,11 +119,11 @@ footer, footer p {
     background: transparent;
 }
 
-.tt-service.type-5.color-1 .tt-service-icon:hover span{
+.tt-service.type-5.color-1 .tt-service-icon:hover span {
     color: #86bb6b;
 }
 
-.tt-service.type-5.color-2 .tt-service-icon:hover span{
+.tt-service.type-5.color-2 .tt-service-icon:hover span {
     color: #368aa9;
 }
 
@@ -1018,7 +1022,7 @@ footer ul li ul {
   margin-top: 35px;
 }
 
-.leave-testimonial .leave-testimonial-link {
+.leave-testimonial a {
   font-weight: 600;
   border: 1px solid #7ab55c;
   color: #7ab55c;
@@ -1027,7 +1031,7 @@ footer ul li ul {
   display: inline-block;
 }
 
-.leave-testimonial .leave-testimonial-link:hover {
+.leave-testimonial a:hover {
   background: #7ab55c;
   color: #fff;
 }
@@ -1373,7 +1377,6 @@ footer ul li ul {
 }
 
 .wpcf7-mail-sent-ok {
-  color: #fff !important;
   font-size: 14px !important;
   margin-top: 5px !important;
 }
