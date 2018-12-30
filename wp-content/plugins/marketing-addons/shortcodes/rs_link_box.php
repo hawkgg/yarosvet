@@ -39,9 +39,9 @@ function rs_link_box( $atts, $desc = '', $id = '' ) {
   }
   $output .=  '<div class="tt-case-info text-center">';
   if ($style == 'type-1') {
-    $output .=  '<a class="tt-case-title c-h5" href="'.esc_url($href).'" target="'.esc_attr($target).'">'.esc_html($heading).'</a>';
+    $output .=  '<a class="tt-case-title c-h4" href="'.esc_url($href).'" target="'.esc_attr($target).'">'.esc_html($heading).'</a>';
   }
-  $output .=  '<div class="simple-text size-3">';
+  $output .=  '<div class="fz-17">';
   $output .=  rs_set_wpautop($desc);
   $output .=  '</div>';
   $output .=  '</div>';

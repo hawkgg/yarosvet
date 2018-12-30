@@ -6,6 +6,17 @@ article.type-post p, article.type-post ul, article.type-post li, article.type-po
     color: #353535;
 }
 
+.simple-text h4, .c-h4, .comment-reply-title {
+  font-size: 17px;
+}
+
+
+@media (max-width: 1200px){
+  .simple-text h4, .c-h4, .comment-reply-title {
+    font-size: 16px;
+  }
+}
+
 .h-100vh{
   height:100vh!important;
 }
@@ -385,6 +396,9 @@ article.type-post p, article.type-post ul, article.type-post li, article.type-po
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
+.tt-case-info {
+  padding: 26px 0 30px;
+}
 
 .tt-case-img.hover-custom{
   position: relative;
@@ -468,8 +482,15 @@ ol.breadcrumb {
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
+/* Высота главного меню */
+#mega-menu-wrap-primary-menu #mega-menu-primary-menu > li.mega-menu-item > a.mega-menu-link {
+  height: 65px !important;
+  line-height: 65px;
+}
+
+/* Контактные данные*/
 .tt-header .tt-address-info{
-  padding:0;
+  padding: 0;
 }
 
 .tt-header .main-nav > ul > li > ul > li > a:hover {
@@ -480,7 +501,16 @@ ol.breadcrumb {
   font-size: 15px;
 }
 #mega-menu-wrap-primary-menu #mega-menu-primary-menu > li.mega-menu-megamenu.mega-services > ul.mega-sub-menu {
-  width:150%;
+  width: 150%;
+}
+
+/* Отступы контейнера с лого */
+.tt-header .top-inner {
+  padding: 8px 0 !important;
+}
+
+.tt-header-margin {
+  height: 65px;
 }
 
 @media (max-width: 1200px){
@@ -502,15 +532,20 @@ ol.breadcrumb {
   /* Ширина меню */
   .tt-header .top-inner {
     width: 100%;
+    padding: 8px 0 !important;
   }
 
   /* Отступ от лого */
   .tt-header .toggle-block {
-    padding-top: 55px;
+    padding-top: 75px;
   }
 }
 
 @media (max-width: 991px){
+  #mega-menu-wrap-primary-menu #mega-menu-primary-menu > li.mega-menu-item > a.mega-menu-link {
+    height: 40px !important;
+    line-height: 40px !important;
+  }
   .tt-header .top-inner {
     padding: 6px 0;
   }
@@ -549,13 +584,6 @@ ol.breadcrumb {
     padding-top: 90px;
   }
 }
-
-@media (min-width: 600px) and (max-width: 1200px) {
-  .tt-header .toggle-block > ul#mega-menu-primary-menu a.mega-menu-link {
-    height: 65px !important;
-  }
-}
-
 
 
 /*---------------------*/
@@ -974,7 +1002,7 @@ footer ul li ul {
 }
 
 .leave-testimonial {
-  margin-top: 45px;
+  margin-top: 35px;
 }
 
 .leave-testimonial .leave-testimonial-link {

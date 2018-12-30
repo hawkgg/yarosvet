@@ -142,6 +142,11 @@ jQuery(function($) {
 
       var loopVar = parseInt($t.attr('data-loop'), 10);
       var speedVar = parseInt($t.attr('data-speed'), 10);
+      var sb_lg, sb_md, sb_sm, sb_xs;
+      if (!(sb_lg = parseInt($t.attr('data-sb-lg'), 10))) sb_lg = 1;
+      if (!(sb_md = parseInt($t.attr('data-sb-md'), 10))) sb_md = 1;
+      if (!(sb_sm = parseInt($t.attr('data-sb-sm'), 10))) sb_sm = 1;
+      if (!(sb_xs = parseInt($t.attr('data-sb-xs'), 10))) sb_xs = 1;
 
       swipers['swiper-' + index] = new Swiper('.swiper-' + index, {
         speed: speedVar,
@@ -166,19 +171,19 @@ jQuery(function($) {
         breakpoints: {
             1600: {
               slidesPerView: lg,
-              spaceBetween: 1,
+              spaceBetween: sb_lg,
             },
             1200: {
               slidesPerView: md,
-              spaceBetween: 1,
+              spaceBetween: sb_md,
             },
             992: {
               slidesPerView: sm,
-              spaceBetween: 1,
+              spaceBetween: sb_sm,
             },
             768: {
               slidesPerView: xs,
-              spaceBetween: 1,
+              spaceBetween: sb_xs,
             },
         },
         onSlideChangeEnd: function(swiper) {

@@ -76,7 +76,7 @@ function rs_testimonial( $atts, $content = '', $id = '' ) {
 
   ob_start(); 
 
-  echo '<div class="testimonial-swiper-slider swiper-container" '.$data_autoplay.$data_loop.$data_slides_per_view.$data_xs_slides.$data_sm_slides.$data_md_slides.$data_lg_slides.$data_add_slides.' data-speed="400" data-center="0">';
+  echo '<div class="testimonial-swiper-slider swiper-container" '.$data_autoplay.$data_loop.$data_slides_per_view.$data_xs_slides.$data_sm_slides.$data_md_slides.$data_lg_slides.$data_add_slides.' data-speed="400" data-center="0" data-sb-lg="10">';
   echo '<div class="swiper-wrapper clearfix">';
     $i = 0;
     while( $the_query->have_posts()) : $the_query->the_post();
@@ -100,7 +100,8 @@ function rs_testimonial( $atts, $content = '', $id = '' ) {
   echo '</div>';
 
   echo '<div class="text-center leave-testimonial">';
-  echo '<a href="" class="leave-testimonial-link">Оставить отзыв</a>';
+  echo '<a href="" class="mx-3 my-2 leave-testimonial-link">Оставить отзыв</a>';
+  echo '<a href="/testimonials" class="leave-testimonial-link">Смотреть другие отзывы</a>';
   echo '</div>';
 
   $output = ob_get_clean();
