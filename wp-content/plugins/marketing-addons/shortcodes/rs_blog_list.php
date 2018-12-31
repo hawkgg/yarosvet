@@ -13,7 +13,7 @@ function rs_blog_list( $atts, $content = '', $id = '' ) {
     'class'          => '',
     'cats'           => 0,
     'orderby'        => 'ID',
-    'posts_per_page' => 8,
+    'posts_per_page' => 999,
     'exclude_posts'  => '',
   ), $atts ) );
 
@@ -65,31 +65,37 @@ function rs_blog_list( $atts, $content = '', $id = '' ) {
     $max_num_pages = false;
   }
   ?>
-  <div class="row">
+  <!-- <?php echo do_shortcode( '[searchandfilter fields="category"]' ); ?> -->
+  <div class="row isotope">
     <?php if($the_query -> have_posts()): while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
-    <div <?php post_class('tt-post-3'); ?>>
-      <?php get_template_part('templates/blog/blog-list/content', get_post_format()); ?>
-      <div class="tt-post-3-info">
-        <h2><a class="tt-post-3-title c-h5" href="<?php echo esc_url(get_the_permalink()); ?>"><?php the_title(); ?></a></h2>
-        <a class="tt-post-3-favourite" href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
-        <div class="tt-post-3-label">
-          <!-- <span><?php echo esc_html__('by', 'marketing'); ?> <a href="#"><?php echo get_the_author(); ?></a></span> -->
-          <span><?php the_time('F d, Y'); ?></span>
-          <span><?php echo get_the_category_list( esc_html__( ', ', 'marketing' ) );?></span>
-        </div>
-        <div class="simple-text size-3">
-          <p><?php echo marketing_auto_post_excerpt(); ?></p>
-        </div>
-        <a class="c-btn type-4" href="<?php echo esc_url(get_the_permalink()); ?>"><?php echo esc_html__('Читать далее', 'marketing'); ?> </a>
+    <div <?php post_class('isotope-item col-lg-12 col-md-12 col-sm-12'); ?>>
+      <div <?php post_class('tt-post'); ?>>
+        <?php get_template_part('templates/blog/blog-list/content', get_post_format()); ?>
+        <div class="tt-post-3-info">
+          <!-- <div class="tt-post-cat"><?php echo esc_html__('by', 'marketing-addons'); ?> <?php echo get_the_author(); ?></div> -->
+          <h2><a class="tt-post-title c-h3" href="<?php echo esc_url(get_the_permalink()); ?>"><?php the_title(); ?></a></h2>
+          <div class="tt-post-3-label my-2">
+            <p>
+              <i class="fa fa-calendar mr-2"></i><span><?php the_time('F d, Y'); ?></span>
+              <span><?php echo get_the_category_list( esc_html__( ', ', 'marketing' ) );?></span>
+            </p>
+          </div>
+          <div class="simple-text size-3">
+            <p><?php echo marketing_auto_post_excerpt(); ?></p>
+          </div>
+          <div class="text-right">
+            <a class="c-btn type-4 read-more-link" href="<?php echo esc_url(get_the_permalink()); ?>"><?php echo esc_html__('Читать далее', 'marketing-addons'); ?></a>
+          </div>
+        </div>  
       </div>
     </div>
     <div class="empty-space marg-lg-b30"></div>
     <?php endwhile; wp_reset_postdata(); else:
       get_template_part('templates/content', 'none');
     endif; ?>
-    <?php marketing_paging_nav($max_num_pages, 'default'); ?>
-    <div class="empty-space marg-sm-b30"></div>
   </div>
+  <?php marketing_paging_nav($max_num_pages); ?>
+  <div class="empty-space marg-sm-b30"></div>
 
   <?php
   $output = ob_get_clean();

@@ -8,22 +8,19 @@
 ?>
 
 <article <?php post_class(); ?>>
-    <div class="tt-blog-cat">
+    <?= wp_get_attachment_image(get_post_thumbnail_id(get_the_ID()), 'full') ?>
 
-      <?php foreach ( array_slice(get_the_category(), 1) as $category): ?>
-        <?php $out .= '<a href="http://kvardelka.loc/blog/#'.$category->slug.'">'.$category->name.'</a>, '; ?>
-      <?php endforeach; ?>
-      <?php echo trim($out, ', '); ?>
-
-      </div>
-    <h1 class="tt-blog-title c-h2"><?php the_title(); ?></h1>
-    <div class="tt-blog-label">
-      <!-- <span><?php echo esc_html__('by', 'marketing'); ?> <a href="#"><?php echo get_the_author(); ?></a></span> -->
-      <p><i class="fa fa-calendar mr-2"></i><span><?php the_time('F d, Y'); ?></span></p>
-    </div>
-    <div class="empty-space marg-lg-b30"></div>
-    <div class="tt-devider"></div>
-    <div class="empty-space marg-lg-b30"></div>
+  <h1 class="tt-blog-title mt-3 c-h2"><?php the_title(); ?></h1>
+  <div class="tt-post-3-label">
+    <!-- <span><?php echo esc_html__('by', 'marketing'); ?> <a href="#"><?php echo get_the_author(); ?></a></span> -->
+    <p>
+      <i class="fa fa-calendar mr-2"></i><span><?php the_time('F d, Y'); ?></span>
+      <span><?php echo get_the_category_list( esc_html__( ', ', 'marketing' ) );?></span>
+    </p>
+  </div>
+  <div class="empty-space marg-lg-b10"></div>
+  <div class="tt-devider"></div>
+  <div class="empty-space marg-lg-b30"></div>
   <!-- <?php get_template_part('templates/blog/blog-single/parts/single', 'media'); ?> -->
 
   <div class="simple-text">

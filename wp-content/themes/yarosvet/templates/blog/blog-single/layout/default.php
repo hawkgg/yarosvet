@@ -9,7 +9,7 @@
 
 <div id="content-wrapper">
   <div class="container">
-      <div class="empty-space marg-lg-b50 marg-sm-b30"></div>
+      <div class="empty-space marg-lg-b30 marg-sm-b20"></div>
       <?php get_template_part('templates/global/page-before-content'); ?>
         <?php while ( have_posts() ) : the_post(); ?>
           <?php get_template_part('templates/blog/blog-single/content', 'single'); ?>

@@ -7,7 +7,7 @@
  */
 ?>
 <?php if(has_post_thumbnail()): ?>
-  <a class="tt-post-3-img custom-hover" href="<?php echo esc_url(get_the_permalink()); ?>">
-    <?php the_post_thumbnail('marketing-medium-hor'); ?>
-  </a>
+    <a class="tt-post-img zoom-hover" href="<?php echo esc_url(get_the_permalink()); ?>">
+      <?php the_post_thumbnail('', array('class' => 'img-responsive')); ?>
+    </a>
 <?php endif; ?>

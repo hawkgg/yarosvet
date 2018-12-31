@@ -64,6 +64,10 @@ footer, footer p {
   justify-content:center;
 }
 
+.tt-custom-pagination {
+  font-size: inherit;
+}
+
 #content-wrapper.content {
   padding:0;
 }
@@ -1268,6 +1272,19 @@ footer ul li ul {
 }
 .zoom-hover img:hover {
     transform: scale(1.2);
+}
+
+.tt-blog-cat {
+  font-weight: normal;
+}
+
+.tt-blog-cat, .tt-blog-cat a {
+  vertical-align: baseline;
+  color: inherit;
+}
+
+.tt-blog-cat a:hover {
+  color: #82aa56;
 }
 
 .read-more-link {

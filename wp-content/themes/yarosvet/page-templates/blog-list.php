@@ -44,23 +44,27 @@ if(is_page()) {
 ?>
 
 <div class="empty-space marg-lg-b100 marg-sm-b50 marg-xs-b30"></div>
+<!-- <? var_dump($post_args) ?> -->
+  <!-- <?php echo do_shortcode( '[searchandfilter fields="category" all_items_labels="Все" show_count="1" submit_label="Показать" hierarchical="1"]' ); ?> -->
 <div class="container">
   <?php get_template_part('templates/global/page-before-content'); ?>
     <?php if($query -> have_posts()): while ($query -> have_posts()) : $query -> the_post(); ?>
     <div <?php post_class('tt-post-3'); ?>>
       <?php get_template_part('templates/blog/blog-list/content', get_post_format()); ?>
       <div class="tt-post-3-info">
-        <h2><a class="tt-post-3-title c-h5" href="<?php echo esc_url(get_the_permalink()); ?>"><?php the_title(); ?></a></h2>
-        <a class="tt-post-3-favourite" href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
-        <div class="tt-post-3-label">
-          <span><?php echo esc_html__('by', 'marketing'); ?> <a href="#"><?php echo get_the_author(); ?></a></span>
-          <span><?php the_time('F d, Y'); ?></span>
-          <span><?php echo get_the_category_list( esc_html__( ', ', 'marketing' ) );?></span>
+        <h2><a class="tt-post-3-title c-h3" href="<?php echo esc_url(get_the_permalink()); ?>"><?php the_title(); ?></a></h2>
+        <div class="tt-post-3-label my-2">
+          <p>
+            <i class="fa fa-calendar mr-2"></i><span><?php the_time('F d, Y'); ?></span>
+            <span><?php echo get_the_category_list( esc_html__( ', ', 'marketing' ) );?></span>
+          </p>
         </div>
         <div class="simple-text size-3">
           <p><?php echo marketing_auto_post_excerpt(); ?></p>
         </div>
-        <a class="c-btn type-4" href="<?php echo esc_url(get_the_permalink()); ?>"><?php echo esc_html__('Read More', 'marketing'); ?> </a>
+        <div class="text-right">
+          <a class="c-btn type-4 read-more-link" href="<?php echo esc_url(get_the_permalink()); ?>"><?php echo esc_html__('Читать далее', 'marketing'); ?> </a>
+        </div>
       </div>
     </div>
     <div class="empty-space marg-lg-b30"></div>
