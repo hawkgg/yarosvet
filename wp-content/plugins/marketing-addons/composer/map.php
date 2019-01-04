@@ -2011,22 +2011,44 @@ vc_map( array(
   'description'   => 'Добавить фильтрацию.',
   'params'        => array(
     array(
-      'type'        => 'textfield',
-      'heading'     => 'Slug родительской категории',
-      'param_name'  => 'slug',
-      'description' => 'Имя родительской категории, по которому будут хвататься дочерние (не дальше 1 вложенности)',
+      'type'        => 'vc_efa_chosen',
+      'heading'     => 'Категория',
+      'param_name'  => 'id_cat',
+      'value'       => rs_element_values( 'categories', array(
+        'taxonomy'    => 'category',
+        'hide_empty'  => false,
+      ) ),
+      'description' => 'ОДНА категория, по которой будут хвататься дочерние',
+    ),
+    array(
+      'type'        => 'dropdown',
+      'heading'     => 'Is hashing',
+      'param_name'  => 'is_hashing',
+      'value'       => array(
+        'Нет'       => '0',
+        'Да'        => '1',
+      ),
+      'description' => 'Будет ли хэшироваться в URL',
     ),
     array(
       'type'        => 'dropdown',
       'heading'     => 'Style',
       'param_name'  => 'style',
-      'holder'        => 'h4',
+      'holder'      => 'h4',
       'value'       => array(
-        'Links' => 'links',
-        'Select'  => 'select',
+        'Links'     => 'links',
+        'Select'    => 'select',
       ),
       'description' => 'Выберите тип фильтрации',
     ),
+    array(
+      'type'        => 'textfield',
+      'heading'     => 'Class target',
+      'param_name'  => 'class_target',
+      'description' => 'Класс контейнера',
+      // 'dependency'  => array( 'element' => 'style', 'value' => array('select') ),
+    ),
+
      // Extras
     $vc_map_extra_id,
     $vc_map_extra_class,

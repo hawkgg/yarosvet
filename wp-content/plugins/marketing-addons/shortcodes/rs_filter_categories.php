@@ -11,21 +11,25 @@ function rs_filter_categories($atts) {
     'id'            => '',
     'class'         => '',
     'style'         => 'links',
+    'is_hashing'    => '0',
+    'id_cat'        => '',
+    'class_target'  => 'isotope',
   ), $atts));
 
-  $class = ( $class ) ? ' ' .$class : '';
+  $class = ( $class ) ? ' ' . $class : '';
 
-  $category = get_category_by_slug( $atts['slug'] );
+  $categories = get_categories(['child_of' => $id_cat]);
+
 
   switch ($style) {
 
     case 'links':
 
-      $output = '<div class="isotope-filter '.$class.'" id="'.$id.'">';
+      $output = '<div class="isotope-filter '.$class.'" id="'.$id.'" data-target=".'.$class_target.'" data-is-hashing="'.$is_hashing.'">';
 
       $output .= '<button type="button" data-filter="*" class="is-checked" >Все</li>';
 
-      foreach (get_categories(['child_of' => $category->term_id]) as $category) {
+      foreach ($categories as $category) {
         $output .= '<button type="button" data-filter=".category-'.$category->slug.'">'.$category->name.'</li>';
       }
 
@@ -35,14 +39,14 @@ function rs_filter_categories($atts) {
 
     case 'select':
 
-      $output .= '<div class="isotope-filter '.$class.'" id="'.$id.'">';
+      $output .= '<div class="isotope-filter '.$class.'" id="'.$id.'" data-target=".'.$class_target.'" data-is-hashing="'.$is_hashing.'">';
 
       $output .= '<select name="" class="isotope-select form-control">';
 
         $output .= '<option disabled selected>Выберите категорию</option>';
         $output .= '<option data-filter="*">Все</option>';
 
-        foreach (get_categories(['child_of' => $category->term_id]) as $category) {
+        foreach ($categories as $category) {
           $output .= '<option data-filter=".category-'.$category->slug.'">'.$category->name.'</option>';
         }
 

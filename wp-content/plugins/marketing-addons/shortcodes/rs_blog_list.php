@@ -66,7 +66,7 @@ function rs_blog_list( $atts, $content = '', $id = '' ) {
   }
   ?>
   <!-- <?php echo do_shortcode( '[searchandfilter fields="category"]' ); ?> -->
-  <div class="row isotope">
+  <div id="<?= $id ?>" class="row isotope <?= $class ?>">
     <?php if($the_query -> have_posts()): while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
     <div <?php post_class('isotope-item col-lg-12 col-md-12 col-sm-12'); ?>>
       <div <?php post_class('tt-post'); ?>>

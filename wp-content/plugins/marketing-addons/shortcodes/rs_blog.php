@@ -56,7 +56,7 @@ function rs_blog( $atts, $content = '', $id = '' ) {
   $the_query = new WP_Query($args);
 
   ?>
-  <div class="row isotope">
+  <div id="<?= $id ?>" class="row isotope <?= $class ?>">
     <?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
       <div <?php post_class('isotope-item col-lg-12 col-md-12 col-sm-12'); ?>>
         <div <?php post_class('tt-post'); ?>>

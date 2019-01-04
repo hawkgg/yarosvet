@@ -491,35 +491,73 @@ jQuery(function($) {
       // }
     };
 
+
+    // bind filter button click
+    jQuery('.isotope-filter button').on( 'click', function() {
+      var jQueryfilterButtonGroup = jQuery( this ).parent();
+      var isHashing = jQueryfilterButtonGroup.attr('data-is-hashing');
+      var target = jQueryfilterButtonGroup.attr('data-target');
+
+      var hashFilter = jQuery( this ).attr('data-filter');
+      // set filter in hash
+
+      if (isHashing == '1') {
+        if (hashFilter[0] != '*') hashFilter = hashFilter.slice(1);
+        location.hash = 'filter=' + encodeURIComponent( hashFilter );
+      } else {
+        isoFilter(target, hashFilter);
+        jQueryfilterButtonGroup.find('.is-checked').removeClass('is-checked');
+        jQuery( this ).addClass('is-checked');
+      }
+    });
+
+    // bind filter on select change
+    $('.isotope-select').on( 'change', function() {
+      var jQueryfilterButtonGroup = jQuery( this ).parent();
+      var isHashing = jQueryfilterButtonGroup.attr('data-is-hashing');
+      var target = jQueryfilterButtonGroup.attr('data-target');
+
+      // get filter value from option value
+      var hashFilter = jQuery( this ).find('option:selected').attr('data-filter');
+
+      if (isHashing == '1') {
+        if (hashFilter[0] != '*') hashFilter = hashFilter.slice(1);
+        location.hash = 'filter=' + encodeURIComponent( hashFilter );
+      } else {
+        isoFilter(target, hashFilter);
+      }
+
+    });
+
+
+    function isoFilter(target, hashFilter) {
+      if (! $(target).hasClass('isotope')) {
+        target = target + ' .isotope';
+      }
+      // filter isotope
+      $(target).isotope({
+        itemSelector: target + ' .isotope-item',
+        // use filterFns
+        filter: filterFns[ hashFilter ] || hashFilter
+      });
+
+      if ($(target).find('fitWidth')) {
+        $(target).isotope({
+          masonry: {
+            fitWidth: true,
+          },
+        });
+      }
+    }
+
+    var isIsotopeInit = false;
+
     function getHashFilter() {
       // get filter=filterName
       var matches = location.hash.match( /filter=([^&]+)/i );
       var hashFilter = matches && matches[1];
       return hashFilter && decodeURIComponent( hashFilter );
     }
-
-    // bind filter button click
-    var jQueryfilterButtonGroup = jQuery('.isotope-filter');
-    jQueryfilterButtonGroup.on( 'click', 'button', function() {
-      var buttonAttr = jQuery( this ).attr('data-filter');
-      // set filter in hash
-
-      if (buttonAttr[0] != '*') buttonAttr = buttonAttr.slice(1);
-
-      location.hash = 'filter=' + encodeURIComponent( buttonAttr );
-    });
-
-    // bind filter on select change
-    $('.isotope-select').on( 'change', function() {
-      // get filter value from option value
-      var selectAttr = jQuery( this ).find('option:selected').attr('data-filter');
-
-      if (selectAttr[0] != '*') selectAttr = selectAttr.slice(1);
-
-      location.hash = 'filter=' + encodeURIComponent( selectAttr );
-    });
-
-    var isIsotopeInit = false;
 
     function onHashchange() {
       var hashFilter = getHashFilter();
@@ -530,26 +568,16 @@ jQuery(function($) {
 
       if (hashFilter && hashFilter[0] != '*') hashFilter = '.' + hashFilter;
 
-      // filter isotope
-      jQuery('.isotope').isotope({
-        itemSelector: '.isotope .isotope-item',
-        // use filterFns
-        filter: filterFns[ hashFilter ] ||  hashFilter
-      });
+      var target = jQuery( '*[data-is-hashing="1"]' ).eq(0).attr('data-target');
 
-      if (jQuery('.isotope').hasClass('fitWidth')) {
-        jQuery('.isotope').isotope({
-          masonry: {
-            fitWidth: true,
-          },
-        });
-      }
+      isoFilter(target, hashFilter);
 
       // set selected class on button
       if ( hashFilter ) {
+        var jQueryfilterButtonGroup = jQuery('*[data-is-hashing="1"]');
         jQueryfilterButtonGroup.find('.is-checked').removeClass('is-checked');
         jQueryfilterButtonGroup.find('[data-filter="' + hashFilter + '"]').addClass('is-checked');
-        $('.isotope-select').find('[data-filter="' + hashFilter + '"]').attr('selected', 'selected');
+        jQueryfilterButtonGroup.find('[data-filter="' + hashFilter + '"]').attr('selected', 'selected');
       }
     }
 
