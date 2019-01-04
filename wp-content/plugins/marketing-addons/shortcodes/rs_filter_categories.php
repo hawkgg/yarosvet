@@ -12,7 +12,7 @@ function rs_filter_categories($atts) {
     'class'         => '',
     'style'         => 'links',
     'is_hashing'    => '0',
-    'id_cat'        => '',
+    'id_cat'        => '0',
     'class_target'  => 'isotope',
   ), $atts));
 
