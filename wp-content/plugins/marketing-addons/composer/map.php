@@ -1551,12 +1551,32 @@ vc_map( array(
       'type'        => 'dropdown',
       'heading'     => 'Vertical position of text block',
       'param_name'  => 'pos_vert',
-      'value'       => '',
       'value'       => array(
         'Top'       => 'start',
         'Center'    => 'center',
         'Bottom'    => 'end',
       ),
+      'dependency'  => array( 'element' => 'style', 'value' => array('style6') )
+    ),
+    array(
+      'type'        => 'textfield',
+      'heading'     => 'Margin of text block',
+      'param_name'  => 'margin',
+      'value'       => '',
+      'dependency'  => array( 'element' => 'style', 'value' => array('style6') )
+    ),
+    array(
+      'type'        => 'textfield',
+      'heading'     => 'Padding of text block',
+      'param_name'  => 'padding',
+      'value'       => '',
+      'dependency'  => array( 'element' => 'style', 'value' => array('style6') )
+    ),
+    array(
+      'type'        => 'colorpicker',
+      'heading'     => 'Background of text block',
+      'param_name'  => 'background_text',
+      'value'       => '',
       'dependency'  => array( 'element' => 'style', 'value' => array('style6') )
     ),
     array(

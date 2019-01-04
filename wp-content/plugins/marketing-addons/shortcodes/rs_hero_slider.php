@@ -78,6 +78,9 @@ function rs_hero_slider_item( $atts, $content = '', $id = '' ) {
     'style'                        => 'style1',
     'pos_horiz'                    => 'left',
     'pos_vert'                     => 'top',
+    'background_text'              => '',
+    'margin'                       => '',
+    'padding'                      => '',
     'text_align'                   => 'left',
     'heading'                      => '',
     'big_heading_font'             => 'default',
@@ -457,7 +460,7 @@ function rs_hero_slider_item( $atts, $content = '', $id = '' ) {
         $slide .=  '<div class="tt-mslide-3 background-block" style="background-image:url('.esc_url($image_url).');">';
         $slide .=  '<div class="container">';
         $slide .=  '<div class="tt-mslide-3-table d-flex align-items-'.$pos_vert.' justify-content-'.$pos_horiz.'">';
-        $slide .=  '<div class="slide-text text-'.$text_align.'">';
+        $slide .=  '<div class="slide-text text-'.$text_align.'" style="margin:'.$margin.'; padding:'.$padding.'; background:'.$background_text.'">';
 
         $slide .= $heading;
         $slide .= $small_heading;
