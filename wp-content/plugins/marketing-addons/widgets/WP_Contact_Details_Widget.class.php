@@ -53,28 +53,29 @@ class marketing_WP_Contact_Details_Widget extends WP_Widget
     <?php if(isset($instance['phone_no']) || isset($instance['email']) || isset($instance['location'])): ?>
 
     <?php if(isset($instance['location']) && !empty($instance['location'])): ?>
-    <div class="tt-address clearfix">
-      <div class="tt-address-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+    <div class="tt-address d-flex">
+      <div class="tt-address-icon d-flex align-items-center justify-content-center"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
       <div class="tt-address-info">
-        <?php echo wp_kses_post($instance['location']); ?>
+        <a href="https://yandex.ru/maps/213/moscow?text=<?php echo wp_kses_post($instance['location']); ?>" target="_blank"><?php echo wp_kses_post($instance['location']); ?></a>
+        
       </div>
     </div>
-    <div class="empty-space marg-lg-b25"></div>
+    <div class="empty-space marg-lg-b15"></div>
     <?php endif; ?>
 
     <?php if(isset($instance['email']) && !empty($instance['email'])): ?>
-    <div class="tt-address clearfix">
-      <div class="tt-address-icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
+    <div class="tt-address d-flex">
+      <div class="tt-address-icon d-flex align-items-center justify-content-center"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
       <div class="tt-address-info">
         <a href="mailto:<?php echo $instance['email']; ?>"><?php echo $instance['email']; ?></a>
       </div>
     </div>
-    <div class="empty-space marg-lg-b25"></div>
+    <div class="empty-space marg-lg-b15"></div>
     <?php endif; ?>
 
     <?php if(isset($instance['phone_no']) && !empty($instance['phone_no'])): ?>
-    <div class="tt-address clearfix">
-      <div class="tt-address-icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+    <div class="tt-address d-flex">
+      <div class="tt-address-icon d-flex align-items-center justify-content-center"><i class="fa fa-phone" aria-hidden="true"></i></div>
       <div class="tt-address-info">
         <a href="tel:<?php echo $instance['phone_no']; ?>"><?php echo $instance['phone_no']; ?></a>
       </div>

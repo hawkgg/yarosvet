@@ -607,6 +607,7 @@ jQuery(function($) {
 
 
 
+
   /*==================================================*/
   /* 13 - MENU OVERLAY */
   /*==================================================*/
@@ -622,7 +623,22 @@ jQuery(function($) {
   });
 
   $('.menu-overlay').on('click', function(){
-    $('.cmn-toggle-switch').click();
-  });
+      $('.cmn-toggle-switch').click();
+    });
 
+  /*==================================================*/
+  /* 14 - CUSTOM */
+  /*==================================================*/
+
+  document.querySelectorAll('.wpcf7').forEach(function(item, i, arr){
+    item.addEventListener('wpcf7beforesubmit', function(e) {
+      jQuery( this ).find('.wpcf7-submit').eq(0).prop('disabled', true);
+    }, false);
+
+    "wpcf7invalid wpcf7spam wpcf7mailsent wpcf7mailfailed wpcf7submit".split(" ").forEach(function(e){
+      item.addEventListener(e, function(){
+        jQuery( this ).find('.wpcf7-submit').eq(0).prop('disabled', false);
+      }, false);
+    });
+  });
 });

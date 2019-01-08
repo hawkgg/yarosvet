@@ -22,7 +22,7 @@ function rs_hero_video_banner( $atts, $content = '', $id = '' ) {
   ), $atts ) );
 
   $id                  = ( $id ) ? ' id="'. esc_attr($id) .'"' : '';
-  $class               = ( $class ) ? ' '. sanitize_html_classes($class) : '';
+  $class               = ( $class ) ? ' '. marketing_sanitize_html_classes($class) : '';
   $big_heading_color   = ($big_heading_color) ? ' style="color:'.esc_attr($big_heading_color).';"':'';
   $small_heading_color = ($small_heading_color) ? ' style="color:'.esc_attr($small_heading_color).';"':'';
   $btn_text_color      = ($btn_text_color) ? ' style="color:'.esc_attr($btn_text_color).';"':'';

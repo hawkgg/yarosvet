@@ -999,6 +999,7 @@ vc_map( array(
       'value'       => array(
         'Green'  => 'color-2',
         'Orange' => 'color-4',
+        'Black'  => 'color-5',
       ),
     ),
     array(

@@ -29,9 +29,9 @@ function rs_special_text( $atts, $content = '', $id = '' ) {
   ), $atts ) );
 
   $id        = ( $id ) ? ' id="'. esc_attr($id) .'"' : '';
-  $class     = ( $class ) ? ' '. sanitize_html_classes($class) : '';
+  $class     = ( $class ) ? ' '. marketing_sanitize_html_classes($class) : '';
   $css_class = apply_filters( VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, vc_shortcode_custom_css_class( $css, ' ' ), '', $atts );
-  $css_class = ( $css_class ) ? ' '.sanitize_html_classes($css_class):'';
+  $css_class = ( $css_class ) ? ' '.marketing_sanitize_html_classes($css_class):'';
   $customize = ($font != 'default' || $align || $font_color || $line_height || $letter_spacing || $transform || $font_style || $font_weight != '300' || $font_size || $margin_top || $margin_bottom ) ? true:false;
   $output = '';
   if(strpos($font, 'google') !== false) {
@@ -69,7 +69,7 @@ function rs_special_text( $atts, $content = '', $id = '' ) {
 
   }
 
-  $output .= '<'.esc_html($tag).' '.$id.' class="'.$class.'special-text'.$css_class.marketing_sanitize_html_classes($uniqid_class).'">';
+  $output .= '<'.esc_html($tag).' '.$id.' class="'.$class.' special-text'.$css_class.marketing_sanitize_html_classes($uniqid_class).'">';
   $output .= do_shortcode(wp_kses_data($content));
   $output .=  '</'.esc_html($tag).'>';
 

@@ -14,6 +14,49 @@ footer, footer p {
   color: #949494;
 }
 
+/* CHECKBOXES */
+input[type="checkbox"] {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+span.wpcf7-list-item-label::before, span.wpcf7-list-item-label::after {
+  position: absolute;
+  top: -2px;
+  left: 5px;
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  pointer-events: all;
+  content: "";
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+span.wpcf7-list-item-label::before, span.wpcf7-list-item-label::after, span.wpcf7-list-item-label {
+  cursor: pointer;
+}
+.wpcf7-form-control-wrap {
+  position: static;
+}
+span.wpcf7-list-item-label::after {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+span.wpcf7-list-item-label::before {
+  border-radius: .25rem;
+  background-color: #dee2e6;
+}
+input:checked ~ span.wpcf7-list-item-label::before {
+  color: #fff;
+  background-color: #007bff;
+}
+input:checked ~ span.wpcf7-list-item-label::after {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E");
+}
+
 .fz-17 {
   font-size: 17px;
 }
@@ -205,7 +248,7 @@ footer, footer p {
 
 .tt-service.type-8 .tt-service-icon {
   width: 60px;
-  height: 60px;
+  height: 80px;
   font-size: 60px;
   border: 0;
 }
@@ -694,6 +737,40 @@ ol.breadcrumb {
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
 
+/* ORANGE FORM */
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+.orange-form-wrap h2,  .orange-form-wrap p {
+  color: #fff !important;
+}
+.orange-form-wrap > div {
+  border: 3px dashed #fff;
+  outline: 1px solid #db6e30;
+  padding: 40px 50px 40px 30px;
+  background: #db6e30;
+}
+
+.orange-form-wrap input {
+  margin: 5px 0;
+}
+
+.orange-form-wrap input[aria-invalid="true"]{
+  border: 1px solid #ff6868;
+}
+
+.orange-form-wrap input[aria-invalid="true"]:focus{
+  border: none;
+}
+
+.orange-form-wrap input[type="submit"]{
+  margin-left: 20px;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
 /* FORM IN CONTACTS */
 
 
@@ -731,6 +808,27 @@ ol.breadcrumb {
 #form-contacts textarea{
   resize:none;
   height:140px;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
+/* FOOTER */
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+.footer_widget {
+  margin-bottom: 10px;
+}
+
+.tt-address-info {
+  padding: 0;
+}
+
+.tt-address-icon {
+  min-width: 20px;
+  margin-right: 10px;
 }
 
 
@@ -823,6 +921,24 @@ footer ul li ul {
 
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
+.c-btn.type-1.color-4 {
+  background: #ef662f;
+  box-shadow: 0px 4px 0px 0px #a54c29;
+  border: 2px solid #ef662f;
+}
+.c-btn.type-1.color-4:active {
+  box-shadow: 0px 1px 0px 0px #a54c29;
+}
+.c-btn.type-1.color-5 {
+  background: #1e1e1e;
+  box-shadow: 0px 4px 0px 0px #212121;
+  border: 2px solid #212121;
+}
+.c-btn.type-1.color-5:active {
+  box-shadow: 0px 1px 0px 0px #212121;
+}
+
+
 @media screen and (max-width: 768px) {
   .c-btn.type-1.size-2 {
     padding: 14px 25px 13px 25px;
@@ -832,7 +948,7 @@ footer ul li ul {
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
 
-/* BUTTON TYPE-1 */
+/* BUTTON TYPE-3 */
 
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
@@ -847,8 +963,6 @@ footer ul li ul {
 
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
-
-
 .c-btn.type-5 {
   font-size: 14px;
   line-height: 18px;

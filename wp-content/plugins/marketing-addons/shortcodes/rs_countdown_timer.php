@@ -22,7 +22,7 @@ function rs_countdown_timer( $atts, $content = '', $id = '' ) {
   ), $atts ) );
 
   $id    = ( $id ) ? ' id="'. esc_attr($id) .'"' : '';
-  $class = ( $class ) ? ' '. sanitize_html_classes($class) : '';
+  $class = ( $class ) ? ' '. marketing_sanitize_html_classes($class) : '';
 
   $data_count_date = '';
 
