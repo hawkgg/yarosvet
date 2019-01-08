@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 5.0.x - Development - Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2018-12-18 00:12:15+0000\n"
+"PO-Revision-Date: 2019-01-07 22:07:58+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -25,6 +25,11 @@ msgstr "1"
 msgctxt "default GMT offset or timezone string"
 msgid "0"
 msgstr "3"
+
+#. translators: %s: https://wordpress.org/plugins/classic-editor
+#: wp-admin/edit-form-blocks.php:412
+msgid "The block editor requires JavaScript. Please enable JavaScript in your browser settings, or try the <a href=\"%s\">Classic Editor plugin</a>."
+msgstr "Редактор блоков требует JavaScript. Пожалуйста, включите JavaScript в настройках вашего браузера или попробуйте плагин <a href=\"%s\">Classic Editor</a>."
 
 #: wp-admin/post.php:44
 msgid "A post type mismatch has been detected."
@@ -92,7 +97,7 @@ msgid "The Gutenberg plugin has been deactivated, as the features are now includ
 msgstr "Плагин Gutenberg был деактивирован, так как его возможности теперь включены в WordPress %1$s. Если вы хотите продолжить тестирование будущих новых возможностей в редакторе WordPress, %2$sснова активируйте плагин Gutenberg%3$s."
 
 #. Translators: Use this to specify the CSS font family for the default font
-#: wp-admin/edit-form-blocks.php:182
+#: wp-admin/edit-form-blocks.php:178
 msgctxt "CSS Font Family for Editor Font"
 msgid "Noto Serif"
 msgstr "Noto Serif"
@@ -173,13 +178,13 @@ msgstr "Создана для редактора блоков"
 msgid "Build your first post"
 msgstr "Создайте свою первую запись"
 
-#: wp-admin/about.php:340
-msgid "A Stunning New Default Theme"
-msgstr "Потрясающая новая тема по умолчанию"
-
 #: wp-admin/about.php:318
 msgid "This new editing experience provides a more consistent treatment of design as well as content. If you&#8217;re building client sites, you can create reusable blocks. This lets your clients add new content anytime, while still maintaining a consistent look and feel."
 msgstr "Новый опыт редактирования представляет более целостное обращение с дизайном и содержимым. Если вы создаете сайты для клиентов, вы можете создавать многократно используемые блоки. Они позволят вашим клиентам легко добавлять новое содержимое, с сохранением целостности вида и восприятия сайта."
+
+#: wp-admin/about.php:340
+msgid "A Stunning New Default Theme"
+msgstr "Потрясающая новая тема по умолчанию"
 
 #: wp-admin/about.php:353
 msgid "The front-end of Twenty Nineteen on the left, and how it looks in the editor on the right."
@@ -312,7 +317,7 @@ msgstr[2] "%s блоков обновлены."
 msgid "<strong>ERROR</strong>: \"Table Prefix\" must not be empty."
 msgstr "<strong>ОШИБКА</strong>: Префикс таблиц не может быть пустым."
 
-#: wp-admin/edit-form-blocks.php:161
+#: wp-admin/edit-form-blocks.php:157
 msgid "Default template"
 msgstr "Шаблон по умолчанию"
 
@@ -332,6 +337,10 @@ msgstr "О нас"
 msgctxt "personal data group label"
 msgid "About"
 msgstr "Детали"
+
+#: wp-admin/edit-form-blocks.php:413
+msgid "https://wordpress.org/plugins/classic-editor/"
+msgstr "https://ru.wordpress.org/plugins/classic-editor"
 
 #: wp-admin/includes/upgrade.php:303
 #: wp-admin/includes/class-wp-internal-pointers.php:167 wp-admin/privacy.php:63
@@ -5292,15 +5301,15 @@ msgstr "Чтобы переключаться между редакциями, <
 msgid "Loading&hellip;"
 msgstr "Загрузка&hellip;"
 
-#: wp-admin/post.php:220
+#: wp-admin/post.php:221
 msgid "The item you are trying to move to the Trash no longer exists."
 msgstr "Элемент, который вы пытаетесь переместить в корзину, не существует."
 
-#: wp-admin/post.php:243
+#: wp-admin/post.php:244
 msgid "The item you are trying to restore from the Trash no longer exists."
 msgstr "Элемент, который вы пытаетесь восстановить из корзины, не существует."
 
-#: wp-admin/post.php:261
+#: wp-admin/post.php:262
 msgid "This item has already been deleted."
 msgstr "Этот элемент уже удалён."
 
@@ -5541,7 +5550,7 @@ msgstr "Черновик, созданный %1$s в %2$s"
 msgid "%s has taken over and is currently editing."
 msgstr "%s перехватил и сейчас редактирует этот материал."
 
-#: wp-admin/post.php:230
+#: wp-admin/post.php:231
 msgid "You cannot move this item to the Trash. %s is currently editing."
 msgstr "Вы не можете переместить этот элемент в корзину. Его сейчас редактирует %s."
 
@@ -8468,16 +8477,16 @@ msgstr "Да, перейти на страницу профиля"
 msgid "No thanks, do not remind me again"
 msgstr "Нет, спасибо. Больше не напоминать мне об этом."
 
-#: wp-admin/post.php:272 wp-admin/post.php:275 wp-admin/upload.php:164
+#: wp-admin/post.php:273 wp-admin/post.php:276 wp-admin/upload.php:164
 #: wp-admin/edit.php:144 wp-admin/edit.php:147
 msgid "Error in deleting."
 msgstr "Ошибка при удалении."
 
-#: wp-admin/post.php:234 wp-admin/upload.php:140 wp-admin/edit.php:114
+#: wp-admin/post.php:235 wp-admin/upload.php:140 wp-admin/edit.php:114
 msgid "Error in moving to Trash."
 msgstr "Ошибка при удалении в корзину."
 
-#: wp-admin/post.php:252 wp-admin/upload.php:152 wp-admin/edit.php:128
+#: wp-admin/post.php:253 wp-admin/upload.php:152 wp-admin/edit.php:128
 msgid "Error in restoring from Trash."
 msgstr "Ошибка при восстановлении из корзины."
 
@@ -8497,11 +8506,11 @@ msgstr[0] "%s комментарий восстановлен из корзин�
 msgstr[1] "%s комментария восстановлены из корзины"
 msgstr[2] "%s комментариев восстановлены из корзины"
 
-#: wp-admin/post.php:249 wp-admin/upload.php:149 wp-admin/edit.php:125
+#: wp-admin/post.php:250 wp-admin/upload.php:149 wp-admin/edit.php:125
 msgid "Sorry, you are not allowed to restore this item from the Trash."
 msgstr "Извините, вам не разрешено восстанавливать этот элемент из корзины."
 
-#: wp-admin/post.php:226 wp-admin/upload.php:137 wp-admin/edit.php:106
+#: wp-admin/post.php:227 wp-admin/upload.php:137 wp-admin/edit.php:106
 msgid "Sorry, you are not allowed to move this item to the Trash."
 msgstr "Извините, вам не разрешено перемещать этот элемент в корзину."
 
@@ -11807,7 +11816,7 @@ msgstr "%1$s %2$s"
 msgid "Single Post"
 msgstr "Отдельная запись"
 
-#: wp-admin/edit-tags.php:100 wp-admin/post.php:267 wp-admin/themes.php:43
+#: wp-admin/edit-tags.php:100 wp-admin/post.php:268 wp-admin/themes.php:43
 #: wp-admin/upload.php:161 wp-admin/edit.php:140
 msgid "Sorry, you are not allowed to delete this item."
 msgstr "Извините, вам не разрешено удалять этот элемент."
