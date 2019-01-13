@@ -513,12 +513,32 @@ ol.breadcrumb {
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
+.psgal {
+  opacity: 1 !important;
+}
 
 .pswp {
   z-index: 1501;
 }
 
+.swiper-container .psgal {
+  overflow: hidden;
+}
 
+.stretched {
+  height: 200px !important;
+}
+
+ .swiper-container .psgal img {
+  object-fit: cover;
+  max-width: none;
+  max-height: none;
+ }
+
+.swiper-container .psgal figure, .swiper-container .psgal img {
+  width: 100%;
+  height: 100%;
+}
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 

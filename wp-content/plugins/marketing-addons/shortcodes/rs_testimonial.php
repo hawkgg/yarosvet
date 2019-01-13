@@ -99,10 +99,10 @@ function rs_testimonial( $atts, $content = '', $id = '' ) {
     echo '</div>';
     // echo '<div class="swiper-pagination type-1 visible-xs-block"></div>';
 
-    echo '</div>';
     echo '<div class="tt-swiper-arrow-center for-testimonials">';
     echo '<div class="swiper-button-prev tt-arrow-left type-2 pos-1 hidden-xs"><span class="lnr lnr-chevron-left"></span></div>';
     echo '<div class="swiper-button-next tt-arrow-right type-2 pos-1 hidden-xs"><span class="lnr lnr-chevron-right"></span></div>';
+    echo '</div>';
     echo '</div>';
 
     echo '<div class="text-center leave-testimonial">';
@@ -110,8 +110,6 @@ function rs_testimonial( $atts, $content = '', $id = '' ) {
     echo '<a href="/otzivi">Смотреть другие отзывы</a>';
     echo '</div>';
   } else {
-
-
 
 
     echo '<div class="testimonials">';

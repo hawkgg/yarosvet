@@ -154,7 +154,7 @@ jQuery(function($) {
       swipers['swiper-' + index] = new Swiper('.swiper-' + index, {
         speed: speedVar,
         pagination: {
-          el: '.swiper-pagination',
+          el: '.swiper-' + index + ' .swiper-pagination',
           clickable: true,
         },
         loop: loopVar,
@@ -164,8 +164,8 @@ jQuery(function($) {
           onlyInViewport: false,
         },
         navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
+          nextEl: '.swiper-' + index + ' .swiper-button-next',
+          prevEl: '.swiper-' + index + ' .swiper-button-prev',
         },
         autoHeight: autoHeightVar,
         parallax: true,

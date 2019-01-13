@@ -320,13 +320,13 @@ CONTENT;
 CONTENT;
   $templates[] = $data;
   $data = array();
-  $data['name'] = esc_html__( 'Client', 'marketing-addons' );
+  $data['name'] = esc_html__( 'Slider Gallery', 'marketing-addons' );
   $data['disabled'] = true; //disable it to not show in the default tab
   $data['image_path'] = preg_replace( '/\s/', '%20',  plugins_url('/assets/img/templates/', __FILE__) . '/13.jpg' );
-  $data['sort_name'] = 'client';
+  $data['sort_name'] = 'slider_gallery';
   $data['custom_class'] = 'general client';
   $data['content'] = <<<CONTENT
-[vc_row][vc_column][rs_client image="http://themebubble.com/demo/marketingpro/wp-content/uploads/2016/10/partner_4.png,http://themebubble.com/demo/marketingpro/wp-content/uploads/2016/10/partner_1.png,http://themebubble.com/demo/marketingpro/wp-content/uploads/2016/10/partner_3.png,http://themebubble.com/demo/marketingpro/wp-content/uploads/2016/10/partner_4.png,http://themebubble.com/demo/marketingpro/wp-content/uploads/2016/10/partner_1.png,http://themebubble.com/demo/marketingpro/wp-content/uploads/2016/10/partner_5.png"][/vc_column][/vc_row]
+[vc_row][vc_column][rs_slider_gallery image="http://themebubble.com/demo/marketingpro/wp-content/uploads/2016/10/partner_4.png,http://themebubble.com/demo/marketingpro/wp-content/uploads/2016/10/partner_1.png,http://themebubble.com/demo/marketingpro/wp-content/uploads/2016/10/partner_3.png,http://themebubble.com/demo/marketingpro/wp-content/uploads/2016/10/partner_4.png,http://themebubble.com/demo/marketingpro/wp-content/uploads/2016/10/partner_1.png,http://themebubble.com/demo/marketingpro/wp-content/uploads/2016/10/partner_5.png"][/vc_column][/vc_row]
 CONTENT;
   $templates[] = $data;
   $data = array();

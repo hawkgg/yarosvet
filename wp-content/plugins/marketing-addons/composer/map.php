@@ -1205,10 +1205,10 @@ vc_map( array(
 // Clients
 // ==========================================================================================
 vc_map( array(
-  'name'            => 'Client',
-  'base'            => 'rs_client',
+  'name'            => 'Slider Gallery',
+  'base'            => 'rs_slider_gallery',
   'icon'            => 'fa fa-paw',
-  'description'     => 'Add client item.',
+  'description'     => 'Add slider.',
   'params'          => array(
     array(
       'type'        => 'attach_images',
@@ -1216,6 +1216,39 @@ vc_map( array(
       'admin_label' => true,
       'param_name'  => 'image',
       'description' => 'Multiple images are supported.'
+    ),
+    array(
+      'type'        => 'dropdown',
+      'heading'     => 'Stretched',
+      'admin_label' => true,
+      'param_name'  => 'stretched',
+      'description' => 'Stretch images for height.',
+      'value'       => array(
+        'No' => '0',
+        'Yes' => '1',
+      ),
+    ),
+    array(
+      'type'        => 'dropdown',
+      'heading'     => 'Zooming',
+      'admin_label' => true,
+      'param_name'  => 'zooming',
+      'description' => 'Possibility to zoom.',
+      'value'       => array(
+        'No' => '0',
+        'Yes' => '1',
+      ),
+    ),
+    array(
+      'type'        => 'dropdown',
+      'heading'     => 'Hover effect',
+      'admin_label' => true,
+      'param_name'  => 'hover_effect',
+      'description' => 'Highlight on hover.',
+      'value'       => array(
+        'No' => '0',
+        'Yes' => '1',
+      ),
     ),
 
     // Extras

@@ -109,7 +109,6 @@ if(!class_exists('RS_Shortcode')) {
       require_once(RS_ROOT. '/' . 'shortcodes/rs_blog_list.php');
       require_once(RS_ROOT. '/' . 'shortcodes/rs_pricing_table.php');
       require_once(RS_ROOT. '/' . 'shortcodes/rs_text_block_with_button.php');
-      require_once(RS_ROOT. '/' . 'shortcodes/rs_client.php');
       require_once(RS_ROOT. '/' . 'shortcodes/rs_testimonial.php');
       require_once(RS_ROOT. '/' . 'shortcodes/rs_cta.php');
       require_once(RS_ROOT. '/' . 'shortcodes/rs_divider.php');
@@ -120,6 +119,7 @@ if(!class_exists('RS_Shortcode')) {
       require_once(RS_ROOT. '/' . 'shortcodes/rs_google_map.php');
       require_once(RS_ROOT. '/' . 'shortcodes/rs_newsletter.php');
       require_once(RS_ROOT. '/' . 'shortcodes/rs_hero_video_banner.php');
+      require_once(RS_ROOT. '/' . 'shortcodes/rs_slider_gallery.php');
       require_once(RS_ROOT. '/' . 'shortcodes/rs_special_text.php');
       require_once(RS_ROOT. '/' . 'shortcodes/rs_featured_tabs.php');
       require_once(RS_ROOT. '/' . 'shortcodes/rs_countdown_timer.php');
