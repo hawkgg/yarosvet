@@ -100,6 +100,16 @@ CONTENT;
 CONTENT;
   $templates[] = $data;
   $data = array();
+  $data['name'] = esc_html__( 'Form order', 'marketing-addons' );
+  $data['disabled'] = true; //disable it to not show in the default tab
+  $data['image_path'] = preg_replace( '/\s/', '%20',  plugins_url('/assets/img/templates/', __FILE__) . '/43.jpg' );
+  // $data['sort_name'] = '';
+  // $data['custom_class'] = '';
+  $data['content'] = <<<CONTENT
+[vc_row][vc_column][vc_row_inner][vc_column_inner el_class="orange-form-wrap" width="5/6" offset="vc_col-md-offset-1 vc_col-md-10 vc_col-sm-12"][vc_custom_heading text="Мы делаем замеры бесплатно" font_container="tag:h2|font_size:28|text_align:center" google_fonts="font_family:Roboto%3A100%2C100italic%2C300%2C300italic%2Cregular%2Citalic%2C500%2C500italic%2C700%2C700italic%2C900%2C900italic|font_style:700%20bold%20regular%3A700%3Anormal"][vc_empty_space][vc_column_text dp_text_size="size-3" font="Verdana" text_color="#ffffff" class="text-white mb-2"] Для точного расчета стоимости работ, Вы можете бесплатно вызвать сметчика-консультанта. Он сделает обмер помещения, обсудит с Вами необходимые работы и применяемые материалы. После этого мы предоставим точную детальную смету на работы и строительные материалы для ремонта Вашей квартиры [/vc_column_text][rs_special_text tag="div" align="center" font_weight="400"] [contact-form-7 id="1665" html_class="form-row justify-content-center"] [/rs_special_text][/vc_column_inner][/vc_row_inner][/vc_column][/vc_row]
+CONTENT;
+  $templates[] = $data;
+  $data = array();
   $data['name'] = esc_html__( 'Icon Box With Image Icon', 'marketing-addons' );
   $data['disabled'] = true; //disable it to not show in the default tab
   $data['image_path'] = preg_replace( '/\s/', '%20',  plugins_url('/assets/img/templates/', __FILE__) . '/24.jpg' );

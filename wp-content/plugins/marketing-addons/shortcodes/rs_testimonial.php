@@ -82,6 +82,7 @@ function rs_testimonial( $atts, $content = '', $id = '' ) {
 
   ob_start(); 
   if ($style != 'type-4') {
+    echo '<div class="swiper-main-wrap">';
     echo '<div class="testimonial-swiper-slider swiper-container" '.$data_autoplay.$data_loop.$data_auto_height.$data_slides_per_view.$data_xs_slides.$data_sm_slides.$data_md_slides.$data_lg_slides.$data_add_slides.' data-speed="400" data-center="0" data-sb-lg="10">';
     echo '<div class="swiper-wrapper clearfix">';
       $i = 0;
@@ -99,7 +100,8 @@ function rs_testimonial( $atts, $content = '', $id = '' ) {
     echo '</div>';
     // echo '<div class="swiper-pagination type-1 visible-xs-block"></div>';
 
-    echo '<div class="tt-swiper-arrow-center for-testimonials">';
+    echo '</div>';
+    echo '<div class="tt-swiper-arrow-center arrows-outside">';
     echo '<div class="swiper-button-prev tt-arrow-left type-2 pos-1 hidden-xs"><span class="lnr lnr-chevron-left"></span></div>';
     echo '<div class="swiper-button-next tt-arrow-right type-2 pos-1 hidden-xs"><span class="lnr lnr-chevron-right"></span></div>';
     echo '</div>';

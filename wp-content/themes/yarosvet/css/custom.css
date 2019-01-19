@@ -22,7 +22,7 @@ input[type="checkbox"] {
 }
 span.wpcf7-list-item-label::before, span.wpcf7-list-item-label::after {
   position: absolute;
-  top: -2px;
+  top: 2px;
   left: 5px;
   display: block;
   width: 1rem;
@@ -776,6 +776,12 @@ ol.breadcrumb {
   margin: 5px 0;
 }
 
+.orange-form-wrap p, .orange-form-wrap span {
+  font-size: 16px !important;
+  line-height: 22px !important;
+  font-weight: initial !important;
+}
+
 .orange-form-wrap input[aria-invalid="true"]{
   border: 1px solid #ff6868;
 }
@@ -783,6 +789,10 @@ ol.breadcrumb {
 .orange-form-wrap input[aria-invalid="true"]:focus{
   border: none;
 }
+
+.orange-form-wrap span.wpcf7-not-valid-tip {
+  color: #f00 !important;
+} 
 
 .orange-form-wrap input[type="submit"]{
   margin-left: 20px;
@@ -1105,6 +1115,13 @@ footer ul li ul {
   max-height:100%;
 }
 
+.tt-swiper-arrow-center.arrows-outside .swiper-button-prev.pos-1{
+  left:-25px!important;
+}
+.tt-swiper-arrow-center.arrows-outside .swiper-button-next.pos-1{
+  right:-25px!important;
+}
+
 .tt-mslide-2-img {
   padding-top:3%;
 }
@@ -1150,13 +1167,6 @@ footer ul li ul {
 
 .tt-testimonial-icon img {
   border-radius: 100%;
-}
-
-.tt-swiper-arrow-center.for-testimonials .swiper-button-prev.pos-1{
-  left:-25px!important;
-}
-.tt-swiper-arrow-center.for-testimonials .swiper-button-next.pos-1{
-  right:-25px!important;
 }
 
 .leave-testimonial {
@@ -1435,7 +1445,7 @@ footer ul li ul {
 
 .post p, .post span {
     font-size: 19px;
-    line-height: 28px !important;
+    line-height: 28px;
     font-weight: 300;
 }
 

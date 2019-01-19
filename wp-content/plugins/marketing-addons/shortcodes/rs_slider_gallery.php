@@ -15,7 +15,9 @@ function rs_slider_gallery( $atts, $content = '', $id = '' ) {
   'image' => '',
   'stretched' => '0',
   'zooming' => '0',
-	'hover_effect' => '0',
+  'hover_effect' => '0',
+  'arrows' => '0',
+	'arrows_pos' => 'inside',
   ), $atts ) );
 
   $id     = ( $id ) ? ' id="'. esc_attr($id) .'"' : '';
@@ -24,6 +26,7 @@ function rs_slider_gallery( $atts, $content = '', $id = '' ) {
 
   $image_array = explode(',', $image);
   if(is_array($image_array)) {
+    $output .=  '<div class="swiper-main-wrap">';
     $output .=  '<div '.$id.' class="swiper-container'.$class.'" data-autoplay="5000" data-loop="1" data-speed="300" data-center="0" data-slides-per-view="responsive" data-xs-slides="2" data-sm-slides="3" data-md-slides="3" data-lg-slides="5" data-add-slides="5">';
     $output .=  '<div class="swiper-wrapper';
     if ($stretched == '1') { $output .= ' stretched'; }
@@ -50,9 +53,14 @@ function rs_slider_gallery( $atts, $content = '', $id = '' ) {
       $output .=  '</div>';
     }                      
     $output .=  '</div>';
-    $output .=  '<div class="swiper-pagination type-1 d-none"></div>';
-      $output .=  '<div class="swiper-button-prev tt-arrow-left type-1 pos-1"><span class="lnr lnr-chevron-left"></span></div>';
-      $output .=  '<div class="swiper-button-next tt-arrow-right type-1 pos-1"><span class="lnr lnr-chevron-right"></span></div>';
+    if ($arrows == '1') {
+      $output .=  '<div class="swiper-pagination type-1 ';
+      if ($arrows_pos == 'outside') { $output .= 'arrows-outside'; }
+      $output .= ' d-none"></div>';
+        $output .=  '<div class="swiper-button-prev tt-arrow-left type-1 pos-1"><span class="lnr lnr-chevron-left"></span></div>';
+        $output .=  '<div class="swiper-button-next tt-arrow-right type-1 pos-1"><span class="lnr lnr-chevron-right"></span></div>';
+      $output .=  '</div>';
+    }
     $output .=  '</div>';
   }
 

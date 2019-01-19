@@ -121,6 +121,15 @@ vc_map( array(
       ),
     ),
     array(
+      'type'        => 'dropdown',
+      'heading'     => 'Arrows position',
+      'param_name'  => 'arrows_pos',
+      'value'       => array(
+        'Inside'   => 'inside',
+        'Outside'  => 'outside',
+      ),
+    ),
+    array(
       'type'        => 'vc_efa_chosen',
       'heading'     => 'Category ID',
       'param_name'  => 'cats',
@@ -1223,6 +1232,17 @@ vc_map( array(
       'admin_label' => true,
       'param_name'  => 'stretched',
       'description' => 'Stretch images for height.',
+      'value'       => array(
+        'No' => '0',
+        'Yes' => '1',
+      ),
+    ),
+    array(
+      'type'        => 'dropdown',
+      'heading'     => 'Arrows',
+      'admin_label' => true,
+      'param_name'  => 'arrows',
+      'description' => 'Enable arrows to navigate.',
       'value'       => array(
         'No' => '0',
         'Yes' => '1',

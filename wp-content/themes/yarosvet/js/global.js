@@ -122,6 +122,7 @@ jQuery(function($) {
       var index = 'swiper-unique-id-' + initIterator;
 
       $t.addClass('swiper-' + index + ' initialized').attr('id', index);
+      $t.parent().addClass('main-wrapper-' + index);
 
       var autoPlayVar = parseInt($t.attr('data-autoplay'), 10);
       var centerVar = parseInt($t.attr('data-center'), 10);
@@ -154,7 +155,7 @@ jQuery(function($) {
       swipers['swiper-' + index] = new Swiper('.swiper-' + index, {
         speed: speedVar,
         pagination: {
-          el: '.swiper-' + index + ' .swiper-pagination',
+          el: '.main-wrapper-' + index + ' .swiper-pagination',
           clickable: true,
         },
         loop: loopVar,
@@ -164,8 +165,8 @@ jQuery(function($) {
           onlyInViewport: false,
         },
         navigation: {
-          nextEl: '.swiper-' + index + ' .swiper-button-next',
-          prevEl: '.swiper-' + index + ' .swiper-button-prev',
+          nextEl: '.main-wrapper-' + index + ' .swiper-button-next',
+          prevEl: '.main-wrapper-' + index + ' .swiper-button-prev',
         },
         autoHeight: autoHeightVar,
         parallax: true,
