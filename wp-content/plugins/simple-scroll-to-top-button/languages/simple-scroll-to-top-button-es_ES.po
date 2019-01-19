@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Simple Scroll to Top Button\n"
-"POT-Creation-Date: 2018-10-09 09:39+0300\n"
-"PO-Revision-Date: 2018-10-09 09:39+0300\n"
+"POT-Creation-Date: 2019-01-11 20:43+0200\n"
+"PO-Revision-Date: 2019-01-11 20:43+0200\n"
 "Last-Translator: Arthur Gareginyan\n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 2.1.1\n"
+"X-Generator: Poedit 2.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: simple-scroll-to-top-button.php\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
@@ -102,10 +102,6 @@ msgstr ""
 #: inc/php/page.php:70
 msgid "It's that simple!"
 msgstr "¡Es así de simple!"
-
-#: inc/php/page.php:72
-msgid "Note!"
-msgstr "¡Nota!"
 
 #: inc/php/page.php:73
 #, php-format
@@ -413,6 +409,9 @@ msgstr "Space X-Chimp"
 #. Author URI of the plugin/theme
 msgid "https://www.spacexchimp.com"
 msgstr "https://www.spacexchimp.com"
+
+#~ msgid "Note!"
+#~ msgstr "¡Nota!"
 
 #~ msgid "Hello! My name is %s Arthur %s and I'm the founder of %s Space X-Chimp %s."
 #~ msgstr "¡Hola! Mi nombre es %s Arthur %s y soy el fundador de %s Space X-Chimp %s."

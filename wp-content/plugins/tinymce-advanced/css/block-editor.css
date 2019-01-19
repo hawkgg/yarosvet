@@ -2,10 +2,33 @@
  * This file is part of the TinyMCE Advanced WordPress plugin and is released under the same license.
  * For more information please see tinymce-advanced.php.
  *
- * Copyright (c) 2007-2018 Andrew Ozz. All rights reserved.
+ * Copyright (c) 2007-2019 Andrew Ozz. All rights reserved.
  */
 
 /* Fixes for the Block Editor */
+.block-library-classic__toolbar:empty {
+    height: 40px;
+}
+
+.block-library-classic__toolbar:empty::before {
+	padding: 0 14px;
+	vertical-align: text-bottom;
+}
+
+.editor-block-list__layout .editor-block-list__block[data-type="core/freeform"] .editor-block-list__block-edit::before {
+	outline: none;
+}
+
+.editor-block-list__block[data-type="core/freeform"] > .editor-block-list__insertion-point {
+	z-index: 11;
+}
+
+.editor-block-list__block[data-type="core/freeform"] .editor-block-list__insertion-point-inserter .editor-inserter__toggle {
+	width: 20px;
+	height: 20px;
+	padding: 0;
+	margin-top: 5px;
+}
 
 .block-library-classic__toolbar .mce-menubar {
 	min-height: 38px;
@@ -19,10 +42,18 @@
 	font-size: 14px;
 }
 
-.block-library-classic__toolbar .mce-menubar > .mce-container-body {
-	padding-top: 0.5em;
-	white-space: normal;
-	width: calc(100% - 36px) !important;
+@media (min-width: 600px) {
+	.block-library-classic__toolbar .mce-menubar > .mce-container-body {
+		padding-top: 6px;
+		padding-right: 36px;
+		white-space: normal;
+		width: auto !important;
+	}
+
+	.rtl .block-library-classic__toolbar .mce-menubar > .mce-container-body {
+		padding-right: 0;
+		padding-left: 36px;
+	}
 }
 
 .block-library-classic__toolbar .mce-menubar i.mce-caret {
@@ -162,6 +193,10 @@ div.mce-inline-toolbar-grp .mce-btn i {
 div.mce-widget.mce-tooltip .mce-tooltip-inner {
 	font-size: 13px;
 	opacity: 1;
+}
+
+.block-library-classic__toolbar .mce-menubar .mce-flow-layout-item {
+	margin: 2px 0;
 }
 
 /* Menu */

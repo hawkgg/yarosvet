@@ -2,12 +2,12 @@
 /*
 Plugin Name: Contact Form 7 - Phone mask field
 Description: This plugin adds a new field in which you can set the phone number entry mask or other to Contact Form 7.
-Version: 1.1
+Version: 1.2
 Author: Ruslan Heorhiiev
 Text Domain: cf7-phone-mask-field
 Domain Path: /assets/languages/
 
-Copyright © 2017 Ruslan Heorhiiev
+Copyright © 2018 Ruslan Heorhiiev
 */
 
 if ( ! ABSPATH ) exit;
@@ -18,11 +18,11 @@ if ( ! ABSPATH ) exit;
 **/
 function wpcf7mf_init(){
 	add_action( 'wpcf7_init', 'wpcf7mf_add_shortcode_mask' );
-	add_action( 'wp_enqueue_scripts', 'wpcf7mf_do_enqueue_scripts' );
+	add_action( 'wp_enqueue_scripts', 'wpcf7mf_enqueue_scripts' );
+    add_action( 'admin_enqueue_scripts', 'wpcf7mf_admin_enqueue_scripts' );
 	add_filter( 'wpcf7_validate_mask*', 'wpcf7mf_mask_validation_filter', 10, 2 );
-    
-    // загрузка language файла & load language file.
-    load_plugin_textdomain( 'contact-form-7-mask-field', false, dirname( plugin_dir_path( __FILE__ ) ) . '/assets/languages/' );
+	
+	load_plugin_textdomain( 'cf7-phone-mask-field', false, dirname( plugin_dir_path( __FILE__ ) ) . '/assets/languages/' );
 }
 add_action( 'plugins_loaded', 'wpcf7mf_init' , 20 );
 
@@ -31,10 +31,22 @@ add_action( 'plugins_loaded', 'wpcf7mf_init' , 20 );
  * Function enqueu script
  * @version 1.0 
 **/
-function wpcf7mf_do_enqueue_scripts() {
+function wpcf7mf_enqueue_scripts() {
     wp_enqueue_script( 'wpcf7mf-mask', plugin_dir_url( __FILE__ ) . 'assets/js/jquery.maskedinput.min.js', array('jquery'), '1.4', true );    
 }
-add_action( 'wp_enqueue_scripts', 'wpcf7mf_do_enqueue_scripts' );
+
+/**
+ * Функция подключения JS для админки
+ * Function enqueu script for admin panel
+ * @version 1.0 
+**/
+function wpcf7mf_admin_enqueue_scripts( $hook_suffix ) {
+	if ( false === strpos( $hook_suffix, 'wpcf7' ) ) {
+		return;
+	}
+    
+ 	wp_enqueue_script( 'wpcf7mf-admin', plugin_dir_url( __FILE__ ) . 'assets/js/jquery.admin.main.js', array('jquery'), null, false );
+}
 
 /**
  * Функция добавления поля маски в wpcf7
@@ -52,7 +64,7 @@ function wpcf7mf_add_shortcode_mask() {
 /**
  * Функция добавления шорткодов с участием маски
  * Function add shortcodes with mask
- * @version 1.0
+ * @version 1.1
 **/
 function wpcf7mf_mask_shortcode_handler( $tag ) {
     if ( ! class_exists( 'WPCF7_FormTag' ) ) return;
@@ -67,8 +79,9 @@ function wpcf7mf_mask_shortcode_handler( $tag ) {
 	$class = wpcf7_form_controls_class( $tag->type, 'wpcf7mf-mask' );
 
 
-	if ( $validation_error )
-		$class .= ' wpcf7-not-valid';
+	if ( $validation_error ) {
+	   $class .= ' wpcf7-not-valid';   
+	}
 
 	$atts = array();
 
@@ -84,35 +97,26 @@ function wpcf7mf_mask_shortcode_handler( $tag ) {
 	$atts['id'] = $tag->get_id_option();
 	$atts['tabindex'] = $tag->get_option( 'tabindex', 'int', true );
 
-	if ( $tag->has_option( 'readonly' ) )
-		$atts['readonly'] = 'readonly';
+	if ( $tag->has_option( 'readonly' ) ) {
+        $atts['readonly'] = 'readonly';   
+	}		
 
-	if ( $tag->is_required() )
-		$atts['aria-required'] = 'true';
+	if ( $tag->is_required() ) {
+        $atts['aria-required'] = 'true';
+	}		
 
 	$atts['aria-invalid'] = $validation_error ? 'true' : 'false';
+        
     
-    /** @var array $tag->values $values */
-    $values = $tag->values;
-    
-    $mask = $values[0];    
-    $value = $mask;
-    
-    if (1 < count($values)) {
-        // если value значений больше одного предпологается, что необходимо разделать маску и placeholder поле        
-        foreach ($values as $val) {
-            if (!strrpos($val, '_' )) {
-                continue;
-            }
-            
+    foreach ( $tag->values as $val ) {			
+        if ( strrpos( $val, '_', 1 ) ) { // $val is mask ?
             $mask = $val;
-            $value = end($values) !== $mask ? end($values) : $values[0];
-            
-            break;            
         }
+            
+        $placeholder = $val;                     
     }
     
-    $atts['placeholder'] = $value;    
+    $atts['placeholder'] = $placeholder;    
     $atts['data-mask'] = $mask;    
     $atts['name'] = $tag->name;    
     $atts['value'] = '';                        	
@@ -189,7 +193,7 @@ function wpcf7mf_add_tag_generator_field() {
 	$tag_generator = WPCF7_TagGenerator::get_instance();
 	$tag_generator->add( 
         'mask', 
-        __( 'mask field', 'contact-form-7-mask-field' ),
+        __( 'mask field', 'cf7-phone-mask-field' ),
 		'wpcf7mf_tag_generator_field' 
     );
 }
@@ -198,7 +202,7 @@ function wpcf7mf_add_tag_generator_field() {
 /**
  * Функция генерирования поля
  * Function generating new field
- * @version 1.0
+ * @version 1.1
 **/
 function wpcf7mf_tag_generator_field( $contact_form , $args = '' ){
 	$args = wp_parse_args( $args, array() );
@@ -208,38 +212,49 @@ function wpcf7mf_tag_generator_field( $contact_form , $args = '' ){
 <div class="control-box">
     <fieldset>
     
-        <legend><?php echo esc_html( __( 'Generate a form-tag for a single-line plain text input field in which you can set the input mask.', 'contact-form-7-mask-field' ) ); ?></legend>
+        <legend>
+            <?php 
+                _e( 'Generate a form-tag for a single-line plain text input field in which you can set the input mask.', 'cf7-phone-mask-field' ); 
+            ?>
+        </legend>
         
         <table class="form-table">
         <tbody>
         	<tr>
-        	   <th scope="row"><?php echo esc_html( __( 'Field type', 'contact-form-7' ) ); ?></th>
+        	   <th scope="row"><?php _e( 'Field type', 'contact-form-7' ); ?></th>
             	<td>
             		<fieldset>
-            		<legend class="screen-reader-text"><?php echo esc_html( __( 'Field type', 'contact-form-7' ) ); ?></legend>
-            		<label><input type="checkbox" name="required" /> <?php echo esc_html( __( 'Required field', 'contact-form-7' ) ); ?></label>
+            		<legend class="screen-reader-text"><?php _e( 'Field type', 'contact-form-7' ); ?></legend>
+            		<label><input type="checkbox" name="required" /> <?php _e( 'Required field', 'contact-form-7' ); ?></label>
             		</fieldset>
             	</td>
         	</tr>
         
         	<tr>
-            	<th scope="row"><label for="<?php echo esc_attr( $args['content'] . '-name' ); ?>"><?php echo esc_html( __( 'Name', 'contact-form-7' ) ); ?></label></th>
+            	<th scope="row"><label for="<?php echo esc_attr( $args['content'] . '-name' ); ?>"><?php _e( 'Name', 'contact-form-7' ); ?></label></th>
             	<td><input type="text" name="name" class="tg-name oneline" id="<?php echo esc_attr( $args['content'] . '-name' ); ?>" /></td>
         	</tr>
+			
             <!-- msk field -->
         	<tr>
-            	<th scope="row"><label for="<?php echo esc_attr( $args['content'] . '-values' ); ?>"><?php echo esc_html( __( 'Mask', 'contact-form-7-mask-field' ) ); ?></label></th>
-            	<td><input type="text" name="values" class="oneline" id="<?php echo esc_attr( $args['content'] . '-values' ); ?>" /><br />
-            	<?php _e( 'Enter the mask for this field. <br /><code>Example: +1 (___) ___-__-__</code>', 'contact-form-7-mask-field' ); ?></td>
-        	</tr>
+            	<th scope="row"><label for="<?php echo esc_attr( $args['content'] . '-values' ); ?>"><?php _e( 'Mask', 'cf7-phone-mask-field' ); ?></label></th>
+            	<td><input type="text" name="values" class="maskvalue oneline" id="<?php echo esc_attr( $args['content'] . '-values' ); ?>" /><br />
+            	<?php _e( 'Enter the mask for this field. <br /><code>Example: +_ (___) ___-__-__</code>', 'cf7-phone-mask-field' ); ?></td>
+        	</tr>              
+        
+            <!-- placeholder field -->
+        	<tr>
+            	<th scope="row"><label for="<?php echo esc_attr( $args['content'] . '-placeholder' ); ?>"><?php _e( 'Placeholder', 'cf7-phone-mask-field' ); ?></label></th>
+            	<td><input type="text" name="values" class="placeholdervalue oneline" id="<?php echo esc_attr( $args['content'] . '-placeholder' ); ?>" /><br />            	
+        	</tr>               
         
         	<tr>
-            	<th scope="row"><label for="<?php echo esc_attr( $args['content'] . '-id' ); ?>"><?php echo esc_html( __( 'Id attribute', 'contact-form-7' ) ); ?></label></th>
+            	<th scope="row"><label for="<?php echo esc_attr( $args['content'] . '-id' ); ?>"><?php _e( 'Id attribute', 'contact-form-7' ); ?></label></th>
             	<td><input type="text" name="id" class="idvalue oneline option" id="<?php echo esc_attr( $args['content'] . '-id' ); ?>" /></td>
         	</tr>
         
         	<tr>
-            	<th scope="row"><label for="<?php echo esc_attr( $args['content'] . '-class' ); ?>"><?php echo esc_html( __( 'Class attribute', 'contact-form-7' ) ); ?></label></th>
+            	<th scope="row"><label for="<?php echo esc_attr( $args['content'] . '-class' ); ?>"><?php _e( 'Class attribute', 'contact-form-7' ); ?></label></th>
             	<td><input type="text" name="class" class="classvalue oneline option" id="<?php echo esc_attr( $args['content'] . '-class' ); ?>" /></td>
         	</tr>                       
             

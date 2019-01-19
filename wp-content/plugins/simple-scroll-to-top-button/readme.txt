@@ -3,8 +3,8 @@ Contributors: Arthur Gareginyan
 Tags: scroll to top, scroll up, scroll back, back to top, smooth scroll, back, to top, back top, back to top, go to top, bottom to top, back to up, scroll top, scroll up, page scroll up, one click scroll to top,link to top, back button, back to top button, arrow, button, navigation, back widget, scroll back to top, scroll me up, scroll to top, scroll to up, scroll top, scroll up, scroll up, scroll widget, scroll, scroller, scrolling, scroll up, simple back to top, simple scroll to top, smooth scroll to top, to top button, top button, top scroll, top, up button, up, vertical scroller,
 Donate link: https://www.spacexchimp.com/donate.html
 Requires at least: 3.9
-Tested up to: 4.9
-Stable tag: 4.25
+Tested up to: 5.0
+Stable tag: 4.26
 License: GPL3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -172,6 +172,13 @@ Commercial licensing (e.g. for projects that can’t use an open-source license)
 
 
 == Changelog ==
+
+= 4.26 =
+* Content of the "Usage" section updated.
+* Code formatting in the "admin.js" file improved.
+* Code commenting improved.
+* The copyright date updated.
+* Translation files are updated.
 
 = 4.25 =
 * Improvement: Design of the plugin settings page is improved.

@@ -1148,6 +1148,10 @@ footer ul li ul {
   color: #30373b
 }
 
+.tt-testimonial-icon img {
+  border-radius: 100%;
+}
+
 .tt-swiper-arrow-center.for-testimonials .swiper-button-prev.pos-1{
   left:-25px!important;
 }
