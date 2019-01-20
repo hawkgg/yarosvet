@@ -57,10 +57,10 @@ function rs_slider_gallery( $atts, $content = '', $id = '' ) {
       $output .=  '<div class="swiper-pagination type-1 ';
       if ($arrows_pos == 'outside') { $output .= 'arrows-outside'; }
       $output .= ' d-none"></div>';
-        $output .=  '<div class="swiper-button-prev tt-arrow-left type-1 pos-1"><span class="lnr lnr-chevron-left"></span></div>';
-        $output .=  '<div class="swiper-button-next tt-arrow-right type-1 pos-1"><span class="lnr lnr-chevron-right"></span></div>';
-      $output .=  '</div>';
+      $output .=  '<div class="swiper-button-prev tt-arrow-left type-1 pos-1"><span class="lnr lnr-chevron-left"></span></div>';
+      $output .=  '<div class="swiper-button-next tt-arrow-right type-1 pos-1"><span class="lnr lnr-chevron-right"></span></div>';
     }
+    $output .=  '</div>';
     $output .=  '</div>';
   }
 

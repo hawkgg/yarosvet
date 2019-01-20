@@ -1099,22 +1099,51 @@ vc_map( array(
 // Section Title
 // ==========================================================================================
 vc_map( array(
-  'name'          => 'Section Heading',
+  'name'          => 'Заголовок раздела',
   'base'          => 'rs_section_heading',
   'icon'          => 'fa fa-text-width',
-  'description'   => 'Add section heading.',
+  'description'   => 'Добавить заголовок раздела.',
   'params'        => array(
     array(
-      'type'        => 'textfield',
-      'heading'     => 'Small Heading',
-      'holder'      => 'h4',
-      'param_name'  => 'small_heading',
+      'type'        => 'dropdown',
+      'heading'     => 'Источник текста',
+      'param_name'  => 'which_header',
+      'value'       => array(
+        'Произвольный текст'               => 'own',
+        'Заголовок записи или страницы'    => 'not_own',
+      ),
     ),
     array(
       'type'        => 'textfield',
-      'heading'     => 'Big Heading',
+      'heading'     => 'Текст',
       'holder'      => 'h1',
-      'param_name'  => 'big_heading',
+      'param_name'  => 'text',
+      'dependency'  => array( 'element' => 'which_header', 'value' => array('own') )
+    ),
+    array(
+      'type'        => 'dropdown',
+      'heading'     => 'Тег',
+      'param_name'  => 'tag',
+      'value'       => array(
+        'h1'      => 'h1',
+        'h2'      => 'h2',
+        'h3'      => 'h3',
+        'h4'      => 'h4',
+        'h5'      => 'h5',
+        'h6'      => 'h6',
+        'p'       => 'p',
+        'div'     => 'div',
+      ),
+    ),
+    array(
+      'type'        => 'dropdown',
+      'heading'     => 'Выравнивание',
+      'param_name'  => 'text_align',
+      'value'       => array(
+        'По левому краю'     => 'left',
+        'По центру'          => 'center',
+        'По левому краю'     => 'right',
+      ),
     ),
     $vc_map_extra_id,
     $vc_map_extra_class,
