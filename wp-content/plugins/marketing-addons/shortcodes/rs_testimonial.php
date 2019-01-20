@@ -82,7 +82,7 @@ function rs_testimonial( $atts, $content = '', $id = '' ) {
 
   ob_start(); 
   if ($style != 'type-4') {
-    echo '<div class="swiper-main-wrap">';
+    echo '<div class="swiper-main-wrap mt-5">';
     echo '<div class="testimonial-swiper-slider swiper-container" '.$data_autoplay.$data_loop.$data_auto_height.$data_slides_per_view.$data_xs_slides.$data_sm_slides.$data_md_slides.$data_lg_slides.$data_add_slides.' data-speed="400" data-center="0" data-sb-lg="10">';
     echo '<div class="swiper-wrapper clearfix">';
       $i = 0;
@@ -108,6 +108,7 @@ function rs_testimonial( $atts, $content = '', $id = '' ) {
     echo '</div>';
 
     echo '<div class="text-center leave-testimonial">';
+    echo '<p class="instlink">* Все отзывы Вы можете найти в <a href="https://www.instagram.com/stories/highlights/17956020421212560/">инстаграме</a></p>';
     echo '<a href="" class="mx-3 my-2 leave-testimonial-link">Оставить отзыв</a>';
     echo '<a href="/otzivi">Смотреть другие отзывы</a>';
     echo '</div>';

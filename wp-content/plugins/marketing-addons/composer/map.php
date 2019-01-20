@@ -999,6 +999,7 @@ vc_map( array(
         'Style 2' => 'type-2',
         'Style 3' => 'type-3',
         'Style 4' => 'type-4',
+        'Style 5' => 'type-5',
       ),
     ),
     array(

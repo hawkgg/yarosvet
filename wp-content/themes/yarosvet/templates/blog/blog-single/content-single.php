@@ -10,7 +10,7 @@
 <article <?php post_class(); ?>>
     <?= wp_get_attachment_image(get_post_thumbnail_id(get_the_ID()), 'full') ?>
 
-  <h1 class="tt-blog-title mt-3 c-h2"><?php the_title(); ?></h1>
+  <h1 class="tt-blog-title mt-3 c-h1"><?php the_title(); ?></h1>
   <div class="tt-post-3-label">
     <!-- <span><?php echo esc_html__('by', 'marketing'); ?> <a href="#"><?php echo get_the_author(); ?></a></span> -->
     <p>

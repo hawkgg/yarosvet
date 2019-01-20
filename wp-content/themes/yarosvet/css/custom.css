@@ -14,33 +14,38 @@ footer, footer p {
   color: #949494;
 }
 
+.table-borderless, .table-borderless td, .table-borderless th {
+    border: none;
+}
+
 /* HEADERS */
-h1,h2,h3,h4,h5,h6 {
+h1, .c-h1, h2, .c-h2, h3, .c-h3, h4, .c-h4, h5, .c-h5, h6, .c-h6 {
   font-family: Roboto;
   font-weight: 700;
-  font-style: normal
+  font-style: normal;
+  line-height: initial;
 }
-h1 {
+h1, .c-h1, .simple-text h1 {
   font-size: 30px;
   margin: 0 0 25px 0;
 }
-h2 {
+h2, .c-h2, .simple-text h2 {
   font-size: 25px;
   margin: 20px 0 20px 0;
 }
-h3 {
+h3, .c-h3, .simple-text h3 {
   font-size: 22px;
   margin: 20px 0 20px 0;
 }
-h4 {
+h4, .c-h4, .simple-text h4 {
   font-size: 20px;
   margin: 15px 0 15px 0;
 }
-h5 {
+h5, .c-h5, .simple-text h5 {
   font-size: 17px;
   margin: 15px 0 10px 0;
 }
-h6 {
+h6, .c-h6, .simple-text h6 {
   font-size: 15px;
   margin: 10px 0 5px 0;
 }
@@ -1205,7 +1210,26 @@ footer ul li ul {
 }
 
 .leave-testimonial {
-  margin-top: 35px;
+  margin-top: 25px;
+}
+
+.leave-testimonial .instlink, .leave-testimonial .instlink a {
+  color: #999;
+  border: none;
+  background: none;
+  padding: 0;
+  text-align: right;
+  margin: 10px 0;
+}
+
+.leave-testimonial .instlink a {
+  text-decoration: underline;
+}
+
+.leave-testimonial .instlink a:hover {
+  background: none;
+  text-decoration: none;
+  color: #999;
 }
 
 .leave-testimonial a {
@@ -1498,7 +1522,7 @@ footer ul li ul {
 }
 
 .post ul li {
-    margin-bottom: 12px;
+    margin-bottom: 7px;
 }
 
 .simple-text h3 {
