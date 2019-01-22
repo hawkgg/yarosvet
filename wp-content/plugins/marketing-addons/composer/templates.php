@@ -90,6 +90,18 @@ CONTENT;
 CONTENT;
   $templates[] = $data;
   $data = array();
+  $data['name'] = esc_html__( 'Insta Slider', 'marketing-addons' );
+  $data['disabled'] = true; //disable it to not show in the default tab
+  $data['image_path'] = preg_replace( '/\s/', '%20',  plugins_url('/assets/img/templates/', __FILE__) . '/44.jpg' );
+  $data['sort_name'] = 'Slider';
+  $data['custom_class'] = 'general slider';
+  $data['content'] = <<<CONTENT
+[vc_row css=".vc_custom_1547973338341{margin-top: 40px !important;margin-bottom: 50px !important;}"][vc_column][rs_section_heading tag="h2" text_align="center" big_heading="Примеры работ" text="Примеры работ" class="mb-4"][vc_column_text]</p>
+<p>[iscwp-slider username="koridze_remont.kvartir" show_likes_count="false" show_comments_count="false" popup_gallery="false" dots="false" slidestoshow="3"]</p>
+<p>[/vc_column_text][rs_button align="text-center" style="type-5" size="size-3" btn_link="url:%2Fportfolio|title:%D0%91%D0%BE%D1%8C%D1%88%D0%B5%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82||" btn_text="Больше работ" class="mt-4"][/vc_column][/vc_row]
+CONTENT;
+  $templates[] = $data;
+  $data = array();
   $data['name'] = esc_html__( 'Under construction', 'marketing-addons' );
   $data['disabled'] = true; //disable it to not show in the default tab
   $data['image_path'] = preg_replace( '/\s/', '%20',  plugins_url('/assets/img/templates/', __FILE__) . '/42.jpg' );
@@ -103,8 +115,8 @@ CONTENT;
   $data['name'] = esc_html__( 'Form order', 'marketing-addons' );
   $data['disabled'] = true; //disable it to not show in the default tab
   $data['image_path'] = preg_replace( '/\s/', '%20',  plugins_url('/assets/img/templates/', __FILE__) . '/43.jpg' );
-  // $data['sort_name'] = '';
-  // $data['custom_class'] = '';
+  $data['sort_name'] = 'cta';
+  $data['custom_class'] = 'general cta';
   $data['content'] = <<<CONTENT
 [vc_row full_width="stretch_row" css=".vc_custom_1547967521998{margin-bottom: 30px !important;}"][vc_column][vc_row_inner][vc_column_inner el_class="orange-form-wrap" width="2/3" offset="vc_col-md-offset-2 vc_col-md-8 vc_col-xs-offset-1 vc_col-xs-10"][rs_section_heading tag="h2" text_align="center" text="Мы делаем замеры бесплатно!" class="mt-0"][vc_column_text dp_text_size="size-3" font="Verdana" text_color="#ffffff" class="text-white mb-2"] Для точного расчета стоимости работ, Вы можете бесплатно вызвать сметчика-консультанта. Он сделает обмер помещения, обсудит с Вами необходимые работы и применяемые материалы. После этого мы предоставим точную детальную смету на работы и строительные материалы для ремонта Вашей квартиры [/vc_column_text][rs_special_text tag="div" align="center" font_weight="400"] [contact-form-7 id="1665" html_class="form-row justify-content-center"] [/rs_special_text][/vc_column_inner][/vc_row_inner][/vc_column][/vc_row]
 CONTENT;
