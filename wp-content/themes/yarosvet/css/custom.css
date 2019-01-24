@@ -1201,8 +1201,12 @@ footer ul li ul {
   margin-bottom: 10px;
 }
 
-.tt-testimonial-label{
+.tt-testimonial-label {
   color: #30373b
+}
+
+.tt-testimonial-icon {
+  margin-bottom: 15px;
 }
 
 .tt-testimonial-icon img {
@@ -1508,20 +1512,20 @@ footer ul li ul {
     font-weight: 300;
 }
 
-.post ul {
+.post ul, .post ol {
     font-size: 19px;
     line-height: 26px !important;
     font-weight: 300;
 }
 
-.post p + ul, .post .simple-text ul {
+.post p + ul, .post .simple-text ul, .post p + ol, .post .simple-text ol {
     margin-left: 20px;
 }
-.post p + ul{
+.post p + ul, .post p + ol{
     margin-top: -20px;
 }
 
-.post ul li {
+.post ul li, .post ol li {
     margin-bottom: 7px;
 }
 
