@@ -2,7 +2,7 @@
 Contributors: anmari
 Tags: shortcode, widget, page, templates, page template, widget_area, sidebar
 Tested up to: 5.0.3
-Version: 3.6
+Version: 3.7
 Stable tag: trunk
 
 == Description ==
@@ -162,6 +162,10 @@ If you only using widget, maybe inserting the whole sidebar or widgertarea would
 [do_widget_area]
 
 == Changelog ==
+= Version 3.6 =
+*  Found a mixed line ending. Updated.
+*  Tested on 5.0.3 and 5.1beta, with php 7.3.1 
+
 = Version 3.6 =
 *  Basically forcing an update in the hope that the third party php7compatibility checker sort itself out.  It's complaining about mixed line endings, but they're not.
 *  Added indonesian translation provided by Jordan Silaen.
