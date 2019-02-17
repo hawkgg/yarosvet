@@ -6,7 +6,7 @@
  * Domain Path: /languages/
  * Description: Easy to display your instagram photo in Grid, slider, carousel and widget. Also work with Gutenberg shortcode block.
  * Author: WP OnlineSupport
- * Version: 1.4.7
+ * Version: 1.4.8
  * Author URI: https://www.wponlinesupport.com
  *
  * @package WordPress
@@ -24,7 +24,7 @@ if ( !defined( 'ABSPATH' ) ) {
  * @since 1.0.0
  */
 if( !defined( 'ISCW_VERSION' ) ) {
-	define( 'ISCW_VERSION', '1.4.7' ); // Version of plugin
+	define( 'ISCW_VERSION', '1.4.8' ); // Version of plugin
 }
 if( !defined( 'ISCW_DIR' ) ) {
 	define( 'ISCW_DIR', dirname( __FILE__ ) ); // Plugin dir
@@ -186,21 +186,26 @@ function wpos_analytics_anl42_load() {
 	require_once dirname( __FILE__ ) . '/wpos-analytics/wpos-analytics.php';
 
 	$wpos_analytics =  wpos_anylc_init_module( array(
-							'id'            => 42,
-							'file'          => plugin_basename( __FILE__ ),
-							'name'          => 'Instagram Slider and Carousel Plus Widget',
-							'slug'          => 'instagram-slider-and-carousel-plus-widget',
-							'type'          => 'plugin',
-							'menu'          => 'iscwp-settings',
-							'text_domain'   => 'instagram-slider-carousel-plus-widget',
+							'id'			=> 42,
+							'file'			=> plugin_basename( __FILE__ ),
+							'name'			=> 'Instagram Slider and Carousel Plus Widget',
+							'slug'			=> 'instagram-slider-and-carousel-plus-widget',
+							'type'			=> 'plugin',
+							'menu'			=> 'iscwp-settings',
+							'text_domain'	=> 'instagram-slider-carousel-plus-widget',
+							'promotion'		=> array( 
+													'bundle' => array(
+																'name'	=> 'Download FREE 50+ Plugins, 10+ Themes and Dashboard Plugin',
+																'desc'	=> 'Download FREE 50+ Plugins, 10+ Themes and Dashboard Plugin',
+																'file'	=> 'https://www.wponlinesupport.com/latest/wpos-free-50-plugins-plus-12-themes.zip'
+															)
+													),
 							'offers'		=> array(
 													'trial_premium' => array(
-														1 => array(
-																'image'	=> 'http://analytics.wponlinesupport.com/?anylc_img=42',
-																'link'	=> 'https://www.wponlinesupport.com/pricing/?utm_source=OptIn&utm_medium=Banner&utm_campaign=OptInBanner#fndtn-lifetime-combo',
-																'desc'	=> 'Or start using the plugin from admin menu',
-															),
-													),
+														'image'	=> 'http://analytics.wponlinesupport.com/?anylc_img=42',
+														'link'	=> 'http://analytics.wponlinesupport.com/?anylc_redirect=42',
+														'desc'	=> 'Or start using the plugin from admin menu',
+													)
 												),
 						));
 

@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - TinyMCE Advanced - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2019-01-15 17:42:07+0000\n"
+"PO-Revision-Date: 2019-02-13 14:53:50+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -263,7 +263,7 @@ msgstr "Заменить настройки размера доступные д
 msgid "A stylesheet file named editor-style.css was not added by your theme."
 msgstr "Файл таблицы стилей с именем editor-style.css не был добавлен вашей темой."
 
-#: tinymce-advanced.php:1132
+#: tinymce-advanced.php:1134
 msgid "Settings"
 msgstr "Настройки"
 
@@ -377,11 +377,11 @@ msgstr "Переносы строк в редакторе HTML по прежне
 
 #: tadv_admin.php:766
 msgid "However it may behave unexpectedly in rare cases, so test it thoroughly before enabling it permanently."
-msgstr "Однако в редких случаях это может вести себя непредсказуемо, поэтому тщательно проверьте его перед включением на постоянно."
+msgstr "В редких случаях это может вести себя непредсказуемо, поэтому тщательно протестируйте перед постоянным включением этой возможности."
 
 #: tadv_admin.php:765
 msgid "This will make it possible to use more advanced coding in the Text editor without the back-end filtering affecting it much."
-msgstr "Это позволит использовать более передовые методы кодирования в редакторе HTML без фоновой фильтрации, существенно влияющей на него."
+msgstr "Это позволит использовать улучшенное написание кода в текстовом редакторе, без фильтрации."
 
 #: tadv_admin.php:764
 msgid "Stop removing the &lt;p&gt; and &lt;br&gt; tags when saving and show them in the Text editor."

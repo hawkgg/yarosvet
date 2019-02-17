@@ -1533,6 +1533,18 @@ footer ul li ul {
     margin-bottom: 10px;
 }
 
+.advice .simple-text blockquote::after {
+  content: '';
+}
+
+.advice .simple-text blockquote {
+  padding: 31px 40px;
+}
+
+.advice .simple-text blockquote p {
+  color: #353535;
+}
+
 @media (max-width: 767px){
   .zoom-hover {
     max-height: 200px;

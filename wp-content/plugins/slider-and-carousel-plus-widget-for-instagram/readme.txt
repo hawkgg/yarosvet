@@ -1,7 +1,7 @@
 === Instagram Slider and Carousel Plus Widget ===
 Contributors: wponlinesupport, anoopranawat, pratik-jain
 Tags: Custom Instagram Feed, feed, hashtag, instagram, Instagram feed, instagram gallery, Instagram images, Instagram photos, Instagram posts, Instagram wall, lightbox, photos, instagram social feed, show instagram post, responsive instgram, beautiful instagram, instagram widget,prepossessing instgram, arresting instgram, instgram plugin, artistic instagram, instagram wordpress, smashing instgram
-Requires at least: 3.5
+Requires at least: 4.0
 Tested up to: 5.0.3
 Stable tag: trunk
 License: GPLv3
@@ -94,6 +94,9 @@ Also work with Gutenberg shortcode block.
 
 
 == Changelog ==
+
+= 1.4.8 (11, Feb 2019) =
+* [*] Minor change in Opt-in flow.
 
 = 1.4.7 (10, Jan 2019) =
 * [*] Update Opt-in flow.
