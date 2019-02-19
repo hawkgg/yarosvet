@@ -1381,6 +1381,10 @@ footer ul li ul {
   width: 100%;
 }
 
+table .green-highlighted {
+  background: #a9ed854d;
+}
+
 .prices table .prices-caption {
   padding-left: 10px;
   font-size: 17px;
