@@ -1196,10 +1196,6 @@ div.aioseop_notice a.aioseop_dismiss_link {
 	width: 98%;
 }
 
-#aioseop_opengraph_settings .aioseop_option_label {
-	width: 30%;
-}
-
 .aioseop_tabs {
 	padding-top: 6px;
 }
@@ -1416,10 +1412,6 @@ div.sfwd_debug_error {
 #aioseop_opengraph_settings .aioseop_options {
 	clear: both;
 	margin-top: 35px;
-}
-
-#aioseop_opengraph_settings .aioseop_option_input {
-	width: 70%;
 }
 
 /**

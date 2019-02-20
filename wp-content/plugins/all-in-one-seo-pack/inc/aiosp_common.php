@@ -156,11 +156,11 @@ class aiosp_common {
 				// for /resource type urls.
 				$url = home_url( $url );
 			}
-		} else if ( strpos( $url, 'http://' ) === false ) {
+		} elseif ( strpos( $url, 'http://' ) === false ) {
 			if ( 0 === strpos( $url, 'http:/' ) ) {
-				$url	= $scheme . '://' .  str_replace( 'http:/', '', $url );
-			} else if ( 0 === strpos( $url, 'http:' ) ) {
-				$url	= $scheme . '://' . str_replace( 'http:', '', $url );
+				$url    = $scheme . '://' . str_replace( 'http:/', '', $url );
+			} elseif ( 0 === strpos( $url, 'http:' ) ) {
+				$url    = $scheme . '://' . str_replace( 'http:', '', $url );
 			}
 		}
 		return $url;
@@ -192,15 +192,10 @@ class aiosp_common {
 		} else {
 			// some tags contain sanitized to some extent but they do not encode < and >.
 			if ( ! in_array( $tag, array( 'image:title' ), true ) ) {
-				// use the WP core functions if they exist.
-				if ( function_exists( 'convert_chars' ) && function_exists( 'wptexturize' ) ) {
-					$value = convert_chars( wptexturize( $value ) );
-				} else {
-					$value = htmlspecialchars( $value, ENT_QUOTES );
-				}
+				$value = convert_chars( wptexturize( $value ) );
 			}
 		}
-		return esc_html( $value );
+		return ent2ncr( esc_html( $value ) );
 	}
 
 	/**
@@ -275,18 +270,18 @@ class aiosp_common {
 				// TODO Add setting to enable; this is TOO MEMORY INTENSE which could result in 1 or more crashes,
 				// TODO however some may still need custom image URLs.
 				// TODO NOTE: Transient data does prevent continual crashes.
-//				else {
-//					// Results_2 query looks for the URL that is cropped and edited. This searches JSON strings
-//					// and returns the original attachment ID (there is no custom attachment IDs).
-//
-//					if ( is_null( $results_2 ) ) {
-//						$results_2 = aiosp_common::attachment_url_to_postid_query_2();
-//					}
-//
-//					if ( isset( $results_2[ $url_md5 ] ) ) {
-//						$id = intval( $results_2[ $url_md5 ] );
-//					}
-//				}
+				// else {
+				// Results_2 query looks for the URL that is cropped and edited. This searches JSON strings
+				// and returns the original attachment ID (there is no custom attachment IDs).
+				//
+				// if ( is_null( $results_2 ) ) {
+				// $results_2 = aiosp_common::attachment_url_to_postid_query_2();
+				// }
+				//
+				// if ( isset( $results_2[ $url_md5 ] ) ) {
+				// $id = intval( $results_2[ $url_md5 ] );
+				// }
+				// }
 			}
 
 			self::$attachment_url_postids[ $url_md5 ] = $id;
@@ -374,10 +369,12 @@ class aiosp_common {
 		global $wpdb;
 
 		$tmp_arr = array();
+		// @codingStandardsIgnoreStart WordPress.WP.PreparedSQL.NotPrepared
 		$results_2 = $wpdb->get_results(
 			"SELECT post_id, meta_value FROM {$wpdb->postmeta} WHERE `meta_key` = '_wp_attachment_metadata' AND `meta_value` != '" . serialize( array() ) . "';",
 			ARRAY_A
 		);
+		// @codingStandardsIgnoreStop WordPress.WP.PreparedSQL.NotPrepared
 		if ( $results_2 ) {
 			for ( $i = 0; $i < count( $results_2 ); $i++ ) {
 				// TODO Investigate potentual memory leak(s); currently with unserialize.

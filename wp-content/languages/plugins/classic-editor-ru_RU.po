@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Classic Editor - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2019-02-02 20:56:53+0000\n"
+"PO-Revision-Date: 2019-02-20 19:00:57+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -112,7 +112,7 @@ msgstr "Участники разработки WordPress"
 
 #. Description of the plugin
 msgid "Enables the WordPress classic editor and the old-style Edit Post screen with TinyMCE, Meta Boxes, etc. Supports the older plugins that extend this screen."
-msgstr "Включает классический редактор WordPress, старый вариант экрана редактирования записей (TinyMCE, мета поля и др.)  Поддерживает другие плагины расширения старого редактора."
+msgstr "Включает классический редактор WordPress, старый вариант экрана редактирования записей (TinyMCE, мета поля и др.). Поддерживает другие плагины расширения старого редактора."
 
 #. Plugin Name of the plugin
 msgid "Classic Editor"

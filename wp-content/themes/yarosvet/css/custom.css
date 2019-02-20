@@ -620,6 +620,15 @@ ol.breadcrumb {
   width: 150%;
 }
 
+#mega-menu-wrap-primary-menu #mega-menu-primary-menu > li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item a.mega-menu-link {
+  line-height: 20px;
+  padding: 5px 10px;
+}
+
+#mega-menu-wrap-primary-menu #mega-menu-primary-menu > li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item:last-of-type a.mega-menu-link {
+  padding-bottom: 10px;
+}
+
 /* Отступы контейнера с лого */
 .tt-header .top-inner {
   padding: 5px 0 !important;
