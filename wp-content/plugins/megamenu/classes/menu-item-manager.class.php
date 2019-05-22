@@ -817,7 +817,7 @@ class Mega_Menu_Menu_Item_Manager {
 
             $return .= "<div class='{$type}'>";
             $return .= "    <input class='radio' id='{$class}' type='radio' rel='{$code}' name='settings[icon]' value='{$class}' " . checked( $this->menu_item_meta['icon'], $class, false ) . " />";
-            $return .= "    <label rel='{$code}' for='{$class}'></label>";
+            $return .= "    <label rel='{$code}' for='{$class}' title='{$class}'></label>";
             $return .= "</div>";
 
         }

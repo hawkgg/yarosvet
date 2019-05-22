@@ -126,12 +126,14 @@
                     transform: scale($scale);
                     align-self: center;
                     outline: 0;
+                    background: none;
                 }
                 .mega-toggle-animated-box {
                     width: 40px;
                     height: 24px;
                     display: inline-block;
                     position: relative;
+                    outline: 0;
                 }
                 .mega-toggle-animated-inner {
                     display: block;

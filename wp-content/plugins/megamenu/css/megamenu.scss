@@ -46,6 +46,7 @@
     right: auto;
     text-align: left;
     text-decoration: none;
+    text-indent: 0;
     text-transform: none;
     transform: none;
     top: auto;
@@ -69,9 +70,19 @@
 
     &.mega-keyboard-navigation {
         .mega-menu-toggle:focus,
+        .mega-toggle-block:focus,
+        .mega-toggle-block a:focus,
+        .mega-toggle-block .mega-search input[type=text]:focus,
+        .mega-toggle-block button.mega-toggle-animated:focus,
         #{$menu} a:focus,
-        #{$menu} input:focus {
-            @include box-shadow(inset 0px 0px 3px 1px #00FFFF);
+        #{$menu} input:focus,
+        #{$menu} li.mega-menu-item a.mega-menu-link:focus {
+            outline: 3px solid #109cde;
+            outline-offset: -3px;
+        }
+
+        .mega-toggle-block button.mega-toggle-animated:focus {
+            outline-offset: 2px;
         }
 
         > li.mega-menu-item > a.mega-menu-link:focus {
@@ -122,6 +133,19 @@
             }
         }
 
+        li.mega-menu-megamenu li.mega-menu-item.mega-icon-left.mega-has-description.mega-has-icon > a.mega-menu-link {
+            display: flex;
+            align-items: center;
+
+            &:before {
+                flex: 0 0 auto;
+                align-self: flex-start;
+            }
+        }
+
+        li.mega-menu-tabbed.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item.mega-icon-left.mega-has-description.mega-has-icon > a.mega-menu-link {
+            display: block;
+        }
 
         li.mega-menu-item.mega-icon-top > a.mega-menu-link {
             display: table-cell;
@@ -187,6 +211,23 @@
             visibility: hidden;
             opacity: 1;
             pointer-events: auto;
+        }
+
+        @include mobile {
+            li.mega-menu-item > ul.mega-sub-menu {
+                display: none;
+                visibility: visible;
+                opacity: 1;
+            }
+
+            li.mega-menu-item.mega-toggle-on > ul.mega-sub-menu,
+            li.mega-menu-megamenu.mega-menu-item.mega-toggle-on ul.mega-sub-menu {
+                display: block;
+            }
+            li.mega-menu-megamenu.mega-menu-item.mega-toggle-on li.mega-hide-sub-menu-on-mobile > ul.mega-sub-menu,
+            li.mega-hide-sub-menu-on-mobile > ul.mega-sub-menu {
+                display: none;
+            }
         }
 
         @include desktop {
@@ -624,6 +665,10 @@
                         vertical-align: top;
                         display: block;
                     }
+
+                    &.mega-icon-left.mega-has-description.mega-has-icon > a.mega-menu-link {
+                        display: flex;
+                    }
                 }
 
                 // Third level menu items hover
@@ -659,7 +704,8 @@
         }
 
         > li.mega-menu-megamenu.mega-no-headers > ul.mega-sub-menu {
-            > li.mega-menu-item > a.mega-menu-link {
+            > li.mega-menu-item > a.mega-menu-link,
+            li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link {
                 color: $panel_third_level_font_color;
                 font-family: $panel_third_level_font;
                 font-size: $panel_third_level_font_size;
@@ -674,7 +720,9 @@
             }
 
             > li.mega-menu-item > a.mega-menu-link:hover,
-            > li.mega-menu-item > a.mega-menu-link:focus {
+            > li.mega-menu-item > a.mega-menu-link:focus,
+            li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link:hover,
+            li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link:focus {
                 color: $panel_third_level_font_color_hover;
                 font-weight: $panel_third_level_font_weight_hover;
                 text-decoration: $panel_third_level_text_decoration_hover;
@@ -846,21 +894,25 @@
             }
 
             @include mobile {
-                a.mega-menu-link:after {
-                    float: right;
-                }
-
-                &.mega-toggle-on > a.mega-menu-link {
+                > a.mega-menu-link {
                     &:after {
                         display: none;
                     }
 
                     > span.mega-indicator {
                         display: inline-block;
+                        
+                        &:after {
+                            content: $arrow_down;
+                        }
                     }
                 }
 
-                &.mega-hide-sub-menu-on-mobile > a.mega-menu-link:after {
+                &.mega-toggle-on > a.mega-menu-link > span.mega-indicator:after {
+                    content: $arrow_up;
+                }
+
+                &.mega-hide-sub-menu-on-mobile > a.mega-menu-link > span.mega-indicator  {
                     display: none;
                 }
             }
@@ -868,6 +920,7 @@
 
         // Hide arrows
         li.mega-menu-megamenu:not(.mega-menu-tabbed) li.mega-menu-item-has-children > a.mega-menu-link:after,
+        li.mega-menu-megamenu:not(.mega-menu-tabbed) li.mega-menu-item-has-children > a.mega-menu-link > span.mega-indicator,
         li.mega-menu-item-has-children.mega-hide-arrow > a.mega-menu-link:after {
             display: none;
         }
@@ -959,7 +1012,7 @@
             clear: both;
         }
 
-        @if $disable_mobile_toggle == off and $mobile_menu_overlay == on {
+        @if ($disable_mobile_toggle == off and $mobile_menu_overlay == on) or ($disable_mobile_toggle == off and $mobile_menu_force_width == on) {
             #{$menu} {
                 position: absolute;
                 width: 100%;
@@ -1065,6 +1118,7 @@
             display: -webkit-flex;
             display: flex;
             height: 100%;
+            outline: 0;
 
             -webkit-align-self: center;
             -ms-flex-item-align: center;
@@ -1084,17 +1138,6 @@
                     display: block; 
                 } @else {
                     display: none;
-                }
-
-                li.mega-menu-item > ul.mega-sub-menu {
-                    display: none;
-                    visibility: visible;
-                    opacity: 1;
-                }
-
-                li.mega-menu-item.mega-toggle-on > ul.mega-sub-menu,
-                li.mega-menu-megamenu.mega-menu-item.mega-toggle-on ul.mega-sub-menu {
-                    display: block;
                 }
             }
 

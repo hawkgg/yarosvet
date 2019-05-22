@@ -1,9 +1,9 @@
 === Max Mega Menu ===
 Contributors: megamenu
 Tags: menu, megamenu, mega menu, navigation, widget, dropdown menu, drag and drop, mobile, responsive, retina, theme editor, widget, shortcode, sidebar, icons, dashicons
-Requires at least: 3.8
-Tested up to: 5.0
-Stable tag: 2.5.3.1
+Requires at least: 4.9
+Tested up to: 5.2
+Stable tag: 2.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -108,6 +108,22 @@ See https://www.megamenu.com for more screenshots
 5. Back end: Use the theme editor to change the appearance of your menus
 
 == Changelog ==
+
+= 2.6 =
+
+* Improvement: Use core version of CodeMirror (requires WordPress 4.9+)
+* Improvement: Performance on grid layout sub menus
+* Improvement: Accessibility - keyboard navigation and screen reader improvements
+* Improvement: Allow a container_id to be specified as an Active Menu Instance
+* Improvement: Swap out admin menu icon from font icon to SVG
+* Fix: JS Lint JavaScript
+* Fix: Compatiblity with ACF Pro Select2 fields
+* Fix: WPML Language selector. Language selector position now respects the position set in the WPML options
+* Fix: Apply 'no-headers' styling to grid layout sub menus
+* Fix: 'Hide Sub Menu on mobile' option doesn't apply to mega menus
+* Fix: Prevent CSS from being auto loaded
+* Fix: Grid Layout: Title and descriprion are pushed below the icon when the description wraps onto two lines
+* Change: Always show mega-indicator arrow on mobile (allows for unbinding events from the link itself)
 
 = 2.5.3.2 =
 

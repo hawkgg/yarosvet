@@ -67,7 +67,7 @@ class Mega_Menu_Toggle_Blocks {
             $closed_text = isset( $settings['closed_text'] ) ? do_shortcode( stripslashes( $settings['closed_text'] ) ) : "MENU";
             $open_text = isset( $settings['open_text'] ) ? do_shortcode( stripslashes( $settings['open_text'] ) ) : "MENU";
             
-            $html = "<span class='mega-toggle-label'><span class='mega-toggle-label-closed'>{$closed_text}</span><span class='mega-toggle-label-open'>{$open_text}</span></span>";
+            $html = "<span class='mega-toggle-label' role='button' aria-expanded='false'><span class='mega-toggle-label-closed'>{$closed_text}</span><span class='mega-toggle-label-open'>{$open_text}</span></span>";
         } else {
             $html = "";
         }
@@ -241,10 +241,16 @@ class Mega_Menu_Toggle_Blocks {
 
         $id = apply_filters('megamenu_toggle_block_id', 'mega-toggle-block-' . $block_id);
 
-        $attributes = apply_filters('megamenu_toggle_block_attributes', array(
+        $atts = array(
             "class" => "mega-toggle-block {$class} mega-toggle-block-{$block_id}",
-            "id" => "mega-toggle-block-{$block_id}"
-        ), $block, $content, $nav_menu, $args, $theme_id);
+            "id" => "mega-toggle-block-{$block_id}",
+        );
+
+        if ( isset( $block['type'] ) && $block['type'] == 'menu_toggle' ) {
+            $atts['tabindex'] = '0';
+        }
+
+        $attributes = apply_filters('megamenu_toggle_block_attributes', $atts, $block, $content, $nav_menu, $args, $theme_id);
 
         $block_html .= "<div";
 
@@ -461,23 +467,11 @@ class Mega_Menu_Toggle_Blocks {
                         $open_icon = 'disabled';
                     }
                     
-                    if ( isset( $settings['closed_text'] ) ) {
-                        $closed_text = "'" . do_shortcode( stripslashes( html_entity_decode( $settings['closed_text'], ENT_QUOTES ) ) ) . "'";
-                    } else {
-                        $closed_text = "'MENU'";
-                    }
-
-                    if ( isset( $settings['open_text'] ) ) {
-                        $open_text = "'" . do_shortcode( stripslashes( html_entity_decode( $settings['open_text'], ENT_QUOTES ) ) ) . "'";
-                    } else {
-                        $open_text = "''";
-                    }
-                    
                     $styles = array(
                         'id' => $index,
                         'align' => isset($settings['align']) ? "'" . $settings['align'] . "'" : "'right'",
-                        'closed_text' => $closed_text,
-                        'open_text' => $open_text,
+                        'closed_text' => "''", // deprecated
+                        'open_text' => "''", // deprecated
                         'closed_icon' => $closed_icon != 'disabled' ? "'\\" . $closed_icon  . "'" : "''",
                         'open_icon' => $open_icon != 'disabled' ? "'\\" . $open_icon . "'" : "''",
                         'text_color' => isset($settings['text_color']) ? $settings['text_color'] : '#fff',
@@ -863,8 +857,9 @@ class Mega_Menu_Toggle_Blocks {
      */
     public function output_menu_public_toggle_block_animated_html( $html, $settings ) {
         $style = isset( $settings['style'] ) ? $settings['style'] : "slider";
+        $label = isset( $settings['aria_label'] ) ? do_shortcode( stripslashes( $settings['aria_label'] ) ) : "Toggle Menu";
 
-        $html = '<button class="mega-toggle-animated mega-toggle-animated-' . $style . '" type="button">
+        $html = '<button aria-label="'. esc_attr($label) .'" class="mega-toggle-animated mega-toggle-animated-' . esc_attr($style) . '" type="button" aria-expanded="false">
                   <span class="mega-toggle-animated-box">
                     <span class="mega-toggle-animated-inner"></span>
                   </span>
@@ -889,7 +884,8 @@ class Mega_Menu_Toggle_Blocks {
 
         $defaults = array(
             'icon_scale' => '0.8',
-            'icon_color' => 'rgb(221, 221, 221)'
+            'icon_color' => 'rgb(221, 221, 221)',
+            'aria_label' => 'Toggle Menu'
         );
 
         $settings = array_merge( $defaults, $settings );
@@ -915,6 +911,9 @@ class Mega_Menu_Toggle_Blocks {
                         <option value='1.0' <?php selected( $settings['icon_scale'], "1.0" ) ?> ><?php _e("Large", "megamenu") ?></option>
                         <option value='1.2' <?php selected( $settings['icon_scale'], "1.2" ) ?> ><?php _e("X Large", "megamenu") ?></option>
                     </select>
+                </label>
+                <label>
+                    <?php _e("Label", "megamenu") ?><input type='text' class='aria_label' name='toggle_blocks[<?php echo $block_id; ?>][aria_label]' value='<?php echo stripslashes( esc_attr( $settings['aria_label']  ) ) ?>' />
                 </label>
                 <a class='mega-delete'><?php _e("Delete", "megamenu"); ?></a>
             </div>

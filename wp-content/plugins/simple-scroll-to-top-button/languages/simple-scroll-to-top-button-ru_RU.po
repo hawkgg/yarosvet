@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Simple Scroll to Top Button\n"
-"POT-Creation-Date: 2019-01-11 20:44+0200\n"
-"PO-Revision-Date: 2019-01-11 20:44+0200\n"
+"POT-Creation-Date: 2019-04-09 14:15+0300\n"
+"PO-Revision-Date: 2019-04-09 14:15+0300\n"
 "Last-Translator: Arthur Gareginyan\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -20,34 +20,42 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: inc/php/core.php:23 inc/php/page.php:43
+#: inc/php/core.php:32 inc/php/page.php:43
 msgid "Settings"
 msgstr "Настройки"
 
-#: inc/php/core.php:37
+#: inc/php/core.php:54
 msgid "Donate"
 msgstr "Поддержать"
 
-#: inc/php/core.php:52
+#: inc/php/core.php:78
 msgid "Scroll to Top"
 msgstr "Прокрутить вверх"
 
-#: inc/php/messages.php:26
-msgid "Hello. We are the team of Space X-Chimp."
-msgstr "Привет! Мы - команда Space X-Chimp."
+#: inc/php/messages.php:33 inc/php/tabs/support.php:25
+msgid "Hello!"
+msgstr "Привет!"
 
-#: inc/php/messages.php:28
+#: inc/php/messages.php:34
+msgid "We are the team of Space X-Chimp."
+msgstr "Мы - команда Space X-Chimp."
+
+#: inc/php/messages.php:39
 #, php-format
 msgid "Thank you for installing our plugin! We hope you will love it! %s"
 msgstr "Благодарим вас за установку нашего плагина! Надеемся, он вам полюбится! %s"
 
-#: inc/php/messages.php:68
+#: inc/php/messages.php:90
 msgid "You have installed an old version of this plugin."
 msgstr "Вы установили устаревшую версию этого плагина."
 
-#: inc/php/messages.php:69
+#: inc/php/messages.php:91
 msgid "Please update the plugin to the latest version, and all will be fine."
 msgstr "Пожалуйста, обновите плагин до последней версии и всё будет отлично."
+
+#: inc/php/messages.php:126
+msgid "Settings saved successfully."
+msgstr ""
 
 #: inc/php/page.php:30
 #, php-format
@@ -66,7 +74,7 @@ msgstr "Применение"
 msgid "F.A.Q."
 msgstr "F.A.Q."
 
-#: inc/php/page.php:46 inc/php/settings.php:126 inc/php/sidebar.php:39
+#: inc/php/page.php:46 inc/php/sidebar.php:46 inc/php/tabs/settings.php:157
 msgid "Support"
 msgstr "Поддержка"
 
@@ -74,320 +82,583 @@ msgstr "Поддержка"
 msgid "Store"
 msgstr "Магазин"
 
-#: inc/php/page.php:63
-msgid "Usage Instructions"
-msgstr "Инструкция по использованию"
-
-#: inc/php/page.php:65
-msgid "To display the \"Scroll to Top\" button on the front end of your website, simply follow these steps:"
-msgstr "Чтобы отобразить кнопку «Прокрутить вверх» на передней панели вашего веб-сайта, выполните следующие действия:"
-
-#: inc/php/page.php:67
-msgid "Go to the \"Settings\" tab on this page."
-msgstr "Перейдите на вкладку «Настройки»."
-
-#: inc/php/page.php:68
-msgid "Select the desired settings."
-msgstr "Выберите нужные настройки."
-
-#: inc/php/page.php:69
-msgid "Click the \"Save changes\" button."
-msgstr "Нажмите кнопку «Сохранить изменения»."
-
-#: inc/php/page.php:70
-msgid "Enjoy your fancy \"Scroll to Top\" button."
-msgstr "Наслаждайтесь своей модной кнопкой «Прокрутить вверх»."
-
-#: inc/php/page.php:70
-msgid "It's that simple!"
-msgstr "Вот так просто!"
-
-#: inc/php/page.php:73
-#, php-format
-msgid "If you want more options, then %s let us know %s and we will be happy to add them."
-msgstr "Если вы хотите больше вариантов, то %s сообщите нам %s и мы будем рады добавить их."
-
-#: inc/php/page.php:87
-msgid "Frequently Asked Questions"
-msgstr "Часто задаваемые вопросы"
-
-#: inc/php/page.php:91
-msgid "If you have a question, please read the Frequently Asked Questions below to see if the answer is here."
-msgstr "Если у вас есть вопрос, пожалуйста, прочтите часто задаваемые вопросы."
-
-#: inc/php/page.php:113
-msgid "Will this plugin work on my WordPress.COM website?"
-msgstr "Этот плагин будет работать на моем сайте WordPress.COM?"
-
-#: inc/php/page.php:114
-msgid "Sorry, this plugin is available for use only on self-hosted (WordPress.ORG) websites."
-msgstr "К сожалению, этот плагин доступен для использования только на самостоятельно размещённых веб-сайтах (WordPress.ORG)."
-
-#: inc/php/page.php:116
-msgid "Can I use this plugin on my language?"
-msgstr "Можно ли использовать этот плагин на моём языке?"
-
-#: inc/php/page.php:117
-msgid "Yes. This plugin is ready for translation and has already been translated into several languages."
-msgstr "Да. Этот плагин готов к переводу и уже переведен на несколько языков."
-
-#: inc/php/page.php:119
-#, php-format
-msgid "If you want to help translate this plugin then please visit the %s. You can also use the POT file, that is included and placed in the \"languages\" folder, in order to create a translation PO file. Just send the PO file to us at the %s and we will include this translation within the next plugin update."
-msgstr "Если вы хотите помочь перевести этот плагин, пожалуйста, посетите %s. Вы также можете использовать файл POT, который включён в плагин и помещён в папку «languages», чтобы создать PO файл перевода. Просто отправьте нам файл PO на %s и мы включим этот перевод в следующее обновление плагина."
-
-#: inc/php/page.php:124
-msgid "Maybe not all existed translations are up to date. You are welcome to contribute corrections!"
-msgstr "Может быть, не все переводы обновлены. Вы можете внести исправления!"
-
-#: inc/php/page.php:125
-msgid "Many of plugin users would be delighted if you share your translation with the community. Thanks for your contribution!"
-msgstr "Многие пользователи плагинов будут рады, если вы поделитесь своим переводом с сообществом. Спасибо за ваш вклад!"
-
-#: inc/php/page.php:127
-msgid "How does it work?"
-msgstr "Как оно работает?"
-
-#: inc/php/page.php:128
-msgid "On the \"Settings\" tab, select the desired settings and click the \"Save changes\" button. Enjoy your fancy \"Scroll to Top\" button. It's that simple!"
-msgstr "На вкладке «Настройки» выберите нужные параметры и нажмите кнопку «Сохранить изменения». Наслаждайтесь своей модной кнопкой «Прокрутить вверх». Это так просто!"
-
-#: inc/php/page.php:130
-msgid "Is it possible to use different buttons/arrows?"
-msgstr "Можно ли использовать разные кнопки/стрелки?"
-
-#: inc/php/page.php:131
-msgid "This plugin comes with the FontAwesome iconic font. Now you can customize the button style using and combining 10 symbols and 4 backgrounds from FontAwesome library, in result you have 40 variations of buttons. You can change the size of button, color (unlimited) of background, color (unlimited) of symbol and etc. A future version may include more buttons, and/or the option to upload your own button graphics."
-msgstr "Этот плагин поставляется с иконочным шрифтом FontAwesome. Теперь вы можете настроить стиль кнопки, используя и комбинируя 10 символов и 4 фона из библиотеки FontAwesome, в результате у вас есть 40 вариантов кнопок. Вы можете изменить размер кнопки, цвет фона (неограниченно), цвета символов (неограниченно) и т. д. Будущая версия может включать в себя больше кнопок и/или возможность загружать собственную графику кнопок."
-
-#: inc/php/page.php:133
-msgid "Does this plugin requires any modification of the theme?"
-msgstr "Этот плагин требует изменения темы?"
-
-#: inc/php/page.php:134
-msgid "Absolutely not. This plugin is configurable entirely from the plugin settings page."
-msgstr "Абсолютно нет. Этот плагин настраивается полностью на странице настроек плагина."
-
-#: inc/php/page.php:136
-msgid "Does this require any knowledge of HTML or CSS?"
-msgstr "Требуются ли какие-либо знания HTML или CSS?"
-
-#: inc/php/page.php:137
-msgid "Absolutely not. This plugin can be configured with no knowledge of HTML or CSS, using an easy-to-use plugin settings page."
-msgstr "Абсолютно нет. Этот плагин можно настроить без знания HTML или CSS, с помощью простой в использовании страницы настройки плагина."
-
-#: inc/php/page.php:139
-msgid "It's not working. What could be wrong?"
-msgstr "Оно не работает. Что может быть не так?"
-
-#: inc/php/page.php:140
-msgid "As with every plugin, it's possible that things don't work. The most common reason for this is a web browser's cache. Every web browser stores a cache of the websites you visit (pages, images, and etc.) to reduce bandwidth usage and server load. This is called the browser's cache.​ Clearing your browser's cache may solve the problem."
-msgstr "Как и в случае с любым другим плагином, что-то может не работать. Наиболее распространенной причиной этого является кеш веб-браузера. Каждый веб-браузер хранит кеш веб-сайтов, которые вы посещаете (страницы, изображения и т. д.) для того, чтобы уменьшить использование интернет канала и нагрузку на сервер. Это называется кешем браузера. Очистка кеша браузера может решить проблему."
-
-#: inc/php/page.php:141
-msgid "It's impossible to tell what could be wrong exactly, but if you post a support request in the plugin's support forum on WordPress.org, we'd be happy to give it a look and try to help out. Please include as much information as possible, including a link to your website where the problem can be seen."
-msgstr "Невозможно точно сказать, что может быть неправильно, но если вы разместите запрос поддержки на форуме поддержки плагина на WordPress.org, то мы с радостью посмотрим и попытаемся помочь. Пожалуйста, укажите как можно больше информации, включая ссылку на ваш сайт, на котором можно увидеть проблему."
-
-#: inc/php/page.php:143
-msgid "The last WordPress update is preventing me from editing my website that is using this plugin. Why is this?"
-msgstr "Последнее обновление WordPress не позволяет мне редактировать мой сайт, который использует этот плагин. Почему так?"
-
-#: inc/php/page.php:144
-msgid "This plugin can not cause such problem. More likely, the problem are related to the settings of the website. It could just be a cache, so please try to clear your website's cache (may be you using a caching plugin, or some web service such as the CloudFlare) and then the cache of your web browser. Also please try to re-login to the website, this too can help."
-msgstr "Этот плагин не может вызвать такую проблему. Скорее всего, проблема связана с настройками веб-сайта. Это может быть кеш, поэтому попробуйте очистить кеш вашего сайта (возможно, вы используете плагин для кеширования или какой-либо веб-сервис, такой как CloudFlare), а затем кеш вашего веб-браузера. Также попробуйте повторно войти на сайт, это тоже может помочь."
-
-#: inc/php/page.php:146
-msgid "Where to report bug if found?"
-msgstr "Где можно сообщить об ошибке?"
-
-#: inc/php/page.php:148
-#, php-format
-msgid "Bug reports are very welcome! Please visit %s our contact page %s and report. Please do not forget to specify the name of the plugin. Thank you!"
-msgstr "Посетите %s эту страницу %s и сообщите. Не забудьте указать название плагина. Спасибо!"
-
-#: inc/php/page.php:154
-msgid "Where to share any ideas or suggestions to make the plugin better?"
-msgstr "Где можно поделиться идеями или предложениями, чтобы сделать плагин лучше?"
-
-#: inc/php/page.php:156
-#, php-format
-msgid "Any suggestions are very welcome! Please visit %s our contact page %s. Please do not forget to specify the name of the plugin. Thank you!"
-msgstr "Любые предложения приветствуются! Просто свяжитесь с нами %s здесь %s. Не забудьте указать название плагина. Спасибо!"
-
-#: inc/php/page.php:162
-msgid "I love this plugin! Can I help somehow?"
-msgstr "Мне нравится этот плагин! Могу Я чем-то помочь?"
-
-#: inc/php/page.php:164
-#, php-format
-msgid "Yes, any contributions are very welcome! Please visit %s our donation page %s. Thank you!"
-msgstr "Да, любые финансовые взносы приветствуются! Просто посетите %s мой сайт %s, нажмите на кнопку пожертвования. Спасибо!"
-
-#: inc/php/page.php:170
-msgid "My question wasn't answered here."
-msgstr "Моего вопроса здесь нет."
-
-#: inc/php/page.php:172
-#, php-format
-msgid "You can ask your question on %s this page %s. But please keep in mind that this plugin is free, and there is no a special support team, so we have no way to answer everyone."
-msgstr "Вы можете задать ваш вопрос на %s этой странице %s. Но имейте в виду, что этот плагин является бесплатным и без специальной поддержки, поэтому у нас нет возможности ответить на все вопросы."
-
-#: inc/php/page.php:186
-msgid "Support Us"
-msgstr "Поддержать нас"
-
-#: inc/php/page.php:194 inc/php/settings.php:133 inc/php/sidebar.php:46
-msgid "Donate with PayPal"
-msgstr "Пожертвовать через PayPal"
-
-#: inc/php/page.php:199
-#, php-format
-msgid "Hello! My name is %s Arthur %s, I'm the founder of %s Space X-Chimp %s, which unites a small international team of young people."
-msgstr ""
-
-#: inc/php/page.php:207
-msgid "Our intention is to create projects that will make this world a better place. Our motto is - «Follow your dreams and don’t give up». We are really passionate about our work, we like what we are doing and hope that you will be enriched by our projects too."
-msgstr ""
-
-#: inc/php/page.php:208
-msgid "We spend a lot of time and effort trying to make sure that the themes, plugins and other things we build are useful, and the ultimate proof of that for us is that you actually want to use them. But we are an independent developers, without a regular income, so every little contribution helps to cover our costs and allows us to spend more time creating things for awesome people like you to enjoy."
-msgstr "Мы тратим много времени и усилий, пытаясь убедиться в том, что темы, плагины и другие вещи, которые мы создаём, полезны, и окончательное доказательство этого для нас то, что вы на самом деле хотите их использовать. Но мы независимые разработчики, без регулярного дохода, поэтому каждый небольшой вклад помогает покрыть наши расходы и позволяет нам тратить больше времени на создание вещей для таких замечательных людей, как вы."
-
-#: inc/php/page.php:209
-msgid "If you appreciate our work, you can buy us a cup of coffee!"
-msgstr "Если вы цените мою работу, то вы можете купить мне кофе!"
-
-#: inc/php/page.php:210
-msgid "Thank you for your support!"
-msgstr "Спасибо за вашу поддержку!"
-
-#: inc/php/settings.php:32 inc/php/settings.php:111
-msgid "Save changes"
-msgstr "Сохранить изменения"
-
-#: inc/php/settings.php:36
-msgid "Main Settings"
-msgstr "Основные Настройки"
-
-#: inc/php/settings.php:38
-msgid "Here you can configure this plugin."
-msgstr "Здесь вы можете настроить этот плагин."
-
-#: inc/php/settings.php:42
-msgid "Enable \"Scroll to Top\" button"
-msgstr "Включить кнопку “Прокрутить вверх”"
-
-#: inc/php/settings.php:43
-msgid "Enable or disable this plugin."
-msgstr "Включить или выключить этот плагин."
-
-#: inc/php/settings.php:50
-msgid "Without background"
-msgstr "Без фона"
-
-#: inc/php/settings.php:52
-msgid "Button background"
-msgstr "Фон кнопки"
-
-#: inc/php/settings.php:53
-msgid "Select the background of the button by choosing one of the four variants above."
-msgstr "Выберите фон кнопки, выбрав один из четырех вариантов выше."
-
-#: inc/php/settings.php:57
-msgid "Button background color"
-msgstr "Цвет фона кнопки"
-
-#: inc/php/settings.php:58
-msgid "Select the background color of button. You can also add html HEX color code."
-msgstr "Выберите цвет фона кнопки. Вы также можете добавить html HEX код цвета."
-
-#: inc/php/settings.php:74
-msgid "Button symbol"
-msgstr "Символ кнопки"
-
-#: inc/php/settings.php:75
-msgid "Select the symbol of the button by choosing one of the ten variants above."
-msgstr "Выберите символ кнопки, выбрав один из десяти вариантов выше."
-
-#: inc/php/settings.php:79
-msgid "Button symbol color"
-msgstr "Цвет символа кнопки"
-
-#: inc/php/settings.php:80
-msgid "Select the color of symbol inside button. You can also add html HEX color code."
-msgstr "Выберите цвет символа кнопки. Вы также можете добавить html HEX код цвета."
-
-#: inc/php/settings.php:84
-msgid "Transparency"
-msgstr "Прозрачность"
-
-#: inc/php/settings.php:85
-msgid "Enable the transparency of the button."
-msgstr "Включить прозрачность кнопки."
-
-#: inc/php/settings.php:88
-msgid "Button size"
-msgstr "Размер кнопки"
-
-#: inc/php/settings.php:89
-msgid "You can set the size of button (in pixels). The default size is 32 pixels."
-msgstr "Вы можете установить размер кнопки (в пикселях). Размер по умолчанию - 32 пикселя."
-
-#: inc/php/settings.php:93
-msgid "Scroll duration"
-msgstr "Длительность прокрутки"
-
-#: inc/php/settings.php:94
-msgid "Duration is given in milliseconds. Higher values indicate slower animation (speed/smoothness), not faster ones. The default duration is 300 milliseconds."
-msgstr "Продолжительность задается в миллисекундах. Более высокие значения указывают на более медленную анимацию (скорость/гладкость), а не более быструю. Продолжительность по умолчанию - 300 миллисекунд."
-
-#: inc/php/settings.php:99
-msgid "Every frontend page"
-msgstr "Весь Веб-сайт"
-
-#: inc/php/settings.php:100
-msgid "Home Page Only"
-msgstr "Только Главная Страница"
-
-#: inc/php/settings.php:102
-msgid "Display button on"
-msgstr "Отображать кнопку на"
-
-#: inc/php/settings.php:103
-msgid "Select where button need to be appeared."
-msgstr "Выберите, где кнопка должна показываться."
-
-#: inc/php/settings.php:114
-msgid "Live Preview"
-msgstr "Просмотр в реальном времени"
-
-#: inc/php/settings.php:128 inc/php/sidebar.php:41
-msgid "Every little contribution helps to cover our costs and allows us to spend more time creating things for awesome people like you to enjoy."
-msgstr "Я независимый разработчик, без регулярного дохода, так что каждый маленький вклад помогает мне покрыть затраты и позволяет тратить больше времени на создание программ для людей как вы."
-
-#: inc/php/settings.php:135 inc/php/sidebar.php:48
-msgid "Thanks for your support!"
-msgstr "Спасибо за вашу поддержку!"
-
-#: inc/php/sidebar.php:16
+#: inc/php/sidebar.php:17
 msgid "We are «Space X-Chimp»"
-msgstr ""
+msgstr "Мы «Space X-Chimp»"
 
-#: inc/php/sidebar.php:25
+#: inc/php/sidebar.php:28
 msgid "About"
 msgstr "О плагине"
 
-#: inc/php/sidebar.php:27
-msgid "This plugin allows you to easily add the \"Scroll to Top\" button to your website in a simple and elegant way."
-msgstr "Этот плагин позволяет легко добавлять кнопку «Scroll to Top» на ваш сайт в простой и элегантный способ."
+#: inc/php/sidebar.php:30
+msgid "This plugin gives you the ability to easily and safely add a \"Scroll to Top\" button to your WordPress website."
+msgstr "Этот плагин даёт вам возможность легко и безопасно добавлять кнопку «Scroll to Top» на ваш веб-сайт в простой и элегантный способ."
 
-#: inc/php/sidebar.php:32
+#: inc/php/sidebar.php:37
 msgid "Help"
 msgstr "Помощь"
 
-#: inc/php/sidebar.php:34
+#: inc/php/sidebar.php:39
 msgid "If you have a question, please read the information in the FAQ section."
 msgstr "Если у вас есть вопрос, пожалуйста ознакомьтесь с информацией в разделе FAQ."
+
+#: inc/php/sidebar.php:48 inc/php/tabs/settings.php:159
+msgid "Every little contribution helps to cover our costs and allows us to spend more time creating things for awesome people like you to enjoy."
+msgstr "Каждый небольшой вклад помогает покрыть наши расходы и позволяет нам тратить больше времени на создание вещей, которыми могут наслаждаться удивительные люди, такие как вы."
+
+#: inc/php/sidebar.php:53 inc/php/tabs/settings.php:164
+#: inc/php/tabs/support.php:21
+msgid "Donate with PayPal"
+msgstr "Пожертвовать через PayPal"
+
+#: inc/php/sidebar.php:55 inc/php/tabs/settings.php:166
+msgid "Thanks for your support!"
+msgstr "Спасибо за вашу поддержку!"
+
+#: inc/php/tabs/faq.php:13
+msgid "Frequently Asked Questions"
+msgstr "Часто задаваемые вопросы"
+
+#: inc/php/tabs/faq.php:17
+msgid "If you have a question, please read the Frequently Asked Questions below to see if the answer is here."
+msgstr "Если у вас есть вопрос, пожалуйста, прочтите часто задаваемые вопросы."
+
+#: inc/php/tabs/faq.php:42
+msgid "Where can I find a documentation for this plugin?"
+msgstr ""
+
+#: inc/php/tabs/faq.php:47
+#, php-format
+msgid "Please visit our %s Documentation site %s to view documentation."
+msgstr ""
+
+#: inc/php/tabs/faq.php:55
+msgid "Will this plugin work on my wordpress.COM website?"
+msgstr "Будет ли этот плагин работать на моем веб-сайте wordpress.COM?"
+
+#: inc/php/tabs/faq.php:58
+msgid "Sorry, this plugin is available for use only on self-hosted (wordpress.ORG) websites."
+msgstr "К сожалению, этот плагин доступен для использования только на самостоятельно размещённых веб-сайтах (wordpress.ORG)."
+
+#: inc/php/tabs/faq.php:60
+msgid "Please note that there is a difference between wordpress.COM and wordpress.ORG."
+msgstr ""
+
+#: inc/php/tabs/faq.php:61
+msgid "The wordpress.COM is a blog hosting service that offers a limited version of the popular self-hosted WordPress software."
+msgstr ""
+
+#: inc/php/tabs/faq.php:64
+#, php-format
+msgid "You can learn more about the difference here: %s ."
+msgstr ""
+
+#: inc/php/tabs/faq.php:71
+msgid "Will this plugin work/compatible with the theme I use?"
+msgstr ""
+
+#: inc/php/tabs/faq.php:74
+msgid "This plugin is compatible with most themes."
+msgstr ""
+
+#: inc/php/tabs/faq.php:75
+msgid "But, unfortunately, we cannot check it with all third-party themes (especially paid ones) for compatibility, therefore there are cases when this plugin does not work with a third-party theme."
+msgstr ""
+
+#: inc/php/tabs/faq.php:76
+msgid "We constantly check this plugin for compatibility with third-party themes."
+msgstr ""
+
+#: inc/php/tabs/faq.php:77
+msgid "If we find that this plugin is incompatible with a third-party theme, and if we can fix it on our part, we release an update of our plugin to fix the problem."
+msgstr ""
+
+#: inc/php/tabs/faq.php:79
+msgid "If you find a conflict between our plugin and a third-party theme, please let us know and we will definitely release an update of our plugin to fix the problem."
+msgstr ""
+
+#: inc/php/tabs/faq.php:83
+msgid "Will this plugin work/compatible with other plugins that I use?"
+msgstr ""
+
+#: inc/php/tabs/faq.php:86
+msgid "This plugin is compatible with most plugins."
+msgstr ""
+
+#: inc/php/tabs/faq.php:87
+msgid "But, unfortunately, we cannot check it with all third-party plugins (especially paid ones) for compatibility, therefore there are cases when this plugin does not work with a third-party plugin."
+msgstr ""
+
+#: inc/php/tabs/faq.php:88
+msgid "We constantly check this plugin for compatibility with third-party plugins."
+msgstr ""
+
+#: inc/php/tabs/faq.php:89
+msgid "If we find that this plugin is incompatible with a third-party plugin, and if we can fix it on our part, we release an update of our plugin to fix the problem."
+msgstr ""
+
+#: inc/php/tabs/faq.php:91
+msgid "If you find a conflict between our plugin and a third-party plugin, please let us know and we will definitely release an update of our plugin to fix the problem."
+msgstr ""
+
+#: inc/php/tabs/faq.php:95
+msgid "Can I use this plugin on my language?"
+msgstr "Можно ли использовать этот плагин на моём языке?"
+
+#: inc/php/tabs/faq.php:98
+msgid "Yes."
+msgstr "Да."
+
+#: inc/php/tabs/faq.php:99
+msgid "This plugin is ready for translation and has already been translated into several languages."
+msgstr "Этот плагин готов к переводу и уже переведен на несколько языков."
+
+#: inc/php/tabs/faq.php:100
+msgid "But If your language is not available then you can make one."
+msgstr ""
+
+#: inc/php/tabs/faq.php:101
+msgid "It is also possible that not all existing translations are up-to-date or correct, so you are welcome to make corrections."
+msgstr ""
+
+#: inc/php/tabs/faq.php:102
+msgid "Many of plugin users would be delighted if you share your translation with the community."
+msgstr "Многие пользователи плагинов будут рады, если вы поделитесь своим переводом с сообществом."
+
+#: inc/php/tabs/faq.php:103
+msgid "Thanks for your contribution!"
+msgstr "Спасибо за ваш вклад!"
+
+#: inc/php/tabs/faq.php:107
+#, php-format
+msgid "If you want to help translate this plugin, please visit the %s."
+msgstr "Если вы хотите помочь перевести этот плагин, пожалуйста, посетите %s."
+
+#: inc/php/tabs/faq.php:111
+msgid "You can also use the POT file that is included and placed in the \"languages\" folder to create a translation PO file."
+msgstr "Вы также можете использовать файл POT, который включён в плагин и помещён в папку «languages», чтобы создать PO файл перевода."
+
+#: inc/php/tabs/faq.php:114
+#, php-format
+msgid "Just send the PO file to us ( %s ) and we will include this translation within the next plugin update."
+msgstr "Просто отправьте нам файл PO на %s и мы включим этот перевод в следующее обновление плагина."
+
+#: inc/php/tabs/faq.php:121
+msgid "How does it work?"
+msgstr "Как это работает?"
+
+#: inc/php/tabs/faq.php:124
+msgid "On the \"Settings\" tab, select the desired settings and click the \"Save changes\" button."
+msgstr "На вкладке «Настройки» выберите нужные параметры и нажмите кнопку «Сохранить изменения»."
+
+#: inc/php/tabs/faq.php:125 inc/php/tabs/usage.php:20
+msgid "Enjoy your fancy \"Scroll to Top\" button."
+msgstr "Наслаждайтесь своей модной кнопкой «Прокрутить вверх»."
+
+#: inc/php/tabs/faq.php:126 inc/php/tabs/usage.php:20
+msgid "It's that simple!"
+msgstr "Это так просто!"
+
+#: inc/php/tabs/faq.php:130
+msgid "Is it possible to use different buttons/arrows?"
+msgstr "Можно ли использовать разные кнопки/стрелки?"
+
+#: inc/php/tabs/faq.php:133
+msgid "This plugin comes with the FontAwesome iconic font."
+msgstr ""
+
+#: inc/php/tabs/faq.php:134
+msgid "Now you can customize the button style using and combining 10 symbols and 4 backgrounds from FontAwesome library, in result you have 40 variations of buttons."
+msgstr ""
+
+#: inc/php/tabs/faq.php:135
+msgid "You can change the size of button, color (unlimited) of background, color (unlimited) of symbol and etc."
+msgstr ""
+
+#: inc/php/tabs/faq.php:136
+msgid "A future version may include more buttons, and/or the option to upload your own button graphics."
+msgstr ""
+
+#: inc/php/tabs/faq.php:140
+msgid "Does this plugin requires any modification of the theme?"
+msgstr "Этот плагин требует изменения темы?"
+
+#: inc/php/tabs/faq.php:143 inc/php/tabs/faq.php:151
+msgid "Absolutely not."
+msgstr "Абсолютно нет."
+
+#: inc/php/tabs/faq.php:144
+msgid "This plugin is configurable entirely from the plugin settings page."
+msgstr "Этот плагин настраивается полностью на странице настроек плагина."
+
+#: inc/php/tabs/faq.php:148
+msgid "Does this require any knowledge of HTML or CSS?"
+msgstr "Требуются ли какие-либо знания HTML или CSS?"
+
+#: inc/php/tabs/faq.php:152
+msgid "This plugin can be configured with no knowledge of HTML or CSS, using an easy-to-use plugin settings page."
+msgstr "Этот плагин можно настроить без знания HTML или CSS, с помощью простой в использовании страницы настройки плагина."
+
+#: inc/php/tabs/faq.php:156
+msgid "It's not working."
+msgstr "Оно не работает."
+
+#: inc/php/tabs/faq.php:157
+msgid "What could be wrong?"
+msgstr "Что может быть не так?"
+
+#: inc/php/tabs/faq.php:160
+msgid "As with every plugin, it's possible that things don't work."
+msgstr "Как и в случае с любым другим плагином, что-то может не работать."
+
+#: inc/php/tabs/faq.php:161
+msgid "It's impossible to tell what could be wrong exactly."
+msgstr "Невозможно точно сказать, что может быть не так."
+
+#: inc/php/tabs/faq.php:162
+msgid "The most common reason for this is a web browser's cache."
+msgstr "Наиболее распространённой причиной этого является кеш веб-браузера."
+
+#: inc/php/tabs/faq.php:163
+msgid "Every web browser stores a cache of the websites you visit (pages, images, and etc.) to reduce bandwidth usage and server load."
+msgstr "Каждый веб-браузер хранит кеш веб-сайтов, которые вы посещаете (страницы, изображения и т. д.) для того, чтобы уменьшить использование интернет канала и нагрузку на сервер."
+
+#: inc/php/tabs/faq.php:164
+msgid "This is called the browser's cache."
+msgstr "Это называется кешем браузера."
+
+#: inc/php/tabs/faq.php:165
+msgid "Clearing your browser's cache may solve the problem."
+msgstr "Очистка кеша браузера может решить проблему."
+
+#: inc/php/tabs/faq.php:167
+msgid "If you post a support request in the plugin's support forum on WordPress.org, we'd be happy to give it a look and try to help out."
+msgstr "Если вы разместите запрос поддержки на форуме поддержки плагина на WordPress.org, то мы с радостью посмотрим и попытаемся помочь."
+
+#: inc/php/tabs/faq.php:168 inc/php/tabs/faq.php:197
+msgid "Please include as much information as possible, including a link to your website where the problem can be seen."
+msgstr "Пожалуйста, укажите как можно больше информации, включая ссылку на ваш веб-сайт, на котором можно увидеть проблему."
+
+#: inc/php/tabs/faq.php:172
+msgid "The last WordPress update is preventing me from editing my website that is using this plugin."
+msgstr "Последнее обновление WordPress не позволяет мне редактировать мой веб-сайт, на котором используется этот плагин."
+
+#: inc/php/tabs/faq.php:173
+msgid "Why is this?"
+msgstr "Почему так?"
+
+#: inc/php/tabs/faq.php:176
+msgid "This plugin can not cause such problem."
+msgstr "Этот плагин не может вызвать такую проблему."
+
+#: inc/php/tabs/faq.php:177
+msgid "More likely, the problem are related to the settings of the website."
+msgstr "Скорее всего, проблема связана с настройками веб-сайта."
+
+#: inc/php/tabs/faq.php:178
+msgid "It could just be a cache, so please try to clear your website's cache (may be you using a caching plugin, or some web service such as the CloudFlare) and then the cache of your web browser."
+msgstr "Это может быть кеш, поэтому попробуйте очистить кеш вашего веб-сайта (возможно, вы используете плагин для кеширования или какой-либо веб-сервис, такой как CloudFlare), а затем кеш вашего веб-браузера."
+
+#: inc/php/tabs/faq.php:179
+msgid "Also please try to re-login to the website, this too can help."
+msgstr "Также, пожалуйста, попробуйте повторно войти на веб-сайт, это тоже может помочь."
+
+#: inc/php/tabs/faq.php:183
+msgid "Where to report bug if found?"
+msgstr "Где можно сообщить об ошибке?"
+
+#: inc/php/tabs/faq.php:186
+msgid "Bug reports are very welcome!"
+msgstr ""
+
+#: inc/php/tabs/faq.php:189
+#, php-format
+msgid "Please visit our %s contact page %s and report."
+msgstr ""
+
+#: inc/php/tabs/faq.php:194 inc/php/tabs/faq.php:222
+msgid "Please do not forget to specify the name of the plugin."
+msgstr "Пожалуйста не забудьте указать название плагина."
+
+#: inc/php/tabs/faq.php:195 inc/php/tabs/faq.php:223 inc/php/tabs/faq.php:239
+msgid "Thank you!"
+msgstr "Спасибо!"
+
+#: inc/php/tabs/faq.php:198
+msgid "Describe in more detail what exactly you are seeing."
+msgstr ""
+
+#: inc/php/tabs/faq.php:199
+msgid "Here are some examples:"
+msgstr ""
+
+#: inc/php/tabs/faq.php:202
+msgid "Elements of the plugin settings page are not working."
+msgstr ""
+
+#: inc/php/tabs/faq.php:203
+msgid "An error message is displayed on the plugin settings page."
+msgstr ""
+
+#: inc/php/tabs/faq.php:204
+msgid "An error message is displayed on the front end of website."
+msgstr ""
+
+#: inc/php/tabs/faq.php:205
+msgid "An error message is displayed on the back end of website."
+msgstr ""
+
+#: inc/php/tabs/faq.php:206
+msgid "Website is crashed."
+msgstr ""
+
+#: inc/php/tabs/faq.php:211
+msgid "Where to share any ideas or suggestions to make the plugin better?"
+msgstr "Где можно поделиться идеями или предложениями, чтобы сделать плагин лучше?"
+
+#: inc/php/tabs/faq.php:214
+msgid "Any suggestions are very welcome!"
+msgstr "Любые предложения приветствуются!"
+
+#: inc/php/tabs/faq.php:217
+#, php-format
+msgid "Please visit our %s contact page %s."
+msgstr ""
+
+#: inc/php/tabs/faq.php:227
+msgid "I love this plugin!"
+msgstr "Мне нравится этот плагин!"
+
+#: inc/php/tabs/faq.php:228
+msgid "Can I help somehow?"
+msgstr "Могу Я чем-то помочь?"
+
+#: inc/php/tabs/faq.php:231
+msgid "Yes, any contributions are very welcome!"
+msgstr "Да, любой вклад приветствуется!"
+
+#: inc/php/tabs/faq.php:234
+#, php-format
+msgid "Please visit our %s Support Us %s page."
+msgstr "Пожалуйста, посетите нашу страницу %s Поддержите нас %s ."
+
+#: inc/php/tabs/faq.php:243
+msgid "Where can I find information about your licenses, payment process and refunds?"
+msgstr ""
+
+#: inc/php/tabs/faq.php:248
+#, php-format
+msgid "Answers to common questions about our licenses, payment process and refunds can be found on our %s Common Questions %s page."
+msgstr ""
+
+#: inc/php/tabs/faq.php:256
+msgid "Where can I find information about your customer support?"
+msgstr ""
+
+#: inc/php/tabs/faq.php:261
+#, php-format
+msgid "Answers to common questions about our customer support can be found on our %s Common Questions %s page."
+msgstr ""
+
+#: inc/php/tabs/faq.php:269
+msgid "Where can I find information about your affiliate program?"
+msgstr ""
+
+#: inc/php/tabs/faq.php:274
+#, php-format
+msgid "Answers to common questions about our affiliate program can be found on our %s Common Questions %s page."
+msgstr ""
+
+#: inc/php/tabs/faq.php:282
+msgid "My question wasn't answered here."
+msgstr "На мой вопрос здесь не было ответа."
+
+#: inc/php/tabs/faq.php:287
+#, php-format
+msgid "You can ask your question on %s this page %s."
+msgstr "Вы можете задать ваш вопрос на %s этой странице %s."
+
+#: inc/php/tabs/faq.php:292
+msgid "But please keep in mind that this plugin is free, and there is no a special support team, so we have no way to answer everyone."
+msgstr "Но имейте в виду, что этот плагин является бесплатным и без специальной поддержки, поэтому у нас нет возможности ответить на все вопросы."
+
+#: inc/php/tabs/settings.php:33 inc/php/tabs/settings.php:138
+msgid "Save changes"
+msgstr "Сохранить изменения"
+
+#: inc/php/tabs/settings.php:38
+msgid "Button"
+msgstr "Кнопка"
+
+#: inc/php/tabs/settings.php:40
+msgid "Here you can customize the button."
+msgstr "Здесь вы можете настроить кнопку."
+
+#: inc/php/tabs/settings.php:56
+msgid "Symbol"
+msgstr "Символ"
+
+#: inc/php/tabs/settings.php:57
+msgid "Select the symbol of the button by choosing one of the ten variants above."
+msgstr "Выберите символ кнопки, выбрав один из десяти вариантов выше."
+
+#: inc/php/tabs/settings.php:65
+msgid "Without background"
+msgstr "Без фона"
+
+#: inc/php/tabs/settings.php:67
+msgid "Background shape"
+msgstr "Форма фона"
+
+#: inc/php/tabs/settings.php:68
+msgid "Select the background of the button by choosing one of the four variants above."
+msgstr "Выберите фон кнопки, выбрав один из четырех вариантов выше."
+
+#: inc/php/tabs/settings.php:72
+msgid "Color"
+msgstr "Цвет"
+
+#: inc/php/tabs/settings.php:75
+msgid "Symbol color"
+msgstr "Цвет символа"
+
+#: inc/php/tabs/settings.php:76
+msgid "Select the color of symbol inside button. You can also add html HEX color code."
+msgstr "Выберите цвет символа кнопки. Вы также можете добавить html HEX код цвета."
+
+#: inc/php/tabs/settings.php:80
+msgid "Background color"
+msgstr "Цвет фона"
+
+#: inc/php/tabs/settings.php:81
+msgid "Select the background color of button. You can also add html HEX color code."
+msgstr "Выберите цвет фона кнопки. Вы также можете добавить html HEX код цвета."
+
+#: inc/php/tabs/settings.php:85
+msgid "Size"
+msgstr "Размер"
+
+#: inc/php/tabs/settings.php:88
+msgid "Button size"
+msgstr "Размер кнопки"
+
+#: inc/php/tabs/settings.php:89
+msgid "You can set the size of button (in pixels). The default size is 32 pixels."
+msgstr "Вы можете установить размер кнопки (в пикселях). Размер по умолчанию - 32 пикселя."
+
+#: inc/php/tabs/settings.php:98
+msgid "Effects"
+msgstr "Эффекты"
+
+#: inc/php/tabs/settings.php:100
+msgid "Here you can customize the effects."
+msgstr ""
+
+#: inc/php/tabs/settings.php:104
+msgid "Transparency"
+msgstr "Прозрачность"
+
+#: inc/php/tabs/settings.php:105
+msgid "Enable the transparency of the button."
+msgstr "Включить прозрачность кнопки."
+
+#: inc/php/tabs/settings.php:108
+msgid "Scroll duration"
+msgstr "Длительность прокрутки"
+
+#: inc/php/tabs/settings.php:109
+msgid "Duration is given in milliseconds. Higher values indicate slower animation (speed/smoothness), not faster ones. The default duration is 300 milliseconds."
+msgstr "Продолжительность задается в миллисекундах. Более высокие значения указывают на более медленную анимацию (скорость/гладкость), а не более быструю. Продолжительность по умолчанию - 300 миллисекунд."
+
+#: inc/php/tabs/settings.php:118
+msgid "Autoload"
+msgstr ""
+
+#: inc/php/tabs/settings.php:120
+msgid "Here you can configure the autoload."
+msgstr ""
+
+#: inc/php/tabs/settings.php:125
+msgid "Every frontend page"
+msgstr "Каждая передняя страница"
+
+#: inc/php/tabs/settings.php:126
+msgid "Home Page Only"
+msgstr "Только Главная Страница"
+
+#: inc/php/tabs/settings.php:128
+msgid "Display button on"
+msgstr "Отображать кнопку на"
+
+#: inc/php/tabs/settings.php:129
+msgid "Select where button need to be appeared."
+msgstr "Выберите, где кнопка должна показываться."
+
+#: inc/php/tabs/settings.php:143
+msgid "Live preview"
+msgstr "Просмотр в реальном времени"
+
+#: inc/php/tabs/support.php:13
+msgid "Support Us"
+msgstr "Поддержать нас"
+
+#: inc/php/tabs/support.php:28
+#, php-format
+msgid "My name is %s Arthur %s, I'm the founder of %s Space X-Chimp %s, which unites a small international team of young people."
+msgstr "Меня зовут %s Артур %s и Я основатель %s Space X-Chimp %s, который объединяет небольшую международную команду молодых людей."
+
+#: inc/php/tabs/support.php:37
+msgid "Our intention is to create projects that will make this world a better place."
+msgstr ""
+
+#: inc/php/tabs/support.php:38
+msgid "Our motto is - «Follow your dreams and don’t give up»."
+msgstr ""
+
+#: inc/php/tabs/support.php:39
+msgid "We are really passionate about our work, we like what we are doing and hope that you will be enriched by our projects too."
+msgstr ""
+
+#: inc/php/tabs/support.php:42
+msgid "We spend a lot of time and effort trying to make sure that the themes, plugins and other things we build are useful, and the ultimate proof of that for us is that you actually want to use them."
+msgstr "Мы тратим много времени и усилий, пытаясь убедиться в том, что темы, плагины и другие вещи, которые мы создаём, полезны, и окончательное доказательство этого для нас то, что вы на самом деле хотите их использовать."
+
+#: inc/php/tabs/support.php:43
+msgid "But we are an independent developers, without a regular income, so every little contribution helps to cover our costs and allows us to spend more time creating things for awesome people like you to enjoy."
+msgstr "Но мы независимые разработчики, без регулярного дохода, так что каждый небольшой вклад помогает покрыть наши расходы и позволяет нам тратить больше времени на создание вещей, которыми могут наслаждаться удивительные люди, такие как вы."
+
+#: inc/php/tabs/support.php:46
+msgid "If you appreciate our work, you can buy us a cup of coffee!"
+msgstr "Если вы цените мою работу, то вы можете купить мне кофе!"
+
+#: inc/php/tabs/support.php:49
+msgid "Thank you for your support!"
+msgstr "Спасибо за вашу поддержку!"
+
+#: inc/php/tabs/usage.php:13
+msgid "Usage Instructions"
+msgstr "Инструкция по использованию"
+
+#: inc/php/tabs/usage.php:15
+msgid "To display the \"Scroll to Top\" button on the front end of your website, simply follow these steps:"
+msgstr "Чтобы отобразить кнопку «Прокрутить вверх» на передней панели вашего веб-сайта, выполните следующие действия:"
+
+#: inc/php/tabs/usage.php:17
+msgid "Go to the \"Settings\" tab on this page."
+msgstr "Перейдите на вкладку «Настройки»."
+
+#: inc/php/tabs/usage.php:18
+msgid "Select the desired settings."
+msgstr "Выберите нужные настройки."
+
+#: inc/php/tabs/usage.php:19
+msgid "Click the \"Save changes\" button."
+msgstr "Нажмите кнопку «Сохранить изменения»."
+
+#: inc/php/tabs/usage.php:25
+#, php-format
+msgid "If you want more options, then %s let us know %s and we will be happy to add them."
+msgstr "Если вы хотите больше вариантов, то %s сообщите нам %s и мы будем рады добавить их."
 
 #. Plugin Name of the plugin/theme
 msgid "Simple Scroll to Top Button"
@@ -398,8 +669,8 @@ msgid "https://github.com/ArthurGareginyan/simple-scroll-to-top-button"
 msgstr "https://github.com/ArthurGareginyan/simple-scroll-to-top-button"
 
 #. Description of the plugin/theme
-msgid "Easily add cross browser \"Scroll to Top\" button to your website. It will be responsive and compatible with all major browsers. It will work with any theme!"
-msgstr "Легко добавьте кросс-браузерную кнопку «Scroll to Top» на ваш вебсайта. Она будет responsive и совместима со всеми основными браузерами. Она будет работать с любой темой!"
+msgid "Easily and safely add a \"Scroll to Top\" button to your WordPress website."
+msgstr "Легко и безопасно добавьте кнопку «Scroll to Top» на ваш веб-сайта."
 
 #. Author of the plugin/theme
 msgid "Space X-Chimp"
@@ -409,11 +680,14 @@ msgstr "Space X-Chimp"
 msgid "https://www.spacexchimp.com"
 msgstr "https://www.spacexchimp.com"
 
-#~ msgid "Note!"
-#~ msgstr "Примечание!"
+#~ msgid "Main Settings"
+#~ msgstr "Основные Настройки"
 
-#~ msgid "Hello! My name is %s Arthur %s and I'm the founder of %s Space X-Chimp %s."
-#~ msgstr "Привет! Меня зовут %s Артур %s и Я основатель %s Space X-Chimp %s."
+#~ msgid "Button symbol"
+#~ msgstr "Символ кнопки"
 
-#~ msgid "My intention is to create projects that will make this world a better place. I'm really passionate about my work, I like what I'm doing and hope that you will be enriched by my projects too."
-#~ msgstr "Я намерен создать проекты, которые сделают этот мир лучшим местом. Я очень увлечен своей работой, мне нравится то, что Я делаю и надеюсь, что вы тоже станете лучше благодаря моим проектам."
+#~ msgid "Enable \"Scroll to Top\" button"
+#~ msgstr "Включить кнопку “Прокрутить вверх”"
+
+#~ msgid "Enable or disable this plugin."
+#~ msgstr "Включить или выключить этот плагин."

@@ -164,8 +164,8 @@ msgctxt "Libre Franklin font: on or off"
 msgid "on"
 msgstr "on"
 
-#: functions.php:64 functions.php:203
-#: template-parts/navigation/navigation-top.php:12
+#: template-parts/navigation/navigation-top.php:12 functions.php:64
+#: functions.php:203
 msgid "Top Menu"
 msgstr "Верхнее меню"
 
@@ -185,7 +185,7 @@ msgstr "Извините, по вашему запросу ничего не н�
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr "Готовы опубликовать свою первую запись? <a href=\"%1$s\">Начните отсюда</a>."
 
-#: search.php:21 template-parts/post/content-none.php:17
+#: template-parts/post/content-none.php:17 search.php:21
 msgid "Nothing Found"
 msgstr "Не найдено"
 
@@ -221,12 +221,12 @@ msgid "Search Results for: %s"
 msgstr "Результаты поиска для: %s"
 
 #. translators: %s: Name of current post
-#: functions.php:390 template-parts/post/content-gallery.php:71
-#: template-parts/post/content.php:57 template-parts/post/content-image.php:61
-#: template-parts/post/content-audio.php:84
-#: template-parts/post/content-video.php:83
-#: template-parts/page/content-front-page.php:42
 #: template-parts/page/content-front-page-panels.php:45
+#: template-parts/page/content-front-page.php:42
+#: template-parts/post/content-audio.php:84 template-parts/post/content.php:57
+#: template-parts/post/content-gallery.php:71
+#: template-parts/post/content-video.php:83
+#: template-parts/post/content-image.php:61 functions.php:390
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr "Читать далее<span class=\"screen-reader-text\"> «%s»</span>"
 
@@ -243,11 +243,11 @@ msgstr "Тема Twenty Seventeen требует WordPress версии 4.7 ил
 msgid "Edit<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr "Изменить<span class=\"screen-reader-text\"> «%s»</span>"
 
-#: template-parts/post/content-gallery.php:78
-#: template-parts/post/content.php:64 template-parts/post/content-image.php:68
-#: template-parts/post/content-audio.php:91
-#: template-parts/post/content-video.php:90
 #: template-parts/page/content-page.php:26
+#: template-parts/post/content-audio.php:91 template-parts/post/content.php:64
+#: template-parts/post/content-gallery.php:78
+#: template-parts/post/content-video.php:90
+#: template-parts/post/content-image.php:68
 msgid "Pages:"
 msgstr "Страницы:"
 
@@ -255,7 +255,7 @@ msgstr "Страницы:"
 msgid "Menu"
 msgstr "Меню"
 
-#: header.php:27
+#: header.php:28
 msgid "Skip to content"
 msgstr "Перейти к содержимому"
 
@@ -298,7 +298,7 @@ msgctxt "comments title"
 msgid "One Reply to &ldquo;%s&rdquo;"
 msgstr "%s: 1 комментарий"
 
-#: index.php:54 archive.php:50 search.php:47
+#: archive.php:50 search.php:47 index.php:54
 msgid "Page"
 msgstr "Страница"
 
@@ -310,11 +310,11 @@ msgstr "Ой! Страница не найдена."
 msgid "It looks like nothing was found at this location. Maybe try a search?"
 msgstr "По данному адресу ничего не найдено. Попробуйте воспользоваться поиском."
 
-#: index.php:52 archive.php:48 search.php:45
+#: archive.php:48 search.php:45 index.php:52
 msgid "Previous page"
 msgstr "Предыдущая страница"
 
-#: index.php:53 archive.php:49 search.php:46
+#: archive.php:49 search.php:46 index.php:53
 msgid "Next page"
 msgstr "Следующая страница"
 

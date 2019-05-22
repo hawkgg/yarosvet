@@ -2,10 +2,10 @@
 /**
  * Plugin Name: Simple Scroll to Top Button
  * Plugin URI: https://github.com/ArthurGareginyan/simple-scroll-to-top-button
- * Description: Easily add cross browser "Scroll to Top" button to your website. It will be responsive and compatible with all major browsers. It will work with any theme!
+ * Description: Easily and safely add a "Scroll to Top" button to your WordPress website.
  * Author: Space X-Chimp
  * Author URI: https://www.spacexchimp.com
- * Version: 4.26
+ * Version: 4.33
  * License: GPL3
  * Text Domain: simple-scroll-to-top-button
  * Domain Path: /languages/
@@ -52,7 +52,7 @@ $plugin_data = get_file_data( __FILE__,
                             );
 function spacexchimp_p008_define_constants( $constant_name, $value ) {
     $constant_name = 'SPACEXCHIMP_P008_' . $constant_name;
-    if ( !defined( $constant_name ) )
+    if ( ! defined( $constant_name ) )
         define( $constant_name, $value );
 }
 spacexchimp_p008_define_constants( 'FILE', __FILE__ );
@@ -68,13 +68,38 @@ spacexchimp_p008_define_constants( 'PREFIX', 'spacexchimp_p008' );
 spacexchimp_p008_define_constants( 'SETTINGS', 'spacexchimp_p008' );
 
 /**
+ * A useful function that returns an array with the contents of plugin constants
+ */
+function spacexchimp_p008_plugin() {
+    $array = array(
+        'file'     => SPACEXCHIMP_P008_FILE,
+        'dir'      => SPACEXCHIMP_P008_DIR,
+        'base'     => SPACEXCHIMP_P008_BASE,
+        'url'      => SPACEXCHIMP_P008_URL,
+        'path'     => SPACEXCHIMP_P008_PATH,
+        'slug'     => SPACEXCHIMP_P008_SLUG,
+        'name'     => SPACEXCHIMP_P008_NAME,
+        'version'  => SPACEXCHIMP_P008_VERSION,
+        'text'     => SPACEXCHIMP_P008_TEXT,
+        'prefix'   => SPACEXCHIMP_P008_PREFIX,
+        'settings' => SPACEXCHIMP_P008_SETTINGS
+    );
+    return $array;
+}
+
+/**
+ * Put value of plugin constants into an array for easier access
+ */
+$plugin = spacexchimp_p008_plugin();
+
+/**
  * Load the plugin modules
  */
-require_once( SPACEXCHIMP_P008_PATH . 'inc/php/core.php' );
-require_once( SPACEXCHIMP_P008_PATH . 'inc/php/upgrade.php' );
-require_once( SPACEXCHIMP_P008_PATH . 'inc/php/versioning.php' );
-require_once( SPACEXCHIMP_P008_PATH . 'inc/php/enqueue.php' );
-require_once( SPACEXCHIMP_P008_PATH . 'inc/php/functional.php' );
-require_once( SPACEXCHIMP_P008_PATH . 'inc/php/controls.php' );
-require_once( SPACEXCHIMP_P008_PATH . 'inc/php/page.php' );
-require_once( SPACEXCHIMP_P008_PATH . 'inc/php/messages.php' );
+require_once( $plugin['path'] . 'inc/php/core.php' );
+require_once( $plugin['path'] . 'inc/php/upgrade.php' );
+require_once( $plugin['path'] . 'inc/php/versioning.php' );
+require_once( $plugin['path'] . 'inc/php/enqueue.php' );
+require_once( $plugin['path'] . 'inc/php/functional.php' );
+require_once( $plugin['path'] . 'inc/php/controls.php' );
+require_once( $plugin['path'] . 'inc/php/page.php' );
+require_once( $plugin['path'] . 'inc/php/messages.php' );

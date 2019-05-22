@@ -1637,6 +1637,9 @@ body.toplevel_page_maxmegamenu .megamenu_right {
       height: auto;
       min-height: 150px;
       border: 1px solid #aaa; }
+    body[class*='_page_maxmegamenu_'] .megamenu_right .menu_settings table div.CodeMirror span.CodeMirror-matchingbracket,
+    body.toplevel_page_maxmegamenu .megamenu_right .menu_settings table div.CodeMirror span.CodeMirror-matchingbracket {
+      color: green; }
     body[class*='_page_maxmegamenu_'] .megamenu_right .menu_settings table .CodeMirror-scroll,
     body.toplevel_page_maxmegamenu .megamenu_right .menu_settings table .CodeMirror-scroll {
       min-height: 150px; }
@@ -1672,7 +1675,7 @@ body.toplevel_page_maxmegamenu .megamenu_right {
           display: block;
           float: left;
           font-size: 0.9em;
-          color: #aaa;
+          color: #777;
           line-height: 20px;
           width: 100%; }
           body[class*='_page_maxmegamenu_'] .megamenu_right .menu_settings table td.mega-value .mega-info:before,
@@ -1867,7 +1870,7 @@ body.toplevel_page_maxmegamenu .megamenu_right {
     body.toplevel_page_maxmegamenu .megamenu_right .menu_settings table label span.mega-short-desc {
       font-size: 0.8em;
       text-transform: uppercase;
-      color: #aaa;
+      color: #777;
       display: block;
       margin: 0 0 2px 1px; }
     body[class*='_page_maxmegamenu_'] .megamenu_right .menu_settings table label.mega-copy_color,

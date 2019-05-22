@@ -79,6 +79,9 @@ class Mega_Menu_Walker extends Walker_Nav_Menu {
 
         $class = join( ' ', apply_filters( 'megamenu_nav_menu_css_class', array_filter( $classes ), $item, $args ) );
 
+        // these classes are prepended with 'mega-'
+        $mega_classes = explode( ' ', $class);
+
         // strip widget classes back to how they're intended to be output
         $class = str_replace( "mega-menu-widget-class-", "", $class );
 
@@ -122,17 +125,18 @@ class Mega_Menu_Walker extends Walker_Nav_Menu {
 				$atts['class'] = 'mega-custom-icon';
 			}
 
-			$atts = apply_filters( 'megamenu_nav_menu_link_attributes', $atts, $item, $args );
+			if ( in_array('menu-item-has-children', $classes ) && $item->parent_submenu_type == 'flyout') {
 
-			if ( strlen( $atts['class'] ) ) {
-			    $atts['class'] = $atts['class'] . ' mega-menu-link';
-			} else {
-			    $atts['class'] = 'mega-menu-link';
-			}
+				$atts['aria-haspopup'] = "true"; // required for Surface/Win10/Edge
+				$atts['aria-expanded'] = "false";
 
-			// required for Surface/Win10/Edge
-			if ( in_array('menu-item-has-children', $classes ) ) {
-				$atts['aria-haspopup'] = "true";
+				if ( in_array('mega-toggle-on', $mega_classes ) ) {
+					$atts['aria-expanded'] = "true";
+				}
+
+				if ( $settings['disable_link'] == 'true' ) {
+					$atts['role'] = 'button';
+				}
 			}
 
 			if ( $depth == 0 ) {
@@ -141,6 +145,14 @@ class Mega_Menu_Walker extends Walker_Nav_Menu {
 
 			if ( $settings['hide_text'] == 'true' ) {
 				$atts['aria-label'] = $item->title;
+			}
+
+			$atts = apply_filters( 'megamenu_nav_menu_link_attributes', $atts, $item, $args );
+
+			if ( strlen( $atts['class'] ) ) {
+			    $atts['class'] = $atts['class'] . ' mega-menu-link';
+			} else {
+			    $atts['class'] = 'mega-menu-link';
 			}
 
 			$attributes = '';

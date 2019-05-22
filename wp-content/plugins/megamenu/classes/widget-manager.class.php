@@ -15,6 +15,8 @@ if ( ! class_exists('Mega_Menu_Widget_Manager') ) :
  */
 class Mega_Menu_Widget_Manager {
 
+    var $mega_menu_widgets = false;
+
     /**
      * Constructor
      *
@@ -38,6 +40,8 @@ class Mega_Menu_Widget_Manager {
         add_action( 'megamenu_after_widget_add', array( $this, 'clear_caches' ) );
         add_action( 'megamenu_after_widget_save', array( $this, 'clear_caches' ) );
         add_action( 'megamenu_after_widget_delete', array( $this, 'clear_caches' ) );
+
+        $this->mega_menu_widgets = $this->get_mega_menu_sidebar_widgets();
 
     }
 
@@ -348,20 +352,22 @@ class Mega_Menu_Widget_Manager {
      * @since 1.5
      * @return array
      */
-    private function get_second_level_menu_items( $parent_menu_item_id, $menu_id ) {
+    private function get_second_level_menu_items( $parent_menu_item_id, $menu_id, $menu_items = false ) {
 
-        $items = array();
+        $second_level_items = array();
 
         // check we're using a valid menu ID
         if ( ! is_nav_menu( $menu_id ) ) {
-            return $items;
+            return $second_level_items;
         }
 
-        $menu = wp_get_nav_menu_items( $menu_id );
+        if ( ! $menu_items ) {
+            $menu_items = wp_get_nav_menu_items( $menu_id );
+        }
 
-        if ( count( $menu ) ) {
+        if ( count( $menu_items ) ) {
 
-            foreach ( $menu as $item ) {
+            foreach ( $menu_items as $item ) {
 
                 // find the child menu items
                 if ( $item->menu_item_parent == $parent_menu_item_id ) {
@@ -370,7 +376,7 @@ class Mega_Menu_Widget_Manager {
 
                     $settings = array_merge( Mega_Menu_Nav_Menus::get_menu_item_defaults(), $saved_settings );
 
-                    $items[ $item->ID ] = array(
+                    $second_level_items[ $item->ID ] = array(
                         'id' => $item->ID,
                         'type' => 'menu_item',
                         'title' => $item->title,
@@ -384,7 +390,7 @@ class Mega_Menu_Widget_Manager {
 
         }
 
-        return $items;
+        return $second_level_items;
     }
 
     /**
@@ -397,9 +403,9 @@ class Mega_Menu_Widget_Manager {
 
         $widgets = array();
 
-        if ( $mega_menu_widgets = $this->get_mega_menu_sidebar_widgets() ) {
+        if ( $this->mega_menu_widgets ) {
 
-            foreach ( $mega_menu_widgets as $widget_id ) {
+            foreach ( $this->mega_menu_widgets as $widget_id ) {
 
                 $settings = $this->get_settings_for_widget_id( $widget_id );
 
@@ -476,18 +482,18 @@ class Mega_Menu_Widget_Manager {
      * @since 2.4
      * @return array
      */
-    public function get_grid_widgets_and_menu_items_for_menu_id( $parent_menu_item_id, $menu_id ) {
+    public function get_grid_widgets_and_menu_items_for_menu_id( $parent_menu_item_id, $menu_id, $menu_items = false ) {
 
         $meta = get_post_meta($parent_menu_item_id, '_megamenu', true);
 
         $saved_grid = array();
         
         if ( isset( $meta['grid'] ) ) {
-            $saved_grid = $this->populate_saved_grid_data( $parent_menu_item_id, $menu_id, $meta['grid'] );
+            $saved_grid = $this->populate_saved_grid_data( $parent_menu_item_id, $menu_id, $meta['grid'], $menu_items );
         } else {
             // return empty row
             $saved_grid[0]['columns'][0]['meta']['span'] = 3;
-            $saved_grid = $this->populate_saved_grid_data( $parent_menu_item_id, $menu_id, $saved_grid );
+            $saved_grid = $this->populate_saved_grid_data( $parent_menu_item_id, $menu_id, $saved_grid, $menu_items );
 
         }
 
@@ -504,9 +510,9 @@ class Mega_Menu_Widget_Manager {
      * @since 2.4
      * @return array
      */
-    public function populate_saved_grid_data( $parent_menu_item_id, $menu_id, $saved_grid ) {
+    public function populate_saved_grid_data( $parent_menu_item_id, $menu_id, $saved_grid, $menu_items ) {
 
-        $second_level_menu_items = $this->get_second_level_menu_items( $parent_menu_item_id, $menu_id );
+        $second_level_menu_items = $this->get_second_level_menu_items( $parent_menu_item_id, $menu_id, $menu_items );
 
         $menu_items_included = array();
 
@@ -1193,6 +1199,8 @@ class Mega_Menu_Widget_Manager {
         $sidebar_widgets[ 'mega-menu' ] = $widgets;
 
         wp_set_sidebars_widgets( $sidebar_widgets );
+
+        $this->mega_menu_widgets = $this->get_mega_menu_sidebar_widgets();
 
     }
 

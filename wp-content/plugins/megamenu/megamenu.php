@@ -4,11 +4,21 @@
  * Plugin Name: Max Mega Menu
  * Plugin URI:  https://www.megamenu.com
  * Description: An easy to use mega menu plugin. Written the WordPress way.
- * Version:     2.5.3.2
+ * Version:     2.6
  * Author:      megamenu.com
  * Author URI:  https://www.megamenu.com
  * License:     GPL-2.0+
- * Copyright:   2018 Tom Hemsley (https://www.megamenu.com)
+ * Copyright:   2019 Tom Hemsley (https://www.megamenu.com)
+ *
+ * Max Mega Menu is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 2 of the License, or
+ * any later version.
+ *
+ * Max Mega Menu is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -26,7 +36,7 @@ final class Mega_Menu {
     /**
      * @var string
      */
-    public $version = '2.5.3.2';
+    public $version = '2.6';
 
 
     /**
@@ -132,8 +142,6 @@ final class Mega_Menu {
      * @since 1.8.3
      */
     public function admin_enqueue_scripts( $hook ) {
-        wp_enqueue_style( 'maxmegamenu-global', MEGAMENU_BASE_URL . 'css/admin/global.css', array(), MEGAMENU_VERSION );
-
         if ( ! wp_script_is('maxmegamenu') ) {
             if ( 'nav-menus.php' == $hook ) {
                 // load widget scripts and styles first to allow us to dequeue conflicting colorbox scripts from other plugins
@@ -442,6 +450,9 @@ final class Mega_Menu {
      * @since 1.3
      */
     public function add_responsive_toggle( $nav_menu, $args ) {
+
+        $args = (object) $args;
+        
         // make sure we're working with a Mega Menu
         if ( ! is_a( $args->walker, 'Mega_Menu_Walker' ) )
             return $nav_menu;
@@ -454,7 +465,7 @@ final class Mega_Menu {
 
         $content = apply_filters( "megamenu_toggle_bar_content", $content, $nav_menu, $args, $theme_id );
 
-        $replace = $find . '<div class="mega-menu-toggle" tabindex="0">' . $content . '</div>';
+        $replace = $find . '<div class="mega-menu-toggle">' . $content . '</div>';
 
         return str_replace( $find, $replace, $nav_menu );
     }
@@ -470,6 +481,9 @@ final class Mega_Menu {
      * @return array - Menu objects including widgets
      */
     public function add_widgets_to_menu( $items, $args ) {
+
+        $args = (object) $args;
+
         // make sure we're working with a Mega Menu
         if ( ! is_a( $args->walker, 'Mega_Menu_Walker' ) ) {
             return $items;
@@ -499,7 +513,7 @@ final class Mega_Menu {
 
                     $widget_position = 0;
                     $total_widgets_in_menu = count( $panel_widgets );
-                    $next_order = $this->menu_order_of_next_sibling( $item->ID, $item->menu_item_parent,  $items );
+                    $next_order = $this->menu_order_of_next_sibling( $item->ID, $item->menu_item_parent, $items );
 
                     if ( ! in_array( 'menu-item-has-children', $item->classes ) ) {
                         $item->classes[] = 'menu-item-has-children';
@@ -539,7 +553,7 @@ final class Mega_Menu {
             // populate grid sub menus
             if ( $item->depth === 0 && $item->megamenu_settings['type'] == 'grid' || ( $item->depth === 1 && $item->parent_submenu_type == 'tabbed' && $item->megamenu_settings['type'] == 'grid' ) ) {
 
-                $saved_grid = $widget_manager->get_grid_widgets_and_menu_items_for_menu_id( $item->ID, $args->menu->term_id );
+                $saved_grid = $widget_manager->get_grid_widgets_and_menu_items_for_menu_id( $item->ID, $args->menu->term_id, $items );
 
                 $next_order = $this->menu_order_of_next_sibling( $item->ID, $item->menu_item_parent, $items) - 999;
 
@@ -801,7 +815,6 @@ final class Mega_Menu {
      */
     public function reorder_menu_items_within_megamenus( $items, $args ) {
         $new_items = array();
-        $wpml_lang_items = array();
 
         // reorder menu items within mega menus based on internal ordering
         foreach ( $items as $item ) {
@@ -816,15 +829,14 @@ final class Mega_Menu {
         foreach ( $items as $item ) {
             if ( in_array( 'wpml-ls-item', $item->classes ) ) {
                 $item->classes[] = 'menu-flyout';
-                $wpml_lang_items[] = $item;
-            } else {
-                $new_items[ $item->menu_order ] = $item;
             }
+            
+            $new_items[ $item->menu_order ] = $item;
         }
 
         ksort( $new_items );
 
-        return array_merge( $new_items, $wpml_lang_items );
+        return $new_items;
     }
 
 
@@ -884,7 +896,7 @@ final class Mega_Menu {
                     $item->classes[] = 'has-icon';
                 }
 
-                if ( $item->megamenu_settings['icon_position'] != 'left' ) {
+                if ( $item->megamenu_settings['icon'] != 'disabled' && isset( $item->megamenu_settings['icon_position'] ) ) {
                     $item->classes[] = "icon-" . $item->megamenu_settings['icon_position'];
                 }
 
@@ -975,6 +987,10 @@ final class Mega_Menu {
         $active_instance = isset( $settings['instances'][$current_theme_location] ) ? $settings['instances'][$current_theme_location] : 0;
 
         if ( $active_instance != 0 && $active_instance != $num_times_called ) {
+            return $args;
+        }
+
+        if ( strlen( $active_instance ) && ! is_numeric( $active_instance ) && isset( $args['container_id'] ) && $active_instance != $args['container_id'] ) {
             return $args;
         }
 
@@ -1477,3 +1493,5 @@ if ( ! function_exists('max_mega_menu_get_active_caching_plugins') ) {
         return $active_plugins;
     }
 }
+
+

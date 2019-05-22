@@ -639,8 +639,11 @@ class Mega_Menu_Settings {
      */
     public function megamenu_themes_page() {
 
-        $page = add_menu_page( __('Max Mega Menu', 'megamenu'), __('Mega Menu', 'megamenu'), 'edit_theme_options', 'maxmegamenu', array($this, 'page') );
+        $svg = 'PHN2ZyB2ZXJzaW9uPSIxLjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEyNy4wMDAwMDBwdCIgaGVpZ2h0PSIxMjcuMDAwMDAwcHQiIHZpZXdCb3g9IjAgMCAxMjcuMDAwMDAwIDEyNy4wMDAwMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIG1lZXQiPgogICAgICAgICAgICAgICAgICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAuMDAwMDAwLDEyNy4wMDAwMDApIHNjYWxlKDAuMTAwMDAwLC0wLjEwMDAwMCkiIGZpbGw9IiMwMDAwMDAiIHN0cm9rZT0ibm9uZSI+CiAgICAgICAgICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0zMzAgMTEyNyBsLTI0NSAtMTQzIC03IC0xODAgYy01IC05OCAtNyAtMjUzIC01IC0zNDQgbDIgLTE2NSAxMzAKICAgICAgICAgICAgICAgICAgICAgICAgLTc2IGMyOTUgLTE3MyAzNDUgLTIwNCAzNDUgLTIxMSAwIC00IDI0IC04IDU0IC04IDQ4IDAgNjUgNyAxNjcgNjYgMjIzIDEyOQogICAgICAgICAgICAgICAgICAgICAgICAzNzYgMjI0IDM5MCAyNDAgMTggMjEgMjYgNTkzIDEwIDYzNyAtMTIgMzAgLTczIDcyIC0yNzYgMTkwIC03MSA0MiAtMTUyIDkwCiAgICAgICAgICAgICAgICAgICAgICAgIC0xNzkgMTA2IC0zNiAyMyAtNjAgMzEgLTk1IDMxIC00MSAwIC03MiAtMTYgLTI5MSAtMTQzeiBtNDEwIC03NyBjMTMxIC03NgogICAgICAgICAgICAgICAgICAgICAgICAxNDEgLTg1IDExNSAtMTA1IC00MyAtMzEgLTIyMSAtMTI1IC0yMzkgLTEyNSAtMjEgMCAtMjE3IDExMiAtMjM1IDEzNCAtOCAxMAogICAgICAgICAgICAgICAgICAgICAgICAtNiAxNyA3IDI4IDM3IDMyIDIwNyAxMjggMjI2IDEyOCAxMiAwIDY4IC0yNyAxMjYgLTYweiBtLTM2MSAtMjc5IGM4OCAtNTAKICAgICAgICAgICAgICAgICAgICAgICAgMTgxIC05OSAyMDcgLTExMCBsNDcgLTIxIDEyMSA2OSBjMTY4IDk2IDI1NSAxNDEgMjcyIDE0MSAxMiAwIDE0IC0zOCAxNCAtMjI4CiAgICAgICAgICAgICAgICAgICAgICAgIGwwIC0yMjggLTc3IC00NyAtNzggLTQ3IC03IDE0NiBjLTMgODAgLTggMTQ3IC0xMCAxNDkgLTIgMiAtNTMgLTI1IC0xMTMgLTYwCiAgICAgICAgICAgICAgICAgICAgICAgIC02MSAtMzUgLTExOSAtNjQgLTEyOSAtNjUgLTExIDAgLTcwIDI3IC0xMzIgNjAgLTYyIDMzIC0xMTUgNjAgLTExNyA2MCAtMyAwCiAgICAgICAgICAgICAgICAgICAgICAgIC04IC02MyAtMTIgLTE0MCAtNCAtNzcgLTExIC0xNDAgLTE2IC0xNDAgLTQgMCAtMzkgMTkgLTc4IDQyIGwtNzAgNDIgLTMgMTI2CiAgICAgICAgICAgICAgICAgICAgICAgIGMtNCAxODIgMSAzNDAgMTIgMzQwIDUgMCA4MSAtNDAgMTY5IC04OXogbTE5NSAtNDU4IGw1NSAtMjcgNDEgMjggYzIzIDE1IDQ4CiAgICAgICAgICAgICAgICAgICAgICAgIDI1IDU2IDIyIDE1IC02IDIwIC03OSA4IC0xMTEgLTcgLTE4IC05NCAtNjUgLTEyMSAtNjUgLTIyIDAgLTgzIDM1IC0xMDAgNTgKICAgICAgICAgICAgICAgICAgICAgICAgLTE4IDIyIC0xNSAxMjIgMyAxMjIgMiAwIDI4IC0xMiA1OCAtMjd6Ii8+CiAgICAgICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICAgICAgPC9zdmc+';
 
+        $icon = "data:image/svg+xml;base64," . $svg;
+
+        $page = add_menu_page( __('Max Mega Menu', 'megamenu'), __('Mega Menu', 'megamenu'), 'edit_theme_options', 'maxmegamenu', array($this, 'page'), $icon );
 
         $tabs = apply_filters("megamenu_menu_tabs", array(
             'general_settings' => __("General Settings", "megamenu"),
@@ -1116,7 +1119,7 @@ class Mega_Menu_Settings {
                 <tr>
                     <td class='mega-name'>
                         <?php _e("Cache", "megamenu"); ?>
-                        <div class='mega-description'><?php _e("The CSS cache is automatically cleared every time a menu or a menu theme is saved. You can manually clear the CSS cache using this tool.", "megamenu"); ?></div>
+                        <div class='mega-description'><?php _e("The CSS for your menu is updated each time a menu or a menu theme is changed. You can force the menu CSS to be updated using this tool.", "megamenu"); ?></div>
                     </td>
                     <td class='mega-value'>
                         <form action="<?php echo admin_url('admin-post.php'); ?>" method="post">
@@ -1124,6 +1127,10 @@ class Mega_Menu_Settings {
                             <input type="hidden" name="action" value="megamenu_clear_css_cache" />
 
                             <input type='submit' class='button button-secondary' value='<?php _e("Clear CSS Cache", "megamenu"); ?>' />
+
+                            <?php if ( get_transient( 'megamenu_css_last_updated' ) ): ?>
+                                <p><em><small><?php echo sprintf(__("The menu CSS was last updated on %s", "megamenu"), date('l jS F Y H:i:s', get_transient('megamenu_css_last_updated') ) ); ?><small><em></p>
+                            <?php endif; ?>
                         </form>
                     </td>
                 </tr>
@@ -1852,8 +1859,13 @@ class Mega_Menu_Settings {
                                         )
                                     )
                                 ),
+                                'top_level_menu_items' => array(
+                                    'priority' => 50,
+                                    'title' => __( "Top Level Menu Items", "megamenu" ),
+                                    'description' => '',
+                                ),
                                 'menu_item_align' => array(
-                                    'priority' => 40,
+                                    'priority' => 55,
                                     'title' => __( "Menu Items Align", "megamenu" ),
                                     'description' => __( "Align <i>all</i> menu items to the left (default), centrally or to the right.", "megamenu" ),
                                     'info' => array( __( "This option will apply to all menu items. To align an individual menu item to the right, edit the menu item itself and set 'Menu Item Align' to 'Right'.", "megamenu" ) ),
@@ -1864,11 +1876,6 @@ class Mega_Menu_Settings {
                                             'key' => 'menu_item_align'
                                         )
                                     )
-                                ),
-                                'top_level_menu_items' => array(
-                                    'priority' => 50,
-                                    'title' => __( "Top Level Menu Items", "megamenu" ),
-                                    'description' => '',
                                 ),
                                 'menu_item_background' => array(
                                     'priority' => 60,
@@ -1996,6 +2003,7 @@ class Mega_Menu_Settings {
                                     'priority' => 120,
                                     'title' => __( "Menu Item Padding", "megamenu" ),
                                     'description' => __( "Set the padding for each top level menu item.", "megamenu" ),
+                                    'info' => array( __( "Generally we advise against using the Top and Bottom options here. Use the 'Menu Height' setting to determine the height of your top level menu items.", "megamenu" ) ),
                                     'settings' => array(
                                         array(
                                             'title' => __( "Top", "megamenu" ),
@@ -3952,14 +3960,18 @@ class Mega_Menu_Settings {
         wp_enqueue_style( 'spectrum', MEGAMENU_BASE_URL . 'js/spectrum/spectrum.css', false, MEGAMENU_VERSION );
         wp_enqueue_style( 'mega-menu-settings', MEGAMENU_BASE_URL . 'css/admin/admin.css', false, MEGAMENU_VERSION );
         wp_deregister_style('codemirror');
-        wp_enqueue_style( 'mega-menu-codemirror', MEGAMENU_BASE_URL . 'js/codemirror/codemirror.css', false, MEGAMENU_VERSION );
         wp_enqueue_style( 'select2', MEGAMENU_BASE_URL . 'js/select2/select2.css', false, MEGAMENU_VERSION );
 
         wp_enqueue_script( 'spectrum', MEGAMENU_BASE_URL . 'js/spectrum/spectrum.js', array( 'jquery' ), MEGAMENU_VERSION );
         wp_deregister_script('codemirror');
-        wp_enqueue_script( 'mega-menu-codemirror', MEGAMENU_BASE_URL . 'js/codemirror/codemirror.js', array(), MEGAMENU_VERSION );
+
+        $cm_settings['codeEditor'] = wp_enqueue_code_editor(array('type' => 'text/x-scss'));
+        wp_localize_script('jquery', 'cm_settings', $cm_settings);
+
+        wp_enqueue_style('wp-codemirror');
+
         wp_enqueue_script( 'mega-menu-select2', MEGAMENU_BASE_URL . 'js/select2/select2.min.js', array(), MEGAMENU_VERSION );
-        wp_enqueue_script( 'mega-menu-theme-editor', MEGAMENU_BASE_URL . 'js/settings.js', array( 'jquery', 'spectrum', 'mega-menu-codemirror' ), MEGAMENU_VERSION );
+        wp_enqueue_script( 'mega-menu-theme-editor', MEGAMENU_BASE_URL . 'js/settings.js', array( 'jquery', 'spectrum' ), MEGAMENU_VERSION );
 
         wp_localize_script( 'mega-menu-theme-editor', 'megamenu_settings',
             array(
