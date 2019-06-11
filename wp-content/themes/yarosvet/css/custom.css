@@ -294,11 +294,20 @@ input:checked ~ span.wpcf7-list-item-label::after {
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
+.tt-service.type-8 {
+  margin-bottom: 15px;
+}
+
 .tt-service.type-8 .tt-service-icon {
   width: 60px;
   height: 80px;
   font-size: 60px;
   border: 0;
+  line-height: unset;
+}
+
+.tt-service.type-8 .tt-service-icon img {
+  max-height: 100%;
 }
 
 .tt-service.type-8 .tt-service-icon span {
@@ -322,15 +331,20 @@ input:checked ~ span.wpcf7-list-item-label::after {
 
 .tt-service.type-8 .tt-service-info {
   padding-left: 80px;
+  padding-top: 0;
 }
 
 @media (max-width:991px) {
+  .tt-service.type-8 {
+    margin-bottom: 25px;
+  }
   .tt-service.type-8 .tt-service-info {
     padding-left: 0;
   }
   .tt-service.type-8 .tt-service-icon {
     display: block;
     margin-bottom: 10px;
+    width: auto;
   }
 }
 
@@ -857,10 +871,107 @@ ol.breadcrumb {
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
 
+/* SCHEME OF WORK */
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+#scheme-wrap {
+}
+
+#scheme-wrap .scheme-item {
+  display: flex;
+  text-align: left;
+}
+
+#scheme-wrap .scheme-item .border-wrap {
+  display: inline-block;
+  border-top: 6px solid #a98169;
+  border-right: 6px solid #a98169;
+  padding: 4px;
+}
+#scheme-wrap .scheme-item .border-wrap .num-wrap {
+  border-radius: 100%;
+  border: 3px solid green;
+  width: 34px;
+  height: 34px;
+  padding: 2px 7px;
+  color: green;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+#scheme-wrap .scheme-item .description {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  top: 2px;
+  margin-left: 3px;
+}
+
+#scheme-wrap .scheme-item .description p {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#scheme-wrap .scheme-item .description img {
+  max-height: 40px;
+  margin-right: 5px;
+  vertical-align: bottom;
+}
+
+#scheme-wrap .scheme-item .description a {
+  color: inherit;
+}
+
+#scheme-wrap .scheme-item .description a:hover {
+  color: green;
+}
+
+#scheme-wrap .scheme-item:nth-of-type(2) {
+  margin-left:42px;
+}
+
+#scheme-wrap .scheme-item:nth-of-type(3) {
+  margin-left:84px;
+}
+
+#scheme-wrap .scheme-item:nth-of-type(4) {
+  margin-left:126px;
+}
+
+#scheme-wrap .scheme-item:nth-of-type(5) {
+  margin-left:168px;
+}
+
+#scheme-wrap .scheme-item:nth-of-type(6) {
+  margin-left:210px;
+}
+
+#scheme-wrap .scheme-item:nth-of-type(7) {
+  margin-left:252px;
+}
+
+#scheme-wrap .scheme-item:nth-of-type(8) {
+  margin-left:294px;
+}
+
+#scheme-wrap .scheme-item .border-wrap .num {
+  color: green;
+}
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
 /* CONTACTS */
 
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
+.contacts-info {
+  margin-bottom: 20px;
+}
 
 .contacts-info p {
   line-height: 30px;
