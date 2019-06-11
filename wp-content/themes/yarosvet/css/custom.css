@@ -93,6 +93,18 @@ input:checked ~ span.wpcf7-list-item-label::after {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E");
 }
 
+.mt-30 {
+  margin-top: 30px;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mb-30 {
+  margin-bottom: 30px;
+}
+
 .fz-17 {
   font-size: 17px;
 }
@@ -410,6 +422,16 @@ input:checked ~ span.wpcf7-list-item-label::after {
   border-radius: 0;
 }
 
+.tt-service.type-10 .tt-service-icon {
+  width: auto;
+  height: auto;
+  margin: auto;
+}
+
+.tt-service.type-10 .tt-service-title {
+  font-weight: bold;
+}
+
 .tt-service.type-10 .tt-service-info {
   padding-left: 0 !important;
   padding-top: 0px;
@@ -598,15 +620,40 @@ ol.breadcrumb {
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
-/* Высота главного меню */
+/* Ссылки главного меню */
 #mega-menu-wrap-primary-menu #mega-menu-primary-menu > li.mega-menu-item > a.mega-menu-link {
   height: 65px !important;
   line-height: 65px;
+  color: #777;
+  padding: 0 12px;
+}
+
+.tt-header .cmn-toggle-switch {
+  height: 21px;
 }
 
 /* Контактные данные*/
+.tt-header .nav-more {
+  margin-left: 15px;
+}
+
 .tt-header .tt-address-info{
   padding: 0;
+  margin-right: 10px;
+}
+
+.tt-header .contact-details-module .detail-module i {
+  margin-right: 5px;
+  color: #86bb6b;
+  position: relative;
+  font-size: 20px;
+  top: 4px;
+}
+
+.tt-header .contact-details-module .phone-link a {
+  color: #86bb6b;
+  font-size: 19px;
+  font-weight: bold;
 }
 
 .tt-header .main-nav > ul > li > ul > li > a:hover {
@@ -618,6 +665,12 @@ ol.breadcrumb {
 }
 #mega-menu-wrap-primary-menu #mega-menu-primary-menu > li.mega-menu-megamenu.mega-services > ul.mega-sub-menu {
   width: 150%;
+}
+#mega-menu-wrap-primary-menu #mega-menu-primary-menu > li.mega-menu-megamenu ul.mega-sub-menu ul.mega-sub-menu li.mega-menu-item a.mega-menu-link {
+  color: #777;
+}
+#mega-menu-wrap-primary-menu #mega-menu-primary-menu > li.mega-menu-megamenu ul.mega-sub-menu li.mega-menu-item a.mega-menu-link:hover {
+  color: #333 !important;
 }
 
 #mega-menu-wrap-primary-menu #mega-menu-primary-menu > li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item a.mega-menu-link {
@@ -662,7 +715,7 @@ ol.breadcrumb {
 
   /* Отступ от лого */
   .tt-header .toggle-block {
-    padding-top: 75px;
+    padding-top: 55px;
   }
 }
 
@@ -673,6 +726,10 @@ ol.breadcrumb {
   }
   .tt-header .top-inner {
     padding: 6px 0;
+  }
+  /* Отступ от лого */
+  .tt-header .toggle-block {
+    padding-top: 75px;
   }
 }
 
@@ -701,12 +758,22 @@ ol.breadcrumb {
     overflow: initial;
   }
 }
-@media (max-width:600px) {
+@media (max-width:576px) {
   .tt-header .toggle-block {
     overflow: auto !important;
   }
   .tt-header .toggle-block {
-    padding-top: 90px;
+    padding-top: 80px;
+  }
+}
+
+
+@media (min-width:576px) and (max-width: 992px) {
+  .tt-header .tt-address-info{
+    margin-right: 0;
+  }
+  .tt-header .nav-more {
+    margin-left: 0;
   }
 }
 
@@ -795,8 +862,12 @@ ol.breadcrumb {
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
-.contacts-info p{
+.contacts-info p {
   line-height: 30px;
+}
+
+.contacts-info a {
+  text-decoration: none;
 }
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
@@ -862,27 +933,36 @@ ol.breadcrumb {
 }
 
 #form-contacts label{
-  display:block;
+  display: block;
   margin: 10px 0;
   font-size: 17px;
 }
 
 #form-contacts input, #form-contacts textarea {
-  width:100%;
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 3px;
+}
+
+#form-contacts .wpcf7-not-valid {
+  border: 1px solid #ff000099 !important;
+}
+#form-contacts .wpcf7-not-valid-tip {
+  color: #ff000099;
 }
 
 #form-contacts input:not([type="submit"]), #form-contacts textarea{
-  background-color:#eee;
-  border:none;
-  line-height:30px;
-  font-size:18px;
+  background-color: #eee;
+  border: none;
+  line-height: 30px;
+  font-size: 18px;
   padding: 1px 4px;
   color: #4f4f4f;
 }
 
 #form-contacts textarea{
-  resize:none;
-  height:140px;
+  resize: none;
+  height: 140px;
 }
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
@@ -899,6 +979,7 @@ ol.breadcrumb {
 
 .tt-address-info {
   padding: 0;
+  line-height: 21px;
 }
 
 .tt-address-icon {
@@ -906,6 +987,18 @@ ol.breadcrumb {
   margin-right: 10px;
 }
 
+.tt-footer-list .tt-social li {
+  margin-right: 15px;
+  margin-bottom: 0;
+}
+.tt-footer-list .tt-social i {
+  font-size: 20px;
+}
+
+.tt-footer-list .phone-link {
+  font-size: 15px;
+  font-weight: bold;
+}
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
@@ -1612,6 +1705,11 @@ table .green-highlighted {
 
 .read-more-link {
     font-size: 14px !important;
+}
+
+.post table {
+  max-width: 100%;
+  line-height: 23px;
 }
 
 .post p, .post ul, .post li, .post span {

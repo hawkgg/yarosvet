@@ -60,7 +60,7 @@ class marketing_WP_Contact_Details_Widget extends WP_Widget
         
       </div>
     </div>
-    <div class="empty-space marg-lg-b15"></div>
+    <div class="empty-space marg-lg-b20"></div>
     <?php endif; ?>
 
     <?php if(isset($instance['email']) && !empty($instance['email'])): ?>
@@ -70,14 +70,14 @@ class marketing_WP_Contact_Details_Widget extends WP_Widget
         <a href="mailto:<?php echo $instance['email']; ?>"><?php echo $instance['email']; ?></a>
       </div>
     </div>
-    <div class="empty-space marg-lg-b15"></div>
+    <div class="empty-space marg-lg-b20"></div>
     <?php endif; ?>
 
     <?php if(isset($instance['phone_no']) && !empty($instance['phone_no'])): ?>
     <div class="tt-address d-flex">
       <div class="tt-address-icon d-flex align-items-center justify-content-center"><i class="fa fa-phone" aria-hidden="true"></i></div>
       <div class="tt-address-info">
-        <a href="tel:<?php echo $instance['phone_no']; ?>"><?php echo $instance['phone_no']; ?></a>
+        <a href="tel:<?php echo $instance['phone_no']; ?>"><span class="phone-link"><?php echo $instance['phone_no']; ?></span><br>ежедневно с 9:00 до 23:00</a>
       </div>
     </div>
     <div class="empty-space marg-lg-b40 marg-xs-b30"></div>

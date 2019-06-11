@@ -11,19 +11,18 @@
 <footer class="tt-footer">
   <div class="container">
     <div class="row">
-      <div class="col-sm-6 col-md-4">
+      <div class="col-sm-6 col-md-6 col-lg-4">
         <?php if (is_active_sidebar( marketing_get_custom_sidebar('footer-1', 'footer-sidebar-1') )): ?>
           <?php dynamic_sidebar( marketing_get_custom_sidebar('footer-1', 'footer-sidebar-1') ); ?>
         <?php endif; ?>
-        <div class="empty-space marg-xs-b30"></div>
+        <div class="empty-space marg-xs-b5"></div>
       </div>
-      <div class="col-sm-6 col-md-5">
+      <div class="col-sm-6 col-lg-5">
         <?php if (is_active_sidebar( marketing_get_custom_sidebar('footer-2', 'footer-sidebar-2') )): ?>
           <?php dynamic_sidebar( marketing_get_custom_sidebar('footer-2', 'footer-sidebar-2') ); ?>
         <?php endif; ?>
-        <div class="empty-space marg-sm-b30"></div>
       </div>
-      <div class="col-xs-12 col-md-3">
+      <div class="col-xs-12 col-lg-3">
         <?php if (is_active_sidebar( marketing_get_custom_sidebar('footer-3', 'footer-sidebar-3') )): ?>
           <?php dynamic_sidebar( marketing_get_custom_sidebar('footer-3', 'footer-sidebar-3') ); ?>
         <?php endif; ?>
