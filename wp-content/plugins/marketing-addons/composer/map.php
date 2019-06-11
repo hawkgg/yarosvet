@@ -1870,6 +1870,8 @@ vc_map( array(
         'Type 2'   => 'type-2',
         'Type 3'   => 'type-3',
         'Type 4'   => 'type-4',
+        'Type 5'   => 'type-5',
+        'Type 6'   => 'type-6',
       ),
       'group'       => 'Кнопка',
       'dependency'  => array( 'element' => 'style', 'value' => array('style6') )

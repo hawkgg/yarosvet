@@ -83,7 +83,7 @@ function rs_blog_list( $atts, $content = '', $id = '' ) {
           <div class="simple-text size-3">
             <p><?php echo marketing_auto_post_excerpt(); ?></p>
           </div>
-          <div class="text-right">
+          <div class="text-right"> 
             <a class="c-btn type-4 read-more-link" href="<?php echo esc_url(get_the_permalink()); ?>"><?php echo esc_html__('Читать далее', 'marketing-addons'); ?></a>
           </div>
         </div>  

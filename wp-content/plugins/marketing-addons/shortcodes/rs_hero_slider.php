@@ -135,13 +135,13 @@ function rs_hero_slider_item( $atts, $content = '', $id = '' ) {
     if ($big_heading_customize) {
       $big_heading_uniqclass = wp_generate_uuid4();
       $big_heading_custom_style =  '.custom-font-properties-'.$big_heading_uniqclass.'{';
-      $big_heading_custom_style .= ($big_heading_font != 'default') ? 'font-family:'.$big_heading_font.', san-serif;':'';
-      $big_heading_custom_style .= ($big_heading_color) ? 'color:'.esc_attr($big_heading_color).';':'';
-      $big_heading_custom_style .= ($big_heading_font_size) ? 'font-size:'.esc_attr($big_heading_font_size).'px;':'';
-      $big_heading_custom_style .= ($big_heading_font_weight) ? 'font-weight:'.esc_attr($big_heading_font_weight).';':'';
-      $big_heading_custom_style .= ($big_heading_font_style) ? 'font-style:'.esc_attr($big_heading_font_style).';':'';
-      $big_heading_custom_style .= ($big_heading_line_height) ? 'line-height:'.esc_attr($big_heading_line_height).'px;':'';
-      $big_heading_custom_style .= ($big_heading_letter_spacing) ? 'letter-spacing:'.esc_attr($big_heading_letter_spacing).'px;':'';
+      $big_heading_custom_style .= ($big_heading_font != 'default') ? 'font-family:'.$big_heading_font.', san-serif !important;':'';
+      $big_heading_custom_style .= ($big_heading_color) ? 'color:'.esc_attr($big_heading_color).' !important;':'';
+      $big_heading_custom_style .= ($big_heading_font_size) ? 'font-size:'.esc_attr($big_heading_font_size).'px !important;':'';
+      $big_heading_custom_style .= ($big_heading_font_weight) ? 'font-weight:'.esc_attr($big_heading_font_weight).' !important;':'';
+      $big_heading_custom_style .= ($big_heading_font_style) ? 'font-style:'.esc_attr($big_heading_font_style).' !important;':'';
+      $big_heading_custom_style .= ($big_heading_line_height) ? 'line-height:'.esc_attr($big_heading_line_height).'px !important;':'';
+      $big_heading_custom_style .= ($big_heading_letter_spacing) ? 'letter-spacing:'.esc_attr($big_heading_letter_spacing).'px !important;':'';
       $big_heading_custom_style .= '}';
 
       marketing_add_inline_style( $big_heading_custom_style );
@@ -168,13 +168,13 @@ function rs_hero_slider_item( $atts, $content = '', $id = '' ) {
     if ($small_heading_customize) {
       $small_heading_uniqclass = wp_generate_uuid4();
       $small_heading_custom_style =  '.custom-font-properties-'.$small_heading_uniqclass.'{';
-      $small_heading_custom_style .= ($small_heading_font != 'default') ? 'font-family:'.$small_heading_font.', san-serif;':'';
-      $small_heading_custom_style .= ($small_heading_color) ? 'color:'.esc_attr($small_heading_color).';':'';
-      $small_heading_custom_style .= ($small_heading_font_size) ? 'font-size:'.esc_attr($small_heading_font_size).'px;':'';
-      $small_heading_custom_style .= ($small_heading_font_weight) ? 'font-weight:'.esc_attr($small_heading_font_weight).';':'';
-      $small_heading_custom_style .= ($small_heading_font_style) ? 'font-style:'.esc_attr($small_heading_font_style).';':'';
-      $small_heading_custom_style .= ($small_heading_line_height) ? 'line-height:'.esc_attr($small_heading_line_height).'px;':'';
-      $small_heading_custom_style .= ($small_heading_letter_spacing) ? 'letter-spacing:'.esc_attr($small_heading_letter_spacing).'px;':'';
+      $small_heading_custom_style .= ($small_heading_font != 'default') ? 'font-family:'.$small_heading_font.', san-serif !important;':'';
+      $small_heading_custom_style .= ($small_heading_color) ? 'color:'.esc_attr($small_heading_color).'; !important;':'';
+      $small_heading_custom_style .= ($small_heading_font_size) ? 'font-size:'.esc_attr($small_heading_font_size).'px !important;':'';
+      $small_heading_custom_style .= ($small_heading_font_weight) ? 'font-weight:'.esc_attr($small_heading_font_weight).' !important;':'';
+      $small_heading_custom_style .= ($small_heading_font_style) ? 'font-style:'.esc_attr($small_heading_font_style).' !important;':'';
+      $small_heading_custom_style .= ($small_heading_line_height) ? 'line-height:'.esc_attr($small_heading_line_height).'px !important;':'';
+      $small_heading_custom_style .= ($small_heading_letter_spacing) ? 'letter-spacing:'.esc_attr($small_heading_letter_spacing).'px !important;':'';
       $small_heading_custom_style .= '}';
 
       marketing_add_inline_style( $small_heading_custom_style );
@@ -208,13 +208,13 @@ function rs_hero_slider_item( $atts, $content = '', $id = '' ) {
     if ($btn_link_customize) {
       $btn_link_uniqclass = wp_generate_uuid4();
       $btn_link_custom_style =  '.custom-font-properties-'.$btn_link_uniqclass.'{';
-      $btn_link_custom_style .= ($btn_link_font != 'default') ? 'font-family:'.$btn_link_font.', san-serif;':'';
-      $btn_link_custom_style .= ($btn_link_color) ? 'color:'.esc_attr($btn_link_color).';':'';
-      $btn_link_custom_style .= ($btn_link_font_size) ? 'font-size:'.esc_attr($btn_link_font_size).'px;':'';
-      $btn_link_custom_style .= ($btn_link_font_weight) ? 'font-weight:'.esc_attr($btn_link_font_weight).';':'';
-      $btn_link_custom_style .= ($btn_link_font_style) ? 'font-style:'.esc_attr($btn_link_font_style).';':'';
-      $btn_link_custom_style .= ($btn_link_line_height) ? 'line-height:'.esc_attr($btn_link_line_height).'px;':'';
-      $btn_link_custom_style .= ($btn_link_letter_spacing) ? 'letter-spacing:'.esc_attr($btn_link_letter_spacing).'px;':'';
+      $btn_link_custom_style .= ($btn_link_font != 'default') ? 'font-family:'.$btn_link_font.', san-serif !important;':'';
+      $btn_link_custom_style .= ($btn_link_color) ? 'color:'.esc_attr($btn_link_color).' !important;':'';
+      $btn_link_custom_style .= ($btn_link_font_size) ? 'font-size:'.esc_attr($btn_link_font_size).'px !important;':'';
+      $btn_link_custom_style .= ($btn_link_font_weight) ? 'font-weight:'.esc_attr($btn_link_font_weight).' !important;':'';
+      $btn_link_custom_style .= ($btn_link_font_style) ? 'font-style:'.esc_attr($btn_link_font_style).' !important;':'';
+      $btn_link_custom_style .= ($btn_link_line_height) ? 'line-height:'.esc_attr($btn_link_line_height).'px !important;':'';
+      $btn_link_custom_style .= ($btn_link_letter_spacing) ? 'letter-spacing:'.esc_attr($btn_link_letter_spacing).'px !important;':'';
       $btn_link_custom_style .= '}';
 
       marketing_add_inline_style( $btn_link_custom_style );
