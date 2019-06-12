@@ -1933,12 +1933,16 @@ table .green-highlighted {
   top: 1px;
 }
 
+.cp_id_7605b .wpcf7-mail-sent-ok {
+  color: #fff;
+}
+
 .call-order-success-message {
   color: #fff !important;
   font-size: 17px !important;
 }
 
-.wpcf7-mail-sent-ok {
+.wpcf7-response-output {
   font-size: 14px !important;
   margin-top: 5px !important;
 }

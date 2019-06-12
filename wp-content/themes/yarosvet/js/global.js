@@ -598,8 +598,8 @@ jQuery(function($) {
 
   $('.call-order-link').on('click', function(){
     setTimeout(function(){
-      $('.cp_id_7605b p .your-phone input').focus();
-    },100);
+      $('.cp_id_7605b form .your-phone input').focus();
+    },200);
   });
 
   // $('.wpcf7-form.sent').on('load', function(){
