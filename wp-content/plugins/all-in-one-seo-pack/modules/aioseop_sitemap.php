@@ -1434,10 +1434,11 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Sitemap' ) ) {
 		 * @return array
 		 */
 		public function get_rewrite_rules( $prefix_removed_rules_with = null ) {
+
 			$sitemap_rules  = array(
-				$this->get_filename() . '.xml'            => 'index.php?' . $this->prefix . 'path=root',
-				$this->get_filename() . '_(.+)_(\d+).xml' => 'index.php?' . $this->prefix . 'path=$matches[1]&' . $this->prefix . 'page=$matches[2]',
-				$this->get_filename() . '_(.+).xml'       => 'index.php?' . $this->prefix . 'path=$matches[1]',
+				$this->get_filename() . '.xml'                => 'index.php?' . $this->prefix . 'path=root',
+				'(.+)-' . $this->get_filename() . '(\d+).xml' => 'index.php?' . $this->prefix . 'path=$matches[1]&' . $this->prefix . 'page=$matches[2]',
+				'(.+)-' . $this->get_filename() . '.xml'      => 'index.php?' . $this->prefix . 'path=$matches[1]',
 			);
 
 			if ( isset( $this->options[ "{$this->prefix}rss_sitemap" ] ) && $this->options[ "{$this->prefix}rss_sitemap" ] ) {
@@ -1952,7 +1953,7 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Sitemap' ) ) {
 			$options[ "{$this->prefix}posttypes" ]  = array_diff( $options[ "{$this->prefix}posttypes" ], array( 'all' ) );
 			$options[ "{$this->prefix}taxonomies" ] = $this->show_or_hide_taxonomy( array_diff( $options[ "{$this->prefix}taxonomies" ], array( 'all' ) ) );
 
-			$files[] = array( 'loc' => aioseop_home_url( '/' . $prefix . '_addl' . $suffix ) );
+			$files[] = array( 'loc' => aioseop_home_url( '/addl-' . $prefix . $suffix ) );
 
 			// Get post types selected, and NoIndex post types & Index posts.
 			$post_types = $options[ "{$this->prefix}posttypes" ];
@@ -2027,21 +2028,21 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Sitemap' ) ) {
 							$count = 1;
 							for ( $post_count = 0; $post_count < $post_counts[ $sm ]; $post_count += $this->max_posts ) {
 								$files[] = array(
-									'loc'        => aioseop_home_url( '/' . $prefix . '_' . $sm . '_' . ( $count ++ ) . $suffix ),
+									'loc'        => aioseop_home_url( '/' . $sm . '-' . $prefix . ( $count ++ ) . $suffix ),
 									'changefreq' => $freq,
 									'priority'   => $prio,
 								);
 							}
 						} else {
 							$files[] = array(
-								'loc'        => aioseop_home_url( '/' . $prefix . '_' . $sm . $suffix ),
+								'loc'        => aioseop_home_url( '/' . $sm . '-' . $prefix . $suffix ),
 								'changefreq' => $freq,
 								'priority'   => $prio,
 							);
 						}
 					} else {
 						$files[] = array(
-							'loc'        => aioseop_home_url( '/' . $prefix . '_' . $sm . $suffix ),
+							'loc'        => aioseop_home_url( '/' . $sm . '-' . $prefix . $suffix ),
 							'changefreq' => $freq,
 							'priority'   => $prio,
 						);
@@ -2050,14 +2051,14 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Sitemap' ) ) {
 			}
 			if ( $this->option_isset( 'archive' ) ) {
 				$files[] = array(
-					'loc'        => aioseop_home_url( '/' . $prefix . '_archive' . $suffix ),
+					'loc'        => aioseop_home_url( '/' . 'archive-' . $prefix . $suffix ),
 					'changefreq' => $this->get_default_frequency( 'archive' ),
 					'priority'   => $this->get_default_priority( 'archive' ),
 				);
 			}
 			if ( $this->option_isset( 'author' ) ) {
 				$files[] = array(
-					'loc'        => aioseop_home_url( '/' . $prefix . '_author' . $suffix ),
+					'loc'        => aioseop_home_url( '/' . 'author-' . $prefix . $suffix ),
 					'changefreq' => $this->get_default_frequency( 'author' ),
 					'priority'   => $this->get_default_priority( 'author' ),
 				);
@@ -2075,21 +2076,21 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Sitemap' ) ) {
 								$count = 1;
 								for ( $tc = 0; $tc < $term_count; $tc += $this->max_posts ) {
 									$files[] = array(
-										'loc'        => aioseop_home_url( '/' . $prefix . '_' . $v1_taxonomy . '_' . ( $count ++ ) . $suffix ),
+										'loc'        => aioseop_home_url( '/' . $v1_taxonomy . '-' . $prefix . ( $count ++ ) . $suffix ),
 										'changefreq' => $this->get_default_frequency( 'taxonomies' ),
 										'priority'   => $this->get_default_priority( 'taxonomies' ),
 									);
 								}
 							} else {
 								$files[] = array(
-									'loc'        => aioseop_home_url( '/' . $prefix . '_' . $v1_taxonomy . $suffix ),
+									'loc'        => aioseop_home_url( '/' . $v1_taxonomy . '-' . $prefix . $suffix ),
 									'changefreq' => $this->get_default_frequency( 'taxonomies' ),
 									'priority'   => $this->get_default_priority( 'taxonomies' ),
 								);
 							}
 						} else {
 							$files[] = array(
-								'loc'        => aioseop_home_url( '/' . $prefix . '_' . $v1_taxonomy . $suffix ),
+								'loc'        => aioseop_home_url( '/' . $v1_taxonomy . '-' . $prefix . $suffix ),
 								'changefreq' => $this->get_default_frequency( 'taxonomies' ),
 								'priority'   => $this->get_default_priority( 'taxonomies' ),
 							);
@@ -2162,7 +2163,7 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Sitemap' ) ) {
 				if ( 'root' === $sitemap_type ) {
 					$filename = $this->get_filename();
 				} else {
-					$filename = $this->get_filename() . '_' . $sitemap_type;
+					$filename = $sitemap_type . '-' . $this->get_filename();
 				}
 			}
 			if ( empty( $comment ) ) {
@@ -2211,7 +2212,7 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Sitemap' ) ) {
 					if ( ! empty( $this->options[ "{$this->prefix}indexes" ] ) && ( $post_counts[ $posttype ] > $this->max_posts ) ) {
 						$count = 1;
 						for ( $post_count = 0; $post_count < $post_counts[ $posttype ]; $post_count += $this->max_posts ) {
-							$this->do_write_sitemap( $posttype, $count - 1, $this->get_filename() . "_{$posttype}_{$count}" );
+							$this->do_write_sitemap( $posttype, $count - 1, "{$posttype}-" . $this->get_filename() . "{$count}" );
 							$count ++;
 						}
 					} else {
@@ -2228,7 +2229,7 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Sitemap' ) ) {
 							if ( $term_count > $this->max_posts ) {
 								$count = 1;
 								for ( $tc = 0; $tc < $term_count; $tc += $this->max_posts ) {
-									$this->do_write_sitemap( $taxonomy, $tc, $this->get_filename() . "_{$taxonomy}_{$count}" );
+									$this->do_write_sitemap( $taxonomy, $tc, "{$taxonomy}-" . $this->get_filename() . "{$count}" );
 									$count ++;
 								}
 							} else {
